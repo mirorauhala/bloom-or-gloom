@@ -6,26 +6,37 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 public class MyGdxGame extends ApplicationAdapter {
-	SpriteBatch batch;
-	Texture img;
+	SpriteBatch gameBatch;
+	SpriteBatch hudBatch;
+	private BottomHud bottomHud;
+	private GameScreen gameScreen;
+
 	
 	@Override
 	public void create () {
-		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
+		SpriteBatch gameBatch = new SpriteBatch();
+		SpriteBatch hudBatch = new SpriteBatch();;
+		bottomHud = new BottomHud();
+		gameScreen = new GameScreen(new Texture("splashScreen.jpg"), 0, 0);
 	}
 
 	@Override
 	public void render () {
-		ScreenUtils.clear(1, 0, 0, 1);
-		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.end();
+		ScreenUtils.clear(0, 0, 0, 0);
+
+		gameBatch.begin();
+		gameScreen.draw(gameBatch);
+		gameBatch.end();
+
+		/*hudBatch.begin();
+		bottomHud.draw(hudBatch);
+		hudBatch.end();*/
 	}
 	
 	@Override
 	public void dispose () {
-		batch.dispose();
-		img.dispose();
+		gameBatch.dispose();
+		hudBatch.dispose();
+
 	}
 }
