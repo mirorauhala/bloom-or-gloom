@@ -1,44 +1,54 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-public class MyGdxGame extends ApplicationAdapter {
+import java.util.concurrent.TimeUnit;
+
+public class MyGdxGame extends Game {
 	SpriteBatch gameBatch;
 	SpriteBatch hudBatch;
 	private BottomHud bottomHud;
 	private GameScreen gameScreen;
 	public final float SCREEN_WIDTH = 1080;
 	public final float SCREEN_HEIGHT = 1920;
+	private long splashTimer = System.nanoTime();
 
-	private OrthographicCamera camera;
+	public OrthographicCamera camera;
 	
 	@Override
 	public void create () {
 		gameBatch = new SpriteBatch();
 		hudBatch = new SpriteBatch();;
 		bottomHud = new BottomHud();
-		gameScreen = new GameScreen(new Texture("splashScreen.jpg"), 0, 0);
-
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+		setScreen(new SplashScreen(this));
+
 	}
 
 	@Override
 	public void render () {
-		gameBatch.setProjectionMatrix(camera.combined);
-		ScreenUtils.clear(0, 0, 0, 0);
+		// Uses the render method from current screen.
+		super.render();
 
-		gameBatch.begin();
-		gameScreen.draw(gameBatch);
-		gameBatch.end();
+		if (Gdx.input.justTouched() || TimeUnit.MILLISECONDS.convert(System.nanoTime() - splashTimer, TimeUnit.NANOSECONDS) > 7500) {
+			setGameScreen();
+		}
 
 		/*hudBatch.begin();
 		bottomHud.draw(hudBatch);
 		hudBatch.end();*/
+	}
+
+	public void setGameScreen () {
+		setScreen(new GameScreen(this));
 	}
 	
 	@Override
