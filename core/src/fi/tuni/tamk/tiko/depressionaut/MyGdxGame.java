@@ -14,8 +14,8 @@ public class MyGdxGame extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
-		SpriteBatch gameBatch = new SpriteBatch();
-		SpriteBatch hudBatch = new SpriteBatch();;
+		gameBatch = new SpriteBatch();
+		hudBatch = new SpriteBatch();;
 		bottomHud = new BottomHud();
 		gameScreen = new GameScreen(new Texture("splashScreen.jpg"), 0, 0);
 	}

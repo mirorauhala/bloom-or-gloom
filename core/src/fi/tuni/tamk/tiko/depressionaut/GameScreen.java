@@ -17,10 +17,10 @@ public class GameScreen {
     }
 
     public void setX(float xPos) {
-        xPos = x;
+        x = xPos;
     }
     public void setY(float yPos) {
-        yPos = y;
+        y = yPos;
     }
 
     public float getX() {
@@ -32,7 +32,7 @@ public class GameScreen {
     }
 
     public void setWall(Texture wallTexture) {
-        wallTexture = wall;
+        wall = wallTexture;
     }
 
     public Texture getWall() {
