@@ -1,10 +1,13 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
+
+import java.util.concurrent.TimeUnit;
 
 public class SplashScreen implements Screen {
     MyGdxGame host;
@@ -46,6 +49,11 @@ public class SplashScreen implements Screen {
     public void render(float delta) {
         batch.setProjectionMatrix(camera.combined);
         ScreenUtils.clear(0, 0, 0, 0);
+
+        // Switch to comic screen if screen is touched or after 7.5s has passed.
+        if (Gdx.input.justTouched() || TimeUnit.MILLISECONDS.convert(System.nanoTime() - host.splashTimer, TimeUnit.NANOSECONDS) > 7500) {
+            host.setComicScreen();
+        }
 
         batch.begin();
         batch.draw(bg, 0, 0);
