@@ -1,14 +1,8 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
-
-import java.util.concurrent.TimeUnit;
 
 public class MyGdxGame extends Game {
 	SpriteBatch gameBatch;
@@ -17,7 +11,7 @@ public class MyGdxGame extends Game {
 	private GameScreen gameScreen;
 	public final float SCREEN_WIDTH = 1080;
 	public final float SCREEN_HEIGHT = 1920;
-	private long splashTimer = System.nanoTime();
+	public long splashTimer = System.nanoTime();
 
 	public OrthographicCamera camera;
 	
@@ -38,13 +32,13 @@ public class MyGdxGame extends Game {
 		// Uses the render method from current screen.
 		super.render();
 
-		if (Gdx.input.justTouched() || TimeUnit.MILLISECONDS.convert(System.nanoTime() - splashTimer, TimeUnit.NANOSECONDS) > 7500) {
-			setGameScreen();
-		}
-
 		/*hudBatch.begin();
 		bottomHud.draw(hudBatch);
 		hudBatch.end();*/
+	}
+
+	public void setComicScreen () {
+		setScreen(new Comic(this));
 	}
 
 	public void setGameScreen () {
