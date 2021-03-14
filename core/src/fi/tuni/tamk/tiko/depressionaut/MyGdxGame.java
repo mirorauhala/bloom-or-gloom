@@ -29,15 +29,16 @@ public class MyGdxGame extends Game {
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
 
+		// Start game with splash screen.
 		setScreen(new SplashScreen(this));
-
 	}
 
 	@Override
 	public void render () {
-		// Uses the render method from current screen.
+		// Uses render method from current screen.
 		super.render();
 
+		// Move to GameScreen when screen is touched or when 7.5s has passed.
 		if (Gdx.input.justTouched() || TimeUnit.MILLISECONDS.convert(System.nanoTime() - splashTimer, TimeUnit.NANOSECONDS) > 7500) {
 			setGameScreen();
 		}
@@ -47,6 +48,7 @@ public class MyGdxGame extends Game {
 		hudBatch.end();*/
 	}
 
+	// Sets GameScreen as the current screen.
 	public void setGameScreen () {
 		setScreen(new GameScreen(this));
 	}
