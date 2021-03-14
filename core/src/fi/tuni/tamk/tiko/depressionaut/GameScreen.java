@@ -8,8 +8,22 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class GameScreen implements Screen {
     private Texture wall;
-    private float x;
-    private float y;
+
+    private float x = 0;
+    private float y = 0;
+    final private float width = 480f;
+    final private float height = 800f;
+
+
+    public int wallTier;
+    public int floorTier;
+    public int bedTier;
+
+    final private Texture wallTier1 = new Texture("walls/tier1.png");
+    final private Texture floorTier1 = new Texture("floors/tier1.png");
+    final private Texture bedTier1 = new Texture("furniture/bed/tier1.png");
+    //final private Texture wallTier2 = new Texture("walls/tier2.png");
+    //final private Texture floorTier2 = new Texture("floors/tier2.png");
 
     MyGdxGame host;
     SpriteBatch batch;
@@ -21,9 +35,25 @@ public class GameScreen implements Screen {
         batch = host.gameBatch;
         camera = host.camera;
 
-        setWall(new Texture("walls/tier1.jpg"));
-        setX(0);
-        setY(0);
+
+
+    }
+
+    /*
+    Tiering system
+
+    Tier on each object in the gamescreen can be set with gamescreen.setObjecttier
+
+
+     */
+    public void setWallTier(int wallTier) {
+        this.wallTier = wallTier;
+    }
+    public void setFloorTier(int floorTier) {
+        this.floorTier = floorTier;
+    }
+    public void setBedTier(int bedTier) {
+        this.bedTier = bedTier;
     }
 
     @Override
@@ -31,18 +61,17 @@ public class GameScreen implements Screen {
         batch.setProjectionMatrix(camera.combined);
         ScreenUtils.clear(0, 0, 0, 0);
 
+        setFloorTier(2);
+        setWallTier(2);
+        setBedTier(2);
+
         batch.begin();
-        batch.draw(getWall(), getX(), getY());
+        batch.draw(getWallTexture(), getX(), getY());
+        batch.draw(getFloorTexture(), getX(), getY());
+        batch.draw(getBedTexture(), getX(), getY());
         batch.end();
     }
 
-    public void setX(float xPos) {
-        x = xPos;
-    }
-
-    public void setY(float yPos) {
-        y = yPos;
-    }
 
     public float getX() {
         return x;
@@ -52,13 +81,37 @@ public class GameScreen implements Screen {
         return y;
     }
 
-    public void setWall(Texture wallTexture) {
-        wall = wallTexture;
+    public Texture getWallTexture() {
+        switch(wallTier) {
+            case 1:
+                return wallTier1;
+            case 2:
+                return wallTier1;
+            default:
+                return wallTier1;
+        }
+    }
+    public Texture getFloorTexture() {
+        switch (floorTier) {
+            case 1:
+                return floorTier1;
+            case 2:
+                return floorTier1;
+            default:
+                return floorTier1;
+        }
+    }
+    public Texture getBedTexture() {
+        switch (bedTier) {
+            case 1:
+                return bedTier1;
+            case 2:
+                return bedTier1;
+            default:
+                return bedTier1;
+        }
     }
 
-    public Texture getWall() {
-        return wall;
-    }
 
     @Override
     public void show() {

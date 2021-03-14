@@ -2,6 +2,7 @@ package fi.tuni.tamk.tiko.depressionaut;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MyGdxGame extends Game {
@@ -24,6 +25,9 @@ public class MyGdxGame extends Game {
 		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 		setScreen(new SplashScreen(this));
+
+
+
 
 	}
 
