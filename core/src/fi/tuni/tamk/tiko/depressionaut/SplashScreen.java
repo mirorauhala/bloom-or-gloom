@@ -23,6 +23,9 @@ public class SplashScreen implements Screen {
     private float rotation;
     private boolean rotatingRight;
 
+    // Background rotation:
+    private float bgRotation = 0;
+
     SpriteBatch batch;
     private OrthographicCamera camera;
 
@@ -48,7 +51,24 @@ public class SplashScreen implements Screen {
         ScreenUtils.clear(0, 0, 0, 0);
 
         batch.begin();
-        batch.draw(bg, 0, 0);
+
+        batch.draw(bg,
+                -660,
+                -1174,
+                bg.getWidth() / 2f,
+                bg.getHeight() / 2f,
+                bg.getWidth(),
+                bg.getHeight(),
+                1,
+                1,
+                bgRotation,
+                0,
+                0,
+                bg.getWidth(),
+                bg.getHeight(),
+                false,
+                false);
+
         batch.draw(head,
                 0,
                 0,
@@ -65,6 +85,7 @@ public class SplashScreen implements Screen {
                 head.getHeight(),
                 false,
                 false);
+
         batch.draw(title,
                 0,
                 0,
@@ -81,6 +102,7 @@ public class SplashScreen implements Screen {
                 title.getHeight(),
                 false,
                 false);
+
         batch.end();
 
         scaler();
@@ -116,7 +138,7 @@ public class SplashScreen implements Screen {
                 // Slow scaling down.
                 scaler *= 0.90;
 
-                if (scalingDirection == ScalingDirection.SCALING_DOWN && scale <= 1){
+                if (scale <= 1){
                     scale = 1;
                     scalingDirection = ScalingDirection.NOT_SCALING;
                 }
@@ -132,6 +154,9 @@ public class SplashScreen implements Screen {
                 rotatingRight = rotation <= -7.5;
             }
         }
+
+        // Rotate background:
+        bgRotation += 0.15f;
     }
 
     @Override
