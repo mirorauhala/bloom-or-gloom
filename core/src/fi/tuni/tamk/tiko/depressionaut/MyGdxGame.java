@@ -10,6 +10,7 @@ public class MyGdxGame extends Game {
 	SpriteBatch hudBatch;
 	private BottomHud bottomHud;
 	private GameScreen gameScreen;
+	private ShopScreen shopScreen;
 	public final float SCREEN_WIDTH = 1080;
 	public final float SCREEN_HEIGHT = 1920;
 	public long splashTimer = System.nanoTime();
@@ -54,6 +55,10 @@ public class MyGdxGame extends Game {
 	public void setGameScreen () {
 		setScreen(new GameScreen(this));
 	}
+
+	/*public void setShopScreen () {
+		setScreen(new ShopScreen(this));
+	}*/
 	
 	@Override
 	public void dispose () {
