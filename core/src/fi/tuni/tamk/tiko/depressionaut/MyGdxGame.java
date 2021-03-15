@@ -14,6 +14,7 @@ public class MyGdxGame extends Game {
 	public final float SCREEN_WIDTH = 1080;
 	public final float SCREEN_HEIGHT = 1920;
 	public long splashTimer = System.nanoTime();
+	public int pitest;
 
 	public OrthographicCamera camera;
 	
@@ -24,11 +25,9 @@ public class MyGdxGame extends Game {
 		bottomHud = new BottomHud();
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
+		pitest = 0;
 
 		setScreen(new SplashScreen(this));
-		ScoreCounter.addToClickPower(1);
-		ScoreCounter.addToMultiplier(1);
-
 
 	}
 
@@ -44,7 +43,15 @@ public class MyGdxGame extends Game {
 		hudBatch.end();
 
 		ScoreCounter.checkForClick();
-		ScoreCounter.drawScore();
+
+
+
+		pitest++;
+		if(pitest > 60) {
+			pitest = 0;
+			ScoreCounter.drawScore();
+		}
+
 
 	}
 

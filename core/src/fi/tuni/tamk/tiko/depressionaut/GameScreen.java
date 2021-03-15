@@ -47,23 +47,23 @@ public class GameScreen implements Screen {
     );
     public List<Texture> beds = Arrays.asList(
             new Texture("furniture/bed/tier1.png"),
-            new Texture("floors/tier1.png")
+            new Texture("furniture/bed/tier1.png")
     );
     public List<Texture> chairs = Arrays.asList(
             new Texture("furniture/chair/tier1.png"),
-            new Texture("floors/tier1.png")
+            new Texture("furniture/chair/tier1.png")
     );
     public List<Texture> desks = Arrays.asList(
             new Texture("furniture/desk/tier1.png"),
-            new Texture("floors/tier1.png")
+            new Texture("furniture/desk/tier1.png")
     );
     public List<Texture> characters = Arrays.asList(
             new Texture("character/tier1.png"),
-            new Texture("floors/tier1.png")
+            new Texture("character/tier1.png")
     );
     public List<Texture> smiles = Arrays.asList(
             new Texture("character/smile/tier1.png"),
-            new Texture("floors/tier1.png")
+            new Texture("character/smile/tier1.png")
     );
 
 
