@@ -33,11 +33,13 @@ public class MyGdxGame extends Game {
 
 	@Override
 	public void render () {
+		hudBatch.setProjectionMatrix(camera.combined);
 		// Uses the render method from current screen.
 		super.render();
 
 		hudBatch.begin();
-		//bottomHud.draw(hudBatch);
+
+		bottomHud.draw(hudBatch);
 		hudBatch.end();
 
 		ScoreCounter.checkForClick();
