@@ -55,6 +55,7 @@ public class SplashScreen implements Screen {
 
         // Switch to comic screen if screen is touched or after 7.5s has passed.
         if (Gdx.input.justTouched() || TimeUnit.MILLISECONDS.convert(System.nanoTime() - host.splashTimer, TimeUnit.NANOSECONDS) > 7500) {
+
             host.setComicScreen();
         }
 

@@ -1,6 +1,8 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -38,13 +40,11 @@ public class MyGdxGame extends Game {
 		super.render();
 
 		hudBatch.begin();
-
 		bottomHud.draw(hudBatch);
+
 		hudBatch.end();
 
 		ScoreCounter.checkForClick();
-
-
 
 		pitest++;
 		if(pitest > 60) {
@@ -52,20 +52,22 @@ public class MyGdxGame extends Game {
 			ScoreCounter.drawScore();
 		}
 
-
 	}
 
 	public void setComicScreen () {
+		bottomHud.setHudSelection(0);
 		setScreen(new Comic(this));
 	}
 
 	public void setGameScreen () {
+		bottomHud.setHudSelection(1);
 		setScreen(new GameScreen(this));
 	}
 
-	/*public void setShopScreen () {
+	public void setShopScreen () {
+		bottomHud.setHudSelection(2);
 		setScreen(new ShopScreen(this));
-	}*/
+	}
 	
 	@Override
 	public void dispose () {
