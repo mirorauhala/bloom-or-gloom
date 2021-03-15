@@ -4,6 +4,13 @@ import com.badlogic.gdx.Gdx;
 
 import java.util.concurrent.TimeUnit;
 
+
+/**
+ * ScoreCounter class has methods for counting the score,
+ * adding multiplier and temporary buffs, drawing the score etc.
+ *
+ * @author Jaakko Saranpää
+ */
 public class ScoreCounter {
     private static long score = 0;
     private static double multiplier = 1;
@@ -22,7 +29,7 @@ public class ScoreCounter {
     }
 
     public static void checkForClick() {
-        if(Gdx.input.justTouched()) {
+        if(Gdx.input.justTouched()) { //Will get changed to a rectangle, so the clickable area is smaller
             addScore();
         }
     }

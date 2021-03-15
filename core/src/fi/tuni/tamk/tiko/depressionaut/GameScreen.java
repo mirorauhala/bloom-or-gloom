@@ -12,6 +12,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * GameScreen has everything that gets drawed in the main games screen
+ *
+ */
+
 public class GameScreen implements Screen {
     private Texture particle = new Texture("visuals.png");
 
@@ -28,6 +33,9 @@ public class GameScreen implements Screen {
 
     public int eyestest = 0;
 
+    /*
+    Lists for all tiers of textures
+     */
     public List<Texture> walls = Arrays.asList(
             new Texture("walls/tier1.png"),
             new Texture("floors/tier1.png")
@@ -132,6 +140,9 @@ public class GameScreen implements Screen {
     }
 
 
+    /*
+    Makes the player blink every 390 frames
+     */
     public void blink() {
         eyestest++;
         if(eyestest > 400) {
