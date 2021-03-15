@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 
 public class BottomHud {
-    private Texture testhud = new Texture("HUD/bottomhudTest.png");
+    private Texture testhud = new Texture("UI/bottomhudTest.png");
 
 
     public void draw(SpriteBatch batch) {
