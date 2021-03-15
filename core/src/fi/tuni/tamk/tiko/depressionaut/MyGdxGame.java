@@ -19,7 +19,7 @@ public class MyGdxGame extends Game {
 	@Override
 	public void create () {
 		gameBatch = new SpriteBatch();
-		hudBatch = new SpriteBatch();;
+		hudBatch = new SpriteBatch();
 		bottomHud = new BottomHud();
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -36,9 +36,9 @@ public class MyGdxGame extends Game {
 		// Uses the render method from current screen.
 		super.render();
 
-		/*hudBatch.begin();
-		bottomHud.draw(hudBatch);
-		hudBatch.end();*/
+		hudBatch.begin();
+		//bottomHud.draw(hudBatch);
+		hudBatch.end();
 	}
 
 	public void setComicScreen () {
