@@ -10,6 +10,6 @@ public class BottomHud {
 
     public void draw(SpriteBatch batch) {
 
-        batch.draw(testhud, 0, 0, testhud.getWidth(), testhud.getHeight());
+        //batch.draw(testhud, 0, 0, testhud.getWidth(), testhud.getHeight());
     }
 }

@@ -26,8 +26,8 @@ public class MyGdxGame extends Game {
 		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 		setScreen(new SplashScreen(this));
-		ScoreCounter.addToClickPower(100);
-		ScoreCounter.addToMultiplier(5000);
+		ScoreCounter.addToClickPower(1);
+		ScoreCounter.addToMultiplier(1);
 
 
 	}

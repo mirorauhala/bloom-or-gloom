@@ -38,7 +38,8 @@ public class GameScreen implements Screen {
      */
     public List<Texture> walls = Arrays.asList(
             new Texture("walls/tier1.png"),
-            new Texture("floors/tier1.png")
+            new Texture("walls/tier1.png")
+            //Will have many tiers
     );
     public List<Texture> floors = Arrays.asList(
             new Texture("floors/tier1.png"),
@@ -88,7 +89,6 @@ public class GameScreen implements Screen {
     Tiering system
 
     Tier on each object in the gamescreen can be set with gamescreen.setObjecttier
-
      */
     public void setWallTier(int wallTier) {
         this.wallTier = wallTier - 1;
@@ -134,7 +134,7 @@ public class GameScreen implements Screen {
     }
 
     private void particle() {
-        if(Gdx.input.justTouched()) {
+        if(Gdx.input.isTouched()) {
             batch.draw(particle, MathUtils.random(100, 500), MathUtils.random(1145, 1375));
         }
     }

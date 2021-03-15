@@ -40,11 +40,11 @@ public class ScoreCounter {
 
     public static void drawScore() {
         if(ScoreCounter.getScore() >= 1000000) {
-            System.out.println(ScoreCounter.getScore() / 1000000 + "M");
+            System.out.println("Score: " + ScoreCounter.getScore() / 1000000 + "M");
         } else if(ScoreCounter.getScore() >= 1000) {
-            System.out.println(ScoreCounter.getScore() / 1000 + "K");
+            System.out.println("Score: " + ScoreCounter.getScore() / 1000 + "K");
         } else {
-            System.out.println(ScoreCounter.getScore());
+            System.out.println("Score: " + ScoreCounter.getScore());
         }
     }
 }
