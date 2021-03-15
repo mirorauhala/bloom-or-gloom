@@ -1,9 +1,11 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 import java.util.ArrayList;
@@ -11,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class GameScreen implements Screen {
-    private Texture wall;
+    private Texture particle = new Texture("visuals.png");
 
     final private float x = 0;
     final private float y = 0;
@@ -22,6 +24,9 @@ public class GameScreen implements Screen {
     public int chairTier = 0;
     public int deskTier = 0;
     public int characterTier = 0;
+    public int smileTier = 0;
+
+    public int eyestest = 0;
 
     public List<Texture> walls = Arrays.asList(
             new Texture("walls/tier1.png"),
@@ -46,6 +51,17 @@ public class GameScreen implements Screen {
     public List<Texture> characters = Arrays.asList(
             new Texture("character/tier1.png"),
             new Texture("floors/tier1.png")
+    );
+    public List<Texture> smiles = Arrays.asList(
+            new Texture("character/smile/tier1.png"),
+            new Texture("floors/tier1.png")
+    );
+
+
+
+    public List<Texture> eyes = Arrays.asList(
+            new Texture("character/eyes/open.png"),
+            new Texture("character/eyes/closed.png")
     );
 
 
@@ -84,22 +100,50 @@ public class GameScreen implements Screen {
     public void setCharacterTier(int characterTier) {
         this.characterTier = characterTier - 1;
     }
+    public void setSmileTier(int smileTier) {
+        this.smileTier = smileTier;
+    }
 
     @Override
     public void render(float delta) {
         batch.setProjectionMatrix(camera.combined);
-        ScreenUtils.clear(0, 0, 0, 0);
+        ScreenUtils.clear(0.8f, 0.8f, 1, 1);
 
         batch.begin();
+        particle();
         batch.draw(walls.get(wallTier), x, y);
         batch.draw(floors.get(wallTier), x, y);
         batch.draw(beds.get(wallTier), x, y);
         batch.draw(chairs.get(wallTier), x, y);
         batch.draw(desks.get(wallTier), x, y);
         batch.draw(characters.get(wallTier), x, y);
+        batch.draw(smiles.get(smileTier), x, y);
+
+        blink();
         batch.end();
+
+
     }
 
+    private void particle() {
+        if(Gdx.input.justTouched()) {
+            batch.draw(particle, MathUtils.random(100, 500), MathUtils.random(1145, 1375));
+        }
+    }
+
+
+    public void blink() {
+        eyestest++;
+        if(eyestest > 400) {
+            eyestest = 0;
+        }
+        if(eyestest > 390) {
+            batch.draw(eyes.get(1), x, y);
+        } else {
+            batch.draw(eyes.get(0), x, y);
+        }
+
+    }
 
     @Override
     public void show() {

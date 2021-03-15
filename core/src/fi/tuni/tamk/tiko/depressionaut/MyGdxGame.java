@@ -25,8 +25,8 @@ public class MyGdxGame extends Game {
 		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 		setScreen(new SplashScreen(this));
-
-
+		ScoreCounter.addToClickPower(100);
+		ScoreCounter.addToMultiplier(5000);
 
 
 	}
@@ -39,6 +39,10 @@ public class MyGdxGame extends Game {
 		hudBatch.begin();
 		//bottomHud.draw(hudBatch);
 		hudBatch.end();
+
+		ScoreCounter.checkForClick();
+		ScoreCounter.drawScore();
+
 	}
 
 	public void setComicScreen () {
