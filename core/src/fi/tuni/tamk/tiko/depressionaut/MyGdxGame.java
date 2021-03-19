@@ -8,6 +8,13 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MyGdxGame extends Game {
+	// DEBUG ->
+
+	private final boolean SKIP_TO_GAME = true;
+
+	// <- DEBUG
+
+
 	SpriteBatch gameBatch;
 	SpriteBatch hudBatch;
 	private BottomHud bottomHud;
@@ -29,7 +36,11 @@ public class MyGdxGame extends Game {
 		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
 		pitest = 0;
 
-		setScreen(new SplashScreen(this));
+		if (!SKIP_TO_GAME) {
+			setScreen(new SplashScreen(this));
+		} else {
+			setGameScreen();
+		}
 
 	}
 

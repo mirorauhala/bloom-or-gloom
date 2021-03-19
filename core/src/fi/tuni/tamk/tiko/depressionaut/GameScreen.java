@@ -18,7 +18,7 @@ import java.util.List;
  */
 
 public class GameScreen implements Screen {
-    private Texture particle = new Texture("visuals.png");
+    private TapParticle particle = new TapParticle();
 
     final private float x = 0;
     final private float y = 0;
@@ -117,28 +117,35 @@ public class GameScreen implements Screen {
         batch.setProjectionMatrix(camera.combined);
         ScreenUtils.clear(0.8f, 0.8f, 1, 1);
 
+        createParticle();
+
         batch.begin();
-        particle();
+        // Background layer:
         batch.draw(walls.get(wallTier), x, y);
         batch.draw(floors.get(wallTier), x, y);
+
+        // Furniture layer:
         batch.draw(beds.get(wallTier), x, y);
         batch.draw(chairs.get(wallTier), x, y);
         batch.draw(desks.get(wallTier), x, y);
+
+        // Character layer:
         batch.draw(characters.get(wallTier), x, y);
         batch.draw(smiles.get(smileTier), x, y);
 
+        // Top layer:
         blink();
+        particle.renderParticles(batch);
         batch.end();
 
 
     }
 
-    private void particle() {
-        if(Gdx.input.isTouched()) {
-            batch.draw(particle, MathUtils.random(100, 500), MathUtils.random(1145, 1375));
+    public void createParticle() {
+        if (Gdx.input.justTouched()) {
+            particle.createParticle();
         }
     }
-
 
     /*
     Makes the player blink every 390 frames
