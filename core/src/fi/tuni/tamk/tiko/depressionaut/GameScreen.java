@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * GameScreen has everything that gets drawed in the main games screen
+ * GameScreen has everything that gets drawn in the main games screen
  *
  */
 
