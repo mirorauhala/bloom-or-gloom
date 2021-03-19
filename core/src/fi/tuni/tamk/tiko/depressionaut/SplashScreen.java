@@ -9,6 +9,12 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * SplashScreen is a Screen class that displays the games splash screen.
+ *
+ * @author Jere Joensuu
+ */
+
 public class SplashScreen implements Screen {
     MyGdxGame host;
 
@@ -32,12 +38,20 @@ public class SplashScreen implements Screen {
     SpriteBatch batch;
     private OrthographicCamera camera;
 
+    /**
+     *  Contains information about the scaling of the textures.
+     */
     private enum ScalingDirection {
         SCALING_UP,
         SCALING_DOWN,
         NOT_SCALING
     }
 
+    /**
+     * The constructor of the class.
+     *
+     * @param host Related to the functionality of the Screen interface.
+     */
     public SplashScreen(MyGdxGame host) {
         this.host = host;
         batch = host.gameBatch;
@@ -48,6 +62,11 @@ public class SplashScreen implements Screen {
         title = new Texture("splashScreen/splashTitle.png");
     }
 
+    /**
+     * The method that draws the textures and calls other supporting methods.
+     *
+     * @param delta Related to the functionality of the Screen interface.
+     */
     @Override
     public void render(float delta) {
         batch.setProjectionMatrix(camera.combined);
@@ -114,10 +133,13 @@ public class SplashScreen implements Screen {
 
         batch.end();
 
-        scaler();
+        animator();
     }
 
-    public void scaler() {
+    /**
+     * Handles the animating of the textures.
+     */
+    public void animator() {
         // Set to 120% to leave room for bounce.
         float maxScale = 1.2f;
 
@@ -167,6 +189,10 @@ public class SplashScreen implements Screen {
         // Rotate background:
         bgRotation += 0.15f;
     }
+
+    /**
+     * The rest of the methods are part of the Screen interface.
+     */
 
     @Override
     public void show() {}
