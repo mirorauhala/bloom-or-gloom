@@ -134,7 +134,7 @@ public class GameScreen implements Screen {
 
         // Top layer:
         blink();
-        particle.renderParticles(batch);
+        particle.renderParticles(batch, delta);
         batch.end();
 
 
