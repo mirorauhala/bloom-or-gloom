@@ -48,9 +48,10 @@ public class TapParticle extends Actor {
         // Set newest object (ie. the newly created particle) in the list as temp particle:
         TapParticle tempParticle = Particles.get(Particles.size()-1);
 
-        // Give the particle a random scale and rotation:
+        // Give the particle a random scale:
         tempParticle.setScale(randomFloat(0.75f, 1.25f));
-        tempParticle.setRotation(randomFloat(-30, 150));
+        // Determines the size of the sector the particles can move in.
+        tempParticle.setRotation(randomFloat(-20, 100));
 
         // Give the particle a vector according to its rotation. The vector is used to move the particle
         tempParticle.vector = new Vector2((float)Math.cos(Math.toRadians(tempParticle.getRotation() + 90)) * SPEED,
