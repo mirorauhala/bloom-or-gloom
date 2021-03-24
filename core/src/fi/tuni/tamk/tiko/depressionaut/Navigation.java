@@ -1,14 +1,17 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
+import com.badlogic.gdx.Application;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector3;
 
 public class Navigation {
-    private Texture ui;
-    private Texture game = new Texture("UI/gamePressed.png");
-    private Texture shop = new Texture("UI/shopPressed.png");
-    private Texture settings = new Texture("UI/settingsPressed.png");
+    private final Texture game = new Texture("UI/gamePressed.png");
+    private final Texture shop = new Texture("UI/shopPressed.png");
+    private final Texture settings = new Texture("UI/settingsPressed.png");
+    private final Rectangle area = new Rectangle(0, 10, 100, 10 );
 
     private Screen hudSelection;
 
@@ -24,25 +27,24 @@ public class Navigation {
             this.screenIndex = screenIndex;
         }
 
+        /**
+         * @return int  The integer value for the navigation level.
+         */
         public int getScreenIndex() {
             return screenIndex;
         }
-    };
-
-    public Navigation() {
-        ui = new Texture("UI/gamePressed.png");
-        current = Screen.GAME;
     }
 
-
+    public Navigation() {
+        hudSelection = Screen.GAME;
+    }
 
     /**
-     * Draws the hud that is selected by a number 0-4
+     * Draws the hud that is selected by a number 0-4.
      *
      * @param batch
      */
     public void draw(SpriteBatch batch) {
-
         if(hudSelection == Screen.GAME) {
             batch.draw(game, 0, 0);
         }
@@ -52,7 +54,6 @@ public class Navigation {
         if(hudSelection == Screen.SETTINGS) {
             batch.draw(settings, 0, 0);
         }
-
     }
 
     /**

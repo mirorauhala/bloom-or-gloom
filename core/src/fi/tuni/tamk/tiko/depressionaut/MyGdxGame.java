@@ -17,11 +17,11 @@ public class MyGdxGame extends Game {
 
 	SpriteBatch gameBatch;
 	SpriteBatch hudBatch;
-	private BottomHud bottomHud;
+	private Navigation navigation;
 	private GameScreen gameScreen;
 	private ShopScreen shopScreen;
-	public final float SCREEN_WIDTH = 1080;
-	public final float SCREEN_HEIGHT = 1920;
+	public final static float SCREEN_WIDTH = 1080;
+	public final static float SCREEN_HEIGHT = 1920;
 	public long splashTimer = System.nanoTime();
 	public int pitest;
 
@@ -31,7 +31,7 @@ public class MyGdxGame extends Game {
 	public void create () {
 		gameBatch = new SpriteBatch();
 		hudBatch = new SpriteBatch();
-		bottomHud = new BottomHud();
+		navigation = new Navigation();
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
 		pitest = 0;
@@ -41,7 +41,6 @@ public class MyGdxGame extends Game {
 		} else {
 			setGameScreen();
 		}
-
 	}
 
 	@Override
@@ -51,7 +50,7 @@ public class MyGdxGame extends Game {
 		super.render();
 
 		hudBatch.begin();
-		bottomHud.draw(hudBatch);
+		navigation.draw(hudBatch);
 
 		hudBatch.end();
 
@@ -66,17 +65,17 @@ public class MyGdxGame extends Game {
 	}
 
 	public void setComicScreen () {
-		bottomHud.setHudSelection(0);
+		navigation.setHudSelection(Navigation.Screen.NONE);
 		setScreen(new Comic(this));
 	}
 
 	public void setGameScreen () {
-		bottomHud.setHudSelection(1);
+		navigation.setHudSelection(Navigation.Screen.GAME);
 		setScreen(new GameScreen(this));
 	}
 
 	public void setShopScreen () {
-		bottomHud.setHudSelection(2);
+		navigation.setHudSelection(Navigation.Screen.SHOP);
 		setScreen(new ShopScreen(this));
 	}
 	
@@ -84,6 +83,5 @@ public class MyGdxGame extends Game {
 	public void dispose () {
 		gameBatch.dispose();
 		hudBatch.dispose();
-
 	}
 }
