@@ -39,7 +39,7 @@ public class MyGdxGame extends Game {
 		if (!SKIP_TO_GAME) {
 			setScreen(new SplashScreen(this));
 		} else {
-			setGameScreen();
+			setShopScreen();
 		}
 	}
 
