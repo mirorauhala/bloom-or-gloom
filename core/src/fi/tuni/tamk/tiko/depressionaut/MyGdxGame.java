@@ -17,9 +17,8 @@ public class MyGdxGame extends Game {
 
 	SpriteBatch gameBatch;
 	SpriteBatch hudBatch;
-	private Navigation navigation;
-	private GameScreen gameScreen;
-	private ShopScreen shopScreen;
+	public Navigation navigation;
+
 	public final static float SCREEN_WIDTH = 1080;
 	public final static float SCREEN_HEIGHT = 1920;
 	public long splashTimer = System.nanoTime();
@@ -31,15 +30,17 @@ public class MyGdxGame extends Game {
 	public void create () {
 		gameBatch = new SpriteBatch();
 		hudBatch = new SpriteBatch();
-		navigation = new Navigation();
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
+		navigation = new Navigation(this);
+
 		pitest = 0;
 
 		if (!SKIP_TO_GAME) {
 			setScreen(new SplashScreen(this));
 		} else {
-			setShopScreen();
+			navigation.setActive(Navigation.Screen.GAME);
+			setScreen(new GameScreen(this));
 		}
 	}
 
@@ -62,21 +63,6 @@ public class MyGdxGame extends Game {
 			ScoreCounter.drawScore();
 		}
 
-	}
-
-	public void setComicScreen () {
-		navigation.setHudSelection(Navigation.Screen.NONE);
-		setScreen(new Comic(this));
-	}
-
-	public void setGameScreen () {
-		navigation.setHudSelection(Navigation.Screen.GAME);
-		setScreen(new GameScreen(this));
-	}
-
-	public void setShopScreen () {
-		navigation.setHudSelection(Navigation.Screen.SHOP);
-		setScreen(new ShopScreen(this));
 	}
 	
 	@Override
