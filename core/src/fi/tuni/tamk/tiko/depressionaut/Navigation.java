@@ -2,64 +2,106 @@ package fi.tuni.tamk.tiko.depressionaut;
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 
-public class Navigation {
-    private final Texture game = new Texture("UI/gamePressed.png");
-    private final Texture shop = new Texture("UI/shopPressed.png");
-    private final Texture settings = new Texture("UI/settingsPressed.png");
-    private final Rectangle area = new Rectangle(0, 10, 100, 10 );
+import java.util.HashMap;
 
-    private Screen hudSelection;
+public class Navigation {
+    private OrthographicCamera camera;
+    private MyGdxGame game;
+    private Screen activeScreen;
+    private HashMap<Screen, com.badlogic.gdx.Screen> screenPair = new HashMap<>();
 
     public enum Screen {
-        NONE(0),
-        GAME(1),
-        SHOP(2),
-        SETTINGS(3);
+        GAME("Game", new Texture("UI/gamePressed.png"), new Rectangle(0, 0, 360, 202)),
+        SHOP("Shop", new Texture("UI/shopPressed.png"), new Rectangle(360, 0 , 360, 202)),
+        SETTINGS("Settings", new Texture("UI/settingsPressed.png"), new Rectangle(720, 0, 360, 202));
 
-        private final int screenIndex;
+        private final String name;
+        private final Texture texture;
+        private final Rectangle rectangle;
 
-        Screen(int screenIndex) {
-            this.screenIndex = screenIndex;
+        Screen(String name, Texture texture, Rectangle rectangle) {
+            this.name = name;
+            this.texture = texture;
+            this.rectangle = rectangle;
         }
 
         /**
-         * @return int  The integer value for the navigation level.
+         * @return String  The name of the screen.
          */
-        public int getScreenIndex() {
-            return screenIndex;
+        public String getName() {
+            return name;
+        }
+
+        /**
+         * @return Texture  Get the navigation texture for the active state of this screen.
+         */
+        public Texture getTexture() {
+            return texture;
+        }
+
+        /**
+         * @return Rectangle  Get the area where the navigation button is.
+         */
+        public Rectangle getRectangle() {
+            return rectangle;
         }
     }
 
-    public Navigation() {
-        hudSelection = Screen.GAME;
+    public Navigation(MyGdxGame game) {
+        this.activeScreen = Screen.GAME;
+        this.game = game;
+        this.camera = game.camera;
+
+        // pair the actual gdx screen along with the corresponding enum
+        this.screenPair.put(Screen.GAME, new GameScreen(game));
+        this.screenPair.put(Screen.SHOP, new ShopScreen(game));
+        this.screenPair.put(Screen.SETTINGS, new SettingsScreen(game));
     }
 
     /**
-     * Draws the hud that is selected by a number 0-4.
+     * Draws the current navigation.
      *
      * @param batch
      */
     public void draw(SpriteBatch batch) {
-        if(hudSelection == Screen.GAME) {
-            batch.draw(game, 0, 0);
+        if(null == activeScreen.getTexture()) {
+            return;
         }
-        if(hudSelection == Screen.SHOP) {
-            batch.draw(shop, 0, 0);
-        }
-        if(hudSelection == Screen.SETTINGS) {
-            batch.draw(settings, 0, 0);
+
+        batch.draw(activeScreen.getTexture(), 0, 0);
+        listenForClick();
+    }
+
+    /**
+     * Listen for a click on the navigation buttons and change the active screen.
+     */
+    public void listenForClick() {
+        if(Gdx.input.justTouched()) {
+            Gdx.app.setLogLevel(Application.LOG_DEBUG);
+
+            Vector3 touch = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
+            camera.unproject(touch);
+
+            for (Screen screen : Screen.values()) {
+                if(screen.getRectangle().contains(touch.x, touch.y)) {
+                    Gdx.app.debug("NAV", "Set active navigation for: " + screen.getName());
+                    game.setScreen(screenPair.get(screen));
+                }
+            }
         }
     }
 
     /**
-     * @param hudSelection
+     * @param screen  The navigation to be set visible.
      */
-    public void setHudSelection(Screen hudSelection) {
-        this.hudSelection = hudSelection;
+    public void setActive(Screen screen) {
+        this.activeScreen = screen;
     }
 }
