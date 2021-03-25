@@ -12,7 +12,7 @@ on:
 jobs:
   android:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
@@ -23,6 +23,10 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew :android:assembleDebug
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Android Debug Package
+        path: android/build/outputs/android-debug.apk
 
   desktop:
     runs-on: ubuntu-latest
@@ -37,4 +41,7 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew desktop:dist
-    
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Desktop Package
+        path: desktop/build/libs/desktop-1.0.jar
