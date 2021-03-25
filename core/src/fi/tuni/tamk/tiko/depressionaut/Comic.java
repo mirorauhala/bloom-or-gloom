@@ -39,7 +39,8 @@ public class Comic implements Screen {
         // Turn page when screen is touched. Move to GameScreen when comic ends.
         if (Gdx.input.justTouched()) {
             if (pageNum == pages.length) {
-                host.setGameScreen();
+                game.navigation.setActive(Navigation.Screen.GAME);
+                game.setScreen(new GameScreen(game));
             } else {
                 nextPage();
             }

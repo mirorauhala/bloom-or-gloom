@@ -46,7 +46,8 @@ public class ShopScreen implements Screen {
             camera.unproject(touch);
             if(rect.contains(touch.x, touch.y)){
                 Gdx.app.debug("YES", "X touched: " + touch.x + " Y touched: " + touch.y);
-                game.setGameScreen();
+                game.navigation.setActive(Navigation.Screen.GAME);
+                game.setScreen(new GameScreen(game));
             }else{
                 Gdx.app.debug("NO", "X touched: " + touch.x + " Y touched: " + touch.y);
             }
