@@ -92,6 +92,7 @@ public class Navigation {
             for (Screen screen : Screen.values()) {
                 if(screen.getRectangle().contains(touch.x, touch.y)) {
                     Gdx.app.debug("NAV", "Set active navigation for: " + screen.getName());
+                    setActive(screen);
                     game.setScreen(screenPair.get(screen));
                 }
             }
