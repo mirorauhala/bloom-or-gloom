@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 public class Comic implements Screen {
-    MyGdxGame host;
+    MyGdxGame game;
 
     // Textures:
     private Texture[] pages;
@@ -19,10 +19,10 @@ public class Comic implements Screen {
     SpriteBatch batch;
     private OrthographicCamera camera;
 
-    public Comic(MyGdxGame host) {
-        this.host = host;
-        batch = host.gameBatch;
-        camera = host.camera;
+    public Comic(MyGdxGame game) {
+        this.game = game;
+        batch = game.gameBatch;
+        camera = game.camera;
 
         pages = new Texture[] {new Texture("comic/page1.jpg"),
                 new Texture("comic/page2.jpg"),
