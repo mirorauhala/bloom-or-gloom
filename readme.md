@@ -14,7 +14,10 @@ Run the following commands in terminal:
 
 ```
 gradlew clean
-gradelw dist
+gradlew desktop:dist
+gradlew :android:assembleDebug
 ```
 
 Desktop `.jar` file can be found at `desktop/build/lib`.
+
+Android `.apk` file can be found at `android/build/outputs`.
