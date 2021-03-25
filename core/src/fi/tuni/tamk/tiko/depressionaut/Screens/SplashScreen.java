@@ -1,4 +1,4 @@
-package fi.tuni.tamk.tiko.depressionaut;
+package fi.tuni.tamk.tiko.depressionaut.Screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -8,6 +8,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 import java.util.concurrent.TimeUnit;
+
+import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 
 /**
  * SplashScreen is a Screen class that displays the games splash screen.

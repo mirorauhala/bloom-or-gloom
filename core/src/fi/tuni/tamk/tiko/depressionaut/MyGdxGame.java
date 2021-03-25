@@ -1,11 +1,11 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+import fi.tuni.tamk.tiko.depressionaut.Screens.GameScreen;
+import fi.tuni.tamk.tiko.depressionaut.Screens.SplashScreen;
 
 public class MyGdxGame extends Game {
 	// DEBUG ->
@@ -15,8 +15,8 @@ public class MyGdxGame extends Game {
 	// <- DEBUG
 
 
-	SpriteBatch gameBatch;
-	SpriteBatch hudBatch;
+	public SpriteBatch gameBatch;
+	public SpriteBatch hudBatch;
 	public Navigation navigation;
 
 	public final static float SCREEN_WIDTH = 1080;

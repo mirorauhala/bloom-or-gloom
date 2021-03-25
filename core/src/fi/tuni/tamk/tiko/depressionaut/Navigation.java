@@ -2,7 +2,6 @@ package fi.tuni.tamk.tiko.depressionaut;
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -10,6 +9,10 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 
 import java.util.HashMap;
+
+import fi.tuni.tamk.tiko.depressionaut.Screens.GameScreen;
+import fi.tuni.tamk.tiko.depressionaut.Screens.SettingsScreen;
+import fi.tuni.tamk.tiko.depressionaut.Screens.ShopScreen;
 
 public class Navigation {
     private OrthographicCamera camera;

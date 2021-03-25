@@ -1,4 +1,4 @@
-package fi.tuni.tamk.tiko.depressionaut;
+package fi.tuni.tamk.tiko.depressionaut.Screens;
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
@@ -9,6 +9,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
+
+import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
+import fi.tuni.tamk.tiko.depressionaut.Navigation;
 
 public class ShopScreen implements Screen {
     private final Rectangle rect;

@@ -1,8 +1,10 @@
-package fi.tuni.tamk.tiko.depressionaut;
+package fi.tuni.tamk.tiko.depressionaut.Screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+
+import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 
 public class SettingsScreen implements Screen {
     private MyGdxGame game;

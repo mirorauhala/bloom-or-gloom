@@ -1,4 +1,4 @@
-package fi.tuni.tamk.tiko.depressionaut;
+package fi.tuni.tamk.tiko.depressionaut.Screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -10,6 +10,9 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
+import fi.tuni.tamk.tiko.depressionaut.TapParticle;
 
 /**
  * GameScreen has everything that gets drawn in the main games screen
