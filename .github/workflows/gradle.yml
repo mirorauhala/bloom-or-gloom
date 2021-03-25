@@ -26,7 +26,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: Android Debug Package
-        path: android/build/outputs/android-debug.apk
+        path: android/build/outputs/apk/debug/android-debug.apk
 
   desktop:
     runs-on: ubuntu-latest

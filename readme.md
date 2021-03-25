@@ -20,4 +20,4 @@ gradlew :android:assembleDebug
 
 Desktop `.jar` file can be found at `desktop/build/lib`.
 
-Android `.apk` file can be found at `android/build/outputs`.
+Android `.apk` file can be found at `android/build/outputs/apk/debug`.
