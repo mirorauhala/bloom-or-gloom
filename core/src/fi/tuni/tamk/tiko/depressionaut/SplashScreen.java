@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class SplashScreen implements Screen {
-    MyGdxGame host;
+    MyGdxGame game;
 
     // Textures:
     private Texture bg;
@@ -50,12 +50,12 @@ public class SplashScreen implements Screen {
     /**
      * The constructor of the class.
      *
-     * @param host Related to the functionality of the Screen interface.
+     * @param game Related to the functionality of the Screen interface.
      */
-    public SplashScreen(MyGdxGame host) {
-        this.host = host;
-        batch = host.gameBatch;
-        camera = host.camera;
+    public SplashScreen(MyGdxGame game) {
+        this.game = game;
+        batch = game.gameBatch;
+        camera = game.camera;
 
         bg = new Texture("splashScreen/splashBackground.jpg");
         head = new Texture("splashScreen/splashHead.png");
