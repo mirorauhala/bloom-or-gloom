@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import fi.tuni.tamk.tiko.depressionaut.GameCharacter;
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 import fi.tuni.tamk.tiko.depressionaut.TapParticle;
 
@@ -21,6 +22,7 @@ import fi.tuni.tamk.tiko.depressionaut.TapParticle;
 
 public class GameScreen implements Screen {
     private TapParticle particle = new TapParticle();
+    private GameCharacter character = new GameCharacter();
 
     final private float x = 0;
     final private float y = 0;
@@ -59,21 +61,6 @@ public class GameScreen implements Screen {
             new Texture("furniture/desk/tier1.png"),
             new Texture("furniture/desk/tier1.png")
     );
-    public List<Texture> characters = Arrays.asList(
-            new Texture("character/tier1.png"),
-            new Texture("character/tier1.png")
-    );
-    public List<Texture> smiles = Arrays.asList(
-            new Texture("character/smile/tier1.png"),
-            new Texture("character/smile/tier1.png")
-    );
-
-
-
-    public List<Texture> eyes = Arrays.asList(
-            new Texture("character/eyes/open.png"),
-            new Texture("character/eyes/closed.png")
-    );
 
 
     MyGdxGame host;
@@ -85,6 +72,9 @@ public class GameScreen implements Screen {
         this.host = host;
         batch = host.gameBatch;
         camera = host.camera;
+
+        // For testing purposes. Works with values 1 and 2.
+        character.setTier(1);
     }
 
     /*
@@ -132,11 +122,9 @@ public class GameScreen implements Screen {
         batch.draw(desks.get(wallTier), x, y);
 
         // Character layer:
-        batch.draw(characters.get(wallTier), x, y);
-        batch.draw(smiles.get(smileTier), x, y);
+        character.draw(batch);
 
         // Top layer:
-        blink();
         particle.renderParticles(batch, delta);
         batch.end();
 
@@ -147,22 +135,6 @@ public class GameScreen implements Screen {
         if (Gdx.input.justTouched()) {
             particle.createParticle();
         }
-    }
-
-    /*
-    Makes the player blink every 390 frames
-     */
-    public void blink() {
-        eyestest++;
-        if(eyestest > 400) {
-            eyestest = 0;
-        }
-        if(eyestest > 390) {
-            batch.draw(eyes.get(1), x, y);
-        } else {
-            batch.draw(eyes.get(0), x, y);
-        }
-
     }
 
     @Override
