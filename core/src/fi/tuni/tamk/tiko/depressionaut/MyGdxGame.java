@@ -26,6 +26,10 @@ public class MyGdxGame extends Game {
 	
 	@Override
 	public void create () {
+		if(DEBUG) {
+			Gdx.app.setLogLevel(Application.LOG_DEBUG);
+		}
+
 		gameBatch = new SpriteBatch();
 		hudBatch = new SpriteBatch();
 		camera = new OrthographicCamera();
