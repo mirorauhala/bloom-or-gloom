@@ -9,15 +9,14 @@ import fi.tuni.tamk.tiko.depressionaut.Screens.SplashScreen;
 
 public class MyGdxGame extends Game {
 	// DEBUG ->
-
-	private final boolean SKIP_TO_GAME = true;
-
+	public static final boolean DEBUG = false;
 	// <- DEBUG
 
 
 	public SpriteBatch gameBatch;
 	public SpriteBatch hudBatch;
 	public Navigation navigation;
+	public ScoreCounter score;
 
 	public final static float SCREEN_WIDTH = 1080;
 	public final static float SCREEN_HEIGHT = 1920;
@@ -32,9 +31,10 @@ public class MyGdxGame extends Game {
 		hudBatch = new SpriteBatch();
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
-		navigation = new Navigation(this);
 
 		pitest = 0;
+		score = new ScoreCounter();
+		navigation = new Navigation(this);
 
 		if (!SKIP_TO_GAME) {
 			setScreen(new SplashScreen(this));
@@ -52,15 +52,12 @@ public class MyGdxGame extends Game {
 
 		hudBatch.begin();
 		navigation.draw(hudBatch);
-
 		hudBatch.end();
 
-		ScoreCounter.checkForClick();
 
 		pitest++;
 		if(pitest > 60) {
 			pitest = 0;
-			ScoreCounter.drawScore();
 		}
 
 	}

@@ -13,6 +13,7 @@ import java.util.List;
 
 import fi.tuni.tamk.tiko.depressionaut.GameCharacter;
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
+import fi.tuni.tamk.tiko.depressionaut.ScoreCounter;
 import fi.tuni.tamk.tiko.depressionaut.TapParticle;
 
 /**
@@ -23,7 +24,6 @@ import fi.tuni.tamk.tiko.depressionaut.TapParticle;
 public class GameScreen implements Screen {
     private TapParticle particle = new TapParticle();
     private GameCharacter character = new GameCharacter();
-
     final private float x = 0;
     final private float y = 0;
 
@@ -133,6 +133,7 @@ public class GameScreen implements Screen {
     public void createParticle() {
         if (Gdx.input.justTouched()) {
             particle.createParticle();
+            game.score.click();
         }
     }
 
