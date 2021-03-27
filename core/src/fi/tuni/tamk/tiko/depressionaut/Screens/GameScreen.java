@@ -62,16 +62,15 @@ public class GameScreen implements Screen {
             new Texture("furniture/desk/tier1.png")
     );
 
-
-    MyGdxGame host;
+    MyGdxGame game;
     SpriteBatch batch;
 
     private OrthographicCamera camera;
 
-    public GameScreen(MyGdxGame host) {
-        this.host = host;
-        batch = host.gameBatch;
-        camera = host.camera;
+    public GameScreen(MyGdxGame game) {
+        this.game = game;
+        batch = game.gameBatch;
+        camera = game.camera;
 
         // For testing purposes. Works with values 1 and 2.
         character.setTier(1);
