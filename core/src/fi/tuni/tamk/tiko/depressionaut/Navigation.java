@@ -58,7 +58,6 @@ public class Navigation {
     }
 
     public Navigation(MyGdxGame game) {
-        this.activeScreen = Screen.GAME;
         this.game = game;
         this.camera = game.camera;
 
@@ -74,7 +73,7 @@ public class Navigation {
      * @param batch
      */
     public void draw(SpriteBatch batch) {
-        if(null == activeScreen.getTexture()) {
+        if(null == activeScreen) {
             return;
         }
 
