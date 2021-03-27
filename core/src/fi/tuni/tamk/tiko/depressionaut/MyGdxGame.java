@@ -20,7 +20,6 @@ public class MyGdxGame extends Game {
 
 	public final static float SCREEN_WIDTH = 1080;
 	public final static float SCREEN_HEIGHT = 1920;
-	public long splashTimer = System.nanoTime();
 
 	public OrthographicCamera camera;
 	

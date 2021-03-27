@@ -39,6 +39,8 @@ public class SplashScreen implements Screen {
 
     SpriteBatch batch;
     private OrthographicCamera camera;
+    public long splashTimer = System.nanoTime();
+
 
     /**
      *  Contains information about the scaling of the textures.
@@ -77,6 +79,7 @@ public class SplashScreen implements Screen {
         // Switch to comic screen if screen is touched or after 7.5s has passed.
         if (Gdx.input.justTouched() || TimeUnit.MILLISECONDS.convert(System.nanoTime() - game.splashTimer, TimeUnit.NANOSECONDS) > 7500) {
             game.setScreen(new Comic(game));
+        if (Gdx.input.justTouched() || TimeUnit.MILLISECONDS.convert(System.nanoTime() - splashTimer, TimeUnit.NANOSECONDS) > 7500) {
         }
 
         batch.begin();
