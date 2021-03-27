@@ -1,6 +1,9 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -12,7 +15,6 @@ public class MyGdxGame extends Game {
 	public static final boolean DEBUG = false;
 	// <- DEBUG
 
-
 	public SpriteBatch gameBatch;
 	public SpriteBatch hudBatch;
 	public Navigation navigation;
@@ -22,7 +24,8 @@ public class MyGdxGame extends Game {
 	public final static float SCREEN_HEIGHT = 1920;
 
 	public OrthographicCamera camera;
-	
+	public Preferences prefs;
+
 	@Override
 	public void create () {
 		if(DEBUG) {
@@ -34,15 +37,11 @@ public class MyGdxGame extends Game {
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
 
+		prefs = Gdx.app.getPreferences("general");
 		score = new ScoreCounter();
 		navigation = new Navigation(this);
 
-		if (!SKIP_TO_GAME) {
-			setScreen(new SplashScreen(this));
-		} else {
-			navigation.setActive(Navigation.Screen.GAME);
-			setScreen(new GameScreen(this));
-		}
+		setScreen(new SplashScreen(this));
 	}
 
 	@Override

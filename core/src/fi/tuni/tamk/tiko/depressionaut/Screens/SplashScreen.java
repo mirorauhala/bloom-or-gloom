@@ -10,6 +10,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import java.util.concurrent.TimeUnit;
 
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
+import fi.tuni.tamk.tiko.depressionaut.Navigation;
 
 /**
  * SplashScreen is a Screen class that displays the games splash screen.
@@ -77,9 +78,14 @@ public class SplashScreen implements Screen {
         ScreenUtils.clear(0, 0, 0, 0);
 
         // Switch to comic screen if screen is touched or after 7.5s has passed.
-        if (Gdx.input.justTouched() || TimeUnit.MILLISECONDS.convert(System.nanoTime() - game.splashTimer, TimeUnit.NANOSECONDS) > 7500) {
-            game.setScreen(new Comic(game));
         if (Gdx.input.justTouched() || TimeUnit.MILLISECONDS.convert(System.nanoTime() - splashTimer, TimeUnit.NANOSECONDS) > 7500) {
+
+            if(!game.prefs.getBoolean("has-seen-comic") && !MyGdxGame.DEBUG) {
+                game.setScreen(new Comic(game));
+            } else {
+                game.navigation.setActive(Navigation.Screen.GAME);
+                game.setScreen(new GameScreen(game));
+            }
         }
 
         batch.begin();

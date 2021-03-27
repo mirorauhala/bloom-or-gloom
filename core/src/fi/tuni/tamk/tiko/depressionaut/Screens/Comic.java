@@ -43,6 +43,8 @@ public class Comic implements Screen {
         if (Gdx.input.justTouched()) {
             if (pageNum == pages.length) {
                 game.navigation.setActive(Navigation.Screen.GAME);
+                game.prefs.putBoolean("has-seen-comic", true);
+                game.prefs.flush();
                 game.setScreen(new GameScreen(game));
             } else {
                 nextPage();
