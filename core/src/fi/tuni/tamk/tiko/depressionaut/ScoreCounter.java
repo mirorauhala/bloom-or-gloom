@@ -1,9 +1,7 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
 import com.badlogic.gdx.Gdx;
-
-import java.util.concurrent.TimeUnit;
-
+import com.badlogic.gdx.Preferences;
 
 /**
  * ScoreCounter class has methods for counting the score,
@@ -13,113 +11,254 @@ import java.util.concurrent.TimeUnit;
  */
 public class ScoreCounter {
 
-
     /*EVERYTHING FOR THE MAIN SCORE
     A unit gets added to the main score when the user presses the screen
     The amount of score that gets added is calculated by multiplying the temporary multiplier (buffs and daily bonuses),
     the multiplier (which can be bought on the store) and the clickpower (which can also be upgraded from the store)
      */
-    private static long score = 0;
-    private static long passiveIncome = 0;
-    private static double multiplier = 1; //Has to alway be atleast 1
-    private static long clickPower = 1; //Has to alway be atleast 1
-    private static double tempMultiplier = 1; //Has to alway be atleast 1
+    private static float tempMultiplier = 1; // Has to always be at least 1
+    private final Preferences prefs;
 
+    public ScoreCounter() {
+        prefs = Gdx.app.getPreferences("score");
 
-    /*EVERYTHING FOR THE WALLET SYSTEM
-    A unit gets added to the wallet everytime a unit is added to the main score
-    so if your main score is 100, your wallet will be 100 units too until you spend the units on
-    something
-    */
-    private static long walletScore = 0;
+        Thread counter = new Thread(new Runnable() {
+            /**
+             * Score counter.
+             *
+             * Instead of running every second, this counter runs every 10 milliseconds. This is to
+             * make the user-interface part of the counter refresh more frequently than every second.
+             */
+            @Override
+            public void run() {
 
+                while(true) {
+                    float amount = countPassiveIncomeIncrement()/100f;
 
-    /**
-     * Used when the player buys something
-     * Substracts the cost of the object from the wallet score
-     * Return a boolean whether the player has enough funds for the purchase
-     *
-     * @param costAmount
-     */
-    public static boolean removeScoreFromWallet(long costAmount) {
-        if (costAmount <= walletScore) {
-            walletScore -= costAmount;
-            return true;
-        } else {
-            return false;
+                    incrementScore(amount);
+                    incrementWallet(amount);
+
+                    try {
+                        Thread.sleep(10);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        });
+
+        counter.start();
+
+        if(MyGdxGame.DEBUG) {
+            Thread printer = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    while(true) {
+                        Gdx.app.debug("SCORE", "Score is: " + getScore());
+
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            });
+
+            printer.start();
         }
+
     }
 
-
     /**
-     * addScore() adds points to the main score and the wallet
+     * click() adds points to the main score and the wallet
      * by multiplying the temporary multiplier (buffs and daily bonuses),
      * the multiplier (which can be bought on the store) and the clickpower (which can also be upgraded from the store)
-     *
-     *
      */
-    private static void addScore() {
-        score += tempMultiplier * multiplier * clickPower;
-        walletScore += tempMultiplier * multiplier * clickPower;
+    public void click() {
+        incrementScore(countScoreIncrement());
+        incrementWallet(countScoreIncrement());
     }
 
     /**
-     * Increases the main score and the walletscore passively each second, if the player has bought something
-     * from the store that adds a passive income
+     * The math used when incrementing the score.
+     *
+     * @return long The amount of score to increment;
      */
-    public static void addPassiveIncome() {
-        if(passiveIncome > 0) {
-            score += tempMultiplier * multiplier * passiveIncome;
+    private long countScoreIncrement() {
+        return (long)(tempMultiplier * getMultiplier() * getClickPower());
+    }
+
+    /**
+     * The math used when incrementing with passive income.
+     *
+     * @return long The increment amount of passive income.
+     */
+    private long countPassiveIncomeIncrement() {
+        if(getPassiveIncome() <= 0) {
+            return 0;
         }
+
+        return (long)(tempMultiplier * getMultiplier() * getPassiveIncome());
     }
 
     /**
-     * Used for adding passive income to already existing passive income
-     * Passive income starts at 0, and can be increased by buying objects from the store
-     * @param amount
-     */
-    public static void increasePassiveIncome(long amount) {
-        passiveIncome += amount;
-    }
-
-    /**
-     * Used to increase the amount of score the player receives by clicking once
-     * @param amount
-     */
-    public static void addToClickPower(double amount) {
-        clickPower += amount;
-    }
-
-    /**
-     * increases the multiplier which multiplies the passive income, and the income the player gets from clicking
-     * @param amount
-     */
-    public static void addToMultiplier(double amount) {
-        multiplier += amount;
-    }
-
-    /**
-     * Checks if the screen is pressed and adds score
+     * Get the score.
      *
-     *
-     * Will get changed to a rectangle, so the clickable area is smaller
-     * Also this will only be active when the player is in the game screen, this is not implemented yet
-     *
+     * @return float The score amount.
      */
-    public static void checkForClick() {
-        if(Gdx.input.justTouched()) {
-            addScore();
+    public float getScore() {
+        return prefs.getFloat("score");
+    }
+
+    /**
+     * Set the score.
+     *
+     * @param amount The score amount.
+     */
+    public void setScore(float amount) {
+        prefs.putFloat("score", amount);
+        prefs.flush();
+    }
+
+    /**
+     * Increment the score by the amount.
+     *
+     * @param amount The increment amount.
+     */
+    public void incrementScore(float amount) {
+        setScore(getScore() + amount);
+    }
+
+    /**
+     * Get the amount of money in the wallet.
+     *
+     * @return float The amount money in the wallet.
+     */
+    public float getWallet() {
+        return prefs.getFloat("wallet");
+    }
+
+    /**
+     * Set the amount of money in the wallet to the given amount.
+     *
+     * @param amount The amount of money to set.
+     */
+    public void setWallet(float amount) {
+        prefs.putFloat("wallet", amount);
+        prefs.flush();
+    }
+
+    /**
+     * Increment the amount of money in the wallet by the given amount.
+     *
+     * @param amount The increment amount.
+     */
+    public void incrementWallet(float amount) {
+        setWallet(getWallet() + amount);
+    }
+
+    /**
+     * Decrement the amount of money in the wallet by the given amount.
+     *
+     * Safeguards against the player not having enough funds.
+     *
+     * @param amount The decrement amount.
+     * @return boolean True on a successful withdrawal. False if not enough money.
+     */
+    public boolean decrementWallet(float amount) {
+        if (getWallet() < amount) {
+            return false;
         }
+
+        setWallet(getWallet() - amount);
+        return true;
     }
 
-    public static long getScore() {
-        return score;
+    /**
+     * Set the amount of passive income.
+     *
+     * @param amount The amount of passive income to set.
+     */
+    public void setPassiveIncome(float amount) {
+        prefs.putFloat("passive-income", amount);
+        prefs.flush();
     }
 
-    public static long getWalletScore() {
-        return walletScore;
+    /**
+     * Get the amount of passive income.
+     *
+     * @return long The amount of passive income.
+     */
+    public float getPassiveIncome() {
+        return prefs.getFloat("passive-income");
     }
 
+    /**
+     * Increment the amount of passive income by the given amount.
+     *
+     * @param amount The increment amount.
+     */
+    public void incrementPassiveIncome(float amount) {
+        setPassiveIncome(getPassiveIncome() + amount);
+    }
+
+    /**
+     * Get the multiplier.
+     *
+     * @return float The multiplier amount.
+     */
+    public float getMultiplier() {
+        return prefs.getFloat("multiplier") + 1;
+    }
+
+    /**
+     * Set the multiplier.
+     *
+     * @param amount The amount to set.
+     */
+    public void setMultiplier(float amount) {
+        prefs.putFloat("multiplier", amount);
+        prefs.flush();
+    }
+
+    /**
+     * Increment the multiplier by the given amount.
+     *
+     * @param amount The increment amount.
+     */
+    public void incrementMultiplier(float amount) {
+        setMultiplier(getMultiplier() + amount);
+    }
+
+    /**
+     * Get the click power amount.
+     *
+     * @return long The click power amount.
+     */
+    public float getClickPower() {
+        return prefs.getFloat("click-power") + 1;
+    }
+
+    /**
+     * Set the click power amount.
+     *
+     * @param amount The amount to set.
+     */
+    public void setClickPower(float amount) {
+        prefs.putFloat("click-power", amount);
+        prefs.flush();
+    }
+
+    /**
+     * Increment the click power by the given amount.
+     *
+     * @param amount The increment amount.
+     */
+    public void incrementClickPower(float amount) {
+        setClickPower(getClickPower() + amount);
+    }
 
     /**
      * drawScore() and drawWallet() are used to draw the amount of units the player has of each on the screen
@@ -128,22 +267,22 @@ public class ScoreCounter {
      * currently prints them in the console
      *
      */
-    public static void drawScore() {
-        if(ScoreCounter.getScore() >= 1000000) {
-            System.out.println("Score: " + ScoreCounter.getScore() / 1000000 + "M");
-        } else if(ScoreCounter.getScore() >= 1000) {
-            System.out.println("Score: " + ScoreCounter.getScore() / 1000 + "K");
+    public void drawScore() {
+        if(getScore() >= 1000000) {
+            Gdx.app.debug("SCORE", getScore() / 1000000 + "M");
+        } else if(getScore() >= 1000) {
+            Gdx.app.debug("SCORE", getScore() / 1000 + "K");
         } else {
-            System.out.println("Score: " + ScoreCounter.getScore());
+            Gdx.app.debug("SCORE", Float.toString(getScore()));
         }
     }
-    public static void drawWallet() {
-        if(ScoreCounter.getWalletScore() >= 1000000) {
-            System.out.println("Score: " + ScoreCounter.getWalletScore() / 1000000 + "M");
-        } else if(ScoreCounter.getWalletScore() >= 1000) {
-            System.out.println("Score: " + ScoreCounter.getWalletScore() / 1000 + "K");
+    public void drawWallet() {
+        if(getWallet() >= 1000000) {
+            Gdx.app.debug("SCORE", getWallet() / 1000000 + "M");
+        } else if(getWallet() >= 1000) {
+            Gdx.app.debug("SCORE", getWallet() / 1000 + "K");
         } else {
-            System.out.println("Score: " + ScoreCounter.getWalletScore());
+            Gdx.app.debug("SCORE",  Float.toString(getWallet()));
         }
     }
 }
