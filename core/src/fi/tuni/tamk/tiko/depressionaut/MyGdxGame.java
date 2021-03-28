@@ -42,7 +42,7 @@ public class MyGdxGame extends Game {
 		score = new ScoreCounter();
 		navigation = new Navigation(this);
 		scoreMeter = new ScoreMeter(this);
-		scoreMeter.setMeterTexture(4);
+
 
 		setScreen(new SplashScreen(this));
 	}
