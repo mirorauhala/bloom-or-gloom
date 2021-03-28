@@ -1,7 +1,9 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import java.util.ArrayList;
@@ -16,6 +18,7 @@ public class ScoreMeter {
     public Texture meterBase = new Texture("UI/UpperHUDbase.png");
     public Texture meterTexture;
     public ScoreCounter score = new ScoreCounter();
+    public BitmapFont font;
 
 
     public List<Texture> meterTextures = Arrays.asList(
@@ -72,11 +75,17 @@ public class ScoreMeter {
     public ScoreMeter(MyGdxGame game) {
         this.game = game;
         this.camera = game.camera;
+        font = new BitmapFont(Gdx.files.internal("font/Quicksand.fnt"));
+        font.setUseIntegerPositions(false);
     }
 
     public void draw(SpriteBatch batch) {
         determineMeterHeight();
         batch.draw(meterBase, 0, 0);
         batch.draw(meterTexture, 0, 0);
+        font.getData().setScale(3f, 3f);
+        font.draw(batch, Integer.toString((int)score.getScore()), 520, 1870);
+        font.getData().setScale(2f, 2f);
+        font.draw(batch, "e/s " + score.getPassiveIncome(), 400, 1740);
     }
 }
