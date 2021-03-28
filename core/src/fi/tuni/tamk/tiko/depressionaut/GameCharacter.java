@@ -42,7 +42,7 @@ public class GameCharacter {
 
     private int blinkTimer = 0;
 
-    private enum heldItem{
+    public enum heldItem{
         EMPTY,
         PHONE
     }
@@ -59,7 +59,7 @@ public class GameCharacter {
         lists.add(hands);
     }
 
-    public void draw(SpriteBatch batch, int tier) {
+    public void draw(SpriteBatch batch, int tier, heldItem item) {
         // draw head
         batch.draw(head,
                 getHeadPosition(tier).x,
@@ -73,7 +73,7 @@ public class GameCharacter {
         }
 
         // draw hands
-        batch.draw(lists.get(getTextureIndex(textureIndex.HANDS)).get(getItemIndex(heldItem.PHONE)),
+        batch.draw(lists.get(getTextureIndex(textureIndex.HANDS)).get(getItemIndex(item)),
                 0,
                 getTierOffset(tier));
 

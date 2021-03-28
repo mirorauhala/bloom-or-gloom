@@ -118,7 +118,7 @@ public class GameScreen implements Screen {
         batch.draw(desks.get(wallTier), x, y);
 
         // Character layer:
-        character.draw(batch, characterTier);
+        character.draw(batch, characterTier, GameCharacter.heldItem.EMPTY);
 
         // Top layer:
         particle.renderParticles(batch, delta);
