@@ -40,6 +40,7 @@ public class MyGdxGame extends Game {
 		prefs = Gdx.app.getPreferences("general");
 		score = new ScoreCounter();
 		navigation = new Navigation(this);
+		score.incrementClickPower(9);
 
 
 		setScreen(new SplashScreen(this));
