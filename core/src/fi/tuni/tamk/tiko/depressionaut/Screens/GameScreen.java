@@ -5,6 +5,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 import java.util.ArrayList;
@@ -32,10 +33,9 @@ public class GameScreen implements Screen {
     public int bedTier = 0;
     public int chairTier = 0;
     public int deskTier = 0;
-    public int characterTier = 0;
+    // Character's lowest tier is 1, not 0.
+    public int characterTier = 1;
     public int smileTier = 0;
-
-    public int eyestest = 0;
 
     /*
     Lists for all tiers of textures
@@ -71,9 +71,6 @@ public class GameScreen implements Screen {
         this.game = game;
         batch = game.gameBatch;
         camera = game.camera;
-
-        // For testing purposes. Works with values 1 and 2.
-        character.setTier(1);
     }
 
     /*
@@ -121,7 +118,7 @@ public class GameScreen implements Screen {
         batch.draw(desks.get(wallTier), x, y);
 
         // Character layer:
-        character.draw(batch);
+        character.draw(batch, characterTier);
 
         // Top layer:
         particle.renderParticles(batch, delta);
@@ -131,8 +128,12 @@ public class GameScreen implements Screen {
     }
 
     public void createParticle() {
+        Vector2 headPos = new Vector2(character.getHeadPosition(characterTier));
+        headPos.x += character.head.getWidth() / 2f;
+        headPos.y += character.head.getHeight() / 2f;
+
         if (Gdx.input.justTouched()) {
-            particle.createParticle();
+            particle.createParticle(headPos);
             game.score.click();
         }
     }
