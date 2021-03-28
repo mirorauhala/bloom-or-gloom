@@ -45,24 +45,24 @@ public class GameScreen implements Screen {
      */
     public List<Texture> walls = Arrays.asList(
             new Texture("walls/tier1.png"),
-            new Texture("walls/tier1.png")
+            new Texture("walls/tier2.png")
             //Will have many tiers
     );
     public List<Texture> floors = Arrays.asList(
             new Texture("floors/tier1.png"),
-            new Texture("floors/tier1.png")
+            new Texture("floors/tier2.png")
     );
     public List<Texture> beds = Arrays.asList(
             new Texture("furniture/bed/tier1.png"),
-            new Texture("furniture/bed/tier1.png")
+            new Texture("furniture/bed/tier2.png")
     );
     public List<Texture> chairs = Arrays.asList(
             new Texture("furniture/chair/tier1.png"),
-            new Texture("furniture/chair/tier1.png")
+            new Texture("furniture/chair/tier2.png")
     );
     public List<Texture> desks = Arrays.asList(
             new Texture("furniture/desk/tier1.png"),
-            new Texture("furniture/desk/tier1.png")
+            new Texture("furniture/desk/tier2.png")
     );
 
     MyGdxGame game;
