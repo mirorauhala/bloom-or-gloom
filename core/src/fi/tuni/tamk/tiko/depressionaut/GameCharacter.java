@@ -57,12 +57,15 @@ public class GameCharacter {
                 getHeadPosition(getTier()).x,
                 getHeadPosition(getTier()).y);
 
+        // draw mouth:
+        batch.draw(smiles.get(getTier()-1),
+                0,
+                0);
+
         // draw body
-        for (int lIndex = 0; lIndex <= 1; lIndex++) {
-            batch.draw(bodies.get(getTier()-1),
-                    0,
-                    0);
-        }
+        batch.draw(bodies.get(getTier()-1),
+                0,
+                0);
 
         // draw hands
         batch.draw(hands.get(currentItem),
