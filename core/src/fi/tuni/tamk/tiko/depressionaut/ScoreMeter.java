@@ -10,7 +10,7 @@ public class ScoreMeter {
     private MyGdxGame game;
 
     public Texture meterBase = new Texture("UI/UpperHUDbase.png");
-    public Texture meterTexture = new Texture("UI/UpperHUDmeter.png");
+    public Texture meterTexture = new Texture("UI/Meters/Meter2.png");
 
     public ScoreMeter(MyGdxGame game) {
         this.game = game;
