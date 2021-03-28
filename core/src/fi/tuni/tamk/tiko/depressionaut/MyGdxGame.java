@@ -43,7 +43,6 @@ public class MyGdxGame extends Game {
 		navigation = new Navigation(this);
 		scoreMeter = new ScoreMeter(this);
 
-
 		setScreen(new SplashScreen(this));
 	}
 
