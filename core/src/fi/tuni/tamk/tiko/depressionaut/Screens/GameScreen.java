@@ -30,6 +30,7 @@ public class GameScreen implements Screen {
     final private float y = 0;
 
     public ScoreMeter scoreMeter;
+    public ScoreCounter scoreCounter;
 
     public int wallTier = 0;
     public int floorTier = 0;
@@ -75,6 +76,7 @@ public class GameScreen implements Screen {
         batch = game.gameBatch;
         camera = game.camera;
         scoreMeter = new ScoreMeter(game);
+        scoreCounter = new ScoreCounter();
     }
 
     /*
@@ -110,6 +112,15 @@ public class GameScreen implements Screen {
         ScreenUtils.clear(0.8f, 0.8f, 1, 1);
 
         createParticle();
+        // set character's "happiness tier"
+        character.setTier(scoreCounter.getHappinessLevel() + 1);
+        // TODO: Remove temp
+        setBedTier(scoreCounter.getHappinessLevel() + 1);
+        setDeskTier(scoreCounter.getHappinessLevel() + 1);
+        setChairTier(scoreCounter.getHappinessLevel() + 1);
+        setWallTier(scoreCounter.getHappinessLevel() + 1);
+        setFloorTier(scoreCounter.getHappinessLevel() + 1);
+        character.setItem(GameCharacter.heldItem.PHONE);
 
         batch.begin();
         // Background layer:
