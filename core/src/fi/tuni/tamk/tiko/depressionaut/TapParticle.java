@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 // TODO: Refactor the fadeParticle() method to lessen the amount of code.
-// TODO: Move getHeadX() and getHeadY() methods to character's own class:
 /**
  * The TapParticle class creates particles when the screen is tapped.
  *
@@ -41,7 +40,7 @@ public class TapParticle extends Actor {
     /**
      * Creates a new particle.
      */
-    public void createParticle() {
+    public void createParticle(Vector2 headPos) {
         // Adds a new TapParticle object to the list.
         Particles.add(new TapParticle());
 
@@ -59,8 +58,8 @@ public class TapParticle extends Actor {
 
         // Set the origin coordinates of the particle according to the character's head and the push
         // it outwards according to the particle's vector.
-        tempParticle.setX(getHeadX() - (texture.getWidth() / 2f) + tempParticle.vector.x * 55);
-        tempParticle.setY(getHeadY() - (texture.getHeight() / 2f) + tempParticle.vector.y * 55);
+        tempParticle.setX(headPos.x - (texture.getWidth() / 2f) + tempParticle.vector.x * 55);
+        tempParticle.setY(headPos.y - (texture.getHeight() / 2f) + tempParticle.vector.y * 55);
 
         // Set the particle's opacity to 0:
         tempParticle.getColor().a = 0;
@@ -138,14 +137,6 @@ public class TapParticle extends Actor {
         if (this.particleTimer <=0 && this.getColor().a == 0) {
             Particles.remove(this);
         }
-    }
-
-    // TODO: Move to character's own class:
-    public float getHeadX() {
-        return 740f;
-    }
-    public float getHeadY() {
-        return 1920 - 1070f;
     }
 
     /**
