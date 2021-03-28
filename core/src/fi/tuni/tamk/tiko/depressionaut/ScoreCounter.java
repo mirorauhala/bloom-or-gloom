@@ -271,7 +271,7 @@ public class ScoreCounter {
         } else if(getWallet() >= 1000) {
             return ((int)getScore() / 1000) + "K";
         } else {
-            return "" + getScore();
+            return "" + (int)getScore();
         }
     }
 

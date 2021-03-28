@@ -120,7 +120,7 @@ public class GameScreen implements Screen {
         batch.draw(beds.get(wallTier), x, y);
         batch.draw(chairs.get(wallTier), x, y);
         batch.draw(desks.get(wallTier), x, y);
-
+        
         // Character layer:
         character.draw(batch);
 

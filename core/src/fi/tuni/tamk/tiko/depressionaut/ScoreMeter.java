@@ -117,5 +117,6 @@ public class ScoreMeter {
         font.draw(batch, score.getRationalizedScore(), 520, 1870);
         font.getData().setScale(2f, 2f);
         font.draw(batch, "e/s " + score.getPassiveIncome(), 410, 1740);
+
     }
 }
