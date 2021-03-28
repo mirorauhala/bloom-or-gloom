@@ -54,34 +54,51 @@ public class ScoreMeter {
      * will get changed when the happiness level is invented
      */
     public void determineMeterHeight() {
-        if(score.getScore() < 100) {
-            setMeterTexture(0);
-        }
-        else if(score.getScore() < 200) {
-            setMeterTexture(1);
-        }
-        else if(score.getScore() < 300) {
-            setMeterTexture(2);
-        }
-        else if(score.getScore() < 400) {
-            setMeterTexture(3);
-        }
-        else if(score.getScore() < 500) {
-            setMeterTexture(4);
-        }
-        else if(score.getScore() < 600) {
-            setMeterTexture(5);
-        }
-        else if(score.getScore() < 700) {
-            setMeterTexture(6);
-        }
-        else if(score.getScore() < 800) {
-            setMeterTexture(7);
-        }
-        else {
-            setMeterTexture(8);
+        int amountOfScoreForNextLevel = 0;
+
+        switch(score.getHappinessLevel()) {
+            case 0:
+                amountOfScoreForNextLevel = score.getScoreForNextLevel(0);
+                break;
+            case 1:
+                amountOfScoreForNextLevel = score.getScoreForNextLevel(1);
+                break;
+            case 2:
+                amountOfScoreForNextLevel = score.getScoreForNextLevel(2);
+                break;
+            case 3:
+                amountOfScoreForNextLevel = score.getScoreForNextLevel(3);
+                break;
+            case 4:
+                amountOfScoreForNextLevel = score.getScoreForNextLevel(4);
+                break;
         }
 
+
+        if(score.getScore() < amountOfScoreForNextLevel / 8) {
+            setMeterTexture(0);
+        }
+        else if(score.getScore() < (amountOfScoreForNextLevel / 8) * 2) {
+            setMeterTexture(1);
+        }
+        else if(score.getScore() < (amountOfScoreForNextLevel / 8) * 3) {
+            setMeterTexture(2);
+        }
+        else if(score.getScore() < (amountOfScoreForNextLevel / 8) * 4) {
+            setMeterTexture(3);
+        }
+        else if(score.getScore() < (amountOfScoreForNextLevel / 8) * 5) {
+            setMeterTexture(4);
+        }
+        else if(score.getScore() < (amountOfScoreForNextLevel / 8) * 6) {
+            setMeterTexture(5);
+        }
+        else if(score.getScore() < (amountOfScoreForNextLevel / 8) * 7) {
+            setMeterTexture(6);
+        }
+        else if(score.getScore() < amountOfScoreForNextLevel) {
+            setMeterTexture(7);
+        }
     }
 
     public ScoreMeter(MyGdxGame game) {
