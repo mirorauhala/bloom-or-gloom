@@ -6,9 +6,13 @@ import com.badlogic.gdx.math.Vector2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class GameCharacter {
-    public ArrayList<ArrayList<Texture>> lists = new ArrayList<ArrayList<Texture>>();
+
+    public Texture head = new Texture("character/head.png");
+
+    public HashMap<heldItem, Texture> hands = new HashMap<heldItem, Texture>();
 
     private ArrayList<Texture> bodies = new ArrayList<Texture>(
             Arrays.asList(
@@ -17,8 +21,6 @@ public class GameCharacter {
             )
     );
 
-    public Texture head = new Texture("character/head.png");
-
     private ArrayList<Texture> smiles = new ArrayList<Texture>(
             Arrays.asList(
                     new Texture("character/smile/tier1.png"),
@@ -26,12 +28,6 @@ public class GameCharacter {
             )
     );
 
-    private ArrayList<Texture> hands = new ArrayList<Texture>(
-            Arrays.asList(
-                    new Texture("character/hands/empty.png"),
-                    new Texture("character/hands/phone.png")
-            )
-    );
 
     private ArrayList<Texture> eyes = new ArrayList<Texture>(
             Arrays.asList(
@@ -40,45 +36,41 @@ public class GameCharacter {
             )
     );
 
-    private int blinkTimer = 0;
-
     public enum heldItem{
         EMPTY,
         PHONE
     }
 
-    private enum textureIndex{
-        BODY,
-        SMILE,
-        HANDS
-    }
+    private heldItem currentItem = heldItem.EMPTY;
+    private int tier = 1;
+
+    private int blinkTimer = 0;
 
     public GameCharacter() {
-        lists.add(bodies);
-        lists.add(smiles);
-        lists.add(hands);
+        hands.put(heldItem.EMPTY, new Texture("character/hands/empty.png"));
+        hands.put(heldItem.PHONE, new Texture("character/hands/phone.png"));
     }
 
-    public void draw(SpriteBatch batch, int tier, heldItem item) {
+    public void draw(SpriteBatch batch) {
         // draw head
         batch.draw(head,
-                getHeadPosition(tier).x,
-                getHeadPosition(tier).y);
+                getHeadPosition(getTier()).x,
+                getHeadPosition(getTier()).y);
 
         // draw body
         for (int lIndex = 0; lIndex <= 1; lIndex++) {
-            batch.draw(lists.get(lIndex).get(tier-1),
+            batch.draw(bodies.get(getTier()-1),
                     0,
                     0);
         }
 
         // draw hands
-        batch.draw(lists.get(getTextureIndex(textureIndex.HANDS)).get(getItemIndex(item)),
+        batch.draw(hands.get(currentItem),
                 0,
-                getTierOffset(tier));
+                getTierOffset(getTier()));
 
         // draw eyes
-        blink(batch, tier);
+        blink(batch, getTier());
     }
 
     public void blink(SpriteBatch batch, int tier) {
@@ -94,22 +86,16 @@ public class GameCharacter {
 
     }
 
-    public int getItemIndex(heldItem name) {
-        switch (name) {
-            case EMPTY: return 0;
-            case PHONE: return 1;
-        }
-        return -1;
+    public void setItem(heldItem item) {
+        currentItem = item;
     }
 
-    public int getTextureIndex(textureIndex name) {
-        switch (name) {
-            case BODY: return 0;
-            //case HEAD: return 1;
-            case SMILE: return 1;
-            case HANDS: return 2;
-        }
-        return -1;
+    public void setTier(int tier) {
+        this.tier = tier;
+    }
+
+    public int getTier() {
+        return tier;
     }
 
     public int getTierOffset(int tier) {
