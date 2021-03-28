@@ -1,28 +1,8 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
-/*
-    head offset values:
-    - tier 1: down 65px
-    - tier 2: down 15px
- */
-
-/* TODO: implement the following:
-public void blink() {
-        eyestest++;
-        if(eyestest > 400) {
-        eyestest = 0;
-        }
-        if(eyestest > 390) {
-        batch.draw(eyes.get(1), x, y);
-        } else {
-        batch.draw(eyes.get(0), x, y);
-        }
-
-        }
-*/
-
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,92 +10,88 @@ import java.util.Arrays;
 public class GameCharacter {
     public ArrayList<ArrayList<Texture>> lists = new ArrayList<ArrayList<Texture>>();
 
-    ArrayList<Texture> bodies = new ArrayList<Texture>(
+    private ArrayList<Texture> bodies = new ArrayList<Texture>(
             Arrays.asList(
                     new Texture("character/body/tier1.png"),
                     new Texture("character/body/tier2.png")
             )
     );
 
-    ArrayList<Texture> heads = new ArrayList<Texture>(
-            Arrays.asList(
-                    new Texture("character/head/tier1.png"),
-                    new Texture("character/head/tier2.png")
-            )
-    );
+    public Texture head = new Texture("character/head.png");
 
-    ArrayList<Texture> smiles = new ArrayList<Texture>(
+    private ArrayList<Texture> smiles = new ArrayList<Texture>(
             Arrays.asList(
                     new Texture("character/smile/tier1.png"),
                     new Texture("character/smile/tier2.png")
             )
     );
 
-    ArrayList<Texture> hands = new ArrayList<Texture>(
+    private ArrayList<Texture> hands = new ArrayList<Texture>(
             Arrays.asList(
                     new Texture("character/hands/empty.png"),
                     new Texture("character/hands/phone.png")
             )
     );
 
-    ArrayList<Texture> eyes = new ArrayList<Texture>(
+    private ArrayList<Texture> eyes = new ArrayList<Texture>(
             Arrays.asList(
                     new Texture("character/eyes/open.png"),
                     new Texture("character/eyes/closed.png")
             )
     );
 
+    private int blinkTimer = 0;
 
-    public int tier = 0;
-    public int handTier = 0;
-
-    private enum heldItem{
+    public enum heldItem{
         EMPTY,
         PHONE
     }
 
     private enum textureIndex{
         BODY,
-        HEAD,
         SMILE,
         HANDS
     }
 
     public GameCharacter() {
         lists.add(bodies);
-        lists.add(heads);
         lists.add(smiles);
         lists.add(hands);
     }
 
-    public void draw(SpriteBatch batch) {
+    public void draw(SpriteBatch batch, int tier, heldItem item) {
+        // draw head
+        batch.draw(head,
+                getHeadPosition(tier).x,
+                getHeadPosition(tier).y);
+
         // draw body
-        for (int lIndex = 0; lIndex <= 2; lIndex++) {
-            batch.draw(lists.get(lIndex).get(getTier()),
+        for (int lIndex = 0; lIndex <= 1; lIndex++) {
+            batch.draw(lists.get(lIndex).get(tier-1),
                     0,
                     0);
         }
 
-        /*
         // draw hands
-        batch.draw(lists.get(getTextureIndex(textureIndex.HANDS)).get(getItemIndex(heldItem.EMPTY)),
+        batch.draw(lists.get(getTextureIndex(textureIndex.HANDS)).get(getItemIndex(item)),
                 0,
-                getTierOffset(getTier()));
+                getTierOffset(tier));
 
-         */
-
-        // draw face
-        batch.draw(eyes.get(0),
-                0,
-                getTierOffset(getTier()));
+        // draw eyes
+        blink(batch, tier);
     }
 
-    public void setTier(int tier) {
-        this.tier = tier;
-    }
+    public void blink(SpriteBatch batch, int tier) {
+        blinkTimer++;
+        if(blinkTimer > 400) {
+            blinkTimer = 0;
+        }
+        if(blinkTimer > 390) {
+            batch.draw(eyes.get(1), 0, getTierOffset(tier));
+        } else {
+            batch.draw(eyes.get(0), 0, getTierOffset(tier));
+        }
 
-    public int getTier() {
-        return tier - 1;
     }
 
     public int getItemIndex(heldItem name) {
@@ -129,19 +105,23 @@ public class GameCharacter {
     public int getTextureIndex(textureIndex name) {
         switch (name) {
             case BODY: return 0;
-            case HEAD: return 1;
-            case SMILE: return 2;
-            case HANDS: return 3;
+            //case HEAD: return 1;
+            case SMILE: return 1;
+            case HANDS: return 2;
         }
         return -1;
     }
 
     public int getTierOffset(int tier) {
-        switch (tier + 1) {
-            case 1: return -65;
-            case 2: return 0;
+        return (int) (getHeadPosition(tier).y - getHeadPosition(1).y);
+    }
+
+    public Vector2 getHeadPosition(int tier) {
+        switch (tier) {
+            case 1: return new Vector2(514,1920 - 1336);
+            case 2: return new Vector2(514,1920 - 1285);
         }
-        return 0;
+        return new Vector2();
     }
 
 }
