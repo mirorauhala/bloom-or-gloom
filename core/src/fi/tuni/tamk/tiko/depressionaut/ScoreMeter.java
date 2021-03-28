@@ -10,17 +10,24 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
+/**
+ * ScoreMeter houses everything for the upper UI in the game screen
+ */
 public class ScoreMeter {
 
     private OrthographicCamera camera;
     private MyGdxGame game;
-
+    public ScoreCounter score;
     public Texture meterBase = new Texture("UI/UpperHUDbase.png");
     public Texture meterTexture;
-    public ScoreCounter score = new ScoreCounter();
+
     public BitmapFont font;
 
 
+    /**
+     * meterTextures houses all the increments for the happiness meter
+     */
     public List<Texture> meterTextures = Arrays.asList(
             new Texture("UI/Meters/Meter0.png"),
             new Texture("UI/Meters/Meter1.png"),
@@ -41,6 +48,11 @@ public class ScoreMeter {
         return meterTexture;
     }
 
+    /**
+     * Determines the amount of bars the meter should have relative the players score
+     *
+     * will get changed when the happiness level is invented
+     */
     public void determineMeterHeight() {
         if(score.getScore() < 100) {
             setMeterTexture(0);
@@ -75,6 +87,7 @@ public class ScoreMeter {
     public ScoreMeter(MyGdxGame game) {
         this.game = game;
         this.camera = game.camera;
+        this.score = game.score;
         font = new BitmapFont(Gdx.files.internal("font/Quicksand.fnt"));
         font.setUseIntegerPositions(false);
     }

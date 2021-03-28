@@ -261,6 +261,10 @@ public class ScoreCounter {
     }
 
 
+    /**
+     * getRationalizedScore() rounds the score for when it gets printed to the UI
+     *
+     */
     public String getRationalizedScore() {
         if(getWallet() >= 1000000) {
             return ((int)getScore() / 1000000) + "M";
