@@ -18,7 +18,6 @@ public class MyGdxGame extends Game {
 	public SpriteBatch gameBatch;
 	public SpriteBatch hudBatch;
 	public Navigation navigation;
-	public ScoreMeter scoreMeter;
 	public ScoreCounter score;
 
 	public final static float SCREEN_WIDTH = 1080;
@@ -41,7 +40,7 @@ public class MyGdxGame extends Game {
 		prefs = Gdx.app.getPreferences("general");
 		score = new ScoreCounter();
 		navigation = new Navigation(this);
-		scoreMeter = new ScoreMeter(this);
+
 
 		setScreen(new SplashScreen(this));
 	}
@@ -54,7 +53,7 @@ public class MyGdxGame extends Game {
 
 		hudBatch.begin();
 		navigation.draw(hudBatch);
-		scoreMeter.draw(hudBatch);
+
 		hudBatch.end();
 
 	}

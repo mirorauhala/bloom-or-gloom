@@ -15,6 +15,7 @@ import java.util.List;
 import fi.tuni.tamk.tiko.depressionaut.GameCharacter;
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 import fi.tuni.tamk.tiko.depressionaut.ScoreCounter;
+import fi.tuni.tamk.tiko.depressionaut.ScoreMeter;
 import fi.tuni.tamk.tiko.depressionaut.TapParticle;
 
 /**
@@ -27,6 +28,8 @@ public class GameScreen implements Screen {
     private GameCharacter character = new GameCharacter();
     final private float x = 0;
     final private float y = 0;
+
+    public ScoreMeter scoreMeter;
 
     public int wallTier = 0;
     public int floorTier = 0;
@@ -71,6 +74,7 @@ public class GameScreen implements Screen {
         this.game = game;
         batch = game.gameBatch;
         camera = game.camera;
+        scoreMeter = new ScoreMeter(game);
     }
 
     /*
@@ -122,6 +126,9 @@ public class GameScreen implements Screen {
 
         // Top layer:
         particle.renderParticles(batch, delta);
+
+        scoreMeter.draw(batch);
+
         batch.end();
 
 
