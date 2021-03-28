@@ -260,20 +260,14 @@ public class ScoreCounter {
         setClickPower(getClickPower() + amount);
     }
 
-    /**
-     * drawScore() and drawWallet() are used to draw the amount of units the player has of each on the screen
-     * Will also have a method of changing decimal places when the score gets above a certain limit
-     *
-     * currently prints them in the console
-     *
-     */
-    public void drawScore() {
-        if(getScore() >= 1000000) {
-            Gdx.app.debug("SCORE", getScore() / 1000000 + "M");
-        } else if(getScore() >= 1000) {
-            Gdx.app.debug("SCORE", getScore() / 1000 + "K");
+
+    public String getRationalizedScore() {
+        if(getWallet() >= 1000000) {
+            return ((int)getScore() / 1000000) + "M";
+        } else if(getWallet() >= 1000) {
+            return ((int)getScore() / 1000) + "K";
         } else {
-            Gdx.app.debug("SCORE", Float.toString(getScore()));
+            return "" + getScore();
         }
     }
     public void drawWallet() {

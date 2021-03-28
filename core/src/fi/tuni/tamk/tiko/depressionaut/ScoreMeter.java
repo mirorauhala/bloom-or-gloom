@@ -84,7 +84,7 @@ public class ScoreMeter {
         batch.draw(meterBase, 0, 0);
         batch.draw(meterTexture, 0, 0);
         font.getData().setScale(3f, 3f);
-        font.draw(batch, Integer.toString((int)score.getScore()), 520, 1870);
+        font.draw(batch, score.getRationalizedScore(), 520, 1870);
         font.getData().setScale(2f, 2f);
         font.draw(batch, "e/s " + score.getPassiveIncome(), 410, 1740);
     }
