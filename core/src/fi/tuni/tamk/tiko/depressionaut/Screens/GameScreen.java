@@ -2,9 +2,11 @@ package fi.tuni.tamk.tiko.depressionaut.Screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ScreenUtils;
 
@@ -16,6 +18,7 @@ import fi.tuni.tamk.tiko.depressionaut.GameCharacter;
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 import fi.tuni.tamk.tiko.depressionaut.ScoreCounter;
 import fi.tuni.tamk.tiko.depressionaut.ScoreMeter;
+import fi.tuni.tamk.tiko.depressionaut.Sounds;
 import fi.tuni.tamk.tiko.depressionaut.TapParticle;
 
 /**
@@ -28,6 +31,8 @@ public class GameScreen implements Screen {
     private GameCharacter character = new GameCharacter();
     final private float x = 0;
     final private float y = 0;
+
+    public Sounds sounds = new Sounds();
 
     public ScoreMeter scoreMeter;
     public ScoreCounter scoreCounter;
@@ -145,6 +150,7 @@ public class GameScreen implements Screen {
 
     }
 
+    //Täytyy vaihtaa käyttämään rectanglee
     public void createParticle() {
         Vector2 headPos = new Vector2(character.getHeadPosition(characterTier));
         headPos.x += character.head.getWidth() / 2f;
@@ -153,7 +159,9 @@ public class GameScreen implements Screen {
         if (Gdx.input.justTouched()) {
             particle.createParticle(headPos);
             game.score.click();
+            sounds.clicksoundPlay();
         }
+
     }
 
     @Override

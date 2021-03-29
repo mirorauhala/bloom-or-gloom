@@ -40,8 +40,6 @@ public class MyGdxGame extends Game {
 		prefs = Gdx.app.getPreferences("general");
 		score = new ScoreCounter();
 		navigation = new Navigation(this);
-		score.incrementMultiplier(20);
-
 
 		setScreen(new SplashScreen(this));
 	}
@@ -54,7 +52,6 @@ public class MyGdxGame extends Game {
 
 		hudBatch.begin();
 		navigation.draw(hudBatch);
-
 		hudBatch.end();
 
 	}
