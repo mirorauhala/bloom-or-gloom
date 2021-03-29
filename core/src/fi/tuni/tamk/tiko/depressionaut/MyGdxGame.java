@@ -41,6 +41,8 @@ public class MyGdxGame extends Game {
 		score = new ScoreCounter();
 		navigation = new Navigation(this);
 
+		score.incrementClickPower(9);
+
 		setScreen(new SplashScreen(this));
 	}
 
