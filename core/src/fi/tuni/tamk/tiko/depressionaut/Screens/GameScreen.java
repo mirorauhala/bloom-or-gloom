@@ -50,25 +50,42 @@ public class GameScreen implements Screen {
     Lists for all tiers of textures
      */
     public List<Texture> walls = Arrays.asList(
-            new Texture("walls/tier1.png"),
-            new Texture("walls/tier2.png")
-            //Will have many tiers
+            new Texture("wall/t1v1.png"),
+            new Texture("wall/t1v2.png"),
+            new Texture("wall/t1v3.png"),
+            new Texture("wall/t2v4.png"),
+            new Texture("wall/t2v5.png"),
+            new Texture("wall/t2v6.png")
     );
     public List<Texture> floors = Arrays.asList(
-            new Texture("floors/tier1.png"),
-            new Texture("floors/tier2.png")
+            new Texture("floor/t1v1.png"),
+            new Texture("floor/t1v2.png"),
+            new Texture("floor/t1v3.png"),
+            new Texture("floor/t2v4.png")
     );
     public List<Texture> beds = Arrays.asList(
-            new Texture("furniture/bed/tier1.png"),
-            new Texture("furniture/bed/tier2.png")
+            new Texture("furniture/bed/t1v1.png"),
+            new Texture("furniture/bed/t1v2.png"),
+            new Texture("furniture/bed/t1v3.png"),
+            new Texture("furniture/bed/t2v4.png"),
+            new Texture("furniture/bed/t2v5.png"),
+            new Texture("furniture/bed/t2v6.png")
     );
     public List<Texture> chairs = Arrays.asList(
-            new Texture("furniture/chair/tier1.png"),
-            new Texture("furniture/chair/tier2.png")
+            new Texture("furniture/chair/t1v1.png"),
+            new Texture("furniture/chair/t1v2.png"),
+            new Texture("furniture/chair/t1v3.png"),
+            new Texture("furniture/chair/t2v4.png"),
+            new Texture("furniture/chair/t2v5.png"),
+            new Texture("furniture/chair/t2v6.png")
     );
     public List<Texture> desks = Arrays.asList(
-            new Texture("furniture/desk/tier1.png"),
-            new Texture("furniture/desk/tier2.png")
+            new Texture("furniture/desk/t1v1.png"),
+            new Texture("furniture/desk/t1v2.png"),
+            new Texture("furniture/desk/t1v3.png"),
+            new Texture("furniture/desk/t2v4.png"),
+            new Texture("furniture/desk/t2v5.png"),
+            new Texture("furniture/desk/t2v6.png")
     );
 
     MyGdxGame game;
