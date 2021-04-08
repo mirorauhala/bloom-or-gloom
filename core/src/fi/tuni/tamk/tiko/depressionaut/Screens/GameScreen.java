@@ -1,5 +1,6 @@
 package fi.tuni.tamk.tiko.depressionaut.Screens;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Sound;
@@ -7,7 +8,9 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 import java.util.ArrayList;
@@ -16,6 +19,7 @@ import java.util.List;
 
 import fi.tuni.tamk.tiko.depressionaut.GameCharacter;
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
+import fi.tuni.tamk.tiko.depressionaut.Navigation;
 import fi.tuni.tamk.tiko.depressionaut.ScoreCounter;
 import fi.tuni.tamk.tiko.depressionaut.ScoreMeter;
 import fi.tuni.tamk.tiko.depressionaut.Sounds;
@@ -31,6 +35,8 @@ public class GameScreen implements Screen {
     private GameCharacter character = new GameCharacter();
     final private float x = 0;
     final private float y = 0;
+
+    public Rectangle gameScreenRectangle;
 
     public Sounds sounds = new Sounds();
 
@@ -99,6 +105,8 @@ public class GameScreen implements Screen {
         camera = game.camera;
         scoreMeter = new ScoreMeter(game);
         scoreCounter = new ScoreCounter();
+        gameScreenRectangle = new Rectangle();
+        gameScreenRectangle.set(0, 202, 1080, 1920-202);
     }
 
     /*
@@ -173,13 +181,23 @@ public class GameScreen implements Screen {
         headPos.x += character.head.getWidth() / 2f;
         headPos.y += character.head.getHeight() / 2f;
 
-        if (Gdx.input.justTouched()) {
-            particle.createParticle(headPos);
-            game.score.click();
-            sounds.clicksoundPlay();
+        if(Gdx.input.justTouched()) {
+            Gdx.app.setLogLevel(Application.LOG_DEBUG);
+
+            Vector3 touch = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
+            camera.unproject(touch);
+
+
+            if(gameScreenRectangle.contains(touch.x, touch.y)) {
+                sounds.clicksoundPlay();
+                game.score.click();
+                particle.createParticle(headPos);
+            }
+
         }
 
     }
+
 
     @Override
     public void show() {
