@@ -19,6 +19,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.google.gson.Gson;
 
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
+import fi.tuni.tamk.tiko.depressionaut.Shop.Product;
 import fi.tuni.tamk.tiko.depressionaut.Shop.Products;
 
 public class ShopScreen implements Screen {
@@ -42,7 +43,14 @@ public class ShopScreen implements Screen {
 
         Gson gson = new Gson();
         Products products = gson.fromJson(text, Products.class);
-        Gdx.app.log("NAV", products.getTypes().get(0).getName());
+        for (Product product : products.getProducts()) {
+            Gdx.app.log("NAV", product.getName());
+        }
+
+
+
+
+
 
         //setup skin
         skin = new Skin(Gdx.files.internal("UI/uiskin.json"));
