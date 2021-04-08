@@ -36,6 +36,10 @@ public class GameScreen implements Screen {
     final private float x = 0;
     final private float y = 0;
 
+    public Texture daySky = new Texture("sky/daySky.png");
+    public Texture nightSky = new Texture("sky/nightSky.png");
+
+
     public Rectangle gameScreenRectangle;
 
     public Sounds sounds = new Sounds();
@@ -56,38 +60,38 @@ public class GameScreen implements Screen {
     Lists for all tiers of textures
      */
     public List<Texture> walls = Arrays.asList(
-            new Texture("wall/t1v1.png"),
-            new Texture("wall/t1v2.png"),
-            new Texture("wall/t1v3.png"),
-            new Texture("wall/t2v4.png"),
-            new Texture("wall/t2v5.png"),
-            new Texture("wall/t2v6.png"),
-            new Texture("wall/t3v7.png"),
-            new Texture("wall/t3v8.png"),
-            new Texture("wall/t3v9.png"),
-            new Texture("wall/t4v10.png"),
-            new Texture("wall/t4v11.png"),
-            new Texture("wall/t4v12.png"),
-            new Texture("wall/t5v13.png"),
-            new Texture("wall/t5v14.png"),
-            new Texture("wall/t5v15.png")
+            new Texture("walls/t1v1.png"),
+            new Texture("walls/t1v2.png"),
+            new Texture("walls/t1v3.png"),
+            new Texture("walls/t2v4.png"),
+            new Texture("walls/t2v5.png"),
+            new Texture("walls/t2v6.png"),
+            new Texture("walls/t3v7.png"),
+            new Texture("walls/t3v8.png"),
+            new Texture("walls/t3v9.png"),
+            new Texture("walls/t4v10.png"),
+            new Texture("walls/t4v11.png"),
+            new Texture("walls/t4v12.png"),
+            new Texture("walls/t5v13.png"),
+            new Texture("walls/t5v14.png"),
+            new Texture("walls/t5v15.png")
     );
     public List<Texture> floors = Arrays.asList(
-            new Texture("floor/t1v1.png"),
-            new Texture("floor/t1v2.png"),
-            new Texture("floor/t1v3.png"),
-            new Texture("floor/t2v4.png"),
-            new Texture("floor/t2v5.png"),
-            new Texture("floor/t2v6.png"),
-            new Texture("floor/t3v7.png"),
-            new Texture("floor/t3v8.png"),
-            new Texture("floor/t3v9.png"),
-            new Texture("floor/t4v10.png"),
-            new Texture("floor/t4v11.png"),
-            new Texture("floor/t4v12.png"),
-            new Texture("floor/t5v13.png"),
-            new Texture("floor/t5v14.png"),
-            new Texture("floor/t5v15.png")
+            new Texture("floors/t1v1.png"),
+            new Texture("floors/t1v2.png"),
+            new Texture("floors/t1v3.png"),
+            new Texture("floors/t2v4.png"),
+            new Texture("floors/t2v5.png"),
+            new Texture("floors/t2v6.png"),
+            new Texture("floors/t3v7.png"),
+            new Texture("floors/t3v8.png"),
+            new Texture("floors/t3v9.png"),
+            new Texture("floors/t4v10.png"),
+            new Texture("floors/t4v11.png"),
+            new Texture("floors/t4v12.png"),
+            new Texture("floors/t5v13.png"),
+            new Texture("floors/t5v14.png"),
+            new Texture("floors/t5v15.png")
     );
     public List<Texture> beds = Arrays.asList(
             new Texture("furniture/bed/t1v1.png"),
@@ -113,7 +117,7 @@ public class GameScreen implements Screen {
             new Texture("furniture/chair/t2v4.png"),
             new Texture("furniture/chair/t2v5.png"),
             new Texture("furniture/chair/t2v6.png"),
-            new Texture("furniture/chair/t2v7.png"),
+            new Texture("furniture/chair/t3v7.png"),
             new Texture("furniture/chair/t3v8.png"),
             new Texture("furniture/chair/t3v9.png")
     );
@@ -185,6 +189,7 @@ public class GameScreen implements Screen {
         character.setItem(GameCharacter.heldItem.PHONE);*/
 
         batch.begin();
+        batch.draw(nightSky, 0, 0);
         // Background layer:
         batch.draw(walls.get(wallTier), x, y);
         batch.draw(floors.get(wallTier), x, y);
