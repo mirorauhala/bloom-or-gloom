@@ -268,7 +268,7 @@ public class ScoreCounter {
     public String getRationalizedScore() {
         if(getWallet() >= 1000000) {
             return ((int)getScore() / 1000000) + "M";
-        } else if(getWallet() >= 1000) {
+        } else if(getWallet() >= 10000) {
             return ((int)getScore() / 1000) + "K";
         } else {
             return "" + (int)getScore();
