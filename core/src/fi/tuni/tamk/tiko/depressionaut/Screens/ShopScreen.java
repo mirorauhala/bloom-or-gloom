@@ -29,7 +29,6 @@ public class ShopScreen implements Screen {
     Skin skin;
     Stage stage;
     Table container;
-    Texture texture1, texture2, texture3;
     private BitmapFont font;
     private Skin skinButton;
     private TextureAtlas buttonAtlas;
@@ -43,69 +42,78 @@ public class ShopScreen implements Screen {
 
         Gson gson = new Gson();
         Products products = gson.fromJson(text, Products.class);
-        for (Product product : products.getProducts()) {
-            Gdx.app.log("NAV", product.getName());
-        }
-
-
-
-
-
 
         //setup skin
         skin = new Skin(Gdx.files.internal("UI/uiskin.json"));
 
-        texture1 = new Texture(Gdx.files.internal("shop/wip-shirt-1.png"));
-        texture2 = new Texture(Gdx.files.internal("shop/wip-shirt-2.png"));
-        texture3 = new Texture(Gdx.files.internal("shop/wip-shirt-3.png"));
-
         // table that holds the scroll pane
         container = new Table();
         container.setFillParent(true);
+        container.setHeight(MyGdxGame.SCREEN_HEIGHT);
+        container.setWidth(MyGdxGame.SCREEN_WIDTH);
         container.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
-        container.left();
+        container.left().top();
 
         int height = Gdx.graphics.getHeight()/4;
         int width = Gdx.graphics.getWidth()/4;
 
         // inner table that is used as a makeshift list.
         Table innerContainer = new Table();
+        innerContainer.top();
 
-        for (int i = 0; i < 10; i++) {
-            final int index = i;
+        for (final Product product : products.getProducts()) {
+            Gdx.app.log("NAV", product.getName());
+
+            Texture texture = new Texture(Gdx.files.internal("shop/" + product.getTexture()));
+
             Float labelWidth = Gdx.graphics.getWidth() - 20f - width;
-            Label label = new Label("What happens if the name of the product is really long like will this actually do some word wrapping or what the hey", skin);
+            Label label = new Label(product.getName(), skin);
             label.setWrap(true);
             label.setWidth(labelWidth);
             label.setFontScale(1);
 
-            Table table4 = new Table(skin);
-            table4.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
-            table4.add(new Label("", skin)).width(10f).expandY().fillY();// a spacer
-            table4.add(new Image(texture3)).width(width).height(width);
-            table4.add(new Label("", skin)).width(10f).expandY().fillY();// a spacer
-            table4.add(label).width(labelWidth).expandY().fillX();
-            table4.left().top();
+            Table table = new Table(skin);
+            table.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
+            table.add(new Label("", skin)).width(10f).expandY().fillY();// a spacer
+            table.add(new Image(texture)).width(width).height(width);
+            table.add(new Label("", skin)).width(10f).expandY().fillY();// a spacer
+            table.add(label).width(labelWidth).expandY().fillX();
+            table.left().top();
 
-            table4.addListener(new ClickListener() {
+            table.addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
-                    System.out.println("Clicked on button: "+ index);
+                    System.out.println("Clicked on button: "+ product);
                 }
             });
 
             innerContainer.row();
-            innerContainer.add(table4).expand().fill();
+            innerContainer.add(table);
         }
 
         // create the scrollpane
         scrollpane = new ScrollPane(innerContainer);
+
+        float labelWidth = Gdx.graphics.getWidth() - 20f - width;
+        Label label = new Label("hello world what the heck are you", skin);
+        label.setWrap(true);
+        label.setWidth(labelWidth);
+        label.setFontScale(1);
+
+        Table table = new Table(skin);
+        table.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
+        table.add(new Label("", skin)).width(10f).expandY().fillY();// a spacer
+        table.add(label).width(labelWidth).expandY().fillX();
+        table.left().top();
+        container.add(table).fill().expand();
+        container.row();
 
         //add the scroll pane to the container
         container.add(scrollpane).fill().expand();
 
         // setup stage
         stage = new Stage();
+        stage.setDebugAll(MyGdxGame.DEBUG);
 
         // add container to the stage
         stage.addActor(container);
