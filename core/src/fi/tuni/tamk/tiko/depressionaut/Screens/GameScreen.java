@@ -61,13 +61,33 @@ public class GameScreen implements Screen {
             new Texture("wall/t1v3.png"),
             new Texture("wall/t2v4.png"),
             new Texture("wall/t2v5.png"),
-            new Texture("wall/t2v6.png")
+            new Texture("wall/t2v6.png"),
+            new Texture("wall/t3v7.png"),
+            new Texture("wall/t3v8.png"),
+            new Texture("wall/t3v9.png"),
+            new Texture("wall/t4v10.png"),
+            new Texture("wall/t4v11.png"),
+            new Texture("wall/t4v12.png"),
+            new Texture("wall/t5v13.png"),
+            new Texture("wall/t5v14.png"),
+            new Texture("wall/t5v15.png")
     );
     public List<Texture> floors = Arrays.asList(
             new Texture("floor/t1v1.png"),
             new Texture("floor/t1v2.png"),
             new Texture("floor/t1v3.png"),
-            new Texture("floor/t2v4.png")
+            new Texture("floor/t2v4.png"),
+            new Texture("floor/t2v5.png"),
+            new Texture("floor/t2v6.png"),
+            new Texture("floor/t3v7.png"),
+            new Texture("floor/t3v8.png"),
+            new Texture("floor/t3v9.png"),
+            new Texture("floor/t4v10.png"),
+            new Texture("floor/t4v11.png"),
+            new Texture("floor/t4v12.png"),
+            new Texture("floor/t5v13.png"),
+            new Texture("floor/t5v14.png"),
+            new Texture("floor/t5v15.png")
     );
     public List<Texture> beds = Arrays.asList(
             new Texture("furniture/bed/t1v1.png"),
@@ -75,7 +95,16 @@ public class GameScreen implements Screen {
             new Texture("furniture/bed/t1v3.png"),
             new Texture("furniture/bed/t2v4.png"),
             new Texture("furniture/bed/t2v5.png"),
-            new Texture("furniture/bed/t2v6.png")
+            new Texture("furniture/bed/t2v6.png"),
+            new Texture("furniture/bed/t3v7.png"),
+            new Texture("furniture/bed/t3v8.png"),
+            new Texture("furniture/bed/t3v9.png"),
+            new Texture("furniture/bed/t4v10.png"),
+            new Texture("furniture/bed/t4v11.png"),
+            new Texture("furniture/bed/t4v12.png"),
+            new Texture("furniture/bed/t5v13.png"),
+            new Texture("furniture/bed/t5v14.png"),
+            new Texture("furniture/bed/t5v15.png")
     );
     public List<Texture> chairs = Arrays.asList(
             new Texture("furniture/chair/t1v1.png"),
@@ -83,7 +112,10 @@ public class GameScreen implements Screen {
             new Texture("furniture/chair/t1v3.png"),
             new Texture("furniture/chair/t2v4.png"),
             new Texture("furniture/chair/t2v5.png"),
-            new Texture("furniture/chair/t2v6.png")
+            new Texture("furniture/chair/t2v6.png"),
+            new Texture("furniture/chair/t2v7.png"),
+            new Texture("furniture/chair/t3v8.png"),
+            new Texture("furniture/chair/t3v9.png")
     );
     public List<Texture> desks = Arrays.asList(
             new Texture("furniture/desk/t1v1.png"),
