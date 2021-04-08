@@ -7,18 +7,18 @@ import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import fi.tuni.tamk.tiko.depressionaut.Screens.GameScreen;
 import fi.tuni.tamk.tiko.depressionaut.Screens.SplashScreen;
 
 public class MyGdxGame extends Game {
 	// DEBUG ->
-	public static final boolean DEBUG = false;
+	public static final boolean DEBUG = true;
 	// <- DEBUG
 
 	public SpriteBatch gameBatch;
 	public SpriteBatch hudBatch;
 	public Navigation navigation;
 	public ScoreCounter score;
+	public Inventory inventory;
 
 	public final static float SCREEN_WIDTH = 1080;
 	public final static float SCREEN_HEIGHT = 1920;
@@ -40,6 +40,7 @@ public class MyGdxGame extends Game {
 		prefs = Gdx.app.getPreferences("general");
 		score = new ScoreCounter();
 		navigation = new Navigation(this);
+		inventory = new Inventory(this);
 
 		setScreen(new SplashScreen(this));
 	}
