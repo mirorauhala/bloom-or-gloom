@@ -175,14 +175,14 @@ public class GameScreen implements Screen {
 
         createParticle();
         // set character's "happiness tier"
-        character.setTier(scoreCounter.getHappinessLevel() + 1);
+        //character.setTier(scoreCounter.getHappinessLevel() + 1);
         // TODO: Remove temp
-        setBedTier(scoreCounter.getHappinessLevel() + 1);
+        /*setBedTier(scoreCounter.getHappinessLevel() + 1);
         setDeskTier(scoreCounter.getHappinessLevel() + 1);
         setChairTier(scoreCounter.getHappinessLevel() + 1);
         setWallTier(scoreCounter.getHappinessLevel() + 1);
         setFloorTier(scoreCounter.getHappinessLevel() + 1);
-        character.setItem(GameCharacter.heldItem.PHONE);
+        character.setItem(GameCharacter.heldItem.PHONE);*/
 
         batch.begin();
         // Background layer:

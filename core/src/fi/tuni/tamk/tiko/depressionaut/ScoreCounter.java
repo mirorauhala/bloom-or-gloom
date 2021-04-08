@@ -3,6 +3,8 @@ package fi.tuni.tamk.tiko.depressionaut;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 
+import java.text.DecimalFormat;
+
 /**
  * ScoreCounter class has methods for counting the score,
  * adding multiplier and temporary buffs, drawing the score etc.
@@ -21,6 +23,7 @@ public class ScoreCounter {
 
     public ScoreCounter() {
         prefs = Gdx.app.getPreferences("score");
+
 
         Thread counter = new Thread(new Runnable() {
             /**
@@ -267,9 +270,10 @@ public class ScoreCounter {
      */
     public String getRationalizedScore() {
         if(getWallet() >= 1000000) {
-            return ((int)getScore() / 1000000) + "M";
+            //return Double.parseDouble(String.format("%.3f", (double)getScore())) + "M";
+            return ((double)getScore() / 100000) + "M";
         } else if(getWallet() >= 10000) {
-            return ((int)getScore() / 1000) + "K";
+            return ((double)getScore() / 1000) + "K";
         } else {
             return "" + (int)getScore();
         }
