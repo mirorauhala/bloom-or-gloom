@@ -1,23 +1,14 @@
 {
   "categories": [
-    {
-      "id": 1,
-      "name": "Clothing"
-    },
-    {
-      "id": 2,
-      "name": "Furniture"
-    },
-    {
-      "id": 3,
-      "name": "Others"
-    }
+    {"id": 1, "name": "Clothing" },
+    {"id": 2, "name": "Furniture" },
+    {"id": 3, "name": "Others" }
   ],
   "types": [
     {"id": 1, "name": "Shirt"},
     {"id": 2, "name": "Hats"},
     {"id": 3, "name": "Wall"},
-    {"id": 4, "type": "Floor"},
+    {"id": 4, "name": "Floor"},
     {"id": 5, "name": "Bed"},
     {"id": 6, "name": "Desk"},
     {"id": 7, "name": "Chair"},
