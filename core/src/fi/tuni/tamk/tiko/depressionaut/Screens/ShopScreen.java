@@ -3,110 +3,153 @@ package fi.tuni.tamk.tiko.depressionaut.Screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextField;
-import com.badlogic.gdx.utils.ScreenUtils;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.google.gson.Gson;
 
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
-import fi.tuni.tamk.tiko.depressionaut.Shop.BaseProduct;
 import fi.tuni.tamk.tiko.depressionaut.Shop.Products;
-import fi.tuni.tamk.tiko.depressionaut.Shop.RawProducts.BlueShirt;
-import fi.tuni.tamk.tiko.depressionaut.Shop.Shop;
 
 public class ShopScreen implements Screen {
-    private final Shop shop;
-    private final BaseProduct currentProduct;
+    private final String text;
     MyGdxGame game;
-    SpriteBatch batch;
-    private OrthographicCamera camera;
-    private Rectangle rect;
-    private String text;
+    ScrollPane scrollpane;
+    Skin skin;
+    Stage stage;
+    Table container;
+    Texture texture1, texture2, texture3;
+    private BitmapFont font;
+    private Skin skinButton;
+    private TextureAtlas buttonAtlas;
+    private TextButton.TextButtonStyle textButtonStyle;
 
-    public ShopScreen(MyGdxGame game) {
+    public ShopScreen(MyGdxGame game){
         this.game = game;
-        batch = game.gameBatch;
-        camera = game.camera;
-
-        shop = new Shop(game);
-        //shop.setCategory(Shop.Category.CLOTHES);
-        //categories.setCategory(Shop.Category.FURNITURE);
-        //categories.setCategory(Shop.Category.MISC);
-        //products = shop.getProducts();
 
         FileHandle handle = Gdx.files.local("shop/products.json");
         text = handle.readString();
 
         Gson gson = new Gson();
         Products products = gson.fromJson(text, Products.class);
-        System.out.println(products.getTypes().get(0).getName());
+        Gdx.app.log("NAV", products.getTypes().get(0).getName());
 
+        //setup skin
+        skin = new Skin(Gdx.files.internal("UI/uiskin.json"));
 
-        currentProduct = new BlueShirt();
-        rect = new Rectangle(100, 1700, currentProduct.getTexture().getWidth(),  currentProduct.getTexture().getHeight());
+        texture1 = new Texture(Gdx.files.internal("shop/wip-shirt-1.png"));
+        texture2 = new Texture(Gdx.files.internal("shop/wip-shirt-2.png"));
+        texture3 = new Texture(Gdx.files.internal("shop/wip-shirt-3.png"));
+
+        // table that holds the scroll pane
+        container = new Table();
+        container.setFillParent(true);
+        container.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
+        container.left();
+
+        int height = Gdx.graphics.getHeight()/4;
+        int width = Gdx.graphics.getWidth()/4;
+
+        // inner table that is used as a makeshift list.
+        Table innerContainer = new Table();
+
+        for (int i = 0; i < 10; i++) {
+            final int index = i;
+            Float labelWidth = Gdx.graphics.getWidth() - 20f - width;
+            Label label = new Label("What happens if the name of the product is really long like will this actually do some word wrapping or what the hey", skin);
+            label.setWrap(true);
+            label.setWidth(labelWidth);
+            label.setFontScale(1);
+
+            Table table4 = new Table(skin);
+            table4.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
+            table4.add(new Label("", skin)).width(10f).expandY().fillY();// a spacer
+            table4.add(new Image(texture3)).width(width).height(width);
+            table4.add(new Label("", skin)).width(10f).expandY().fillY();// a spacer
+            table4.add(label).width(labelWidth).expandY().fillX();
+            table4.left().top();
+
+            table4.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    System.out.println("Clicked on button: "+ index);
+                }
+            });
+
+            innerContainer.row();
+            innerContainer.add(table4).expand().fill();
+        }
+
+        // create the scrollpane
+        scrollpane = new ScrollPane(innerContainer);
+
+        //add the scroll pane to the container
+        container.add(scrollpane).fill().expand();
+
+        // setup stage
+        stage = new Stage();
+
+        // add container to the stage
+        stage.addActor(container);
+
+        // setup input processor (gets clicks and stuff)
+        Gdx.input.setInputProcessor(stage);
+
     }
 
     @Override
     public void render(float delta) {
+        Gdx.gl.glClearColor(0, 0, 0, 1);    //sets up the clear color (background color) of the screen.
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);  //instructs openGL to actually clear the screen to the newly set clear color.
+        stage.draw();
+        stage.act(delta);
 
-        // set background to white
-        ScreenUtils.clear(1, 1, 1, 1);
+    }
 
-        // rectangle
-        batch.setProjectionMatrix(camera.combined);
-        batch.begin();
-        batch.draw(currentProduct.getTexture(), rect.getX(), rect.getY());
-        batch.end();
+    @Override
+    public void resize(int width, int height) {
+        //System.out.println("resize");
 
-        if(Gdx.input.justTouched()){
-            Vector3 touch = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
-            camera.unproject(touch);
-            if(rect.contains(touch.x, touch.y)){
-                //game.navigation.setActive(Navigation.Screen.GAME);
-                //game.setScreen(new GameScreen(game));
-
-                //Gdx.app.debug("WHAT", products);
-
-                //currentProduct.buy();
-            }
-        }
     }
 
     @Override
     public void show() {
-
-    }
-
-
-
-    @Override
-    public void resize(int width, int height) {
-
-    }
-
-    @Override
-    public void pause() {
-
-    }
-
-    @Override
-    public void resume() {
+        //System.out.println("Show");
 
     }
 
     @Override
     public void hide() {
+        //System.out.println("Hide");
+
+    }
+
+    @Override
+    public void pause() {
+        System.out.println("pause");
+
+    }
+
+    @Override
+    public void resume() {
+        System.out.println("resume");
 
     }
 
     @Override
     public void dispose() {
+        System.out.println("dispose");
 
     }
+
 }
