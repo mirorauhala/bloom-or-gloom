@@ -41,7 +41,7 @@ public class ScoreMeter {
         this.game = game;
         this.camera = game.camera;
         this.score = game.score;
-        font = new BitmapFont(Gdx.files.internal("font/Quicksand_white.fnt"));
+        font = new BitmapFont(Gdx.files.internal("UI/Quicksand_white.fnt"));
         font.setUseIntegerPositions(false);
 
         meterFiller = new Rectangle();
