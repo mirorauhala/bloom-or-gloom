@@ -1,25 +1,20 @@
 package fi.tuni.tamk.tiko.depressionaut.Screens;
 
-import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import fi.tuni.tamk.tiko.depressionaut.GameCharacter;
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
-import fi.tuni.tamk.tiko.depressionaut.Navigation;
 import fi.tuni.tamk.tiko.depressionaut.ScoreCounter;
 import fi.tuni.tamk.tiko.depressionaut.ScoreMeter;
 import fi.tuni.tamk.tiko.depressionaut.Sounds;
@@ -237,7 +232,6 @@ public class GameScreen implements Screen {
 
     @Override
     public void show() {
-
     }
 
     @Override

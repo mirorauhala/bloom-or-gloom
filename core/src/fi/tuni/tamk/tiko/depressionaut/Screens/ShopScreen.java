@@ -29,10 +29,6 @@ public class ShopScreen implements Screen {
     Skin skin;
     Stage stage;
     Table container;
-    private BitmapFont font;
-    private Skin skinButton;
-    private TextureAtlas buttonAtlas;
-    private TextButton.TextButtonStyle textButtonStyle;
 
     public ShopScreen(MyGdxGame game){
         this.game = game;
