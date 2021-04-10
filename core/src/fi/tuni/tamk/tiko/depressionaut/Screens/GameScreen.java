@@ -151,22 +151,22 @@ public class GameScreen implements Screen {
     Tier on each object in the gamescreen can be set with gamescreen.setObjecttier
      */
     public void setWallTier(int wallTier) {
-        this.wallTier = wallTier - 1;
+        this.wallTier = wallTier;
     }
     public void setFloorTier(int floorTier) {
-        this.floorTier = floorTier - 1;
+        this.floorTier = floorTier;
     }
     public void setBedTier(int bedTier) {
-        this.bedTier = bedTier - 1;
+        this.bedTier = bedTier;
     }
     public void setChairTier(int chairTier) {
-        this.chairTier = chairTier - 1;
+        this.chairTier = chairTier;
     }
     public void setDeskTier(int deskTier) {
-        this.deskTier = deskTier - 1;
+        this.deskTier = deskTier;
     }
     public void setCharacterTier(int characterTier) {
-        this.characterTier = characterTier - 1;
+        this.characterTier = characterTier;
     }
     public void setSmileTier(int smileTier) {
         this.smileTier = smileTier;
