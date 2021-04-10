@@ -9,6 +9,7 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.height = 800;
 		config.width = 480;
+		config.title = "Bloom or Gloom";
 		new LwjglApplication(new MyGdxGame(), config);
 	}
 }
