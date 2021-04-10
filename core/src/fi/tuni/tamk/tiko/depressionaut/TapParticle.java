@@ -39,6 +39,7 @@ public class TapParticle extends Actor {
 
     /**
      * Creates a new particle.
+     * @param headPos Vector2 Character's head position.
      */
     public void createParticle(Vector2 headPos) {
         // Adds a new TapParticle object to the list.

@@ -1,5 +1,6 @@
 package fi.tuni.tamk.tiko.depressionaut.Screens;
 
+import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
@@ -14,7 +15,7 @@ public class SettingsScreen implements Screen {
     }
 
     /**
-     * Called when this screen becomes the current screen for a {@link Game}.
+     * Called when this screen becomes the current screen for a {@link MyGdxGame}.
      */
     @Override
     public void show() {
@@ -34,8 +35,8 @@ public class SettingsScreen implements Screen {
     }
 
     /**
-     * @param width
-     * @param height
+     * @param width the new width in pixels
+     * @param height the new height in pixels
      * @see ApplicationListener#resize(int, int)
      */
     @Override
@@ -60,7 +61,7 @@ public class SettingsScreen implements Screen {
     }
 
     /**
-     * Called when this screen is no longer the current screen for a {@link Game}.
+     * Called when this screen is no longer the current screen for a {@link MyGdxGame}.
      */
     @Override
     public void hide() {

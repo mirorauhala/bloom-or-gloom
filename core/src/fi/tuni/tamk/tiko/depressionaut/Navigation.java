@@ -69,9 +69,10 @@ public class Navigation {
         this.screenPair.put(Screen.SETTINGS, new SettingsScreen(game));
     }
 
+
     /**
      * Draws the current navigation.
-     *
+     * @param batch SpriteBatch
      */
     public void draw(SpriteBatch batch) {
         if(null == activeScreen) {

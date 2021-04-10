@@ -263,10 +263,9 @@ public class ScoreCounter {
         setClickPower(getClickPower() + amount);
     }
 
-
     /**
      * getRationalizedScore() rounds the score for when it gets printed to the UI
-     *
+     * @return boolean
      */
     public String getRationalizedScore() {
         if(getWallet() >= 1000000) {
@@ -274,9 +273,9 @@ public class ScoreCounter {
             return ((double)getScore() / 100000) + "M";
         } else if(getWallet() >= 10000) {
             return ((double)getScore() / 1000) + "K";
-        } else {
-            return "" + (int)getScore();
         }
+
+        return "" + (int)getScore();
     }
 
     /**
@@ -294,8 +293,8 @@ public class ScoreCounter {
 
     /**
      * returns the amount of score the player needs to get to get to the next level
-     * @param happinessLevel
-     *
+     * @param happinessLevel int Integer form of the happiness level
+     * @return int
      */
     public int getScoreForNextLevel(int happinessLevel) {
         switch (happinessLevel) {
