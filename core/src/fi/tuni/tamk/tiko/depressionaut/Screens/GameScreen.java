@@ -219,7 +219,6 @@ public class GameScreen implements Screen {
         headPos.y += character.head.getHeight() / 2f;
 
         if(Gdx.input.justTouched()) {
-            Gdx.app.setLogLevel(Application.LOG_DEBUG);
 
             Vector3 touch = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
             camera.unproject(touch);
