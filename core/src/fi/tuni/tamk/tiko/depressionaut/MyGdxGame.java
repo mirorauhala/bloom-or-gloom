@@ -40,7 +40,7 @@ public class MyGdxGame extends Game {
 		prefs = Gdx.app.getPreferences("general");
 		score = new ScoreCounter();
 		navigation = new Navigation(this);
-		inventory = new Inventory(this);
+		inventory = new Inventory();
 
 		setScreen(new SplashScreen(this));
 	}

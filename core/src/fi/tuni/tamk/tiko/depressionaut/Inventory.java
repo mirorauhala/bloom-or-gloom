@@ -3,23 +3,35 @@ package fi.tuni.tamk.tiko.depressionaut;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 
-import java.util.HashMap;
-
+/**
+ * Holds user's in-game inventory. Has methods for storing the items into the inventory.
+ */
 public class Inventory {
-    private final MyGdxGame game;
-    private HashMap<String, Integer> inventory;
     Preferences prefs;
 
-    public Inventory(MyGdxGame game) {
-        this.game = game;
+    public Inventory() {
         this.prefs = Gdx.app.getPreferences("inventory");
     }
 
-    public void set(String key, Integer value) {
+    /**
+     * Add an item to the user's inventory.
+     *
+     * @param key String The name of the item.
+     * @param value int The level of the stored item.
+     */
+    public void set(String key, int value) {
         prefs.putInteger(key, value);
         prefs.flush();
     }
 
+    /**
+     * Get an item from the user's inventory.
+     *
+     * If the item does not exist, a zero is returned.
+     *
+     * @param key String Name of the item to fetch.
+     * @return int Item's level
+     */
     public int get(String key) {
         return prefs.getInteger(key);
     }
