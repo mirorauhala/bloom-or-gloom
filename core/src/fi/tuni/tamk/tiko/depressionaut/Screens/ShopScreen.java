@@ -30,7 +30,7 @@ public class ShopScreen implements Screen {
     Stage stage;
     Table container;
 
-    public ShopScreen(MyGdxGame game){
+    public ShopScreen(final MyGdxGame game){
         this.game = game;
 
         FileHandle handle = Gdx.files.local("shop/products.json");
@@ -58,7 +58,7 @@ public class ShopScreen implements Screen {
         innerContainer.top();
 
         for (final Product product : products.getProducts()) {
-            Gdx.app.log("NAV", product.getName());
+            Gdx.app.debug("NAV", product.getName());
 
             Texture texture = new Texture(Gdx.files.internal("shop/" + product.getTexture()));
 
@@ -79,6 +79,7 @@ public class ShopScreen implements Screen {
             table.addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
+                    game.inventory.set("wall", 4);
                     System.out.println("Clicked on button: "+ product);
                 }
             });
@@ -121,7 +122,7 @@ public class ShopScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(0, 0, 0, 1);    //sets up the clear color (background color) of the screen.
+        Gdx.gl.glClearColor(1, 1, 1, 1);    //sets up the clear color (background color) of the screen.
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);  //instructs openGL to actually clear the screen to the newly set clear color.
         stage.draw();
         stage.act(delta);
