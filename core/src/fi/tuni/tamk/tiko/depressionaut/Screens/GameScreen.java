@@ -47,8 +47,6 @@ public class GameScreen implements Screen {
     public int bedTier = 0;
     public int chairTier = 0;
     public int deskTier = 0;
-    // Character's lowest tier is 1, not 0.
-    public int characterTier = 1;
     public int smileTier = 0;
 
     /*
@@ -138,6 +136,7 @@ public class GameScreen implements Screen {
         scoreCounter = new ScoreCounter();
         gameScreenRectangle = new Rectangle();
         gameScreenRectangle.set(0, 202, 1080, 1920-202);
+        character.setTier(5);
     }
 
     /*
@@ -160,9 +159,6 @@ public class GameScreen implements Screen {
     public void setDeskTier(int deskTier) {
         this.deskTier = deskTier;
     }
-    public void setCharacterTier(int characterTier) {
-        this.characterTier = characterTier;
-    }
     public void setSmileTier(int smileTier) {
         this.smileTier = smileTier;
     }
@@ -174,14 +170,12 @@ public class GameScreen implements Screen {
 
         createParticle();
         // set character's "happiness tier"
-        //character.setTier(scoreCounter.getHappinessLevel() + 1);
         // TODO: Remove temp
         /*setBedTier(scoreCounter.getHappinessLevel() + 1);
         setDeskTier(scoreCounter.getHappinessLevel() + 1);
         setChairTier(scoreCounter.getHappinessLevel() + 1);
         setWallTier(scoreCounter.getHappinessLevel() + 1);
-        setFloorTier(scoreCounter.getHappinessLevel() + 1);
-        character.setItem(GameCharacter.heldItem.PHONE);*/
+        setFloorTier(scoreCounter.getHappinessLevel() + 1);*/
 
         batch.begin();
         batch.draw(nightSky, 0, 0);
@@ -192,7 +186,7 @@ public class GameScreen implements Screen {
         // Furniture layer:
         batch.draw(beds.get(wallTier), x, y);
         batch.draw(chairs.get(wallTier), x, y);
-        batch.draw(desks.get(wallTier), x, y);
+        batch.draw(desks.get(wallTier), x, character.getStandingOffset());
         
         // Character layer:
         character.draw(batch);
@@ -209,7 +203,7 @@ public class GameScreen implements Screen {
 
     //Täytyy vaihtaa käyttämään rectanglee
     public void createParticle() {
-        Vector2 headPos = new Vector2(character.getHeadPosition(characterTier));
+        Vector2 headPos = new Vector2(character.getHeadPosition(character.getTier()));
         headPos.x += character.head.getWidth() / 2f;
         headPos.y += character.head.getHeight() / 2f;
 

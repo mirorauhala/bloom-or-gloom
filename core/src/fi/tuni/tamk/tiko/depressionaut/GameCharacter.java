@@ -17,14 +17,20 @@ public class GameCharacter {
     private ArrayList<Texture> bodies = new ArrayList<Texture>(
             Arrays.asList(
                     new Texture("character/body/tier1.png"),
-                    new Texture("character/body/tier2.png")
+                    new Texture("character/body/tier2.png"),
+                    new Texture("character/body/tier3.png"),
+                    new Texture("character/body/tier4.png"),
+                    new Texture("character/body/tier5.png")
             )
     );
 
     private ArrayList<Texture> smiles = new ArrayList<Texture>(
             Arrays.asList(
                     new Texture("character/smile/tier1.png"),
-                    new Texture("character/smile/tier2.png")
+                    new Texture("character/smile/tier2.png"),
+                    new Texture("character/smile/tier3.png"),
+                    new Texture("character/smile/tier4.png"),
+                    new Texture("character/smile/tier5.png")
             )
     );
 
@@ -52,25 +58,25 @@ public class GameCharacter {
     }
 
     public void draw(SpriteBatch batch) {
-        // draw head
-        batch.draw(head,
-                getHeadPosition(getTier()).x,
-                getHeadPosition(getTier()).y);
-
-        // draw mouth:
-        batch.draw(smiles.get(getTier()-1),
-                0,
-                0);
-
         // draw body
         batch.draw(bodies.get(getTier()-1),
                 0,
                 0);
 
+        // draw head
+        batch.draw(head,
+                getHeadPosition(getTier()).x,
+                getHeadPosition(getTier()).y);
+
         // draw hands
         batch.draw(hands.get(currentItem),
                 0,
                 getTierOffset(getTier()));
+
+        // draw mouth:
+        batch.draw(smiles.get(getTier()-1),
+                0,
+                0);
 
         // draw eyes
         blink(batch, getTier());
@@ -105,10 +111,21 @@ public class GameCharacter {
         return (int) (getHeadPosition(tier).y - getHeadPosition(1).y);
     }
 
+    public float getStandingOffset() {
+        if (getTier() >= 5) {
+            return 100;
+        } else {
+            return 0;
+        }
+    }
+
     public Vector2 getHeadPosition(int tier) {
         switch (tier) {
             case 1: return new Vector2(514,1920 - 1336);
             case 2: return new Vector2(514,1920 - 1285);
+            case 3: return new Vector2(514,1920 - 1271);
+            case 4: return new Vector2(514,1920 - 1271);
+            case 5: return new Vector2(514,1920 - 1196);
         }
         return new Vector2();
     }
