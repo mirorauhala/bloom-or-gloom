@@ -12,8 +12,8 @@
     <a href="https://mirorauhala.github.io/bloom-or-gloom"><strong>Read the javadoc »</strong></a>
     <br />
     <br />
-    <img src="https://github.com/mirorauhala/bloom-or-gloom/actions/workflows/gradle.yml/badge.svg">
-    <img src="https://github.com/mirorauhala/bloom-or-gloom/actions/workflows/docs.yml/badge.svg">
+    <a href="https://github.com/mirorauhala/bloom-or-gloom/actions/workflows/gradle.yml"><img src="https://github.com/mirorauhala/bloom-or-gloom/actions/workflows/gradle.yml/badge.svg"></a>
+    <a href="https://mirorauhala.github.io/bloom-or-gloom"><img src="https://github.com/mirorauhala/bloom-or-gloom/actions/workflows/docs.yml/badge.svg"></a>
   </p>
 </p>
 <br />
