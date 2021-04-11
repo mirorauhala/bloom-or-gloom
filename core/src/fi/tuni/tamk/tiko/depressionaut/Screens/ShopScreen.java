@@ -5,8 +5,6 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -14,7 +12,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.google.gson.Gson;
 
@@ -23,7 +20,6 @@ import fi.tuni.tamk.tiko.depressionaut.Shop.Product;
 import fi.tuni.tamk.tiko.depressionaut.Shop.Products;
 
 public class ShopScreen implements Screen {
-    private final String text;
     MyGdxGame game;
     ScrollPane scrollpane;
     Skin skin;
@@ -33,8 +29,8 @@ public class ShopScreen implements Screen {
     public ShopScreen(final MyGdxGame game){
         this.game = game;
 
-        FileHandle handle = Gdx.files.local("shop/products.json");
-        text = handle.readString();
+        FileHandle handle = Gdx.files.internal("shop/products.json");
+        String text = handle.readString();
 
         Gson gson = new Gson();
         Products products = gson.fromJson(text, Products.class);
@@ -91,18 +87,14 @@ public class ShopScreen implements Screen {
         // create the scrollpane
         scrollpane = new ScrollPane(innerContainer);
 
-        float labelWidth = Gdx.graphics.getWidth() - 20f - width;
-        Label label = new Label("hello world what the heck are you", skin);
-        label.setWrap(true);
-        label.setWidth(labelWidth);
-        label.setFontScale(1);
+        Texture shopNav = new Texture(Gdx.files.internal("shop/shop-clothing.png"));
 
-        Table table = new Table(skin);
-        table.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
-        table.add(new Label("", skin)).width(10f).expandY().fillY();// a spacer
-        table.add(label).width(labelWidth).expandY().fillX();
-        table.left().top();
-        container.add(table).fill().expand();
+        Table shopTop = new Table(skin);
+        shopTop.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
+        shopTop.add(new Image(shopNav));
+
+        shopTop.left().top();
+        container.add(shopTop).top().left();
         container.row();
 
         //add the scroll pane to the container
