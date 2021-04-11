@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -13,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.google.gson.Gson;
 
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
@@ -20,6 +22,8 @@ import fi.tuni.tamk.tiko.depressionaut.Shop.Product;
 import fi.tuni.tamk.tiko.depressionaut.Shop.Products;
 
 public class ShopScreen implements Screen {
+    private final OrthographicCamera camera;
+    private final StretchViewport viewport;
     MyGdxGame game;
     ScrollPane scrollpane;
     Skin skin;
@@ -28,6 +32,12 @@ public class ShopScreen implements Screen {
 
     public ShopScreen(final MyGdxGame game){
         this.game = game;
+
+        camera = new OrthographicCamera(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT);
+        camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
+
+        viewport = new StretchViewport(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT, camera);
+
 
         FileHandle handle = Gdx.files.internal("shop/products.json");
         String text = handle.readString();
@@ -67,7 +77,7 @@ public class ShopScreen implements Screen {
             Table table = new Table(skin);
             table.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
             table.add(new Label("", skin)).width(10f).expandY().fillY();// a spacer
-            table.add(new Image(texture)).width(width).height(width);
+            table.add(new Image(texture)).width(texture.getWidth()).height(texture.getHeight());
             table.add(new Label("", skin)).width(10f).expandY().fillY();// a spacer
             table.add(label).width(labelWidth).expandY().fillX();
             table.left().top();
@@ -81,7 +91,7 @@ public class ShopScreen implements Screen {
             });
 
             innerContainer.row();
-            innerContainer.add(table);
+            innerContainer.add(table).expandX();
         }
 
         // create the scrollpane
@@ -101,7 +111,7 @@ public class ShopScreen implements Screen {
         container.add(scrollpane).fill().expand();
 
         // setup stage
-        stage = new Stage();
+        stage = new Stage(viewport);
         stage.setDebugAll(MyGdxGame.DEBUG);
 
         // add container to the stage
