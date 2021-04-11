@@ -1,4 +1,4 @@
-package fi.tuni.tamk.tiko.depressionaut;
+package fi.tuni.tamk.tiko.depressionaut.Thoughts;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -6,25 +6,26 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
+import java.util.ArrayList;
+
 public class ThoughtBubble extends Actor {
     private final Texture posBubble = new Texture("thoughts/positiveBubble.png");
-    private final Texture posCircle = new Texture("thoughts/positiveCircle.png");
     private final Texture negBubble = new Texture("thoughts/negativeBubble.png");
-    private final Texture negCircle = new Texture("thoughts/negativeCircle.png");
 
     private ThoughtBubble[] thoughts = new ThoughtBubble[3];
+    private ArrayList<ThoughtCircle> circles = new ArrayList<>();
 
     private Vector2 position;
     private Emotion emotion;
     private Rectangle hitbox;
     private float scale;
 
-    private enum Emotion{
+    public enum Emotion{
         POSITIVE,
         NEGATIVE;
     }
 
-    public void createThought(float offset) {
+    public void createThought(Vector2 headPos, float offset) {
         int randInt = 0;
         while(!isListFull()) {
             randInt = (int)(Math.random()*3);
@@ -48,6 +49,13 @@ public class ThoughtBubble extends Actor {
                 temp.getBubbleTexture().getHeight());
 
         thoughts[randInt] = temp;
+
+        circles.add(new ThoughtCircle(headPos,
+                temp.getCurrentBubbleCenter(),
+                1));
+        circles.add(new ThoughtCircle(headPos,
+                temp.getCurrentBubbleCenter(),
+                2));
     }
 
     public void render(SpriteBatch batch) {
@@ -70,7 +78,26 @@ public class ThoughtBubble extends Actor {
                         bubble.getBubbleTexture().getHeight(),
                         false,
                         false);
+
                 bubble.scale();
+                for (ThoughtCircle circle : circles) {
+                    batch.draw(circle.getCircleTexture(bubble.emotion),
+                            circle.getPosition().x - (circle.getCircleTexture(bubble.emotion).getWidth() / 2f),
+                            circle.getPosition().y - (circle.getCircleTexture(bubble.emotion).getHeight() / 2f),
+                            circle.getCircleTexture(bubble.emotion).getWidth() / 2f,
+                            circle.getCircleTexture(bubble.emotion).getHeight() / 2f,
+                            circle.getCircleTexture(bubble.emotion).getWidth(),
+                            circle.getCircleTexture(bubble.emotion).getHeight(),
+                            circle.getScale(),
+                            circle.getScale(),
+                            0,
+                            0,
+                            0,
+                            circle.getCircleTexture(bubble.emotion).getWidth(),
+                            circle.getCircleTexture(bubble.emotion).getHeight(),
+                            false,
+                            false);
+                }
             }
         }
     }
@@ -117,11 +144,10 @@ public class ThoughtBubble extends Actor {
         }
     }
 
-    public Texture getCircleTexture() {
-        if (this.emotion == Emotion.POSITIVE) {
-            return posCircle;
-        } else {
-            return negCircle;
-        }
+    public Vector2 getCurrentBubbleCenter() {
+        return new Vector2(
+                this.position.x + (this.getBubbleTexture().getWidth() / 2f),
+                this.position.y + (this.getBubbleTexture().getHeight() / 2f)
+        );
     }
 }
