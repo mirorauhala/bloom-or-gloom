@@ -33,8 +33,8 @@ public class ShopScreen implements Screen {
     public ShopScreen(final MyGdxGame game){
         this.game = game;
 
-        FileHandle handle = Gdx.files.local("shop/products.json");
         text = handle.readString();
+        FileHandle handle = Gdx.files.internal("shop/products.json");
 
         Gson gson = new Gson();
         Products products = gson.fromJson(text, Products.class);
