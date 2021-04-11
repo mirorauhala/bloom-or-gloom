@@ -232,7 +232,6 @@ public class GameScreen implements Screen {
 
     @Override
     public void show() {
-        applyCurrentTierTextures();
     }
 
     @Override
@@ -258,19 +257,5 @@ public class GameScreen implements Screen {
     @Override
     public void dispose() {
 
-    }
-
-
-    /**
-     * Fetches the current tiers for all textures from the Inventory.
-     */
-    private void applyCurrentTierTextures() {
-        setWallTier(game.inventory.get("wall"));
-        setFloorTier(game.inventory.get("wall"));
-        setBedTier(game.inventory.get("wall"));
-        setChairTier(game.inventory.get("wall"));
-        setCharacterTier(game.inventory.get("wall"));
-        setDeskTier(game.inventory.get("wall"));
-        setSmileTier(game.inventory.get("wall"));
     }
 }
