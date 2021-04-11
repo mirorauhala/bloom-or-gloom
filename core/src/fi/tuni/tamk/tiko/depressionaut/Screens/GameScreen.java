@@ -223,7 +223,7 @@ public class GameScreen implements Screen {
                 bubble.checkForClear(touch.x, touch.y);
 
                 // temp
-                bubble.createThought(character.getHeadCenter(character.getTier()), character.getTierOffset(character.getTier()));
+                bubble.createThought(character.getTierOffset(character.getTier()));
             }
 
         }

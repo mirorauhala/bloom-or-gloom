@@ -24,7 +24,7 @@ public class ThoughtBubble extends Actor {
         NEGATIVE;
     }
 
-    public void createThought(Vector2 headPos, float offset) {
+    public void createThought(float offset) {
         int randInt = 0;
         while(!isListFull()) {
             randInt = (int)(Math.random()*3);
@@ -116,12 +116,5 @@ public class ThoughtBubble extends Actor {
         } else {
             return negBubble;
         }
-    }
-
-    public Vector2 getCurrentBubbleCenter() {
-        return new Vector2(
-                this.position.x + (this.getBubbleTexture().getWidth() / 2f),
-                this.position.y + (this.getBubbleTexture().getHeight() / 2f)
-        );
     }
 }
