@@ -13,7 +13,6 @@ public class ThoughtBubble extends Actor {
     private final Texture negBubble = new Texture("thoughts/negativeBubble.png");
 
     private ThoughtBubble[] thoughts = new ThoughtBubble[3];
-    private ArrayList<ThoughtCircle> circles = new ArrayList<>();
 
     private Vector2 position;
     private Emotion emotion;
@@ -49,13 +48,6 @@ public class ThoughtBubble extends Actor {
                 temp.getBubbleTexture().getHeight());
 
         thoughts[randInt] = temp;
-
-        circles.add(new ThoughtCircle(headPos,
-                temp.getCurrentBubbleCenter(),
-                1));
-        circles.add(new ThoughtCircle(headPos,
-                temp.getCurrentBubbleCenter(),
-                2));
     }
 
     public void render(SpriteBatch batch) {
@@ -80,24 +72,6 @@ public class ThoughtBubble extends Actor {
                         false);
 
                 bubble.scale();
-                for (ThoughtCircle circle : circles) {
-                    batch.draw(circle.getCircleTexture(bubble.emotion),
-                            circle.getPosition().x - (circle.getCircleTexture(bubble.emotion).getWidth() / 2f),
-                            circle.getPosition().y - (circle.getCircleTexture(bubble.emotion).getHeight() / 2f),
-                            circle.getCircleTexture(bubble.emotion).getWidth() / 2f,
-                            circle.getCircleTexture(bubble.emotion).getHeight() / 2f,
-                            circle.getCircleTexture(bubble.emotion).getWidth(),
-                            circle.getCircleTexture(bubble.emotion).getHeight(),
-                            circle.getScale(),
-                            circle.getScale(),
-                            0,
-                            0,
-                            0,
-                            circle.getCircleTexture(bubble.emotion).getWidth(),
-                            circle.getCircleTexture(bubble.emotion).getHeight(),
-                            false,
-                            false);
-                }
             }
         }
     }
