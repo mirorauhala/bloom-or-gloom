@@ -136,7 +136,7 @@ public class GameScreen implements Screen {
         scoreCounter = new ScoreCounter();
         gameScreenRectangle = new Rectangle();
         gameScreenRectangle.set(0, 202, 1080, 1920-202);
-        character.setTier(5);
+        //character.setTier(5);
     }
 
     /*
@@ -260,11 +260,11 @@ public class GameScreen implements Screen {
      */
     private void applyCurrentTierTextures() {
         setWallTier(game.inventory.get("wall"));
-        setFloorTier(game.inventory.get("wall"));
-        setBedTier(game.inventory.get("wall"));
-        setChairTier(game.inventory.get("wall"));
-        setCharacterTier(game.inventory.get("wall"));
-        setDeskTier(game.inventory.get("wall"));
-        setSmileTier(game.inventory.get("wall"));
+        setFloorTier(game.inventory.get("floor"));
+        setBedTier(game.inventory.get("bed"));
+        setChairTier(game.inventory.get("chair"));
+        setDeskTier(game.inventory.get("desk"));
+        setSmileTier(game.inventory.get("smile"));
+        character.setTier(game.inventory.get("character"));
     }
 }
