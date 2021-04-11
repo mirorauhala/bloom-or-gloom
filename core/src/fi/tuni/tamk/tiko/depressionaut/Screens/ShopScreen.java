@@ -79,7 +79,7 @@ public class ShopScreen implements Screen {
             table.add(new Label("", skin)).width(10f).expandY().fillY();// a spacer
             table.add(new Image(texture)).width(texture.getWidth()).height(texture.getHeight());
             table.add(new Label("", skin)).width(10f).expandY().fillY();// a spacer
-            table.add(label).width(labelWidth).expandY().fillX();
+            table.add(label).width(labelWidth).expand().fillX();
             table.left().top();
 
             table.addListener(new ClickListener() {
@@ -92,6 +92,9 @@ public class ShopScreen implements Screen {
 
             innerContainer.row();
             innerContainer.add(table).expandX();
+
+            // opetustuokio: miten git ja github toimii
+            // staging area
         }
 
         // create the scrollpane
