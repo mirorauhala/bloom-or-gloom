@@ -9,9 +9,11 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import java.util.ArrayList;
 
 public class ThoughtBubble extends Actor {
+    // Textures
     private final Texture posBubble = new Texture("thoughts/positiveBubble.png");
     private final Texture negBubble = new Texture("thoughts/negativeBubble.png");
 
+    // List containing thought bubbles
     private ThoughtBubble[] thoughts = new ThoughtBubble[3];
 
     private Vector2 position;
@@ -25,6 +27,7 @@ public class ThoughtBubble extends Actor {
     }
 
     public void createThought(float offset) {
+        // Randomize bubble position
         int randInt = 0;
         while(!isListFull()) {
             randInt = (int)(Math.random()*3);
@@ -33,15 +36,18 @@ public class ThoughtBubble extends Actor {
                 break;
             }
         }
+
         ThoughtBubble temp = thoughts[randInt];
         temp.position = getPosition(randInt, offset);
         temp.scale = 0.01f;
+        // Randomize emotion
         switch ((int)(Math.random()*2)) {
             case 1: temp.emotion = Emotion.POSITIVE;
                 break;
             case 2: temp.emotion = Emotion.NEGATIVE;
                 break;
         }
+        // Assign hitbox
         temp.hitbox = new Rectangle(temp.position.x,
                 temp.position.y,
                 temp.getBubbleTexture().getWidth(),
