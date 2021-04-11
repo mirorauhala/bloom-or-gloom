@@ -21,7 +21,7 @@
       "type": 1,
       "cat": 1,
       "level": 1,
-      "texture": "wip-shirt-1.png",
+      "texture": "wip-product.png",
       "effect": [
         {"method": "click-power", "action": "increment", "amount": 1}
       ]
@@ -32,7 +32,7 @@
       "type": 1,
       "cat": 1,
       "level": 2,
-      "texture": "wip-shirt-2.png",
+      "texture": "wip-product.png",
       "effect": [
         {"part": "click-power", "increment": 1}
       ]
@@ -43,7 +43,7 @@
       "type": 1,
       "cat": 1,
       "level": 3,
-      "texture": "wip-shirt-3.png",
+      "texture": "wip-product.png",
       "effect": [
         {"part": "click-power", "increment": 1}
       ]

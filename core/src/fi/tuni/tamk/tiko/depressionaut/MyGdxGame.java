@@ -7,11 +7,12 @@ import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import fi.tuni.tamk.tiko.depressionaut.Screens.GameScreen;
 import fi.tuni.tamk.tiko.depressionaut.Screens.SplashScreen;
 
 public class MyGdxGame extends Game {
 	// DEBUG ->
-	public static final boolean DEBUG = true;
+	public static final boolean DEBUG = false;
 	// <- DEBUG
 
 	public SpriteBatch gameBatch;
@@ -42,7 +43,12 @@ public class MyGdxGame extends Game {
 		navigation = new Navigation(this);
 		inventory = new Inventory();
 
-		setScreen(new SplashScreen(this));
+		if(DEBUG) {
+			navigation.setActive(Navigation.Screen.GAME);
+			setScreen(new GameScreen(this));
+		} else {
+			setScreen(new SplashScreen(this));
+		}
 	}
 
 	@Override
