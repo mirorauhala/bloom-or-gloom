@@ -123,8 +123,9 @@ public class GameCharacter {
         switch (tier) {
             case 1: return new Vector2(514,1920 - 1336);
             case 2: return new Vector2(514,1920 - 1285);
-            case 3: return new Vector2(514,1920 - 1271);
-            case 4: return new Vector2(514,1920 - 1271);
+            case 3:
+            case 4:
+                return new Vector2(514,1920 - 1271);
             case 5: return new Vector2(514,1920 - 1196);
         }
         return new Vector2();
