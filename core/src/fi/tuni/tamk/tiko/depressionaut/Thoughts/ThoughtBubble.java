@@ -98,7 +98,6 @@ public class ThoughtBubble extends Actor {
                             false,
                             false);
                 }
-                // kommentin
             }
         }
     }
