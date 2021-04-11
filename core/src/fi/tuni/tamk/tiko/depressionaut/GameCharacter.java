@@ -68,11 +68,6 @@ public class GameCharacter {
                 getHeadPosition(getTier()).x,
                 getHeadPosition(getTier()).y);
 
-        // draw hands
-        batch.draw(hands.get(currentItem),
-                0,
-                getTierOffset(getTier()));
-
         // draw mouth:
         batch.draw(smiles.get(getTier()-1),
                 0,
@@ -80,6 +75,11 @@ public class GameCharacter {
 
         // draw eyes
         blink(batch, getTier());
+
+        // draw hands
+        batch.draw(hands.get(currentItem),
+                0,
+                getTierOffset(getTier()));
     }
 
     public void blink(SpriteBatch batch, int tier) {
@@ -128,6 +128,13 @@ public class GameCharacter {
             case 5: return new Vector2(514,1920 - 1196);
         }
         return new Vector2();
+    }
+
+    public Vector2 getHeadCenter(int tier) {
+        return new Vector2(
+                getHeadPosition(tier).x + (head.getWidth() / 2f),
+                getHeadPosition(tier).y + head.getHeight() / 2f
+        );
     }
 
 }

@@ -19,6 +19,7 @@ import fi.tuni.tamk.tiko.depressionaut.ScoreCounter;
 import fi.tuni.tamk.tiko.depressionaut.ScoreMeter;
 import fi.tuni.tamk.tiko.depressionaut.Sounds;
 import fi.tuni.tamk.tiko.depressionaut.TapParticle;
+import fi.tuni.tamk.tiko.depressionaut.Thoughts.ThoughtBubble;
 
 /**
  * GameScreen has everything that gets drawn in the main games screen
@@ -26,7 +27,6 @@ import fi.tuni.tamk.tiko.depressionaut.TapParticle;
  */
 
 public class GameScreen implements Screen {
-    private TapParticle particle = new TapParticle();
     private GameCharacter character = new GameCharacter();
     final private float x = 0;
     final private float y = 0;
@@ -41,6 +41,8 @@ public class GameScreen implements Screen {
 
     public ScoreMeter scoreMeter;
     public ScoreCounter scoreCounter;
+    private TapParticle particle = new TapParticle();
+    private ThoughtBubble bubble = new ThoughtBubble();
 
     public int wallTier = 0;
     public int floorTier = 0;
@@ -136,7 +138,7 @@ public class GameScreen implements Screen {
         scoreCounter = new ScoreCounter();
         gameScreenRectangle = new Rectangle();
         gameScreenRectangle.set(0, 202, 1080, 1920-202);
-        character.setTier(5);
+        character.setTier(2);
     }
 
     /*
@@ -193,6 +195,7 @@ public class GameScreen implements Screen {
 
         // Top layer:
         particle.renderParticles(batch, delta);
+        bubble.render(batch);
 
         scoreMeter.draw(batch);
 
@@ -217,6 +220,10 @@ public class GameScreen implements Screen {
                 sounds.clicksoundPlay();
                 game.score.click();
                 particle.createParticle(headPos);
+                bubble.checkForClear(touch.x, touch.y);
+
+                // temp
+                bubble.createThought(character.getTierOffset(character.getTier()));
             }
 
         }
