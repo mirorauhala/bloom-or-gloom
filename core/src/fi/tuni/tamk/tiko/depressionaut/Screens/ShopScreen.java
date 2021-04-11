@@ -6,6 +6,7 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -61,25 +62,23 @@ public class ShopScreen implements Screen {
 
         // inner table that is used as a makeshift list.
         Table innerContainer = new Table();
-        innerContainer.top();
+        innerContainer.top().left();
 
         for (final Product product : products.getProducts()) {
             Gdx.app.debug("NAV", product.getName());
 
             Texture texture = new Texture(Gdx.files.internal("shop/" + product.getTexture()));
 
-            Float labelWidth = Gdx.graphics.getWidth() - 20f - width;
             Label label = new Label(product.getName(), skin);
             label.setWrap(true);
-            label.setWidth(labelWidth);
-            label.setFontScale(1);
+            label.setFontScale(2);
 
             Table table = new Table(skin);
             table.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
-            table.add(new Label("", skin)).width(10f).expandY().fillY();// a spacer
-            table.add(new Image(texture)).width(texture.getWidth()).height(texture.getHeight());
-            table.add(new Label("", skin)).width(10f).expandY().fillY();// a spacer
-            table.add(label).width(labelWidth).expand().fillX();
+            table.add(new Label("", skin)).width(20f).expandY().fillY();// a spacer
+            table.add(new Image(texture)).width(texture.getWidth()).height(texture.getHeight()).padBottom(20f);
+            table.add(new Label("", skin)).width(20f).expandY().fillY();// a spacer
+            table.add(label).width(1080f - texture.getWidth() - 40f).fillX();
             table.left().top();
 
             table.addListener(new ClickListener() {
