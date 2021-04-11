@@ -138,7 +138,6 @@ public class GameScreen implements Screen {
         scoreCounter = new ScoreCounter();
         gameScreenRectangle = new Rectangle();
         gameScreenRectangle.set(0, 202, 1080, 1920-202);
-        character.setTier(2);
     }
 
     /*
@@ -233,6 +232,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void show() {
+        applyCurrentTierTextures();
     }
 
     @Override
@@ -258,5 +258,19 @@ public class GameScreen implements Screen {
     @Override
     public void dispose() {
 
+    }
+
+
+    /**
+     * Fetches the current tiers for all textures from the Inventory.
+     */
+    private void applyCurrentTierTextures() {
+        setWallTier(game.inventory.get("wall"));
+        setFloorTier(game.inventory.get("floor"));
+        setBedTier(game.inventory.get("bed"));
+        setChairTier(game.inventory.get("chair"));
+        setDeskTier(game.inventory.get("desk"));
+        setSmileTier(game.inventory.get("smile"));
+        character.setTier(game.inventory.get("character"));
     }
 }
