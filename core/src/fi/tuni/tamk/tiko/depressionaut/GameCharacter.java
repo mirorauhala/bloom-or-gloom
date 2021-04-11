@@ -59,7 +59,7 @@ public class GameCharacter {
 
     public void draw(SpriteBatch batch) {
         // draw body
-        batch.draw(bodies.get(getTier()-1),
+        batch.draw(bodies.get(getTier()),
                 0,
                 0);
 
@@ -74,7 +74,7 @@ public class GameCharacter {
                 getTierOffset(getTier()));
 
         // draw mouth:
-        batch.draw(smiles.get(getTier()-1),
+        batch.draw(smiles.get(getTier()),
                 0,
                 0);
 
@@ -108,7 +108,7 @@ public class GameCharacter {
     }
 
     public int getTierOffset(int tier) {
-        return (int) (getHeadPosition(tier).y - getHeadPosition(1).y);
+        return (int) (getHeadPosition(tier).y - getHeadPosition(0).y);
     }
 
     public float getStandingOffset() {
@@ -121,12 +121,12 @@ public class GameCharacter {
 
     public Vector2 getHeadPosition(int tier) {
         switch (tier) {
-            case 1: return new Vector2(514,1920 - 1336);
-            case 2: return new Vector2(514,1920 - 1285);
+            case 0: return new Vector2(514,1920 - 1336);
+            case 1: return new Vector2(514,1920 - 1285);
+            case 2:
             case 3:
-            case 4:
                 return new Vector2(514,1920 - 1271);
-            case 5: return new Vector2(514,1920 - 1196);
+            case 4: return new Vector2(514,1920 - 1196);
         }
         return new Vector2();
     }
