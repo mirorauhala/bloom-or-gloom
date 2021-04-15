@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 public class GameCharacter {
 
-    public Texture head = new Texture("character/head.png");
+    public Texture head = new Texture("character/head/head.png");
 
     public HashMap<heldItem, Texture> hands = new HashMap<heldItem, Texture>();
 
