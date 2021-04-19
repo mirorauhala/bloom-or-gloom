@@ -22,7 +22,7 @@ import java.util.Random;
 
 public class TapParticle extends Actor {
     // Particle texture:
-    private final Texture texture = new Texture("visuals.png");
+    private final Texture texture = new Texture("cosmetics/visuals.png");
 
     // The list containing the particles:
     private ArrayList<TapParticle> Particles = new ArrayList<>();
