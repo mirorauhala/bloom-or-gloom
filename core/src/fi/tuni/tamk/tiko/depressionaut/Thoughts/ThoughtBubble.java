@@ -32,28 +32,26 @@ public class ThoughtBubble extends Actor {
         while(!isListFull()) {
             randInt = (int)(Math.random()*3);
             if (thoughts[randInt] == null) {
-                thoughts[randInt] = new ThoughtBubble();
+                ThoughtBubble temp = new ThoughtBubble();
+                temp.position = getPosition(randInt, offset);
+                temp.scale = 0.01f;
+                // Randomize emotion
+                switch ((int)(Math.random()*2)) {
+                    case 1: temp.emotion = Emotion.POSITIVE;
+                        break;
+                    case 2: temp.emotion = Emotion.NEGATIVE;
+                        break;
+                }
+                // Assign hitbox
+                temp.hitbox = new Rectangle(temp.position.x,
+                        temp.position.y,
+                        temp.getBubbleTexture().getWidth(),
+                        temp.getBubbleTexture().getHeight());
+
+                thoughts[randInt] = temp;
                 break;
             }
         }
-
-        ThoughtBubble temp = thoughts[randInt];
-        temp.position = getPosition(randInt, offset);
-        temp.scale = 0.01f;
-        // Randomize emotion
-        switch ((int)(Math.random()*2)) {
-            case 1: temp.emotion = Emotion.POSITIVE;
-                break;
-            case 2: temp.emotion = Emotion.NEGATIVE;
-                break;
-        }
-        // Assign hitbox
-        temp.hitbox = new Rectangle(temp.position.x,
-                temp.position.y,
-                temp.getBubbleTexture().getWidth(),
-                temp.getBubbleTexture().getHeight());
-
-        thoughts[randInt] = temp;
     }
 
     public void render(SpriteBatch batch) {
