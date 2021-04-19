@@ -114,7 +114,10 @@ public class GameScreen implements Screen {
             new Texture("furniture/chair/t2v6.png"),
             new Texture("furniture/chair/t3v7.png"),
             new Texture("furniture/chair/t3v8.png"),
-            new Texture("furniture/chair/t3v9.png")
+            new Texture("furniture/chair/t3v9.png"),
+            new Texture("furniture/chair/t4v10.png"),
+            new Texture("furniture/chair/t4v11.png"),
+            new Texture("furniture/chair/t4v12.png")
     );
     public List<Texture> desks = Arrays.asList(
             new Texture("furniture/desk/t1v1.png"),
@@ -122,7 +125,16 @@ public class GameScreen implements Screen {
             new Texture("furniture/desk/t1v3.png"),
             new Texture("furniture/desk/t2v4.png"),
             new Texture("furniture/desk/t2v5.png"),
-            new Texture("furniture/desk/t2v6.png")
+            new Texture("furniture/desk/t2v6.png"),
+            new Texture("furniture/desk/t3v7.png"),
+            new Texture("furniture/desk/t3v8.png"),
+            new Texture("furniture/desk/t3v9.png"),
+            new Texture("furniture/desk/t4v10.png"),
+            new Texture("furniture/desk/t4v11.png"),
+            new Texture("furniture/desk/t4v12.png"),
+            new Texture("furniture/desk/t5v13.png"),
+            new Texture("furniture/desk/t5v14.png"),
+            new Texture("furniture/desk/t5v15.png")
     );
 
     MyGdxGame game;

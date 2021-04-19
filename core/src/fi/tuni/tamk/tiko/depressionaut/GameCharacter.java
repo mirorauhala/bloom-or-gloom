@@ -48,7 +48,7 @@ public class GameCharacter {
     }
 
     private heldItem currentItem = heldItem.EMPTY;
-    private int tier = 1;
+    private int tier;
 
     private int blinkTimer = 0;
 
@@ -112,7 +112,7 @@ public class GameCharacter {
     }
 
     public float getStandingOffset() {
-        if (getTier() >= 5) {
+        if (getTier() >= 4) {
             return 100;
         } else {
             return 0;
