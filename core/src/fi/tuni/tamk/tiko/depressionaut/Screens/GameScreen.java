@@ -47,6 +47,7 @@ public class GameScreen implements Screen {
     public int wallTier = 0;
     public int floorTier = 0;
     public int bedTier = 0;
+    public int stuffTier = 0;
     public int chairTier = 0;
     public int deskTier = 0;
     public int smileTier = 0;
@@ -105,6 +106,11 @@ public class GameScreen implements Screen {
             new Texture("furniture/bed/t5v14.png"),
             new Texture("furniture/bed/t5v15.png")
     );
+    public List<Texture> stuff = Arrays.asList(
+            //new Texture("barbells.png"),
+            //new Texture("plant.png"),
+            //new Texture("moreStuff.png")
+    );
     public List<Texture> chairs = Arrays.asList(
             new Texture("furniture/chair/t1v1.png"),
             new Texture("furniture/chair/t1v2.png"),
@@ -148,8 +154,7 @@ public class GameScreen implements Screen {
         camera = game.camera;
         scoreMeter = new ScoreMeter(game);
         scoreCounter = new ScoreCounter();
-        gameScreenRectangle = new Rectangle();
-        gameScreenRectangle.set(0, 202, 1080, 1920-202);
+        gameScreenRectangle = new Rectangle(0, 202, 1080, 1920-202);
     }
 
     /*
@@ -165,6 +170,9 @@ public class GameScreen implements Screen {
     }
     public void setBedTier(int bedTier) {
         this.bedTier = bedTier;
+    }
+    public void setStuffTier(int stuffTier) {
+        this.stuffTier = stuffTier;
     }
     public void setChairTier(int chairTier) {
         this.chairTier = chairTier;
@@ -182,13 +190,6 @@ public class GameScreen implements Screen {
         ScreenUtils.clear(0.8f, 0.8f, 1, 1);
 
         createParticle();
-        // set character's "happiness tier"
-        // TODO: Remove temp
-        /*setBedTier(scoreCounter.getHappinessLevel() + 1);
-        setDeskTier(scoreCounter.getHappinessLevel() + 1);
-        setChairTier(scoreCounter.getHappinessLevel() + 1);
-        setWallTier(scoreCounter.getHappinessLevel() + 1);
-        setFloorTier(scoreCounter.getHappinessLevel() + 1);*/
 
         batch.begin();
         batch.draw(nightSky, 0, 0);
@@ -198,6 +199,9 @@ public class GameScreen implements Screen {
 
         // Furniture layer:
         batch.draw(beds.get(wallTier), x, y);
+        for (int i = 0; i <= stuffTier; i++) {
+            batch.draw(stuff.get(i), x, y);
+        }
         batch.draw(chairs.get(wallTier), x, y);
         batch.draw(desks.get(wallTier), x, character.getStandingOffset());
         
@@ -280,6 +284,10 @@ public class GameScreen implements Screen {
         setWallTier(game.inventory.get("wall"));
         setFloorTier(game.inventory.get("floor"));
         setBedTier(game.inventory.get("bed"));
+
+        // TODO: Add to inventory system:
+        //setStuffTier(game.inventory.get("stuff"));
+
         setChairTier(game.inventory.get("chair"));
         setDeskTier(game.inventory.get("desk"));
         setSmileTier(game.inventory.get("smile"));
