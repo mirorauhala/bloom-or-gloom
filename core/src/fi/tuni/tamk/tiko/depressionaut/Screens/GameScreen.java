@@ -2,7 +2,6 @@ package fi.tuni.tamk.tiko.depressionaut.Screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -10,11 +9,10 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
-
 import java.util.Arrays;
 import java.util.List;
-
 import fi.tuni.tamk.tiko.depressionaut.GameCharacter;
+import fi.tuni.tamk.tiko.depressionaut.GameClock;
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 import fi.tuni.tamk.tiko.depressionaut.ScoreCounter;
 import fi.tuni.tamk.tiko.depressionaut.ScoreMeter;
@@ -44,6 +42,7 @@ public class GameScreen implements Screen {
     public ScoreCounter scoreCounter;
     private TapParticle particle = new TapParticle();
     private ThoughtBubble bubble = new ThoughtBubble();
+    private GameClock clock = new GameClock();
 
     public int wallTier = 0;
     public int floorTier = 0;
@@ -190,9 +189,12 @@ public class GameScreen implements Screen {
         batch.setProjectionMatrix(camera.combined);
         ScreenUtils.clear(0.8f, 0.8f, 1, 1);
 
-        createParticle();
+        checkForTap();
+        clock.timer();
+        if (clock.thoughtBubbleTimer()) {
+            bubble.createThought(character.getTierOffset(character.getTier()));
+        }
 
-        
         batch.begin();
         batch.draw(nightSky, 0, 0);
         // Background layer:
@@ -222,7 +224,7 @@ public class GameScreen implements Screen {
     }
 
     //Täytyy vaihtaa käyttämään rectanglee
-    public void createParticle() {
+    public void checkForTap() {
         Vector2 headPos = new Vector2(character.getHeadPosition(character.getTier()));
         headPos.x += character.head.getWidth() / 2f;
         headPos.y += character.head.getHeight() / 2f;
@@ -238,9 +240,6 @@ public class GameScreen implements Screen {
                 game.score.click();
                 particle.createParticle(headPos);
                 bubble.checkForClear(touch.x, touch.y);
-
-                // temp
-                bubble.createThought(character.getTierOffset(character.getTier()));
             }
 
         }
