@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -169,7 +169,7 @@ extends com.badlogic.gdx.scenes.scene2d.Actor</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>void</code></td>
+<td class="colFirst"><code><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.Emotion.html" title="enum in fi.tuni.tamk.tiko.depressionaut.Thoughts">ThoughtBubble.Emotion</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#checkForClear-float-float-">checkForClear</a></span>(float&nbsp;x,
              float&nbsp;y)</code>&nbsp;</td>
 </tr>
@@ -182,19 +182,23 @@ extends com.badlogic.gdx.scenes.scene2d.Actor</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#getBubbleTexture--">getBubbleTexture</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#getNegThoughtsAmount--">getNegThoughtsAmount</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>com.badlogic.gdx.math.Vector2</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#getPosition-int-float-">getPosition</a></span>(int&nbsp;index,
            float&nbsp;offset)</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#isListFull--">isListFull</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#render-com.badlogic.gdx.graphics.g2d.SpriteBatch-">render</a></span>(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#scale--">scale</a></span>()</code>&nbsp;</td>
 </tr>
@@ -277,8 +281,8 @@ extends com.badlogic.gdx.scenes.scene2d.Actor</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>checkForClear</h4>
-<pre>public&nbsp;void&nbsp;checkForClear(float&nbsp;x,
-                          float&nbsp;y)</pre>
+<pre>public&nbsp;<a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.Emotion.html" title="enum in fi.tuni.tamk.tiko.depressionaut.Thoughts">ThoughtBubble.Emotion</a>&nbsp;checkForClear(float&nbsp;x,
+                                           float&nbsp;y)</pre>
 </li>
 </ul>
 <a name="getPosition-int-float-">
@@ -303,10 +307,19 @@ extends com.badlogic.gdx.scenes.scene2d.Actor</pre>
 <a name="getBubbleTexture--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getBubbleTexture</h4>
 <pre>public&nbsp;com.badlogic.gdx.graphics.Texture&nbsp;getBubbleTexture()</pre>
+</li>
+</ul>
+<a name="getNegThoughtsAmount--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getNegThoughtsAmount</h4>
+<pre>public&nbsp;int&nbsp;getNegThoughtsAmount()</pre>
 </li>
 </ul>
 </li>
