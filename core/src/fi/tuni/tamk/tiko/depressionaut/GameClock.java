@@ -15,6 +15,9 @@ public class GameClock {
     int lastBuffCheck;
     float dayOpacity;
 
+    /**
+     * Constructor sets necessary values.
+     */
     public GameClock() {
         calendarG.setTime(date);
         hours = calendarG.get(Calendar.HOUR_OF_DAY);
@@ -24,6 +27,9 @@ public class GameClock {
         lastBuffCheck = seconds;
     }
 
+    /**
+     * Main "render loop" updates timers.
+     */
     public void timer() {
         date.setTime(System.currentTimeMillis());
         calendarG.setTime(date);
@@ -36,6 +42,15 @@ public class GameClock {
         dayNightCycle(false);
     }
 
+    /**
+     * Timer for creating thoughtbubbles.
+     *
+     * Debug mode creates bubbles every 5 seconds and non-debug mode every 1 minute.
+     *
+     * @param debug Debug boolean
+     * @return Returns true if an appropriate amount of time has passed since last
+     *         thought bubble was created.
+     */
     public boolean thoughtBubbleTimer(boolean debug) {
         if (debug) {
             if (seconds - lastBubble >= 5) {
@@ -55,6 +70,11 @@ public class GameClock {
         return false;
     }
 
+    /**
+     * Timer that for thought bubble buffs.
+     *
+     * Removes "1" from each buff's timer every second.
+     */
     public void buffTimer() {
         if (seconds - lastBuffCheck >= 1) {
             lastBuffCheck = seconds;
@@ -69,14 +89,34 @@ public class GameClock {
         }
     }
 
+    /**
+     * Adds a new buff to the buff list.
+     *
+     * @param duration Duration of the buff in seconds.
+     */
     public void addBuff(int duration) {
         buffs.add(duration);
     }
 
+    /**
+     * Return the amount of buffs in the list of buffs.
+     *
+     * @return Amount of buffs.
+     */
     public int amountOfBuffs() {
         return buffs.size();
     }
 
+    /**
+     * Calculates dayNightCycle percentage.
+     *
+     * Calculates how far into a day the system clock is and returns a corresponding
+     * percentage. The returned percentage value is then used as an opacity value for
+     * the daySky texture and the lighting effect in the room.
+     * When debug is true, the dayNightCycle is calculated using seconds instead of hours.
+     *
+     * @param debug Debug boolean
+     */
     public void dayNightCycle(boolean debug) {
         int distance;
         if (debug) {
@@ -96,6 +136,11 @@ public class GameClock {
         }
     }
 
+    /**
+     * Returns the dayOpacity value.
+     *
+     * @return dayOpacity value
+     */
     public float getDayOpacity() {
         return dayOpacity;
     }

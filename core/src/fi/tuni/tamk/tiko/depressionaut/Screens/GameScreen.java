@@ -198,9 +198,9 @@ public class GameScreen implements Screen {
         batch.begin();
         // Sky layer:
         batch.draw(nightSky, 0, 0);
-        batch.setColor(1,1,1, clock.getDayOpacity());
+        batch.setColor(1,1,1, clock.getDayOpacity()); // set daySky opacity
         batch.draw(daySky, 0, 0);
-        batch.setColor(clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,1);
+        batch.setColor(clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,1); // lighting effect
 
         // Background layer:
         batch.draw(walls.get(wallTier), x, y);
@@ -221,7 +221,7 @@ public class GameScreen implements Screen {
         particle.renderParticles(batch, delta);
         bubble.render(batch);
 
-        batch.setColor(1,1,1,1);
+        batch.setColor(1,1,1,1); // reset batch color
 
         // Hud layer:
         scoreMeter.draw(batch);
