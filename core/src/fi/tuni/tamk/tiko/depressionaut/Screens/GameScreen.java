@@ -191,16 +191,16 @@ public class GameScreen implements Screen {
 
         checkForTap();
         clock.timer();
-        if (clock.thoughtBubbleTimer()) {
+        if (clock.thoughtBubbleTimer(false)) {
             bubble.createThought(character.getTierOffset(character.getTier()));
         }
 
         batch.begin();
         // Sky layer:
         batch.draw(nightSky, 0, 0);
-        batch.setColor(1,1,1,clock.getDayOpacity());
+        batch.setColor(1,1,1, clock.getDayOpacity());
         batch.draw(daySky, 0, 0);
-        batch.setColor(1,1,1,1);
+        batch.setColor(clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,1);
 
         // Background layer:
         batch.draw(walls.get(wallTier), x, y);
@@ -221,6 +221,9 @@ public class GameScreen implements Screen {
         particle.renderParticles(batch, delta);
         bubble.render(batch);
 
+        batch.setColor(1,1,1,1);
+
+        // Hud layer:
         scoreMeter.draw(batch);
         scoreCounter.setTempMultiplier(clock.amountOfBuffs());
 
@@ -248,7 +251,7 @@ public class GameScreen implements Screen {
                     particle.createParticle(headPos);
                 }
                 if (bubble.checkForClear(touch.x, touch.y) == ThoughtBubble.Emotion.POSITIVE) {
-                    clock.addBuff(10);
+                    clock.addBuff(30);
                 }
 
             }

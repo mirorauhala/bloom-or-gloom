@@ -36,12 +36,21 @@ public class GameClock {
         dayNightCycle(false);
     }
 
-    public boolean thoughtBubbleTimer() {
-        if (seconds - lastBubble >= 5) {
-            lastBubble = seconds;
-            return true;
-        } else if (seconds < lastBubble) {
-            lastBubble = 0;
+    public boolean thoughtBubbleTimer(boolean debug) {
+        if (debug) {
+            if (seconds - lastBubble >= 5) {
+                lastBubble = seconds;
+                return true;
+            } else if (seconds < lastBubble) {
+                lastBubble = 0;
+            }
+        } else {
+            if (minutes - lastBubble >= 1) {
+                lastBubble = minutes;
+                return true;
+            } else if (minutes < lastBubble) {
+                lastBubble = 0;
+            }
         }
         return false;
     }
