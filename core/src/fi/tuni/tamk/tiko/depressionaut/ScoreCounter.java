@@ -18,7 +18,7 @@ public class ScoreCounter {
     The amount of score that gets added is calculated by multiplying the temporary multiplier (buffs and daily bonuses),
     the multiplier (which can be bought on the store) and the clickpower (which can also be upgraded from the store)
      */
-    private static float tempMultiplier = 1; // Has to always be at least 1
+    private static float tempMultiplier; // Has to always be at least 1
     private final Preferences prefs;
 
     public ScoreCounter() {
@@ -90,7 +90,7 @@ public class ScoreCounter {
      * @return long The amount of score to increment;
      */
     private long countScoreIncrement() {
-        return (long)(tempMultiplier * getMultiplier() * getClickPower());
+        return (long)(getTempMultiplier() * getMultiplier() * getClickPower());
     }
 
     /**
@@ -103,7 +103,7 @@ public class ScoreCounter {
             return 0;
         }
 
-        return (long)(tempMultiplier * getMultiplier() * getPassiveIncome());
+        return (long)(getTempMultiplier() * getMultiplier() * getPassiveIncome());
     }
 
     /**
@@ -224,6 +224,24 @@ public class ScoreCounter {
     public void setMultiplier(float amount) {
         prefs.putFloat("multiplier", amount);
         prefs.flush();
+    }
+
+    /**
+     * Sets the tempMultiplier based on buffs.
+     *
+     * @param amount Amount of buffs.
+     */
+    public void setTempMultiplier(float amount) {
+        tempMultiplier = amount + 1;
+    }
+
+    /**
+     * Get tempMultiplier.
+     *
+     * @return tempMultiplier
+     */
+    public float getTempMultiplier() {
+        return tempMultiplier;
     }
 
     /**

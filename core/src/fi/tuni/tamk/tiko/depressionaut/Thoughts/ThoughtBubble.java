@@ -37,9 +37,9 @@ public class ThoughtBubble extends Actor {
                 temp.scale = 0.01f;
                 // Randomize emotion
                 switch ((int)(Math.random()*2)) {
-                    case 1: temp.emotion = Emotion.POSITIVE;
+                    case 0: temp.emotion = Emotion.POSITIVE;
                         break;
-                    case 2: temp.emotion = Emotion.NEGATIVE;
+                    case 1: temp.emotion = Emotion.NEGATIVE;
                         break;
                 }
                 // Assign hitbox
@@ -86,14 +86,17 @@ public class ThoughtBubble extends Actor {
         }
     }
 
-    public void checkForClear(float x, float y) {
+    public Emotion checkForClear(float x, float y) {
+        Emotion tempEmotion = null;
         for (int i = 0; i < thoughts.length; i++) {
             if (thoughts[i] != null) {
                 if (thoughts[i].hitbox.contains(x, y)) {
+                    tempEmotion = thoughts[i].emotion;
                     thoughts[i] = null;
                 }
             }
         }
+        return tempEmotion;
     }
 
     public Vector2 getPosition(int index, float offset) {
@@ -120,5 +123,15 @@ public class ThoughtBubble extends Actor {
         } else {
             return negBubble;
         }
+    }
+
+    public int getNegThoughtsAmount() {
+        int amount = 0;
+        for (ThoughtBubble thought : thoughts) {
+            if (thought != null && thought.emotion == Emotion.NEGATIVE) {
+                amount++;
+            }
+        }
+        return amount;
     }
 }
