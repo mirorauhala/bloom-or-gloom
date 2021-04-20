@@ -14,7 +14,11 @@ public class GameClock {
     int lastBubble = 0;
 
     public GameClock() {
-
+        calendarG.setTime(date);
+        hours = calendarG.get(Calendar.HOUR_OF_DAY);
+        minutes = calendarG.get(Calendar.MINUTE);
+        seconds = calendarG.get(Calendar.SECOND);
+        lastBubble = seconds;
     }
 
     public void timer() {
@@ -27,10 +31,10 @@ public class GameClock {
     }
 
     public boolean thoughtBubbleTimer() {
-        if (minutes - lastBubble >= 1) {
-            lastBubble = minutes;
+        if (seconds - lastBubble >= 5) {
+            lastBubble = seconds;
             return true;
-        } else if (minutes < lastBubble) {
+        } else if (seconds < lastBubble) {
             lastBubble = 0;
         }
         return false;

@@ -236,9 +236,11 @@ public class GameScreen implements Screen {
 
 
             if(gameScreenRectangle.contains(touch.x, touch.y)) {
-                sounds.clicksoundPlay();
-                game.score.click();
-                particle.createParticle(headPos);
+                if (bubble.getNegThoughtsAmount() < 1) {
+                    sounds.clicksoundPlay();
+                    game.score.click();
+                    particle.createParticle(headPos);
+                }
                 bubble.checkForClear(touch.x, touch.y);
             }
 
