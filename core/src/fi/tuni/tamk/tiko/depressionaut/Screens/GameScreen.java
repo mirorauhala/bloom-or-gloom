@@ -229,7 +229,6 @@ public class GameScreen implements Screen {
 
         batch.end();
 
-
     }
 
     //Täytyy vaihtaa käyttämään rectanglee
@@ -249,6 +248,8 @@ public class GameScreen implements Screen {
                     sounds.clicksoundPlay();
                     game.score.click();
                     particle.createParticle(headPos);
+
+                    characterDebug(false); // character debug
                 }
                 if (bubble.checkForClear(touch.x, touch.y) == ThoughtBubble.Emotion.POSITIVE) {
                     clock.addBuff(30);
@@ -258,6 +259,29 @@ public class GameScreen implements Screen {
 
         }
 
+    }
+
+    public void characterDebug(boolean debug) {
+        if (debug) {
+            character.setTier((int)(Math.random()*5));
+            int rand = (int)(Math.random()*5);
+            switch (rand) {
+                case 0: character.setItem(GameCharacter.heldItem.EMPTY);
+                    break;
+                case 1: character.setItem(GameCharacter.heldItem.PHONE);
+                    break;
+                case 2: character.setItem(GameCharacter.heldItem.BOOK);
+                    break;
+                case 3: character.setItem(GameCharacter.heldItem.LAPTOP);
+                    break;
+            }
+            character.setShirtIndex((int)(Math.random()*16));
+            character.setSleeveIndex((int)(Math.random()*16));
+            Gdx.app.debug("Character", "Tier: " + character.getTier());
+            Gdx.app.debug("Character", "Item: " + character.getItem());
+            Gdx.app.debug("Character", "Shirt: " + character.getShirtIndex());
+            Gdx.app.debug("Character", "Sleeve: " + character.getSleeveIndex());
+        }
     }
 
 

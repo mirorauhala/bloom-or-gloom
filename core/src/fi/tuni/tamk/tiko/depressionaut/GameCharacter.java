@@ -11,16 +11,19 @@ import java.util.HashMap;
 public class GameCharacter {
 
     public Texture head = new Texture("character/head/head.png");
+    private Shirts shirts = new Shirts();
+    private int shirtIndex;
+    private int sleeveIndex;
 
     public HashMap<heldItem, Texture> hands = new HashMap<heldItem, Texture>();
 
     private ArrayList<Texture> bodies = new ArrayList<Texture>(
             Arrays.asList(
-                    new Texture("character/body/tier1.png"),
-                    new Texture("character/body/tier2.png"),
-                    new Texture("character/body/tier3.png"),
-                    new Texture("character/body/tier4.png"),
-                    new Texture("character/body/tier5.png")
+                    new Texture("character/body/tier1/tier1.png"),
+                    new Texture("character/body/tier2/tier2.png"),
+                    new Texture("character/body/tier3/tier3.png"),
+                    new Texture("character/body/tier4/tier4.png"),
+                    new Texture("character/body/tier5/tier5.png")
             )
     );
 
@@ -67,6 +70,9 @@ public class GameCharacter {
         batch.draw(bodies.get(getTier()),
                 0,
                 0);
+        batch.draw(shirts.shirts.get(tier).get(shirtIndex),
+                0,
+                0);
 
         // draw head
         batch.draw(head,
@@ -83,6 +89,9 @@ public class GameCharacter {
 
         // draw hands
         batch.draw(hands.get(currentItem),
+                0,
+                getTierOffset(getTier()));
+        batch.draw(shirts.sleeves.get(getSleeveIndex()).get(shirtIndex),
                 0,
                 getTierOffset(getTier()));
     }
@@ -102,6 +111,33 @@ public class GameCharacter {
 
     public void setItem(heldItem item) {
         currentItem = item;
+    }
+
+    public heldItem getItem() {
+        return currentItem;
+    }
+
+    public void setShirtIndex(int index) {
+        shirtIndex = index;
+    }
+
+    public int getShirtIndex() {
+        return shirtIndex;
+    }
+
+    public void setSleeveIndex(int index) {
+        sleeveIndex = index;
+    }
+
+    public int getSleeveIndex() {
+        switch (currentItem) {
+            case EMPTY: return 0;
+            case PHONE: return 1;
+            case BOOK:
+            case LAPTOP:
+            case COMPUTER: return 2;
+        }
+        return -1;
     }
 
     public void setTier(int tier) {
