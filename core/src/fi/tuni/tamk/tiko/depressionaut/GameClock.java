@@ -1,11 +1,17 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 public class GameClock {
+    public Preferences prefs = Gdx.app.getPreferences("general");
 
     Date date = new Date();
     Calendar calendarG = new GregorianCalendar();
@@ -25,7 +31,15 @@ public class GameClock {
         seconds = calendarG.get(Calendar.SECOND);
         lastBubble = seconds;
         lastBuffCheck = seconds;
+        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy", Locale.getDefault());
+        String strDate = formatter.format(date);
+        prefs.putString("lastLogin", strDate);
+        prefs.flush();
     }
+
+    /*public boolean isFirstOfTheDay() {
+
+    }*/
 
     /**
      * Main "render loop" updates timers.
