@@ -20,6 +20,7 @@ public class GameClock {
     private ArrayList<Integer> buffs = new ArrayList<>();
     int lastBuffCheck;
     float dayOpacity;
+    public String strDate;
 
     /**
      * Constructor sets necessary values.
@@ -32,14 +33,18 @@ public class GameClock {
         lastBubble = seconds;
         lastBuffCheck = seconds;
         SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy", Locale.getDefault());
-        String strDate = formatter.format(date);
+        strDate = formatter.format(date);
+
+    }
+
+    public boolean isFirstOfTheDay() {
+        return !strDate.equals(prefs.getString("lastLogin"));
+    }
+    public void setLastLogin() {
         prefs.putString("lastLogin", strDate);
         prefs.flush();
     }
 
-    /*public boolean isFirstOfTheDay() {
-
-    }*/
 
     /**
      * Main "render loop" updates timers.

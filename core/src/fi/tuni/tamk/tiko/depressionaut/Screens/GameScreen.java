@@ -229,10 +229,10 @@ public class GameScreen implements Screen {
 
         batch.end();
 
-
+        System.out.println(clock.isFirstOfTheDay());
+        clock.setLastLogin();
     }
 
-    //Täytyy vaihtaa käyttämään rectanglee
     public void checkForTap() {
         Vector2 headPos = new Vector2(character.getHeadPosition(character.getTier()));
         headPos.x += character.head.getWidth() / 2f;

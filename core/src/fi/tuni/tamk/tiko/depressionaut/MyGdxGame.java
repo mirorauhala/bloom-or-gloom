@@ -12,7 +12,7 @@ import fi.tuni.tamk.tiko.depressionaut.Screens.SplashScreen;
 
 public class MyGdxGame extends Game {
 	// DEBUG ->
-	public static final boolean DEBUG = true;
+	public static final boolean DEBUG = false;
 	// <- DEBUG
 
 	public SpriteBatch gameBatch;
@@ -60,6 +60,7 @@ public class MyGdxGame extends Game {
 		hudBatch.begin();
 		navigation.draw(hudBatch);
 		hudBatch.end();
+		
 
 	}
 	
