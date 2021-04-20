@@ -229,8 +229,7 @@ public class GameScreen implements Screen {
 
         batch.end();
 
-        System.out.println(clock.isFirstOfTheDay());
-        clock.setLastLogin();
+
     }
 
     public void checkForTap() {
