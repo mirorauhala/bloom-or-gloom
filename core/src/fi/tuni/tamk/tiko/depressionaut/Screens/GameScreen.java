@@ -196,7 +196,12 @@ public class GameScreen implements Screen {
         }
 
         batch.begin();
+        // Sky layer:
         batch.draw(nightSky, 0, 0);
+        batch.setColor(1,1,1,clock.getDayOpacity());
+        batch.draw(daySky, 0, 0);
+        batch.setColor(1,1,1,1);
+
         // Background layer:
         batch.draw(walls.get(wallTier), x, y);
         batch.draw(floors.get(wallTier), x, y);

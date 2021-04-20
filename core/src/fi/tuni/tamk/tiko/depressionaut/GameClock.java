@@ -1,7 +1,5 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
-import com.badlogic.gdx.Gdx;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -15,6 +13,7 @@ public class GameClock {
     int lastBubble;
     private ArrayList<Integer> buffs = new ArrayList<>();
     int lastBuffCheck;
+    float dayOpacity;
 
     public GameClock() {
         calendarG.setTime(date);
@@ -34,6 +33,7 @@ public class GameClock {
         //Gdx.app.debug("Clock", hours + ":" + minutes + ":" + seconds);
 
         buffTimer();
+        dayNightCycle(false);
     }
 
     public boolean thoughtBubbleTimer() {
@@ -66,6 +66,29 @@ public class GameClock {
 
     public int amountOfBuffs() {
         return buffs.size();
+    }
+
+    public void dayNightCycle(boolean debug) {
+        int distance;
+        if (debug) {
+            if (seconds <= 30) {
+                distance = seconds;
+            } else {
+                distance = 30 - (seconds - 30);
+            }
+            dayOpacity = (distance * 2.5f) / 30f;
+        } else {
+            if (hours <= 12) {
+                distance = hours;
+            } else {
+                distance = 12 - (hours - 12);
+            }
+            dayOpacity = (distance * 2.5f) / 12f;
+        }
+    }
+
+    public float getDayOpacity() {
+        return dayOpacity;
     }
 
 }
