@@ -2,15 +2,36 @@ package fi.tuni.tamk.tiko.depressionaut.Screens;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
 
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
+import fi.tuni.tamk.tiko.depressionaut.Sounds;
+import fi.tuni.tamk.tiko.depressionaut.Thoughts.ThoughtBubble;
 
 public class SettingsScreen implements Screen {
     private MyGdxGame game;
+
+    public Preferences prefs = Gdx.app.getPreferences("settings");
+
+    private Rectangle soundRectangle;
+
+    private OrthographicCamera camera;
+
+    public Sounds sounds = new Sounds();
+
+    /*prefs.putString("lastLogin", strDate);
+      prefs.flush();
+
+
+      prefs.getString("lastLogin")*/
 
     private SpriteBatch settingsBatch;
 
@@ -22,11 +43,37 @@ public class SettingsScreen implements Screen {
     private Texture langEn = new Texture("Settings/LangButton/english.png");
     private Texture langFi = new Texture("Settings/LangButton/finnish.png");
     private Texture comicBtn = new Texture("Settings/ComicButton/comicbutton.png");
+    private Texture infoBox = new Texture("Settings/InfoBox.png");
 
     public SettingsScreen(MyGdxGame game) {
         this.game = game;
 
         settingsBatch = game.hudBatch;
+        camera = game.camera;
+
+        soundRectangle = new Rectangle(200, 1550, 300, 300);
+
+    }
+    public void checkForTap() {
+
+        if(Gdx.input.justTouched()) {
+
+            Vector3 touch = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
+            camera.unproject(touch);
+
+
+            if(soundRectangle.contains(touch.x, touch.y)) {
+                if(prefs.getString("sound").equals("off")) {
+                    prefs.putString("sound", "on");
+                    prefs.flush();
+                } else {
+                    prefs.putString("sound", "off");
+                    prefs.flush();
+                }
+                sounds.menuClicksoudPlay();
+            }
+
+        }
 
     }
 
@@ -48,11 +95,22 @@ public class SettingsScreen implements Screen {
         // set background to white
         settingsBatch.begin();
         settingsBatch.draw(background, 0, 0);
-        settingsBatch.draw(soundOff, 0 ,0);
+        drawButtonSound();
         settingsBatch.draw(musicOn, 0 ,0);
         settingsBatch.draw(langEn, 0 ,0);
         settingsBatch.draw(comicBtn, 0 ,0);
+        settingsBatch.draw(infoBox, 0, 0);
         settingsBatch.end();
+        checkForTap();
+    }
+
+    public void drawButtonSound() {
+        if(prefs.getString("sound").equals("on")) {
+            settingsBatch.draw(soundOn, 0 ,0);
+        } else {
+            settingsBatch.draw(soundOff, 0 ,0);
+        }
+
     }
 
     /**
