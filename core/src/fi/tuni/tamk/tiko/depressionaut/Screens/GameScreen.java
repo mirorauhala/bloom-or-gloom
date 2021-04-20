@@ -249,7 +249,7 @@ public class GameScreen implements Screen {
                     game.score.click();
                     particle.createParticle(headPos);
 
-                    characterDebug(true); // character debug
+                    characterDebug(false); // character debug
                 }
                 if (bubble.checkForClear(touch.x, touch.y) == ThoughtBubble.Emotion.POSITIVE) {
                     clock.addBuff(30);
