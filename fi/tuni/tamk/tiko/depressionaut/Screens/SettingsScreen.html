@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -120,6 +120,29 @@ implements com.badlogic.gdx.Screen</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>com.badlogic.gdx.Preferences</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Screens/SettingsScreen.html#prefs">prefs</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html" title="class in fi.tuni.tamk.tiko.depressionaut">Sounds</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Screens/SettingsScreen.html#sounds">sounds</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.summary">
@@ -151,36 +174,56 @@ implements com.badlogic.gdx.Screen</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Screens/SettingsScreen.html#checkForTap--">checkForTap</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Screens/SettingsScreen.html#dispose--">dispose</a></span>()</code>
 <div class="block">Called when this screen should release all resources.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Screens/SettingsScreen.html#drawButtonLang--">drawButtonLang</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Screens/SettingsScreen.html#drawButtonMusic--">drawButtonMusic</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Screens/SettingsScreen.html#drawButtonReset--">drawButtonReset</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Screens/SettingsScreen.html#drawButtonSound--">drawButtonSound</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Screens/SettingsScreen.html#hide--">hide</a></span>()</code>
 <div class="block">Called when this screen is no longer the current screen for a <a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/MyGdxGame.html" title="class in fi.tuni.tamk.tiko.depressionaut"><code>MyGdxGame</code></a>.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Screens/SettingsScreen.html#pause--">pause</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Screens/SettingsScreen.html#render-float-">render</a></span>(float&nbsp;delta)</code>
 <div class="block">Called when the screen should render itself.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Screens/SettingsScreen.html#resize-int-int-">resize</a></span>(int&nbsp;width,
       int&nbsp;height)</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Screens/SettingsScreen.html#resume--">resume</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Screens/SettingsScreen.html#show--">show</a></span>()</code>
 <div class="block">Called when this screen becomes the current screen for a <a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/MyGdxGame.html" title="class in fi.tuni.tamk.tiko.depressionaut"><code>MyGdxGame</code></a>.</div>
@@ -202,6 +245,32 @@ implements com.badlogic.gdx.Screen</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="prefs">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prefs</h4>
+<pre>public&nbsp;com.badlogic.gdx.Preferences prefs</pre>
+</li>
+</ul>
+<a name="sounds">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>sounds</h4>
+<pre>public&nbsp;<a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html" title="class in fi.tuni.tamk.tiko.depressionaut">Sounds</a> sounds</pre>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.detail">
@@ -225,6 +294,15 @@ implements com.badlogic.gdx.Screen</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="checkForTap--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>checkForTap</h4>
+<pre>public&nbsp;void&nbsp;checkForTap()</pre>
+</li>
+</ul>
 <a name="show--">
 <!--   -->
 </a>
@@ -253,6 +331,42 @@ implements com.badlogic.gdx.Screen</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>delta</code> - The time in seconds since the last render.</dd>
 </dl>
+</li>
+</ul>
+<a name="drawButtonSound--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>drawButtonSound</h4>
+<pre>public&nbsp;void&nbsp;drawButtonSound()</pre>
+</li>
+</ul>
+<a name="drawButtonMusic--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>drawButtonMusic</h4>
+<pre>public&nbsp;void&nbsp;drawButtonMusic()</pre>
+</li>
+</ul>
+<a name="drawButtonLang--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>drawButtonLang</h4>
+<pre>public&nbsp;void&nbsp;drawButtonLang()</pre>
+</li>
+</ul>
+<a name="drawButtonReset--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>drawButtonReset</h4>
+<pre>public&nbsp;void&nbsp;drawButtonReset()</pre>
 </li>
 </ul>
 <a name="resize-int-int-">
@@ -385,13 +499,13 @@ implements com.badlogic.gdx.Screen</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
