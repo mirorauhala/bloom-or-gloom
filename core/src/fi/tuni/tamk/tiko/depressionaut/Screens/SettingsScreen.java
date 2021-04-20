@@ -28,6 +28,7 @@ public class SettingsScreen implements Screen {
     private Rectangle finnishRectangle;
     private Rectangle englishRectangle;
     private Rectangle resetRectangle;
+    private Rectangle comicRectangle;
     private Rectangle confirmRectangle;
     private Rectangle cancelRectangle;
 
@@ -81,6 +82,7 @@ public class SettingsScreen implements Screen {
         musicRectangle = new Rectangle(580, 1550, 300, 300);
         finnishRectangle = new Rectangle(50, 1300, 250, 200);
         englishRectangle = new Rectangle(415, 1300, 250, 200);
+        comicRectangle = new Rectangle(780, 1300, 250, 200);
         resetRectangle = new Rectangle(240, 240, 600, 230);
         cancelRectangle = new Rectangle(120, 550, 380, 150);
         confirmRectangle = new Rectangle(580, 550, 380, 150);
@@ -135,6 +137,10 @@ public class SettingsScreen implements Screen {
                 }
                 sounds.menuClicksoudPlay();
             }
+            if(comicRectangle.contains(touch.x, touch.y)) {
+                game.setScreen(new Comic(game));
+            }
+
             if(resetRectangle.contains(touch.x, touch.y)) {
                 if(!resetPressed) {
                     resetPressed = true;
@@ -145,6 +151,11 @@ public class SettingsScreen implements Screen {
                 if(resetPressed) {
                     sounds.menuClicksoudPlay();
                     resetPressed = false;
+                }
+            }
+            if(confirmRectangle.contains(touch.x, touch.y)) {
+                if(resetPressed) {
+                    sounds.menuClicksoudPlay();
                 }
             }
         }
