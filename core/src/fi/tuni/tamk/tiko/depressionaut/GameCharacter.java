@@ -44,17 +44,22 @@ public class GameCharacter {
 
     public enum heldItem{
         EMPTY,
-        PHONE
+        PHONE,
+        BOOK,
+        LAPTOP,
+        COMPUTER
     }
 
     private heldItem currentItem = heldItem.EMPTY;
-    private int tier = 1;
+    private int tier;
 
     private int blinkTimer = 0;
 
     public GameCharacter() {
         hands.put(heldItem.EMPTY, new Texture("character/hands/empty.png"));
         hands.put(heldItem.PHONE, new Texture("character/hands/phone.png"));
+        hands.put(heldItem.BOOK, new Texture("character/hands/book.png"));
+        hands.put(heldItem.LAPTOP, new Texture("character/hands/laptop.png"));
     }
 
     public void draw(SpriteBatch batch) {
@@ -112,7 +117,7 @@ public class GameCharacter {
     }
 
     public float getStandingOffset() {
-        if (getTier() >= 5) {
+        if (getTier() >= 4) {
             return 100;
         } else {
             return 0;

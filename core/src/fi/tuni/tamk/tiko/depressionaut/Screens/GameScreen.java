@@ -9,11 +9,10 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
-
 import java.util.Arrays;
 import java.util.List;
-
 import fi.tuni.tamk.tiko.depressionaut.GameCharacter;
+import fi.tuni.tamk.tiko.depressionaut.GameClock;
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 import fi.tuni.tamk.tiko.depressionaut.ScoreCounter;
 import fi.tuni.tamk.tiko.depressionaut.ScoreMeter;
@@ -43,10 +42,12 @@ public class GameScreen implements Screen {
     public ScoreCounter scoreCounter;
     private TapParticle particle = new TapParticle();
     private ThoughtBubble bubble = new ThoughtBubble();
+    private GameClock clock = new GameClock();
 
     public int wallTier = 0;
     public int floorTier = 0;
     public int bedTier = 0;
+    public int stuffTier = 0;
     public int chairTier = 0;
     public int deskTier = 0;
     public int smileTier = 0;
@@ -105,6 +106,11 @@ public class GameScreen implements Screen {
             new Texture("furniture/bed/t5v14.png"),
             new Texture("furniture/bed/t5v15.png")
     );
+    public List<Texture> stuff = Arrays.asList(
+            //new Texture("barbells.png"),
+            //new Texture("plant.png"),
+            //new Texture("moreStuff.png")
+    );
     public List<Texture> chairs = Arrays.asList(
             new Texture("furniture/chair/t1v1.png"),
             new Texture("furniture/chair/t1v2.png"),
@@ -114,7 +120,10 @@ public class GameScreen implements Screen {
             new Texture("furniture/chair/t2v6.png"),
             new Texture("furniture/chair/t3v7.png"),
             new Texture("furniture/chair/t3v8.png"),
-            new Texture("furniture/chair/t3v9.png")
+            new Texture("furniture/chair/t3v9.png"),
+            new Texture("furniture/chair/t4v10.png"),
+            new Texture("furniture/chair/t4v11.png"),
+            new Texture("furniture/chair/t4v12.png")
     );
     public List<Texture> desks = Arrays.asList(
             new Texture("furniture/desk/t1v1.png"),
@@ -122,7 +131,16 @@ public class GameScreen implements Screen {
             new Texture("furniture/desk/t1v3.png"),
             new Texture("furniture/desk/t2v4.png"),
             new Texture("furniture/desk/t2v5.png"),
-            new Texture("furniture/desk/t2v6.png")
+            new Texture("furniture/desk/t2v6.png"),
+            new Texture("furniture/desk/t3v7.png"),
+            new Texture("furniture/desk/t3v8.png"),
+            new Texture("furniture/desk/t3v9.png"),
+            new Texture("furniture/desk/t4v10.png"),
+            new Texture("furniture/desk/t4v11.png"),
+            new Texture("furniture/desk/t4v12.png"),
+            new Texture("furniture/desk/t5v13.png"),
+            new Texture("furniture/desk/t5v14.png"),
+            new Texture("furniture/desk/t5v15.png")
     );
 
     MyGdxGame game;
@@ -136,8 +154,7 @@ public class GameScreen implements Screen {
         camera = game.camera;
         scoreMeter = new ScoreMeter(game);
         scoreCounter = new ScoreCounter();
-        gameScreenRectangle = new Rectangle();
-        gameScreenRectangle.set(0, 202, 1080, 1920-202);
+        gameScreenRectangle = new Rectangle(0, 202, 1080, 1920-202);
     }
 
     /*
@@ -154,6 +171,9 @@ public class GameScreen implements Screen {
     public void setBedTier(int bedTier) {
         this.bedTier = bedTier;
     }
+    public void setStuffTier(int stuffTier) {
+        this.stuffTier = stuffTier;
+    }
     public void setChairTier(int chairTier) {
         this.chairTier = chairTier;
     }
@@ -169,23 +189,28 @@ public class GameScreen implements Screen {
         batch.setProjectionMatrix(camera.combined);
         ScreenUtils.clear(0.8f, 0.8f, 1, 1);
 
-        createParticle();
-        // set character's "happiness tier"
-        // TODO: Remove temp
-        /*setBedTier(scoreCounter.getHappinessLevel() + 1);
-        setDeskTier(scoreCounter.getHappinessLevel() + 1);
-        setChairTier(scoreCounter.getHappinessLevel() + 1);
-        setWallTier(scoreCounter.getHappinessLevel() + 1);
-        setFloorTier(scoreCounter.getHappinessLevel() + 1);*/
+        checkForTap();
+        clock.timer();
+        if (clock.thoughtBubbleTimer(false)) {
+            bubble.createThought(character.getTierOffset(character.getTier()));
+        }
 
         batch.begin();
+        // Sky layer:
         batch.draw(nightSky, 0, 0);
+        batch.setColor(1,1,1, clock.getDayOpacity()); // set daySky opacity
+        batch.draw(daySky, 0, 0);
+        batch.setColor(clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,1); // lighting effect
+
         // Background layer:
         batch.draw(walls.get(wallTier), x, y);
         batch.draw(floors.get(wallTier), x, y);
 
         // Furniture layer:
         batch.draw(beds.get(wallTier), x, y);
+        for (int i = 0; i < stuffTier; i++) {
+            batch.draw(stuff.get(i), x, y);
+        }
         batch.draw(chairs.get(wallTier), x, y);
         batch.draw(desks.get(wallTier), x, character.getStandingOffset());
         
@@ -196,7 +221,11 @@ public class GameScreen implements Screen {
         particle.renderParticles(batch, delta);
         bubble.render(batch);
 
+        batch.setColor(1,1,1,1); // reset batch color
+
+        // Hud layer:
         scoreMeter.draw(batch);
+        scoreCounter.setTempMultiplier(clock.amountOfBuffs());
 
         batch.end();
 
@@ -204,7 +233,7 @@ public class GameScreen implements Screen {
     }
 
     //Täytyy vaihtaa käyttämään rectanglee
-    public void createParticle() {
+    public void checkForTap() {
         Vector2 headPos = new Vector2(character.getHeadPosition(character.getTier()));
         headPos.x += character.head.getWidth() / 2f;
         headPos.y += character.head.getHeight() / 2f;
@@ -216,13 +245,15 @@ public class GameScreen implements Screen {
 
 
             if(gameScreenRectangle.contains(touch.x, touch.y)) {
-                sounds.clicksoundPlay();
-                game.score.click();
-                particle.createParticle(headPos);
-                bubble.checkForClear(touch.x, touch.y);
+                if (bubble.getNegThoughtsAmount() < 1) {
+                    sounds.clicksoundPlay();
+                    game.score.click();
+                    particle.createParticle(headPos);
+                }
+                if (bubble.checkForClear(touch.x, touch.y) == ThoughtBubble.Emotion.POSITIVE) {
+                    clock.addBuff(30);
+                }
 
-                // temp
-                bubble.createThought(character.getTierOffset(character.getTier()));
             }
 
         }
@@ -268,6 +299,10 @@ public class GameScreen implements Screen {
         setWallTier(game.inventory.get("wall"));
         setFloorTier(game.inventory.get("floor"));
         setBedTier(game.inventory.get("bed"));
+
+        // TODO: Add to inventory system:
+        //setStuffTier(game.inventory.get("stuff"));
+
         setChairTier(game.inventory.get("chair"));
         setDeskTier(game.inventory.get("desk"));
         setSmileTier(game.inventory.get("smile"));
