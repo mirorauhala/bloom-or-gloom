@@ -2,6 +2,7 @@ package fi.tuni.tamk.tiko.depressionaut.Screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -191,6 +192,7 @@ public class GameScreen implements Screen {
 
         createParticle();
 
+        
         batch.begin();
         batch.draw(nightSky, 0, 0);
         // Background layer:
@@ -199,7 +201,7 @@ public class GameScreen implements Screen {
 
         // Furniture layer:
         batch.draw(beds.get(wallTier), x, y);
-        for (int i = 0; i <= stuffTier; i++) {
+        for (int i = 0; i < stuffTier; i++) {
             batch.draw(stuff.get(i), x, y);
         }
         batch.draw(chairs.get(wallTier), x, y);
