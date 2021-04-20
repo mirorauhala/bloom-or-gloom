@@ -217,6 +217,7 @@ public class GameScreen implements Screen {
         bubble.render(batch);
 
         scoreMeter.draw(batch);
+        scoreCounter.setTempMultiplier(clock.amountOfBuffs());
 
         batch.end();
 
@@ -241,7 +242,10 @@ public class GameScreen implements Screen {
                     game.score.click();
                     particle.createParticle(headPos);
                 }
-                bubble.checkForClear(touch.x, touch.y);
+                if (bubble.checkForClear(touch.x, touch.y) == ThoughtBubble.Emotion.POSITIVE) {
+                    clock.addBuff(10);
+                }
+
             }
 
         }

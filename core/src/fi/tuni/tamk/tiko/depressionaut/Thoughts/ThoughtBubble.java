@@ -86,14 +86,17 @@ public class ThoughtBubble extends Actor {
         }
     }
 
-    public void checkForClear(float x, float y) {
+    public Emotion checkForClear(float x, float y) {
+        Emotion tempEmotion = null;
         for (int i = 0; i < thoughts.length; i++) {
             if (thoughts[i] != null) {
                 if (thoughts[i].hitbox.contains(x, y)) {
+                    tempEmotion = thoughts[i].emotion;
                     thoughts[i] = null;
                 }
             }
         }
+        return tempEmotion;
     }
 
     public Vector2 getPosition(int index, float offset) {
