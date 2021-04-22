@@ -69,23 +69,34 @@ public class ShopScreen implements Screen {
 
             Texture texture = new Texture(Gdx.files.internal("shop/" + product.getTexture()));
 
-            Label label = new Label(product.getName(), skin);
-            label.setWrap(true);
-            label.setFontScale(2);
+            Label productName = new Label(product.getName(), skin);
+            productName.setWrap(true);
+            productName.setFontScale(2);
+            float productNameSize = 1080f - texture.getWidth() - 40f - 200f;
+
+            Label productPrice = new Label(Integer.toString(product.getPrice()) + "e", skin);
+            productPrice.setWrap(true);
+            productPrice.setFontScale(2);
+            float productPriceSize = 200f;
 
             Table table = new Table(skin);
             table.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
             table.add(new Label("", skin)).width(20f).expandY().fillY();// a spacer
             table.add(new Image(texture)).width(texture.getWidth()).height(texture.getHeight()).padBottom(20f);
             table.add(new Label("", skin)).width(20f).expandY().fillY();// a spacer
-            table.add(label).width(1080f - texture.getWidth() - 40f).fillX();
+            table.add(productName).width(productNameSize);
+            table.add(productPrice).width(productPriceSize).fillX().fillY();
             table.left().top();
 
             table.addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
-                    game.inventory.set("wall", 4);
-                    System.out.println("Clicked on button: "+ product);
+                    if(game.score.decrementWallet(product.getPrice())) {
+                        game.inventory.set(product.getType(), product.getId());
+                        Gdx.app.debug("SHOP", "Bought: "+ product.getName() + " for " + product.getPrice() );
+                    } else {
+                        Gdx.app.debug("SHOP", "Cannot buy " + product.getName());
+                    }
                 }
             });
 
