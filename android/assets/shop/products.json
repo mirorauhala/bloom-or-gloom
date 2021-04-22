@@ -21,6 +21,7 @@
       "type": 1,
       "cat": 1,
       "level": 1,
+      "price": 10,
       "texture": "wip-product.png",
       "effect": [
         {"method": "click-power", "action": "increment", "amount": 1}
@@ -32,6 +33,7 @@
       "type": 1,
       "cat": 1,
       "level": 2,
+      "price": 20,
       "texture": "wip-product.png",
       "effect": [
         {"part": "click-power", "increment": 1}
@@ -43,6 +45,7 @@
       "type": 1,
       "cat": 1,
       "level": 3,
+      "price": 30,
       "texture": "wip-product.png",
       "effect": [
         {"part": "click-power", "increment": 1}

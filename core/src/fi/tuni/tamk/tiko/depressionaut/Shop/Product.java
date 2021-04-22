@@ -8,6 +8,7 @@ public class Product {
     private int type;
     private int cat;
     private int level;
+    private int price;
     private String texture;
     private List<ProductEffect> effects;
 
@@ -29,6 +30,10 @@ public class Product {
 
     public int getLevel() {
         return level;
+    }
+
+    public int getPrice() {
+        return price;
     }
 
     public String getTexture() {
