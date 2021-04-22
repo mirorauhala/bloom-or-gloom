@@ -18,7 +18,7 @@
     {
       "id": 1,
       "name": "Blue Shirt",
-      "type": 1,
+      "type": "shirt",
       "cat": 1,
       "level": 1,
       "price": 10,

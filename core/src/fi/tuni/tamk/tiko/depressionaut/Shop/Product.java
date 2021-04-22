@@ -5,7 +5,7 @@ import java.util.List;
 public class Product {
     private int id;
     private String name;
-    private int type;
+    private String type;
     private int cat;
     private int level;
     private int price;
@@ -20,7 +20,7 @@ public class Product {
         return name;
     }
 
-    public int getType() {
+    public String getType() {
         return type;
     }
 
