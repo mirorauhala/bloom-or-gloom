@@ -86,7 +86,7 @@ public class ShopScreen implements Screen {
             buttonStyle.up = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/button-default.png"))));
             buttonStyle.down = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/button-active.png"))));
             buttonStyle.disabled = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/button-active.png"))));
-            buttonStyle.font = new BitmapFont(Gdx.files.internal("UI/Quicksand_white.fnt"));
+            buttonStyle.font = new BitmapFont(Gdx.files.internal("UI/Quicksand.fnt"));
 
             Button button2 = new TextButton(product.getPrice() + "e", buttonStyle);
             button2.setSize(200f,50f);
@@ -98,7 +98,7 @@ public class ShopScreen implements Screen {
             table.add(new Image(texture)).width(texture.getWidth()).height(texture.getHeight()).padBottom(20f);
             table.add(new Label("", skin)).width(20f).expandY().fillY();// a spacer
             table.add(productName).width(productNameSize);
-            table.add(button2).width(200f);
+            table.add(button2).width(180f);
             table.add(new Label("", skin)).width(20f).expandY().fillY();// a spacer
             table.left().top();
 
