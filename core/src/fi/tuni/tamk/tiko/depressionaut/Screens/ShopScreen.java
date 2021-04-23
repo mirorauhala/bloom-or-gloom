@@ -1,6 +1,7 @@
 package fi.tuni.tamk.tiko.depressionaut.Screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
@@ -30,6 +31,7 @@ public class ShopScreen implements Screen {
     Skin skin;
     Stage stage;
     Table container;
+    private InputMultiplexer multiplexer;
 
     public ShopScreen(final MyGdxGame game){
         this.game = game;
@@ -74,7 +76,7 @@ public class ShopScreen implements Screen {
             productName.setFontScale(2);
             float productNameSize = 1080f - texture.getWidth() - 40f - 200f;
 
-            Label productPrice = new Label(Integer.toString(product.getPrice()) + "e", skin);
+            Label productPrice = new Label(product.getPrice() + "e", skin);
             productPrice.setWrap(true);
             productPrice.setFontScale(2);
             float productPriceSize = 200f;
@@ -102,9 +104,6 @@ public class ShopScreen implements Screen {
 
             innerContainer.row();
             innerContainer.add(table).expandX();
-
-            // opetustuokio: miten git ja github toimii
-            // staging area
         }
 
         // create the scrollpane
@@ -130,9 +129,6 @@ public class ShopScreen implements Screen {
         // add container to the stage
         stage.addActor(container);
 
-        // setup input processor (gets clicks and stuff)
-        Gdx.input.setInputProcessor(stage);
-
     }
 
     @Override
@@ -152,7 +148,8 @@ public class ShopScreen implements Screen {
 
     @Override
     public void show() {
-        //System.out.println("Show");
+        // setup input processor (gets clicks and stuff)
+        Gdx.input.setInputProcessor(stage);
 
     }
 

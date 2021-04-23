@@ -8,7 +8,10 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
+
 import java.util.Arrays;
 import java.util.List;
 import fi.tuni.tamk.tiko.depressionaut.GameCharacter;
@@ -26,6 +29,7 @@ import fi.tuni.tamk.tiko.depressionaut.Thoughts.ThoughtBubble;
  */
 
 public class GameScreen implements Screen {
+    private final Stage stage;
     private GameCharacter character = new GameCharacter();
     final private float x = 0;
     final private float y = 0;
@@ -155,6 +159,8 @@ public class GameScreen implements Screen {
         scoreMeter = new ScoreMeter(game);
         scoreCounter = new ScoreCounter();
         gameScreenRectangle = new Rectangle(0, 202, 1080, 1920-202);
+        stage = new Stage(new ScreenViewport());
+
     }
 
     /*
@@ -286,6 +292,9 @@ public class GameScreen implements Screen {
 
     @Override
     public void show() {
+        // setup input processor (gets clicks and stuff)
+        Gdx.input.setInputProcessor(stage);
+
         applyCurrentTierTextures();
     }
 
