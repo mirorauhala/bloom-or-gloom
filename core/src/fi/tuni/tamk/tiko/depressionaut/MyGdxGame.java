@@ -60,8 +60,6 @@ public class MyGdxGame extends Game {
 		hudBatch.begin();
 		navigation.draw(hudBatch);
 		hudBatch.end();
-
-
 	}
 	
 	@Override
