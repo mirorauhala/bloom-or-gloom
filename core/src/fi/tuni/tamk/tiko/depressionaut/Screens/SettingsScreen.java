@@ -4,21 +4,16 @@ import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
-import org.w3c.dom.css.Rect;
-
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 import fi.tuni.tamk.tiko.depressionaut.Sounds;
-import fi.tuni.tamk.tiko.depressionaut.Thoughts.ThoughtBubble;
 
 public class SettingsScreen implements Screen {
     private MyGdxGame game;
@@ -67,8 +62,6 @@ public class SettingsScreen implements Screen {
     private final Texture resetOnFi = new Texture("Settings/ResetButton/FI/resetOnFi.png");
     private final Texture resetFi = new Texture("Settings/ResetButton/FI/resetFi.png");
     private final Texture resetConfirmationFi = new Texture("Settings/ResetButton/FI/resetConfirmationFi.png");
-
-
 
 
     private boolean resetPressed;
