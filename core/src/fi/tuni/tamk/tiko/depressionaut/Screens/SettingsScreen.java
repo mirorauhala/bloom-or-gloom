@@ -11,6 +11,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
 import org.w3c.dom.css.Rect;
 
@@ -22,6 +24,7 @@ public class SettingsScreen implements Screen {
     private MyGdxGame game;
 
     public Preferences prefs = Gdx.app.getPreferences("settings");
+    private Stage stage;
 
     private Rectangle soundRectangle;
     private Rectangle musicRectangle;
@@ -75,6 +78,7 @@ public class SettingsScreen implements Screen {
 
         settingsBatch = game.hudBatch;
         camera = game.camera;
+        stage = new Stage(new ScreenViewport());
 
         resetPressed = false;
 
@@ -167,7 +171,7 @@ public class SettingsScreen implements Screen {
      */
     @Override
     public void show() {
-
+        Gdx.input.setInputProcessor(stage);
     }
 
     /**
