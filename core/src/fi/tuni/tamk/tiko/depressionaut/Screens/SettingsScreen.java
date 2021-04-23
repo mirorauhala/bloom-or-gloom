@@ -138,6 +138,7 @@ public class SettingsScreen implements Screen {
                 sounds.menuClicksoudPlay();
             }
             if(comicRectangle.contains(touch.x, touch.y)) {
+                game.navigation.setActive(null);
                 game.setScreen(new Comic(game));
             }
 
