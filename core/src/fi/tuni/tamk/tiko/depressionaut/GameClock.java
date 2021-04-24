@@ -59,7 +59,7 @@ public class GameClock {
         //Gdx.app.debug("Clock", hours + ":" + minutes + ":" + seconds);
 
         buffTimer();
-        dayNightCycle(true);
+        dayNightCycle(false);
     }
 
     /**
@@ -180,7 +180,7 @@ public class GameClock {
      * @return dayOpacity value
      */
     public float getDayOpacity() {
-        Gdx.app.debug("Clock", "h: " + (24f * (seconds / 60f)));
+        //Gdx.app.debug("Clock", "h: " + (24f * (seconds / 60f)));
         if (dayOpacity < 0.25) {
             return 0;
         } else if (dayOpacity < 0.5) {
