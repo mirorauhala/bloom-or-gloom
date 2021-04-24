@@ -12,7 +12,7 @@ import fi.tuni.tamk.tiko.depressionaut.Screens.SplashScreen;
 
 public class MyGdxGame extends Game {
 	// DEBUG ->
-	public static final boolean DEBUG = true;
+	public static final boolean DEBUG = false;
 	// <- DEBUG
 
 	public SpriteBatch gameBatch;
@@ -20,6 +20,7 @@ public class MyGdxGame extends Game {
 	public Navigation navigation;
 	public ScoreCounter score;
 	public Inventory inventory;
+	public DailyBonus bonuswindow;
 
 	public final static float SCREEN_WIDTH = 1080;
 	public final static float SCREEN_HEIGHT = 1920;
@@ -45,6 +46,9 @@ public class MyGdxGame extends Game {
 		items = new Items();
 		items.preloadTextures(inventory);
 		navigation = new Navigation(this);
+		bonuswindow = new DailyBonus();
+
+		bonuswindow.txtToArray();
 
 		if(DEBUG) {
 			navigation.setActive(Navigation.Screen.GAME);

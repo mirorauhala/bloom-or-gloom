@@ -1,9 +1,29 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.graphics.Texture;
+
+
 public class DailyBonus {
-    /*
-    Will come once per day, the first time the player enters the game that day.
-    Daily bonus window will have a tip for emotions, and if the player enters the game between 6am and 9am, clicking "Ok"
-    will give the player a 2x multiplier for the day
-     */
+
+    private String [] emotionTips;
+
+    public Texture bonusWindowEN = new Texture("UI/Dailybonus/BonuswindowEN");
+    public Texture bonusWindowFI = new Texture("UI/Dailybonus/BonuswindowFI");
+    public Texture noBonusEN = new Texture("UI/Dailybonus/NobonusEN");
+    public Texture noBonusFI = new Texture("UI/Dailybonus/NobonusFI");
+
+    public void txtToArray() {
+        FileHandle handle = Gdx.files.internal("UI/Dailybonus/TipsEN.txt");
+        String text = handle.readString();
+        emotionTips = text.split("\\r?\\n");
+    }
+
+    public void randomTip() {
+
+    }
+
+
+
 }
