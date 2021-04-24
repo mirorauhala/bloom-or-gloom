@@ -2,38 +2,40 @@ package fi.tuni.tamk.tiko.depressionaut.Sky;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
-import java.util.Arrays;
-import java.util.List;
-
 import fi.tuni.tamk.tiko.depressionaut.GameClock;
 
+/**
+ * Class for rendering everything on the sky layer.
+ */
 public class Sky {
+    // Textures for the sky
     private Texture daySky = new Texture("sky/daySky.png");
     private Texture nightSky = new Texture("sky/nightSky.png");
-    private List<String> cloudTextures = Arrays.asList(
-            "cosmetics/clouds/v1.png",
-            "cosmetics/clouds/v2.png",
-            "cosmetics/clouds/v3.png",
-            "cosmetics/clouds/v4.png",
-            "cosmetics/clouds/v5.png",
-            "cosmetics/clouds/v6.png",
-            "cosmetics/clouds/v7.png",
-            "cosmetics/clouds/v8.png",
-            "cosmetics/clouds/v9.png"
-    );
 
-    
+    // Contains all objects moving in the sky
+    SkyObject skyObject = new SkyObject();
 
+    /**
+     * Draws everything on the sky layer.
+     *
+     * @param batch SpriteBatch needed for the draw() method.
+     * @param clock GameClock object needed for timing skyObject creation.
+     */
     public void draw(SpriteBatch batch, GameClock clock) {
-        batch.draw(nightSky, 0, 0);
+        // Creates a new object in the sky every 6-8 seconds.
+        if (clock.skyObjectTimer()) {
+            skyObject.createSkyObject();
+        }
+
+        batch.draw(nightSky, 0, 0); // draw night sky
         batch.setColor(1,1,1, clock.getDayOpacity()); // set daySky opacity
+
+        // Draw the day sky on top of the night sky. Depending on the time of the day, the day
+        // sky's opacity and coverage of the night sky will be different.
         batch.draw(daySky, 0, 0);
+
         batch.setColor(clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,1); // lighting effect
-    }
-
-    public void moveClouds() {
-
+        skyObject.draw(batch); // draw sky objects
     }
 
 }

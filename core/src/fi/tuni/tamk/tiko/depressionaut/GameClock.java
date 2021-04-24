@@ -97,7 +97,7 @@ public class GameClock {
      *         skyObject was created.
      */
     public boolean skyObjectTimer() {
-        if (seconds - lastSkyObject >= 1) {
+        if (seconds - lastSkyObject >= Math.random()*2+6) {
             lastSkyObject = seconds;
             return true;
         } else if (seconds < lastSkyObject) {
