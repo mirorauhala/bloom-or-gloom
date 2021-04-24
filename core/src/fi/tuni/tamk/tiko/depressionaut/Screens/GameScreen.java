@@ -12,6 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
+import fi.tuni.tamk.tiko.depressionaut.DailyBonus;
 import fi.tuni.tamk.tiko.depressionaut.GameCharacter;
 import fi.tuni.tamk.tiko.depressionaut.GameClock;
 import fi.tuni.tamk.tiko.depressionaut.Items;
@@ -38,6 +39,7 @@ public class GameScreen implements Screen {
 
     public Sounds sounds = new Sounds();
 
+
     public ScoreMeter scoreMeter;
     private TapParticle particle = new TapParticle();
     private ThoughtBubble bubble = new ThoughtBubble();
@@ -46,6 +48,8 @@ public class GameScreen implements Screen {
 
     MyGdxGame game;
     SpriteBatch batch;
+
+    public DailyBonus dailyBonus;
 
     private OrthographicCamera camera;
     private int wallTier;
@@ -64,6 +68,7 @@ public class GameScreen implements Screen {
         gameScreenRectangle = new Rectangle(0, 202, 1080, 1920-202);
         stage = new Stage(new ScreenViewport());
         items = game.items;
+        dailyBonus = new DailyBonus();
     }
 
     @Override
@@ -107,6 +112,9 @@ public class GameScreen implements Screen {
         // Hud layer:
         scoreMeter.draw(batch);
         game.score.setTempMultiplier(clock.amountOfBuffs());
+
+        dailyBonus.drawWindow(batch);
+        dailyBonus.checkForTap(camera);
 
         batch.end();
 
