@@ -28,11 +28,6 @@ public class MyGdxGame extends Game {
 	public Preferences prefs;
 	public Items items;
 
-	public MyGdxGame() {
-		items = new Items();
-		items.preloadTextures(inventory);
-	}
-
 	@Override
 	public void create () {
 		if(DEBUG) {
@@ -46,8 +41,10 @@ public class MyGdxGame extends Game {
 
 		prefs = Gdx.app.getPreferences("general");
 		score = new ScoreCounter();
-		navigation = new Navigation(this);
 		inventory = new Inventory();
+		items = new Items();
+		items.preloadTextures(inventory);
+		navigation = new Navigation(this);
 
 		if(DEBUG) {
 			navigation.setActive(Navigation.Screen.GAME);
