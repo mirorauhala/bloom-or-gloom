@@ -32,6 +32,7 @@ public class ScoreCounter {
              * Instead of running every second, this counter runs every 10 milliseconds. This is to
              * make the user-interface part of the counter refresh more frequently than every second.
              */
+            @SuppressWarnings("BusyWait")
             @Override
             public void run() {
 
@@ -55,6 +56,7 @@ public class ScoreCounter {
 
         if(MyGdxGame.DEBUG) {
             Thread printer = new Thread(new Runnable() {
+                @SuppressWarnings("BusyWait")
                 @Override
                 public void run() {
                     while(true) {
