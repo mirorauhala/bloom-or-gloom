@@ -59,7 +59,7 @@ public class GameClock {
         //Gdx.app.debug("Clock", hours + ":" + minutes + ":" + seconds);
 
         buffTimer();
-        dayNightCycle(false);
+        dayNightCycle(true);
     }
 
     /**
@@ -154,22 +154,24 @@ public class GameClock {
      * @param debug Debug boolean
      */
     public void dayNightCycle(boolean debug) {
-        int distance;
+        float distance;
+        int timeUnit;
+        float max;
         if (debug) {
-            if (seconds <= 30) {
-                distance = seconds;
-            } else {
-                distance = 30 - (seconds - 30);
-            }
-            dayOpacity = (distance * 2.5f) / 30f;
+            timeUnit = seconds - 5;
+            max = 60 / 2f;
         } else {
-            if (hours <= 12) {
-                distance = hours;
-            } else {
-                distance = 12 - (hours - 12);
-            }
-            dayOpacity = (distance * 2.5f) / 12f;
+            timeUnit = hours - 2;
+            max = 24 / 2f;
         }
+
+        if (timeUnit <= max) {
+            distance = timeUnit;
+        } else {
+            distance = max - (timeUnit - max);
+        }
+
+        dayOpacity = distance / max;
     }
 
     /**
@@ -178,7 +180,14 @@ public class GameClock {
      * @return dayOpacity value
      */
     public float getDayOpacity() {
-        return dayOpacity;
+        Gdx.app.debug("Clock", "h: " + (24f * (seconds / 60f)));
+        if (dayOpacity < 0.25) {
+            return 0;
+        } else if (dayOpacity < 0.5) {
+            return (dayOpacity - 0.25f) / 0.25f;
+        } else {
+            return 1;
+        }
     }
 
 }

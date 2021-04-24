@@ -1,5 +1,6 @@
 package fi.tuni.tamk.tiko.depressionaut.Sky;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import fi.tuni.tamk.tiko.depressionaut.GameClock;
@@ -34,8 +35,19 @@ public class Sky {
         // sky's opacity and coverage of the night sky will be different.
         batch.draw(daySky, 0, 0);
 
-        batch.setColor(clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,1); // lighting effect
+        batch.setColor(1,1,1, 1); // reset batch opacity
+
         skyObject.draw(batch); // draw sky objects
+    }
+
+    public float getSkyOpacity(GameClock clock) {
+        if (clock.getDayOpacity() < 0.25) {
+            return 0;
+        } else if (clock.getDayOpacity() < 0.75) {
+            return (clock.getDayOpacity() - 0.25f) / 0.5f;
+        } else {
+            return 1;
+        }
     }
 
 }

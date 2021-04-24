@@ -203,6 +203,8 @@ public class GameScreen implements Screen {
         // Sky layer:
         sky.draw(batch, clock);
 
+        batch.setColor(clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,1); // lighting effect
+
         // Background layer:
         batch.draw(walls.get(wallTier), x, y);
         batch.draw(floors.get(wallTier), x, y);
