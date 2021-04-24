@@ -19,7 +19,7 @@ import fi.tuni.tamk.tiko.depressionaut.GameClock;
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 import fi.tuni.tamk.tiko.depressionaut.ScoreCounter;
 import fi.tuni.tamk.tiko.depressionaut.ScoreMeter;
-import fi.tuni.tamk.tiko.depressionaut.Sky;
+import fi.tuni.tamk.tiko.depressionaut.Sky.Sky;
 import fi.tuni.tamk.tiko.depressionaut.Sounds;
 import fi.tuni.tamk.tiko.depressionaut.TapParticle;
 import fi.tuni.tamk.tiko.depressionaut.Thoughts.ThoughtBubble;
