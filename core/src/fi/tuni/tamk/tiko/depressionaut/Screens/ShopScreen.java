@@ -76,7 +76,7 @@ public class ShopScreen implements Screen {
             float productNameSize = 1080f - texture.getWidth() - 40f - 200f;
 
 
-            Button b = Shop.createButton(productName + "e");
+            Button b = Shop.createButton(product.getPrice() + "e");
 
             Table table = new Table(skin);
             table.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
