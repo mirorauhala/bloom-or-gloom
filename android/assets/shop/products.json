@@ -14,23 +14,23 @@
     {
       "id": 2,
       "name": "Red Shirt",
-      "type": 1,
+      "type": "shirt",
       "level": 2,
       "price": 20,
       "texture": "wip-product.png",
       "effect": [
-        {"part": "click-power", "increment": 1}
+        {"method": "click-power", "action": "increment", "amount": 1}
       ]
     },
     {
       "id": 3,
       "name": "Green Shirt",
-      "type": 1,
+      "type": "shirt",
       "level": 3,
       "price": 30,
       "texture": "wip-product.png",
       "effect": [
-        {"part": "click-power", "increment": 1}
+        {"method": "click-power", "action": "increment", "amount": 1}
       ]
     }
   ]
