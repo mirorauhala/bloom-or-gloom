@@ -7,8 +7,6 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -17,15 +15,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.google.gson.Gson;
 
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
-import fi.tuni.tamk.tiko.depressionaut.Shop.Product;
-import fi.tuni.tamk.tiko.depressionaut.Shop.Products;
+import fi.tuni.tamk.tiko.depressionaut.Shop.Shop;
+import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Product;
+import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products;
 
 public class ShopScreen implements Screen {
     private final OrthographicCamera camera;
@@ -35,7 +32,6 @@ public class ShopScreen implements Screen {
     Skin skin;
     Stage stage;
     Table container;
-    private InputMultiplexer multiplexer;
 
     public ShopScreen(final MyGdxGame game){
         this.game = game;
@@ -44,7 +40,6 @@ public class ShopScreen implements Screen {
         camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
 
         viewport = new StretchViewport(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT, camera);
-
 
         FileHandle handle = Gdx.files.internal("shop/products.json");
         String text = handle.readString();
@@ -80,15 +75,8 @@ public class ShopScreen implements Screen {
             productName.setFontScale(2);
             float productNameSize = 1080f - texture.getWidth() - 40f - 200f;
 
-            TextButton.TextButtonStyle buttonStyle = new TextButton.TextButtonStyle();
-            buttonStyle.up = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/ui/button-default.png"))));
-            buttonStyle.down = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/ui/button-active.png"))));
-            buttonStyle.disabled = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/ui/button-disabled.png"))));
-            buttonStyle.font = new BitmapFont(Gdx.files.internal("UI/Quicksand.fnt"));
 
-            Button button2 = new TextButton(product.getPrice() + "e", buttonStyle);
-            button2.setSize(200f,50f);
-            //button2.setPosition(productPriceSize,50f);
+            Button b = Shop.createButton(productName + "e");
 
             Table table = new Table(skin);
             table.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
@@ -96,11 +84,11 @@ public class ShopScreen implements Screen {
             table.add(new Image(texture)).width(texture.getWidth()).height(texture.getHeight()).padBottom(20f);
             table.add(new Label("", skin)).width(20f).expandY().fillY();// a spacer
             table.add(productName).width(productNameSize);
-            table.add(button2).width(180f);
+            table.add(b).width(180f);
             table.add(new Label("", skin)).width(20f).expandY().fillY();// a spacer
             table.left().top();
 
-            button2.addListener(new ClickListener() {
+            b.addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
                     if(game.score.decrementWallet(product.getPrice())) {
