@@ -17,6 +17,7 @@ public class GameClock {
     Calendar calendarG = new GregorianCalendar();
     int hours, minutes, seconds;
     int lastBubble;
+    int lastSkyObject;
     private ArrayList<Integer> buffs = new ArrayList<>();
     int lastBuffCheck;
     float dayOpacity;
@@ -62,7 +63,7 @@ public class GameClock {
     }
 
     /**
-     * Timer for creating thoughtbubbles.
+     * Timer for creating thought bubbles.
      *
      * Debug mode creates bubbles every 5 seconds and non-debug mode every 1 minute.
      *
@@ -85,6 +86,22 @@ public class GameClock {
             } else if (minutes < lastBubble) {
                 lastBubble = 0;
             }
+        }
+        return false;
+    }
+
+    /**
+     * Timer for creating clouds and birds on the sky layer.
+     *
+     * @return Returns true if an appropriate amount of time has passed since last
+     *         skyObject was created.
+     */
+    public boolean skyObjectTimer() {
+        if (seconds - lastSkyObject >= 1) {
+            lastSkyObject = seconds;
+            return true;
+        } else if (seconds < lastSkyObject) {
+            lastSkyObject = 0;
         }
         return false;
     }
