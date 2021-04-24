@@ -87,6 +87,9 @@ public class DailyBonus {
             if(continueButton.contains(touch.x, touch.y)) {
                 sounds.menuClicksoudPlay();
                 clock.setLastLogin();
+                if(clock.isMorning()) {
+                    clock.addBonus();
+                }
             }
         }
     }

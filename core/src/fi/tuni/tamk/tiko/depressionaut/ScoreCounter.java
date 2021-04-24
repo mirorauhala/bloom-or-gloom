@@ -19,10 +19,13 @@ public class ScoreCounter {
     the multiplier (which can be bought on the store) and the clickpower (which can also be upgraded from the store)
      */
     private static float tempMultiplier; // Has to always be at least 1
+    private float dailyBonus; // Has to always be at least 1
     private final Preferences prefs;
+    private GameClock clock;
 
     public ScoreCounter() {
         prefs = Gdx.app.getPreferences("score");
+        clock = new GameClock();
 
 
         Thread counter = new Thread(new Runnable() {
@@ -38,6 +41,7 @@ public class ScoreCounter {
                 while(true) {
                     float amount = countPassiveIncomeIncrement()/100f;
 
+                    setDailyBonus();
                     incrementScore(amount);
                     incrementWallet(amount);
 
@@ -90,7 +94,7 @@ public class ScoreCounter {
      * @return long The amount of score to increment;
      */
     private long countScoreIncrement() {
-        return (long)(getTempMultiplier() * getMultiplier() * getClickPower());
+        return (long)(getDailyBonus() * getTempMultiplier() * getMultiplier() * getClickPower());
     }
 
     /**
@@ -103,7 +107,7 @@ public class ScoreCounter {
             return 0;
         }
 
-        return (long)(getTempMultiplier() * getMultiplier() * getPassiveIncome());
+        return (long)( getDailyBonus() * getTempMultiplier() * getMultiplier() * getPassiveIncome());
     }
 
     /**
@@ -279,6 +283,18 @@ public class ScoreCounter {
      */
     public void incrementClickPower(float amount) {
         setClickPower(getClickPower() + amount);
+    }
+
+    public void setDailyBonus() {
+        if(clock.hasBonus()) {
+            dailyBonus = 2;
+        } else {
+            dailyBonus = 1;
+        }
+    }
+
+    public float getDailyBonus() {
+        return dailyBonus;
     }
 
     /**

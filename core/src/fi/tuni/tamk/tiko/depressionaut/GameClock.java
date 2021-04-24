@@ -50,6 +50,15 @@ public class GameClock {
         prefs.flush();
     }
 
+    public boolean hasBonus() {
+        return strDate.equals(prefs.getString("bonusDay"));
+    }
+
+    public void addBonus() {
+        prefs.putString("bonusDay", strDate);
+        prefs.flush();
+    }
+
 
     /**
      * Main "render loop" updates timers.
