@@ -64,14 +64,14 @@ public class DailyBonus {
     public void drawWindow(SpriteBatch batch) {
         if(clock.isFirstOfTheDay()) {
             if(prefs.getString("lang").equals("en")) {
-                if(clock.isFirstOfTheDay()) {
+                if(clock.isMorning()) {
                     batch.draw(bonusWindowEN, 0, 0);
                 } else {
                     batch.draw(noBonusEN, 0, 0);
                 }
 
             } else {
-                if(clock.isFirstOfTheDay()) {
+                if(clock.isMorning()) {
                     batch.draw(bonusWindowFI, 0, 0);
                 } else {
                     batch.draw(noBonusFI, 0, 0);
@@ -85,12 +85,8 @@ public class DailyBonus {
             Vector3 touch = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
             camera.unproject(touch);
             if(continueButton.contains(touch.x, touch.y)) {
-
                 sounds.menuClicksoudPlay();
                 clock.setLastLogin();
-
-
-
             }
         }
     }

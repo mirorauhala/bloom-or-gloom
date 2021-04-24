@@ -38,6 +38,10 @@ public class GameClock {
 
     }
 
+    public boolean isMorning() {
+        return hours >= 6 && hours <= 9;
+    }
+
     public boolean isFirstOfTheDay() {
         return !strDate.equals(prefs.getString("lastLogin"));
     }

@@ -113,6 +113,7 @@ public class GameScreen implements Screen {
         scoreMeter.draw(batch);
         game.score.setTempMultiplier(clock.amountOfBuffs());
 
+        // Daily Bonus
         dailyBonus.drawWindow(batch);
         dailyBonus.checkForTap(camera);
 
