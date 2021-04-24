@@ -48,7 +48,7 @@ public class MyGdxGame extends Game {
 
 		if(DEBUG) {
 			navigation.setActive(Navigation.Screen.GAME);
-			setScreen(new GameScreen(this));
+			navigation.setScreen(Navigation.Screen.GAME);
 		} else {
 			setScreen(new SplashScreen(this));
 		}
