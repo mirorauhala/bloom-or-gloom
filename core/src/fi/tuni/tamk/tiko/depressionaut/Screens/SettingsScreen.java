@@ -16,9 +16,9 @@ import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 import fi.tuni.tamk.tiko.depressionaut.Sounds;
 
 public class SettingsScreen implements Screen {
+    private final Preferences prefs;
     private MyGdxGame game;
 
-    public Preferences prefs = Gdx.app.getPreferences("settings");
     private Stage stage;
 
     private Rectangle soundRectangle;
@@ -68,6 +68,8 @@ public class SettingsScreen implements Screen {
 
     public SettingsScreen(MyGdxGame game) {
         this.game = game;
+        
+        prefs = game.prefs;
 
         settingsBatch = game.hudBatch;
         camera = game.camera;
