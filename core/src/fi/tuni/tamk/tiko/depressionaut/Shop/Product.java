@@ -64,7 +64,7 @@ public class Product {
 
     /**
      * Returns the product's effects.
-     * @return List<ProductEffect>
+     * @return List
      */
     public List<ProductEffect> getEffects() {
         return effects;
