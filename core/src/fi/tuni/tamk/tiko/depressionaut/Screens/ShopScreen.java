@@ -25,8 +25,6 @@ import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Product;
 import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products;
 
 public class ShopScreen implements Screen {
-    private final OrthographicCamera camera;
-    private final StretchViewport viewport;
     MyGdxGame game;
     ScrollPane scrollpane;
     Skin skin;
@@ -36,10 +34,10 @@ public class ShopScreen implements Screen {
     public ShopScreen(final MyGdxGame game){
         this.game = game;
 
-        camera = new OrthographicCamera(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT);
+        OrthographicCamera camera = new OrthographicCamera(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT);
         camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
 
-        viewport = new StretchViewport(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT, camera);
+        StretchViewport viewport = new StretchViewport(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT, camera);
 
         FileHandle handle = Gdx.files.internal("shop/products.json");
         String text = handle.readString();
@@ -171,7 +169,7 @@ public class ShopScreen implements Screen {
 
     @Override
     public void dispose() {
-        System.out.println("dispose");
+        stage.dispose();
 
     }
 
