@@ -19,6 +19,7 @@ import fi.tuni.tamk.tiko.depressionaut.GameClock;
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 import fi.tuni.tamk.tiko.depressionaut.ScoreCounter;
 import fi.tuni.tamk.tiko.depressionaut.ScoreMeter;
+import fi.tuni.tamk.tiko.depressionaut.Sky;
 import fi.tuni.tamk.tiko.depressionaut.Sounds;
 import fi.tuni.tamk.tiko.depressionaut.TapParticle;
 import fi.tuni.tamk.tiko.depressionaut.Thoughts.ThoughtBubble;
@@ -34,10 +35,6 @@ public class GameScreen implements Screen {
     final private float x = 0;
     final private float y = 0;
 
-    public Texture daySky = new Texture("sky/daySky.png");
-    public Texture nightSky = new Texture("sky/nightSky.png");
-
-
     public Rectangle gameScreenRectangle;
 
     public Sounds sounds = new Sounds();
@@ -47,6 +44,7 @@ public class GameScreen implements Screen {
     private TapParticle particle = new TapParticle();
     private ThoughtBubble bubble = new ThoughtBubble();
     private GameClock clock = new GameClock();
+    private Sky sky = new Sky();
 
     public int wallTier = 0;
     public int floorTier = 0;
@@ -203,10 +201,7 @@ public class GameScreen implements Screen {
 
         batch.begin();
         // Sky layer:
-        batch.draw(nightSky, 0, 0);
-        batch.setColor(1,1,1, clock.getDayOpacity()); // set daySky opacity
-        batch.draw(daySky, 0, 0);
-        batch.setColor(clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,1); // lighting effect
+        sky.draw(batch, clock);
 
         // Background layer:
         batch.draw(walls.get(wallTier), x, y);
