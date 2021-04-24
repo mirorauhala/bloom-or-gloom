@@ -27,9 +27,6 @@ public class TapParticle extends Actor {
     // The list containing the particles:
     private ArrayList<TapParticle> Particles = new ArrayList<>();
 
-    // Object for creating random values:
-    Random random = new SecureRandom();
-
     // Related to moving the particles:
     private Vector2 vector;
     private final float SPEED = 5;
@@ -49,9 +46,9 @@ public class TapParticle extends Actor {
         TapParticle tempParticle = Particles.get(Particles.size()-1);
 
         // Give the particle a random scale:
-        tempParticle.setScale(randomFloat(0.75f, 1.25f));
+        tempParticle.setScale(Util.randomFloat(0.75f, 1.25f));
         // Determines the size of the sector the particles can move in.
-        tempParticle.setRotation(randomFloat(-20, 100));
+        tempParticle.setRotation(Util.randomFloat(-20, 100));
 
         // Give the particle a vector according to its rotation. The vector is used to move the particle
         tempParticle.vector = new Vector2((float)Math.cos(Math.toRadians(tempParticle.getRotation() + 90)) * SPEED,
@@ -138,15 +135,5 @@ public class TapParticle extends Actor {
         if (this.particleTimer <=0 && this.getColor().a == 0) {
             Particles.remove(this);
         }
-    }
-
-    /**
-     * Randomizes a float between given values.
-     * @param min Minimum value of randomized number.
-     * @param max Maximum value of randomized number.
-     * @return Returns the randomized float.
-     */
-    public float randomFloat(float min, float max) {
-        return min + random.nextFloat() * (max - min);
     }
 }

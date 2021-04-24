@@ -17,6 +17,7 @@ public class GameClock {
     Calendar calendarG = new GregorianCalendar();
     int hours, minutes, seconds;
     int lastBubble;
+    int lastSkyObject;
     private ArrayList<Integer> buffs = new ArrayList<>();
     int lastBuffCheck;
     float dayOpacity;
@@ -62,7 +63,7 @@ public class GameClock {
     }
 
     /**
-     * Timer for creating thoughtbubbles.
+     * Timer for creating thought bubbles.
      *
      * Debug mode creates bubbles every 5 seconds and non-debug mode every 1 minute.
      *
@@ -85,6 +86,22 @@ public class GameClock {
             } else if (minutes < lastBubble) {
                 lastBubble = 0;
             }
+        }
+        return false;
+    }
+
+    /**
+     * Timer for creating clouds and birds on the sky layer.
+     *
+     * @return Returns true if an appropriate amount of time has passed since last
+     *         skyObject was created.
+     */
+    public boolean skyObjectTimer() {
+        if (seconds - lastSkyObject >= Math.random()*2+6) {
+            lastSkyObject = seconds;
+            return true;
+        } else if (seconds < lastSkyObject) {
+            lastSkyObject = 0;
         }
         return false;
     }
@@ -137,22 +154,24 @@ public class GameClock {
      * @param debug Debug boolean
      */
     public void dayNightCycle(boolean debug) {
-        int distance;
+        float distance;
+        int timeUnit;
+        float max;
         if (debug) {
-            if (seconds <= 30) {
-                distance = seconds;
-            } else {
-                distance = 30 - (seconds - 30);
-            }
-            dayOpacity = (distance * 2.5f) / 30f;
+            timeUnit = seconds - 5;
+            max = 60 / 2f;
         } else {
-            if (hours <= 12) {
-                distance = hours;
-            } else {
-                distance = 12 - (hours - 12);
-            }
-            dayOpacity = (distance * 2.5f) / 12f;
+            timeUnit = hours - 2;
+            max = 24 / 2f;
         }
+
+        if (timeUnit <= max) {
+            distance = timeUnit;
+        } else {
+            distance = max - (timeUnit - max);
+        }
+
+        dayOpacity = distance / max;
     }
 
     /**
@@ -161,7 +180,14 @@ public class GameClock {
      * @return dayOpacity value
      */
     public float getDayOpacity() {
-        return dayOpacity;
+        //Gdx.app.debug("Clock", "h: " + (24f * (seconds / 60f)));
+        if (dayOpacity < 0.25) {
+            return 0;
+        } else if (dayOpacity < 0.5) {
+            return (dayOpacity - 0.25f) / 0.25f;
+        } else {
+            return 1;
+        }
     }
 
 }
