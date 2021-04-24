@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -171,55 +171,67 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#addBonus--">addBonus</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#addBuff-int-">addBuff</a></span>(int&nbsp;duration)</code>
 <div class="block">Adds a new buff to the buff list.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#amountOfBuffs--">amountOfBuffs</a></span>()</code>
 <div class="block">Return the amount of buffs in the list of buffs.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#buffTimer--">buffTimer</a></span>()</code>
 <div class="block">Timer that for thought bubble buffs.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#dayNightCycle-boolean-">dayNightCycle</a></span>(boolean&nbsp;debug)</code>
 <div class="block">Calculates dayNightCycle percentage.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#getDayOpacity--">getDayOpacity</a></span>()</code>
 <div class="block">Returns the dayOpacity value.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#hasBonus--">hasBonus</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#isFirstOfTheDay--">isFirstOfTheDay</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#isMorning--">isMorning</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#setLastLogin--">setLastLogin</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#skyObjectTimer--">skyObjectTimer</a></span>()</code>
 <div class="block">Timer for creating clouds and birds on the sky layer.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#thoughtBubbleTimer-boolean-">thoughtBubbleTimer</a></span>(boolean&nbsp;debug)</code>
 <div class="block">Timer for creating thought bubbles.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#timer--">timer</a></span>()</code>
 <div class="block">Main "render loop" updates timers.</div>
@@ -291,6 +303,15 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="isMorning--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isMorning</h4>
+<pre>public&nbsp;boolean&nbsp;isMorning()</pre>
+</li>
+</ul>
 <a name="isFirstOfTheDay--">
 <!--   -->
 </a>
@@ -307,6 +328,24 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setLastLogin</h4>
 <pre>public&nbsp;void&nbsp;setLastLogin()</pre>
+</li>
+</ul>
+<a name="hasBonus--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasBonus</h4>
+<pre>public&nbsp;boolean&nbsp;hasBonus()</pre>
+</li>
+</ul>
+<a name="addBonus--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addBonus</h4>
+<pre>public&nbsp;void&nbsp;addBonus()</pre>
 </li>
 </ul>
 <a name="timer--">

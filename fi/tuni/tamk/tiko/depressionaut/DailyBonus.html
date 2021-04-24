@@ -17,6 +17,12 @@
     catch(err) {
     }
 //-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
 </script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -67,15 +73,15 @@
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.top">
@@ -109,6 +115,53 @@ extends java.lang.Object</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>com.badlogic.gdx.graphics.Texture</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#bonusWindowEN">bonusWindowEN</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>com.badlogic.gdx.graphics.Texture</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#bonusWindowFI">bonusWindowFI</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html" title="class in fi.tuni.tamk.tiko.depressionaut">GameClock</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#clock">clock</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>com.badlogic.gdx.math.Rectangle</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#continueButton">continueButton</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>com.badlogic.gdx.graphics.Texture</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#noBonusEN">noBonusEN</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>com.badlogic.gdx.graphics.Texture</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#noBonusFI">noBonusFI</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>com.badlogic.gdx.Preferences</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#prefs">prefs</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html" title="class in fi.tuni.tamk.tiko.depressionaut">Sounds</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#sounds">sounds</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.summary">
@@ -132,6 +185,29 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#checkForTap-com.badlogic.gdx.graphics.Camera-">checkForTap</a></span>(com.badlogic.gdx.graphics.Camera&nbsp;camera)</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#drawWindow-com.badlogic.gdx.graphics.g2d.SpriteBatch-">drawWindow</a></span>(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#randomTip--">randomTip</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#txtToArray--">txtToArray</a></span>()</code>&nbsp;</td>
+</tr>
+</table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
@@ -147,6 +223,86 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="bonusWindowEN">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>bonusWindowEN</h4>
+<pre>public&nbsp;com.badlogic.gdx.graphics.Texture bonusWindowEN</pre>
+</li>
+</ul>
+<a name="bonusWindowFI">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>bonusWindowFI</h4>
+<pre>public&nbsp;com.badlogic.gdx.graphics.Texture bonusWindowFI</pre>
+</li>
+</ul>
+<a name="noBonusEN">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>noBonusEN</h4>
+<pre>public&nbsp;com.badlogic.gdx.graphics.Texture noBonusEN</pre>
+</li>
+</ul>
+<a name="noBonusFI">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>noBonusFI</h4>
+<pre>public&nbsp;com.badlogic.gdx.graphics.Texture noBonusFI</pre>
+</li>
+</ul>
+<a name="continueButton">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>continueButton</h4>
+<pre>public&nbsp;com.badlogic.gdx.math.Rectangle continueButton</pre>
+</li>
+</ul>
+<a name="prefs">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prefs</h4>
+<pre>public&nbsp;com.badlogic.gdx.Preferences prefs</pre>
+</li>
+</ul>
+<a name="clock">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clock</h4>
+<pre>public&nbsp;<a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html" title="class in fi.tuni.tamk.tiko.depressionaut">GameClock</a> clock</pre>
+</li>
+</ul>
+<a name="sounds">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>sounds</h4>
+<pre>public&nbsp;<a href="../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html" title="class in fi.tuni.tamk.tiko.depressionaut">Sounds</a> sounds</pre>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.detail">
@@ -160,6 +316,50 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>DailyBonus</h4>
 <pre>public&nbsp;DailyBonus()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="txtToArray--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>txtToArray</h4>
+<pre>public&nbsp;void&nbsp;txtToArray()</pre>
+</li>
+</ul>
+<a name="randomTip--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>randomTip</h4>
+<pre>public&nbsp;void&nbsp;randomTip()</pre>
+</li>
+</ul>
+<a name="drawWindow-com.badlogic.gdx.graphics.g2d.SpriteBatch-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>drawWindow</h4>
+<pre>public&nbsp;void&nbsp;drawWindow(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</pre>
+</li>
+</ul>
+<a name="checkForTap-com.badlogic.gdx.graphics.Camera-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>checkForTap</h4>
+<pre>public&nbsp;void&nbsp;checkForTap(com.badlogic.gdx.graphics.Camera&nbsp;camera)</pre>
 </li>
 </ul>
 </li>
@@ -215,15 +415,15 @@ extends java.lang.Object</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#methods.inherited.from.class.java.lang.Object">Method</a></li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.bottom">
