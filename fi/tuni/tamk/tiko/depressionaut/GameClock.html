@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -209,11 +209,17 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#thoughtBubbleTimer-boolean-">thoughtBubbleTimer</a></span>(boolean&nbsp;debug)</code>
-<div class="block">Timer for creating thoughtbubbles.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#skyObjectTimer--">skyObjectTimer</a></span>()</code>
+<div class="block">Timer for creating clouds and birds on the sky layer.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#thoughtBubbleTimer-boolean-">thoughtBubbleTimer</a></span>(boolean&nbsp;debug)</code>
+<div class="block">Timer for creating thought bubbles.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#timer--">timer</a></span>()</code>
 <div class="block">Main "render loop" updates timers.</div>
@@ -320,7 +326,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>thoughtBubbleTimer</h4>
 <pre>public&nbsp;boolean&nbsp;thoughtBubbleTimer(boolean&nbsp;debug)</pre>
-<div class="block">Timer for creating thoughtbubbles.
+<div class="block">Timer for creating thought bubbles.
 
  Debug mode creates bubbles every 5 seconds and non-debug mode every 1 minute.</div>
 <dl>
@@ -329,6 +335,21 @@ extends java.lang.Object</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Returns true if an appropriate amount of time has passed since last
          thought bubble was created.</dd>
+</dl>
+</li>
+</ul>
+<a name="skyObjectTimer--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>skyObjectTimer</h4>
+<pre>public&nbsp;boolean&nbsp;skyObjectTimer()</pre>
+<div class="block">Timer for creating clouds and birds on the sky layer.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Returns true if an appropriate amount of time has passed since last
+         skyObject was created.</dd>
 </dl>
 </li>
 </ul>
