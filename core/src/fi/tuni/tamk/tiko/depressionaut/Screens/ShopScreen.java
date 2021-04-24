@@ -81,9 +81,9 @@ public class ShopScreen implements Screen {
             float productNameSize = 1080f - texture.getWidth() - 40f - 200f;
 
             TextButton.TextButtonStyle buttonStyle = new TextButton.TextButtonStyle();
-            buttonStyle.up = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/button-default.png"))));
-            buttonStyle.down = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/button-active.png"))));
-            buttonStyle.disabled = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/button-active.png"))));
+            buttonStyle.up = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/ui/button-default.png"))));
+            buttonStyle.down = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/ui/button-active.png"))));
+            buttonStyle.disabled = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/ui/button-disabled.png"))));
             buttonStyle.font = new BitmapFont(Gdx.files.internal("UI/Quicksand.fnt"));
 
             Button button2 = new TextButton(product.getPrice() + "e", buttonStyle);
@@ -119,7 +119,7 @@ public class ShopScreen implements Screen {
         // create the scrollpane
         scrollpane = new ScrollPane(innerContainer);
 
-        Texture shopNav = new Texture(Gdx.files.internal("shop/shop-clothing.png"));
+        Texture shopNav = new Texture(Gdx.files.internal("shop/ui/en/shop-clothing.png"));
 
         Table shopTop = new Table(skin);
         shopTop.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
