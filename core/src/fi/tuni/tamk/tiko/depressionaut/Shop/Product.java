@@ -6,7 +6,6 @@ public class Product {
     private int id;
     private String name;
     private String type;
-    private int cat;
     private int level;
     private int price;
     private String texture;
@@ -22,10 +21,6 @@ public class Product {
 
     public String getType() {
         return type;
-    }
-
-    public int getCat() {
-        return cat;
     }
 
     public int getLevel() {
