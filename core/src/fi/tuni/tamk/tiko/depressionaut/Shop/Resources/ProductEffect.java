@@ -1,4 +1,4 @@
-package fi.tuni.tamk.tiko.depressionaut.Shop;
+package fi.tuni.tamk.tiko.depressionaut.Shop.Resources;
 
 /**
  * A class representing a single product effect. Serialized to a POJO from JSON using google/gson.

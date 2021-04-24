@@ -121,7 +121,7 @@ public class Items {
      *
      * @param item  String name of the item
      * @param tier int tier of the item
-     * @return
+     * @return Texture
      */
     public Texture getItem(String item, int tier) {
         Integer currentItemIndex = currentIndex.get(item);

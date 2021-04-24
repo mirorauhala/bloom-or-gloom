@@ -1,4 +1,4 @@
-package fi.tuni.tamk.tiko.depressionaut.Shop;
+package fi.tuni.tamk.tiko.depressionaut.Shop.Resources;
 
 import java.util.List;
 
