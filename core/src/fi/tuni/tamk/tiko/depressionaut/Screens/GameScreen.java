@@ -136,11 +136,8 @@ public class GameScreen implements Screen {
                 if (bubble.checkForClear(touch.x, touch.y) == ThoughtBubble.Emotion.POSITIVE) {
                     clock.addBuff(30);
                 }
-
             }
-
         }
-
     }
 
     public void characterDebug(boolean debug) {
