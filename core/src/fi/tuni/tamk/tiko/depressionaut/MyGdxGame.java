@@ -26,6 +26,7 @@ public class MyGdxGame extends Game {
 
 	public OrthographicCamera camera;
 	public Preferences prefs;
+	public Items items;
 
 	@Override
 	public void create () {
@@ -42,6 +43,8 @@ public class MyGdxGame extends Game {
 		score = new ScoreCounter();
 		navigation = new Navigation(this);
 		inventory = new Inventory();
+		items = new Items();
+		//items.preloadTextures(inventory);
 
 		if(DEBUG) {
 			navigation.setActive(Navigation.Screen.GAME);
