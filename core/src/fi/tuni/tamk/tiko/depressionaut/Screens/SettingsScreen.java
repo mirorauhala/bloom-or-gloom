@@ -106,6 +106,12 @@ public class SettingsScreen implements Screen {
             if(musicRectangle.contains(touch.x, touch.y)) {
                 game.settings.setMusic(!game.settings.getMusic());
                 game.sounds.menuClicksoudPlay();
+                if(game.settings.getMusic()) {
+                    game.sounds.ambientPlay();
+                }
+                if(!game.settings.getMusic()) {
+                    game.sounds.stopAmbient();
+                }
             }
             if(finnishRectangle.contains(touch.x, touch.y)) {
 

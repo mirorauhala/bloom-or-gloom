@@ -228,4 +228,12 @@ public class GameClock {
         }
     }
 
+    /**
+     * returns true if clock is between 8pm and 6am
+     * @return true or false
+     */
+    public boolean isNight() {
+        return hours <= 6 || hours >= 20;
+    }
+
 }
