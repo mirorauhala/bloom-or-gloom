@@ -37,8 +37,6 @@ public class GameScreen implements Screen {
 
     public Rectangle gameScreenRectangle;
 
-    public Sounds sounds = new Sounds();
-
 
     public ScoreMeter scoreMeter;
     private TapParticle particle = new TapParticle();
@@ -133,7 +131,7 @@ public class GameScreen implements Screen {
 
             if(gameScreenRectangle.contains(touch.x, touch.y)) {
                 if (bubble.getNegThoughtsAmount() < 1 && !dailyBonus.isBonusWindowOnScreen) {
-                    sounds.clicksoundPlay();
+                    game.sounds.clicksoundPlay();
                     game.score.click();
                     particle.createParticle(headPos);
 

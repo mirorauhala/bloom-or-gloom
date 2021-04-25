@@ -41,7 +41,6 @@ public class DailyBonus {
 
 
     public GameClock clock;
-    public Sounds sounds;
 
     public DailyBonus(MyGdxGame game) {
         this.game = game;
@@ -54,7 +53,6 @@ public class DailyBonus {
         randomTip();
 
         clock = new GameClock();
-        sounds = new Sounds();
 
     }
 
@@ -127,7 +125,7 @@ public class DailyBonus {
             Vector3 touch = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
             camera.unproject(touch);
             if(continueButton.contains(touch.x, touch.y)) {
-                sounds.menuClicksoudPlay();
+                game.sounds.menuClicksoudPlay();
                 clock.setLastLogin();
                 isBonusWindowOnScreen = false;
                 if(clock.isMorning()) {

@@ -28,6 +28,7 @@ public class MyGdxGame extends Game {
 	public OrthographicCamera camera;
 	public Settings settings;
 	public Items items;
+	public Sounds sounds;
 
 	@Override
 	public void create () {
@@ -44,6 +45,7 @@ public class MyGdxGame extends Game {
 		inventory = new Inventory();
 		items = new Items();
 		items.preloadTextures(inventory);
+		sounds = new Sounds(this);
 		navigation = new Navigation(this);
 
 

@@ -36,14 +36,11 @@ public class SettingsScreen implements Screen {
     private Rectangle cancelRectangle;
 
     private OrthographicCamera camera;
-
-    public Sounds sounds = new Sounds();
-
-    /*prefs.putString("lastLogin", strDate);
-      prefs.flush();
+    /*settings.putString("lastLogin", strDate);
+      settings.flush();
 
 
-      prefs.getString("lastLogin")*/
+      settings.getString("lastLogin")*/
 
     private SpriteBatch settingsBatch;
 
@@ -103,12 +100,12 @@ public class SettingsScreen implements Screen {
 
 
             if(soundRectangle.contains(touch.x, touch.y)) {
-                sounds.menuClicksoudPlay();
                 game.settings.setSound(!game.settings.getSound());
+                game.sounds.menuClicksoudPlay();
             }
             if(musicRectangle.contains(touch.x, touch.y)) {
-                sounds.menuClicksoudPlay();
                 game.settings.setMusic(!game.settings.getMusic());
+                game.sounds.menuClicksoudPlay();
             }
             if(finnishRectangle.contains(touch.x, touch.y)) {
 
@@ -117,7 +114,7 @@ public class SettingsScreen implements Screen {
                 } else {
                     game.settings.setLang("en");
                 }
-                sounds.menuClicksoudPlay();
+                game.sounds.menuClicksoudPlay();
             }
             if(englishRectangle.contains(touch.x, touch.y)) {
                 if(game.settings.getLang().equals("en")) {
@@ -125,7 +122,7 @@ public class SettingsScreen implements Screen {
                 } else {
                     game.settings.setLang("en");
                 }
-                sounds.menuClicksoudPlay();
+                game.sounds.menuClicksoudPlay();
             }
             if(comicRectangle.contains(touch.x, touch.y)) {
                 game.navigation.setActive(null);
@@ -135,18 +132,18 @@ public class SettingsScreen implements Screen {
             if(resetRectangle.contains(touch.x, touch.y)) {
                 if(!resetPressed) {
                     resetPressed = true;
-                    sounds.menuClicksoudPlay();
+                    game.sounds.menuClicksoudPlay();
                 }
             }
             if(cancelRectangle.contains(touch.x, touch.y)) {
                 if(resetPressed) {
-                    sounds.menuClicksoudPlay();
+                    game.sounds.menuClicksoudPlay();
                     resetPressed = false;
                 }
             }
             if(confirmRectangle.contains(touch.x, touch.y)) {
                 if(resetPressed) {
-                    sounds.menuClicksoudPlay();
+                    game.sounds.menuClicksoudPlay();
                 }
             }
         }
