@@ -92,6 +92,8 @@ public class ShopScreen implements Screen {
                     if(game.score.decrementWallet(product.getPrice())) {
                         game.inventory.set(product.getType(), product.getId());
                         Gdx.app.debug("SHOP", "Bought: "+ product.getName() + " for " + product.getPrice() );
+                        game.sounds.menuClicksoudPlay();
+
                     } else {
                         Gdx.app.debug("SHOP", "Cannot buy " + product.getName());
                     }
