@@ -349,13 +349,4 @@ public class ScoreCounter {
             default: return 1000;
         }
     }
-    public void drawWallet() {
-        if(getWallet() >= 1000000) {
-            Gdx.app.debug("SCORE", getWallet() / 1000000 + "M");
-        } else if(getWallet() >= 1000) {
-            Gdx.app.debug("SCORE", getWallet() / 1000 + "K");
-        } else {
-            Gdx.app.debug("SCORE",  Float.toString(getWallet()));
-        }
-    }
 }
