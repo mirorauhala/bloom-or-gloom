@@ -26,7 +26,7 @@ public class MyGdxGame extends Game {
 	public final static float SCREEN_HEIGHT = 1920;
 
 	public OrthographicCamera camera;
-	public Preferences prefs;
+	public Settings settings;
 	public Items items;
 
 	@Override
