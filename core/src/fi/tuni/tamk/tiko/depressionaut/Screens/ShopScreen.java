@@ -86,14 +86,6 @@ public class ShopScreen implements Screen {
             float productNameSize = 1080f - texture.getWidth() - 40f - 200f;
 
             Button buyButton = createButton(product.getPrice() + "e");
-
-            Table table = new Table(skin);
-            table.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
-            table.add(new Image(texture)).width(texture.getWidth()).height(texture.getHeight()).padBottom(20f).padLeft(20f).padRight(20f);
-            table.add(productName).width(productNameSize);
-            table.add(buyButton).width(180f).padRight(20f);
-            table.left().top();
-
             buyButton.addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
@@ -106,6 +98,27 @@ public class ShopScreen implements Screen {
                 }
             });
 
+            Table table = new Table(skin);
+            table.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
+
+            // add new product image
+            table.add(new Image(texture))
+                    .width(texture.getWidth())
+                    .height(texture.getHeight())
+                    .padBottom(20f)
+                    .padLeft(20f)
+                    .padRight(20f);
+
+            // add product title
+            table.add(productName).width(productNameSize);
+
+            // add product buy button
+            table.add(buyButton).width(180f).padRight(20f);
+
+            // alignment
+            table.left().top();
+
+
             buttons.put(product, buyButton);
 
             innerContainer.row();
@@ -113,9 +126,15 @@ public class ShopScreen implements Screen {
         }
 
         scrollpane = new ScrollPane(innerContainer);
-        Texture headingTexture = new Texture(Gdx.files.internal("shop/ui/en/shop.png"));
-        Table shopTop = createShopTop(skin, headingTexture);
-        container.add(shopTop).top().left().padTop(20f).padBottom(20f).fill();
+        Table shopTop = createShopTop(skin);
+
+        container.add(shopTop)
+                .top()
+                .left()
+                .padTop(20f)
+                .padBottom(20f)
+                .fill();
+
         container.row();
 
         //add the scroll pane to the container
@@ -194,9 +213,6 @@ public class ShopScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(1, 1, 1, 1);    //sets up the clear color (background color) of the screen.
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);  //instructs openGL to actually clear the screen to the newly set clear color.
-
         Gdx.gl.glClearColor(1, 1, 1, 1); //sets up the clear color (background color) of the screen.
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); //instructs openGL to actually clear the screen to the newly set clear color.
 
