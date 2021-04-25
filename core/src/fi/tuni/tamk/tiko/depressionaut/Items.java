@@ -11,9 +11,9 @@ import java.util.List;
  * switching.
  */
 public class Items {
-    private HashMap<String, List<String>> items = new HashMap<>();
-    private HashMap<String, Texture> currentTextures = new HashMap<>();
-    private HashMap<String, Integer> currentIndex = new HashMap<>();
+    private final HashMap<String, List<String>> items = new HashMap<>();
+    private final HashMap<String, Texture> currentTextures = new HashMap<>();
+    private final HashMap<String, Integer> currentIndex = new HashMap<>();
 
     /**
      * Store the current items.
@@ -133,6 +133,10 @@ public class Items {
         return currentTextures.get(item);
     }
 
+    /**
+     * Preload textures into memory.
+     * @param inventory Inventory
+     */
     public void preloadTextures(Inventory inventory) {
         List<String> items = Arrays.asList(
                 "wall",

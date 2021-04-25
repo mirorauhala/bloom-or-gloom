@@ -11,7 +11,7 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 
 public class GameClock {
-    public Preferences prefs = Gdx.app.getPreferences("general");
+    private final MyGdxGame game;
 
     Date date = new Date();
     Calendar calendarG = new GregorianCalendar();
@@ -26,7 +26,8 @@ public class GameClock {
     /**
      * Constructor sets necessary values.
      */
-    public GameClock() {
+    public GameClock(MyGdxGame game) {
+        this.game = game;
         calendarG.setTime(date);
         hours = calendarG.get(Calendar.HOUR_OF_DAY);
         minutes = calendarG.get(Calendar.MINUTE);
@@ -51,15 +52,14 @@ public class GameClock {
      * @return true or false
      */
     public boolean isFirstOfTheDay() {
-        return !strDate.equals(prefs.getString("lastLogin"));
+        return !strDate.equals(game.settings.getLastSeen());
     }
 
     /**
      * sets today's date to prefs
      */
     public void setLastLogin() {
-        prefs.putString("lastLogin", strDate);
-        prefs.flush();
+        game.settings.setLastSeen(strDate);
     }
 
     /**
@@ -67,15 +67,14 @@ public class GameClock {
      * @return true if today is a bonusday
      */
     public boolean hasBonus() {
-        return strDate.equals(prefs.getString("bonusDay"));
+        return strDate.equals(game.settings.getBonusDay());
     }
 
     /**
      * Sets today's date as a bonus day where the player will get a 2x multiplier for this date
      */
     public void addBonus() {
-        prefs.putString("bonusDay", strDate);
-        prefs.flush();
+        game.settings.setBonusDay(strDate);
     }
 
 

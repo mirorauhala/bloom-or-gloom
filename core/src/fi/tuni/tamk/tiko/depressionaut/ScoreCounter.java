@@ -23,9 +23,9 @@ public class ScoreCounter {
     private final Preferences prefs;
     private GameClock clock;
 
-    public ScoreCounter() {
+    public ScoreCounter(MyGdxGame game) {
         prefs = Gdx.app.getPreferences("score");
-        clock = new GameClock();
+        clock = new GameClock(game);
 
 
         Thread counter = new Thread(new Runnable() {

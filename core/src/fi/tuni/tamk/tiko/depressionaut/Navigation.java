@@ -20,8 +20,6 @@ public class Navigation {
     private Screen activeScreen;
     private HashMap<Screen, com.badlogic.gdx.Screen> screenPair = new HashMap<>();
 
-    public Sounds sounds = new Sounds();
-
     public enum Screen {
         GAME("Game", new Texture("UI/gamePressed.png"), new Rectangle(0, 0, 360, 202)),
         SHOP("Shop", new Texture("UI/shopPressed.png"), new Rectangle(360, 0 , 360, 202)),
@@ -97,7 +95,7 @@ public class Navigation {
                     Gdx.app.debug("NAV", "Set active navigation for: " + screen.getName());
                     setActive(screen);
                     game.setScreen(screenPair.get(screen));
-                    sounds.menuClicksoudPlay();
+                    game.sounds.menuClicksoudPlay();
                 }
             }
         }

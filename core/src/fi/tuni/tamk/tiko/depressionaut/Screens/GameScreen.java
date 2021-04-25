@@ -37,13 +37,11 @@ public class GameScreen implements Screen {
 
     public Rectangle gameScreenRectangle;
 
-    public Sounds sounds = new Sounds();
-
 
     public ScoreMeter scoreMeter;
     private TapParticle particle = new TapParticle();
     private ThoughtBubble bubble = new ThoughtBubble();
-    private GameClock clock = new GameClock();
+    private GameClock clock;
     private Sky sky = new Sky();
 
     MyGdxGame game;
@@ -68,7 +66,8 @@ public class GameScreen implements Screen {
         gameScreenRectangle = new Rectangle(0, 202, 1080, 1920-202);
         stage = new Stage(new ScreenViewport());
         items = game.items;
-        dailyBonus = new DailyBonus();
+        dailyBonus = new DailyBonus(game);
+        clock = new GameClock(game);
     }
 
     @Override
@@ -133,7 +132,7 @@ public class GameScreen implements Screen {
 
             if(gameScreenRectangle.contains(touch.x, touch.y)) {
                 if (bubble.getNegThoughtsAmount() < 1 && !dailyBonus.isBonusWindowOnScreen) {
-                    sounds.clicksoundPlay();
+                    game.sounds.clicksoundPlay();
                     game.score.click();
                     particle.createParticle(headPos);
 

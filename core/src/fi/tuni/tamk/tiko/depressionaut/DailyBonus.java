@@ -21,6 +21,7 @@ import fi.tuni.tamk.tiko.depressionaut.Screens.Comic;
  * @author Jaakko Saranpää
  */
 public class DailyBonus {
+    private final MyGdxGame game;
 
     private String [] emotionTips;
 
@@ -31,8 +32,6 @@ public class DailyBonus {
 
     public Rectangle continueButton;
 
-    public Preferences prefs = Gdx.app.getPreferences("general");
-
     public BitmapFont font;
 
     public String todaysTip;
@@ -42,9 +41,9 @@ public class DailyBonus {
 
 
     public GameClock clock;
-    public Sounds sounds;
 
-    public DailyBonus() {
+    public DailyBonus(MyGdxGame game) {
+        this.game = game;
 
         continueButton = new Rectangle(230, 380, 620, 240);
 
@@ -53,8 +52,7 @@ public class DailyBonus {
         txtToArray();
         randomTip();
 
-        clock = new GameClock();
-        sounds = new Sounds();
+        clock = new GameClock(game);
 
     }
 
@@ -63,7 +61,7 @@ public class DailyBonus {
      */
     public void txtToArray() {
         FileHandle handle;
-        if(prefs.getString("lang").equals("en")) {
+        if(game.settings.getLang().equals("en")) {
             handle = Gdx.files.internal("UI/Dailybonus/TipsEN.txt");
         } else {
             handle = Gdx.files.internal("UI/Dailybonus/TipsFI.txt");
@@ -88,7 +86,7 @@ public class DailyBonus {
     public void drawWindow(SpriteBatch batch) {
         if(clock.isFirstOfTheDay()) {
             isBonusWindowOnScreen = true;
-            if(prefs.getString("lang").equals("en")) {
+            if(game.settings.getLang().equals("en")) {
                 if(clock.isMorning()) {
                     batch.draw(bonusWindowEN, 0, 0);
                 } else {
@@ -127,7 +125,7 @@ public class DailyBonus {
             Vector3 touch = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
             camera.unproject(touch);
             if(continueButton.contains(touch.x, touch.y)) {
-                sounds.menuClicksoudPlay();
+                game.sounds.menuClicksoudPlay();
                 clock.setLastLogin();
                 isBonusWindowOnScreen = false;
                 if(clock.isMorning()) {

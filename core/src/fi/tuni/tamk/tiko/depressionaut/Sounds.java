@@ -5,16 +5,19 @@ import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.math.MathUtils;
 
 public class Sounds {
+    private final MyGdxGame game;
     public com.badlogic.gdx.audio.Sound click = Gdx.audio.newSound(Gdx.files.internal("sounds/click.mp3"));
     public com.badlogic.gdx.audio.Sound menuClick = Gdx.audio.newSound(Gdx.files.internal("sounds/settingsClick.mp3"));
-    public Preferences prefs = Gdx.app.getPreferences("general");
 
+    public Sounds(MyGdxGame game) {
+        this.game = game;
+    }
 
     /**
      * used to play a clicking sound whenever the player clicks the game screen
      */
     public void clicksoundPlay() {
-        if(prefs.getString("sound").equals("on")) {
+        if(game.settings.getSound()) {
             click.play(0.1f, MathUtils.random(0.95f, 1.05f), 0);
         }
 
@@ -25,7 +28,7 @@ public class Sounds {
      * used to play a clicking sound whenever the player presses a menu button
      */
     public void menuClicksoudPlay() {
-        if(prefs.getString("sound").equals("on")) {
+        if(game.settings.getSound()) {
             menuClick.play(0.1f, MathUtils.random(0.95f, 1.05f), 0);
         }
 

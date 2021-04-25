@@ -6,7 +6,6 @@ import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
@@ -14,7 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
-import fi.tuni.tamk.tiko.depressionaut.ScoreCounter;
+import fi.tuni.tamk.tiko.depressionaut.Settings;
 import fi.tuni.tamk.tiko.depressionaut.Sounds;
 
 /**
@@ -38,16 +37,11 @@ public class SettingsScreen implements Screen {
     private Rectangle cancelRectangle;
 
     private OrthographicCamera camera;
-
-    public Sounds sounds = new Sounds();
-
-    public BitmapFont font;
-
-    /*prefs.putString("lastLogin", strDate);
-      prefs.flush();
+    /*settings.putString("lastLogin", strDate);
+      settings.flush();
 
 
-      prefs.getString("lastLogin")*/
+      settings.getString("lastLogin")*/
 
     private SpriteBatch settingsBatch;
 
@@ -72,23 +66,14 @@ public class SettingsScreen implements Screen {
     private final Texture resetFi = new Texture("Settings/ResetButton/FI/resetFi.png");
     private final Texture resetConfirmationFi = new Texture("Settings/ResetButton/FI/resetConfirmationFi.png");
 
-    public Preferences scorePrefs;
 
     private boolean resetPressed;
 
     public SettingsScreen(MyGdxGame game) {
         this.game = game;
-        
-        prefs = game.prefs;
-        scorePrefs = Gdx.app.getPreferences("score");
-
-
         settingsBatch = game.hudBatch;
         camera = game.camera;
         stage = new Stage(new ScreenViewport());
-
-
-        font = new BitmapFont(Gdx.files.internal("UI/QuicksandASCII.fnt"));
 
         resetPressed = false;
 
@@ -116,44 +101,29 @@ public class SettingsScreen implements Screen {
 
 
             if(soundRectangle.contains(touch.x, touch.y)) {
-                if(prefs.getString("sound").equals("off")) {
-                    prefs.putString("sound", "on");
-                    prefs.flush();
-                } else {
-                    prefs.putString("sound", "off");
-                    prefs.flush();
-                }
-                sounds.menuClicksoudPlay();
+                game.settings.setSound(!game.settings.getSound());
+                game.sounds.menuClicksoudPlay();
             }
             if(musicRectangle.contains(touch.x, touch.y)) {
-                if(prefs.getString("music").equals("off")) {
-                    prefs.putString("music", "on");
-                    prefs.flush();
-                } else {
-                    prefs.putString("music", "off");
-                    prefs.flush();
-                }
-                sounds.menuClicksoudPlay();
+                game.settings.setMusic(!game.settings.getMusic());
+                game.sounds.menuClicksoudPlay();
             }
             if(finnishRectangle.contains(touch.x, touch.y)) {
-                if(prefs.getString("lang").equals("en")) {
-                    prefs.putString("lang", "fi");
-                    prefs.flush();
+
+                if(game.settings.getLang().equals("en")) {
+                    game.settings.setLang("fi");
                 } else {
-                    prefs.putString("lang", "fi");
-                    prefs.flush();
+                    game.settings.setLang("en");
                 }
-                sounds.menuClicksoudPlay();
+                game.sounds.menuClicksoudPlay();
             }
             if(englishRectangle.contains(touch.x, touch.y)) {
-                if(prefs.getString("lang").equals("fi")) {
-                    prefs.putString("lang", "en");
-                    prefs.flush();
+                if(game.settings.getLang().equals("en")) {
+                    game.settings.setLang("fi");
                 } else {
-                    prefs.putString("lang", "en");
-                    prefs.flush();
+                    game.settings.setLang("en");
                 }
-                sounds.menuClicksoudPlay();
+                game.sounds.menuClicksoudPlay();
             }
             if(comicRectangle.contains(touch.x, touch.y)) {
                 game.navigation.setActive(null);
@@ -163,18 +133,18 @@ public class SettingsScreen implements Screen {
             if(resetRectangle.contains(touch.x, touch.y)) {
                 if(!resetPressed) {
                     resetPressed = true;
-                    sounds.menuClicksoudPlay();
+                    game.sounds.menuClicksoudPlay();
                 }
             }
             if(cancelRectangle.contains(touch.x, touch.y)) {
                 if(resetPressed) {
-                    sounds.menuClicksoudPlay();
+                    game.sounds.menuClicksoudPlay();
                     resetPressed = false;
                 }
             }
             if(confirmRectangle.contains(touch.x, touch.y)) {
                 if(resetPressed) {
-                    sounds.menuClicksoudPlay();
+                    game.sounds.menuClicksoudPlay();
                 }
             }
         }
@@ -204,17 +174,15 @@ public class SettingsScreen implements Screen {
         settingsBatch.draw(comicBtn, 0 ,0);
         settingsBatch.draw(infoBox, 0, 0);
         drawButtonReset();
-        drawStats();
         settingsBatch.end();
         checkForTap();
-
     }
 
     /**
      * draw method for sound on/off button
      */
     public void drawButtonSound() {
-        if(prefs.getString("sound").equals("on")) {
+        if(game.settings.getSound()) {
             settingsBatch.draw(soundOn, 0 ,0);
         } else {
             settingsBatch.draw(soundOff, 0 ,0);
@@ -224,7 +192,7 @@ public class SettingsScreen implements Screen {
      * draw method for music on/off button
      */
     public void drawButtonMusic() {
-        if(prefs.getString("music").equals("on")) {
+        if(game.settings.getMusic()) {
             settingsBatch.draw(musicOn, 0 ,0);
         } else {
             settingsBatch.draw(musicOff, 0 ,0);
@@ -234,7 +202,7 @@ public class SettingsScreen implements Screen {
      * draw method for language english/finnish button
      */
     public void drawButtonLang() {
-        if(prefs.getString("lang").equals("en")) {
+        if(game.settings.getLang().equals("en")) {
             settingsBatch.draw(langEn, 0 ,0);
         } else {
             settingsBatch.draw(langFi, 0 ,0);
@@ -244,7 +212,7 @@ public class SettingsScreen implements Screen {
      * draw method for reset button which shows two new buttons for cancel and continue
      */
     public void drawButtonReset() {
-        if(prefs.getString("lang").equals("en")) {
+        if(game.settings.getLang().equals("en")) {
             if(resetPressed) {
                 settingsBatch.draw(resetOnEn, 0 ,0);
                 settingsBatch.draw(resetEn, 0, 0);
@@ -259,25 +227,6 @@ public class SettingsScreen implements Screen {
 
             } else {
                 settingsBatch.draw(resetOffFi, 0 ,0);
-            }
-        }
-
-    }
-
-    public void drawStats() {
-        if(!resetPressed) {
-            if(prefs.getString("lang").equals("en")) {
-                font.getData().setScale(2.0f, 2.0f);
-                font.draw(settingsBatch, "Stats", 150, 1150, 780, 1, true);
-                font.draw(settingsBatch, "Click = " + (int)(prefs.getFloat("click-power") + 999), 120, 1050, 420, -1, true);
-                font.draw(settingsBatch, "Multiplier = " + (int)(prefs.getFloat("multiplier") + 999), 120, 950, 420, -1, true);
-                font.draw(settingsBatch, "Passive = " + (int)(prefs.getFloat("passive-income") + 999), 120, 850, 420, -1, true);
-            } else {
-                font.getData().setScale(2.0f, 2.0f);
-                font.draw(settingsBatch, "Tilastot", 150, 1150, 780, 1, true);
-                font.draw(settingsBatch, "Klikkaus = " + (int)(prefs.getFloat("click-power") + 999), 120, 1050, 420, -1, true);
-                font.draw(settingsBatch, "Kerroin = " + (int)(prefs.getFloat("multiplier") + 999), 120, 950, 420, -1, true);
-                font.draw(settingsBatch, "Passiivinen = " + (int)(prefs.getFloat("passive-income") + 999), 120, 850, 420, -1, true);
             }
         }
 
