@@ -174,7 +174,7 @@ public class ShopScreen implements Screen {
      * @return Table
      */
     private Table createShopTop(Skin skin) {
-        shopHeadingTexture = new Texture(Gdx.files.internal("shop/ui/en/shop.png"));
+        shopHeadingTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/shop.png"));
 
         Table table = new Table(skin);
         table.setDebug(MyGdxGame.DEBUG);
