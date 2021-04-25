@@ -18,7 +18,7 @@ import fi.tuni.tamk.tiko.depressionaut.Util;
  * Responsible for the creation, moving and drawing of the objects.
  */
 public class SkyObject extends Actor {
-    // List of paths for the cloud textures:
+    // List of paths for the cloud and bird textures:
     private List<String> cloudTextures = Arrays.asList(
             "cosmetics/clouds/v1.png",
             "cosmetics/clouds/v2.png",
@@ -28,7 +28,9 @@ public class SkyObject extends Actor {
             "cosmetics/clouds/v6.png",
             "cosmetics/clouds/v7.png",
             "cosmetics/clouds/v8.png",
-            "cosmetics/clouds/v9.png"
+            "cosmetics/clouds/v9.png",
+            "cosmetics/bird.png",
+            "cosmetics/bird.png"
     );
     // Lists for the different layers of objects needed for the parallaxing effect:
     private HashMap<Integer, ArrayList<SkyObject>> layers = new HashMap<>();
@@ -38,8 +40,6 @@ public class SkyObject extends Actor {
 
     // Values for the objects:
     private Vector2 velocity;
-    private float angle = 5.3f;
-    private float speed = 0.5f;
     private Texture texture;
 
     /**
@@ -57,16 +57,32 @@ public class SkyObject extends Actor {
      * The method gives each sky object a random layer, texture, position and scale.
      * Each objects velocity is determined by it's layer to create a parallaxing effect.
      * The randomization is done using Util.randomFloat().
+     *
+     * If the object gets the bird texture, it's speed will be higher and angle slightly randomized.
      */
     public void createSkyObject() {
         SkyObject temp = new SkyObject();
         int randomArray = (int)(Util.randomFloat(0,2)); // set random layer
+        float speed; // object's speed
+        float angle = 5.3f; // object's angle
 
-        temp.texture = getTexture(cloudTextures.get((int)(Util.randomFloat(0,8)))); // set random texture
-        // set random position on the left side of the window
-        temp.setPosition(
-                100 - temp.texture.getWidth(),
-                (float) ((Util.randomFloat(0,144)) + (1920-500) - temp.texture.getHeight()));
+        int randIndex = (int)(Util.randomFloat(0,10));
+        temp.texture = getTexture(cloudTextures.get(randIndex)); // set random texture
+
+        // If bird:
+        if (randIndex >= 9) {
+            speed = 1.5f;
+            angle += Util.randomFloat(-5, 10);
+            temp.setY((float) ((Util.randomFloat(-250,0)) + (1920-460) - temp.texture.getHeight()));
+        // If cloud:
+        } else {
+            speed = 0.5f;
+            temp.setY((float) ((Util.randomFloat(-150,0)) + (1920-400) - temp.texture.getHeight()));
+        }
+
+        // Set x to be the left side of the window:
+        temp.setX(100 - temp.texture.getWidth());
+
         // set random velocity depending on the object's layer
         temp.velocity = new Vector2(
                 (speed + (randomArray * 0.075f)) * (float)Math.cos(Math.toRadians(angle)),
