@@ -13,6 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
+import fi.tuni.tamk.tiko.depressionaut.Settings;
 import fi.tuni.tamk.tiko.depressionaut.Sounds;
 
 /**
@@ -21,7 +22,6 @@ import fi.tuni.tamk.tiko.depressionaut.Sounds;
  * @author Jaakko Saranpää
  */
 public class SettingsScreen implements Screen {
-    private final Preferences prefs;
     private MyGdxGame game;
 
     private Stage stage;
@@ -73,9 +73,6 @@ public class SettingsScreen implements Screen {
 
     public SettingsScreen(MyGdxGame game) {
         this.game = game;
-        
-        prefs = game.prefs;
-
         settingsBatch = game.hudBatch;
         camera = game.camera;
         stage = new Stage(new ScreenViewport());
@@ -106,42 +103,27 @@ public class SettingsScreen implements Screen {
 
 
             if(soundRectangle.contains(touch.x, touch.y)) {
-                if(prefs.getString("sound").equals("off")) {
-                    prefs.putString("sound", "on");
-                    prefs.flush();
-                } else {
-                    prefs.putString("sound", "off");
-                    prefs.flush();
-                }
                 sounds.menuClicksoudPlay();
+                game.settings.setSound(!game.settings.getSound());
             }
             if(musicRectangle.contains(touch.x, touch.y)) {
-                if(prefs.getString("music").equals("off")) {
-                    prefs.putString("music", "on");
-                    prefs.flush();
-                } else {
-                    prefs.putString("music", "off");
-                    prefs.flush();
-                }
                 sounds.menuClicksoudPlay();
+                game.settings.setMusic(!game.settings.getMusic());
             }
             if(finnishRectangle.contains(touch.x, touch.y)) {
-                if(prefs.getString("lang").equals("en")) {
-                    prefs.putString("lang", "fi");
-                    prefs.flush();
+
+                if(game.settings.getLang().equals("en")) {
+                    game.settings.setLang("fi");
                 } else {
-                    prefs.putString("lang", "fi");
-                    prefs.flush();
+                    game.settings.setLang("en");
                 }
                 sounds.menuClicksoudPlay();
             }
             if(englishRectangle.contains(touch.x, touch.y)) {
-                if(prefs.getString("lang").equals("fi")) {
-                    prefs.putString("lang", "en");
-                    prefs.flush();
+                if(game.settings.getLang().equals("en")) {
+                    game.settings.setLang("fi");
                 } else {
-                    prefs.putString("lang", "en");
-                    prefs.flush();
+                    game.settings.setLang("en");
                 }
                 sounds.menuClicksoudPlay();
             }
@@ -202,7 +184,7 @@ public class SettingsScreen implements Screen {
      * draw method for sound on/off button
      */
     public void drawButtonSound() {
-        if(prefs.getString("sound").equals("on")) {
+        if(game.settings.getSound()) {
             settingsBatch.draw(soundOn, 0 ,0);
         } else {
             settingsBatch.draw(soundOff, 0 ,0);
@@ -212,7 +194,7 @@ public class SettingsScreen implements Screen {
      * draw method for music on/off button
      */
     public void drawButtonMusic() {
-        if(prefs.getString("music").equals("on")) {
+        if(game.settings.getMusic()) {
             settingsBatch.draw(musicOn, 0 ,0);
         } else {
             settingsBatch.draw(musicOff, 0 ,0);
@@ -222,7 +204,7 @@ public class SettingsScreen implements Screen {
      * draw method for language english/finnish button
      */
     public void drawButtonLang() {
-        if(prefs.getString("lang").equals("en")) {
+        if(game.settings.getLang().equals("en")) {
             settingsBatch.draw(langEn, 0 ,0);
         } else {
             settingsBatch.draw(langFi, 0 ,0);
@@ -232,7 +214,7 @@ public class SettingsScreen implements Screen {
      * draw method for reset button which shows two new buttons for cancel and continue
      */
     public void drawButtonReset() {
-        if(prefs.getString("lang").equals("en")) {
+        if(game.settings.getLang().equals("en")) {
             if(resetPressed) {
                 settingsBatch.draw(resetOnEn, 0 ,0);
                 settingsBatch.draw(resetEn, 0, 0);
