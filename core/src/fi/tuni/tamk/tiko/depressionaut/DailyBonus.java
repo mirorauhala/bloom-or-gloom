@@ -33,12 +33,15 @@ public class DailyBonus {
 
     public String todaysTip;
 
+    public boolean isBonusWindowOnScreen;
+
 
 
     public GameClock clock;
     public Sounds sounds;
 
     public DailyBonus() {
+
 
         continueButton = new Rectangle(230, 380, 620, 240);
 
@@ -71,6 +74,7 @@ public class DailyBonus {
 
     public void drawWindow(SpriteBatch batch) {
         if(clock.isFirstOfTheDay()) {
+            isBonusWindowOnScreen = true;
             if(prefs.getString("lang").equals("en")) {
                 if(clock.isMorning()) {
                     batch.draw(bonusWindowEN, 0, 0);
@@ -107,6 +111,7 @@ public class DailyBonus {
             if(continueButton.contains(touch.x, touch.y)) {
                 sounds.menuClicksoudPlay();
                 clock.setLastLogin();
+                isBonusWindowOnScreen = false;
                 if(clock.isMorning()) {
                     clock.addBonus();
                 }

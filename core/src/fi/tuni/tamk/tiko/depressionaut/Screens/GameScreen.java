@@ -132,7 +132,7 @@ public class GameScreen implements Screen {
             camera.unproject(touch);
 
             if(gameScreenRectangle.contains(touch.x, touch.y)) {
-                if (bubble.getNegThoughtsAmount() < 1) {
+                if (bubble.getNegThoughtsAmount() < 1 && !dailyBonus.isBonusWindowOnScreen) {
                     sounds.clicksoundPlay();
                     game.score.click();
                     particle.createParticle(headPos);
