@@ -32,6 +32,61 @@
       "effect": [
         {"method": "click-power", "action": "increment", "amount": 1}
       ]
+    },
+    {
+      "id": 3,
+      "name": "Green Shirt",
+      "type": "shirt",
+      "level": 3,
+      "price": 30,
+      "texture": "wip-product.png",
+      "effect": [
+        {"method": "click-power", "action": "increment", "amount": 1}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Green Shirt",
+      "type": "shirt",
+      "level": 3,
+      "price": 30,
+      "texture": "wip-product.png",
+      "effect": [
+        {"method": "click-power", "action": "increment", "amount": 1}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Green Shirt",
+      "type": "shirt",
+      "level": 3,
+      "price": 30,
+      "texture": "wip-product.png",
+      "effect": [
+        {"method": "click-power", "action": "increment", "amount": 1}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Green Shirt",
+      "type": "shirt",
+      "level": 3,
+      "price": 30,
+      "texture": "wip-product.png",
+      "effect": [
+        {"method": "click-power", "action": "increment", "amount": 1}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Green Shirt",
+      "type": "shirt",
+      "level": 3,
+      "price": 30,
+      "texture": "wip-product.png",
+      "effect": [
+        {"method": "click-power", "action": "increment", "amount": 1}
+      ]
     }
   ]
 }
