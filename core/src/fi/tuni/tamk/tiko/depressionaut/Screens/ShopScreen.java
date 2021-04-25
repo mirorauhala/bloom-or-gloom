@@ -30,7 +30,7 @@ import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Product;
 import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products;
 
 public class ShopScreen implements Screen {
-    private HashMap<Product, Button> buttons = new HashMap<>();
+    private final HashMap<Product, Button> buttons = new HashMap<>();
     private final Label walletAmount;
     MyGdxGame game;
     ScrollPane scrollpane;
