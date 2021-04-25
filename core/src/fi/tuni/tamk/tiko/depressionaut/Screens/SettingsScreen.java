@@ -203,7 +203,6 @@ public class SettingsScreen implements Screen {
                 font.draw(settingsBatch, "Aloituspäivä: ", 540, 850, 420, -1, true);
                 font.draw(settingsBatch, game.settings.getFirstDay(), 540, 750, 420, -1, true);
             }
-
         }
     }
 
