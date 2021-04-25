@@ -41,7 +41,7 @@ public class GameScreen implements Screen {
     public ScoreMeter scoreMeter;
     private TapParticle particle = new TapParticle();
     private ThoughtBubble bubble = new ThoughtBubble();
-    private GameClock clock = new GameClock();
+    private GameClock clock;
     private Sky sky = new Sky();
 
     MyGdxGame game;
@@ -67,6 +67,7 @@ public class GameScreen implements Screen {
         stage = new Stage(new ScreenViewport());
         items = game.items;
         dailyBonus = new DailyBonus(game);
+        clock = new GameClock(game);
     }
 
     @Override

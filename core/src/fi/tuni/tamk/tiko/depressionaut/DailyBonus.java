@@ -52,7 +52,7 @@ public class DailyBonus {
         txtToArray();
         randomTip();
 
-        clock = new GameClock();
+        clock = new GameClock(game);
 
     }
 

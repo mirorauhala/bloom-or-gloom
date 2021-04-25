@@ -45,6 +45,7 @@ public class MyGdxGame extends Game {
 		inventory = new Inventory();
 		items = new Items();
 		items.preloadTextures(inventory);
+		score = new ScoreCounter(this);
 		sounds = new Sounds(this);
 		navigation = new Navigation(this);
 
