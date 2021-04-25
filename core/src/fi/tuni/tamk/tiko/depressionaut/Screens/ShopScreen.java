@@ -31,12 +31,14 @@ import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products;
 
 public class ShopScreen implements Screen {
     private final HashMap<Product, Button> buttons = new HashMap<>();
-    private final Label walletAmount;
+    private float walletAmount;
+    private final Label walletLabel;
     MyGdxGame game;
     ScrollPane scrollpane;
     Skin skin;
     Stage stage;
     Table container;
+    Texture shopHeadingTexture;
 
     public ShopScreen(final MyGdxGame game){
         this.game = game;
@@ -55,7 +57,8 @@ public class ShopScreen implements Screen {
         //setup skin
         skin = new Skin(Gdx.files.internal("UI/uiskin.json"));
 
-        walletAmount = new Label("", skin);
+        walletLabel = new Label("", skin);
+        walletLabel.setFontScale(1.5f);
 
         // table that holds the scroll pane
         container = new Table();
@@ -147,18 +150,23 @@ public class ShopScreen implements Screen {
     /**
      * Create the top of the shop.
      * @param skin Skin libgdx skin to be used
-     * @param heading Texture
      * @return Table
      */
-    private Table createShopTop(Skin skin, Texture heading) {
-        walletAmount.setFontScale(1.5f);
+    private Table createShopTop(Skin skin) {
+        shopHeadingTexture = new Texture(Gdx.files.internal("shop/ui/en/shop.png"));
 
-        Table t = new Table(skin);
-        t.setDebug(MyGdxGame.DEBUG);
-        t.add(new Image(heading)).pad(20f).width(heading.getWidth()).expandX().left();
-        t.add(walletAmount).padRight(20f).expand().right();
+        Table table = new Table(skin);
+        table.setDebug(MyGdxGame.DEBUG);
 
-        return t;
+        table.add(new Image(shopHeadingTexture))
+                .pad(20f)
+                .width(shopHeadingTexture.getWidth())
+                .expandX()
+                .left();
+
+        table.add(walletLabel).padRight(20f).expand().right();
+
+        return table;
     }
 
     /**
@@ -166,15 +174,22 @@ public class ShopScreen implements Screen {
      *
      * If the player doesn't have enough funds, set the buttons to a disabled state.
      * Otherwise, enable the buttons back.
-     * @param wallet float
      */
-    private void updateButtons(float wallet) {
+    private void updateButtons() {
         for (Map.Entry<Product, Button> entry : buttons.entrySet()) {
             Product p = entry.getKey();
             Button b = entry.getValue();
 
-            b.setDisabled(p.getPrice() > wallet);
+            b.setDisabled(p.getPrice() > walletAmount);
         }
+    }
+
+    /**
+     * Get the current wallet amount and set it to the label.
+     */
+    private void updateWallet() {
+        walletAmount = game.score.getWallet();
+        walletLabel.setText(walletAmount + ""); // hack: cast to string
     }
 
     @Override
@@ -182,10 +197,11 @@ public class ShopScreen implements Screen {
         Gdx.gl.glClearColor(1, 1, 1, 1);    //sets up the clear color (background color) of the screen.
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);  //instructs openGL to actually clear the screen to the newly set clear color.
 
-        float wallet = game.score.getWallet();
+        Gdx.gl.glClearColor(1, 1, 1, 1); //sets up the clear color (background color) of the screen.
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); //instructs openGL to actually clear the screen to the newly set clear color.
 
-        updateButtons(wallet);
-        walletAmount.setText(wallet + ""); // hack: cast to string
+        updateWallet();
+        updateButtons();
 
         stage.draw();
         stage.act(delta);
