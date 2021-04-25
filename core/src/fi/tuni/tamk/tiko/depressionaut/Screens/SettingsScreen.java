@@ -266,11 +266,19 @@ public class SettingsScreen implements Screen {
 
     public void drawStats() {
         if(!resetPressed) {
-            font.getData().setScale(2.0f, 2.0f);
-            font.draw(settingsBatch, "Stats", 150, 1150, 780, 1, true);
-            font.draw(settingsBatch, "Click = " + (int)(prefs.getFloat("click-power") + 999), 120, 1050, 420, -1, true);
-            font.draw(settingsBatch, "Multiplier = " + (int)(prefs.getFloat("multiplier") + 999), 120, 950, 420, -1, true);
-            font.draw(settingsBatch, "Passive = " + (int)(prefs.getFloat("passive-income") + 999), 120, 850, 420, -1, true);
+            if(prefs.getString("lang").equals("en")) {
+                font.getData().setScale(2.0f, 2.0f);
+                font.draw(settingsBatch, "Stats", 150, 1150, 780, 1, true);
+                font.draw(settingsBatch, "Click = " + (int)(prefs.getFloat("click-power") + 999), 120, 1050, 420, -1, true);
+                font.draw(settingsBatch, "Multiplier = " + (int)(prefs.getFloat("multiplier") + 999), 120, 950, 420, -1, true);
+                font.draw(settingsBatch, "Passive = " + (int)(prefs.getFloat("passive-income") + 999), 120, 850, 420, -1, true);
+            } else {
+                font.getData().setScale(2.0f, 2.0f);
+                font.draw(settingsBatch, "Tilastot", 150, 1150, 780, 1, true);
+                font.draw(settingsBatch, "Klikkaus = " + (int)(prefs.getFloat("click-power") + 999), 120, 1050, 420, -1, true);
+                font.draw(settingsBatch, "Kerroin = " + (int)(prefs.getFloat("multiplier") + 999), 120, 950, 420, -1, true);
+                font.draw(settingsBatch, "Passiivinen = " + (int)(prefs.getFloat("passive-income") + 999), 120, 850, 420, -1, true);
+            }
         }
 
     }
