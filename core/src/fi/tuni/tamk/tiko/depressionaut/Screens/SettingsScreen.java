@@ -6,6 +6,7 @@ import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
@@ -22,7 +23,6 @@ import fi.tuni.tamk.tiko.depressionaut.Sounds;
  * @author Jaakko Saranpää
  */
 public class SettingsScreen implements Screen {
-    private final Preferences prefs;
     private MyGdxGame game;
 
     private Stage stage;
@@ -37,11 +37,8 @@ public class SettingsScreen implements Screen {
     private Rectangle cancelRectangle;
 
     private OrthographicCamera camera;
-    /*settings.putString("lastLogin", strDate);
-      settings.flush();
 
-
-      settings.getString("lastLogin")*/
+    public BitmapFont font;
 
     private SpriteBatch settingsBatch;
 
@@ -74,6 +71,8 @@ public class SettingsScreen implements Screen {
         settingsBatch = game.hudBatch;
         camera = game.camera;
         stage = new Stage(new ScreenViewport());
+
+        font = new BitmapFont(Gdx.files.internal("UI/QuicksandASCII.fnt"));
 
         resetPressed = false;
 
