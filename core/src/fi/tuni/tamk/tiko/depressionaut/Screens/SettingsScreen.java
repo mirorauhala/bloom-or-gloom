@@ -199,8 +199,10 @@ public class SettingsScreen implements Screen {
         settingsBatch.draw(comicBtn, 0 ,0);
         settingsBatch.draw(infoBox, 0, 0);
         drawButtonReset();
+        drawStats();
         settingsBatch.end();
         checkForTap();
+
     }
 
     /**
@@ -258,6 +260,10 @@ public class SettingsScreen implements Screen {
     }
 
     public void drawStats() {
+        if(!resetPressed) {
+            font.getData().setScale(2.5f, 2.5f);
+            font.draw(settingsBatch, "Stats", 150, 1150, 780, 1, true);
+        }
 
     }
 
