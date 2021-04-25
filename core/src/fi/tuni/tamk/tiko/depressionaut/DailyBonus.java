@@ -15,7 +15,11 @@ import com.badlogic.gdx.math.Vector3;
 
 import fi.tuni.tamk.tiko.depressionaut.Screens.Comic;
 
-
+/**
+ * DailyBonus creates a window every day that the user plays the game for the first time during that day and gives the player a bonus
+ *
+ * @author Jaakko Saranpää
+ */
 public class DailyBonus {
 
     private String [] emotionTips;
@@ -42,7 +46,6 @@ public class DailyBonus {
 
     public DailyBonus() {
 
-
         continueButton = new Rectangle(230, 380, 620, 240);
 
         font = new BitmapFont(Gdx.files.internal("UI/QuicksandASCII.fnt"));
@@ -55,6 +58,9 @@ public class DailyBonus {
 
     }
 
+    /**
+     * txtToArray turns a .txt file into an array of strings divided by line breaks
+     */
     public void txtToArray() {
         FileHandle handle;
         if(prefs.getString("lang").equals("en")) {
@@ -67,11 +73,18 @@ public class DailyBonus {
         emotionTips = text.split("\\r?\\n");
     }
 
+    /**
+     * randomTip() chooses a random string from an array of strings
+     */
     public void randomTip() {
         int randomNum = MathUtils.random(emotionTips.length - 1);
         todaysTip = emotionTips[randomNum];
     }
 
+    /**
+     * drawWindow draws the dailybonus window and all its texts
+     * @param batch
+     */
     public void drawWindow(SpriteBatch batch) {
         if(clock.isFirstOfTheDay()) {
             isBonusWindowOnScreen = true;
@@ -104,6 +117,11 @@ public class DailyBonus {
         }
 
     }
+
+    /**
+     * checkForTap checks if the player presses the "continue" button on dailybonus window
+     * @param camera
+     */
     public void checkForTap(Camera camera) {
         if(Gdx.input.justTouched() && clock.isFirstOfTheDay()) {
             Vector3 touch = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
