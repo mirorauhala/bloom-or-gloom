@@ -26,8 +26,9 @@ public class MyGdxGame extends Game {
 	public final static float SCREEN_HEIGHT = 1920;
 
 	public OrthographicCamera camera;
-	public Preferences prefs;
+	public Settings settings;
 	public Items items;
+	public Sounds sounds;
 
 	@Override
 	public void create () {
@@ -40,11 +41,12 @@ public class MyGdxGame extends Game {
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-		prefs = Gdx.app.getPreferences("general");
-		score = new ScoreCounter();
+		settings = new Settings();
 		inventory = new Inventory();
 		items = new Items();
 		items.preloadTextures(inventory);
+		score = new ScoreCounter(this);
+		sounds = new Sounds(this);
 		navigation = new Navigation(this);
 
 
