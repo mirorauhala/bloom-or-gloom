@@ -94,12 +94,12 @@ public class ShopScreen implements Screen {
             buyButton.addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
-                if(game.score.decrementWallet(product.getPrice())) {
-                    game.inventory.set(product.getType(), product.getId());
-                    Gdx.app.debug("SHOP", "Bought: "+ product.getName() + " for " + product.getPrice() );
-                } else {
-                    Gdx.app.debug("SHOP", "Cannot buy " + product.getName());
-                }
+                    if(game.score.decrementWallet(product.getPrice())) {
+                        game.inventory.set(product.getType(), product.getId());
+                        Gdx.app.debug("SHOP", "Bought: "+ product.getName() + " for " + product.getPrice() );
+                    } else {
+                        Gdx.app.debug("SHOP", "Cannot buy " + product.getName());
+                    }
                 }
             });
 
