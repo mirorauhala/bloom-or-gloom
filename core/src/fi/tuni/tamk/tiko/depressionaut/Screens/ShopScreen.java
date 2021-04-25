@@ -48,7 +48,7 @@ public class ShopScreen implements Screen {
 
         StretchViewport viewport = new StretchViewport(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT, camera);
 
-        FileHandle handle = Gdx.files.internal("shop/products.json");
+        FileHandle handle = Gdx.files.internal("shop/clothing.json");
         String text = handle.readString();
 
         Gson gson = new Gson();
@@ -78,7 +78,7 @@ public class ShopScreen implements Screen {
         for (final Product product : products.getProducts()) {
             Gdx.app.debug("NAV", product.getName());
 
-            Texture texture = new Texture(Gdx.files.internal("shop/" + product.getTexture()));
+            Texture texture = new Texture(Gdx.files.internal(product.getTexture()));
 
             Label productName = new Label(product.getName(), skin);
             productName.setWrap(true);
