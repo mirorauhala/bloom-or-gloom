@@ -257,6 +257,10 @@ public class SettingsScreen implements Screen {
 
     }
 
+    public void drawStats() {
+
+    }
+
     /**
      * @param width the new width in pixels
      * @param height the new height in pixels
