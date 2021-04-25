@@ -39,6 +39,9 @@ public class ShopScreen implements Screen {
     Stage stage;
     Table container;
     Texture shopHeadingTexture;
+    private Texture shopClothingTexture;
+    private Texture shopFurnitureTexture;
+    private Texture shopOtherTexture;
 
     public ShopScreen(final MyGdxGame game){
         this.game = game;
@@ -135,6 +138,17 @@ public class ShopScreen implements Screen {
                 .left()
                 .padTop(20f)
                 .padBottom(20f)
+                .fill()
+                .expand();
+
+        container.row();
+
+        Table shopNav = createShopNav(skin);
+
+        container.add(shopNav)
+                .top()
+                .left()
+                .padBottom(20f)
                 .fill();
 
         container.row();
@@ -182,13 +196,52 @@ public class ShopScreen implements Screen {
         table.add(new Image(shopHeadingTexture))
                 .pad(20f)
                 .width(shopHeadingTexture.getWidth())
-                .expandX()
+                .height(shopHeadingTexture.getHeight())
+                .expandY()
                 .left();
 
         table.add(walletLabel).padRight(20f).expand().right();
 
         return table;
     }
+
+    /**
+     * Create the navigation for the shop.
+     * @param skin Skin libgdx skin to be used
+     * @return Table
+     */
+    private Table createShopNav(Skin skin) {
+        shopClothingTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/clothing-text.png"));
+        shopFurnitureTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/furniture-text.png"));
+        shopOtherTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/other-text.png"));
+
+        Table table = new Table(skin);
+        table.setDebug(MyGdxGame.DEBUG);
+
+        table.add(new Image(shopClothingTexture))
+                .pad(20f)
+                .width(shopClothingTexture.getWidth())
+                .height(shopClothingTexture.getHeight())
+                .expandY()
+                .left();
+
+        table.add(new Image(shopFurnitureTexture))
+                .pad(20f)
+                .width(shopFurnitureTexture.getWidth())
+                .height(shopFurnitureTexture.getHeight())
+                .expandY()
+                .left();
+
+        table.add(new Image(shopOtherTexture))
+                .pad(20f)
+                .width(shopOtherTexture.getWidth())
+                .height(shopOtherTexture.getHeight())
+                .expandY()
+                .left();
+
+        return table;
+    }
+
 
     /**
      * Update status of the buy buttons.
