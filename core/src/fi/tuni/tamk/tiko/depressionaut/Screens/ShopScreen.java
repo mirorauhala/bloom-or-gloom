@@ -161,16 +161,19 @@ public class ShopScreen implements Screen {
         return t;
     }
 
+    /**
+     * Update status of the buy buttons.
+     *
+     * If the player doesn't have enough funds, set the buttons to a disabled state.
+     * Otherwise, enable the buttons back.
+     * @param wallet float
+     */
     private void updateButtons(float wallet) {
         for (Map.Entry<Product, Button> entry : buttons.entrySet()) {
             Product p = entry.getKey();
             Button b = entry.getValue();
 
-            if(p.getPrice() > wallet) {
-                b.setDisabled(true);
-            } else {
-                b.setDisabled(false);
-            }
+            b.setDisabled(p.getPrice() > wallet);
         }
     }
 
@@ -197,14 +200,12 @@ public class ShopScreen implements Screen {
 
     @Override
     public void show() {
-        // setup input processor (gets clicks and stuff)
         Gdx.input.setInputProcessor(stage);
 
     }
 
     @Override
     public void hide() {
-        //System.out.println("Hide");
 
     }
 
