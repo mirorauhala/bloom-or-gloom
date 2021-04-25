@@ -15,6 +15,11 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 import fi.tuni.tamk.tiko.depressionaut.Sounds;
 
+/**
+ * SettingsScreen houses all of the settings and stats of the player
+ *
+ * @author Jaakko Saranpää
+ */
 public class SettingsScreen implements Screen {
     private final Preferences prefs;
     private MyGdxGame game;
@@ -88,6 +93,10 @@ public class SettingsScreen implements Screen {
 
 
     }
+
+    /**
+     * checkForTap checks if the player has pressed a button
+     */
     public void checkForTap() {
 
         if(Gdx.input.justTouched()) {
@@ -189,6 +198,9 @@ public class SettingsScreen implements Screen {
         checkForTap();
     }
 
+    /**
+     * draw method for sound on/off button
+     */
     public void drawButtonSound() {
         if(prefs.getString("sound").equals("on")) {
             settingsBatch.draw(soundOn, 0 ,0);
@@ -196,6 +208,9 @@ public class SettingsScreen implements Screen {
             settingsBatch.draw(soundOff, 0 ,0);
         }
     }
+    /**
+     * draw method for music on/off button
+     */
     public void drawButtonMusic() {
         if(prefs.getString("music").equals("on")) {
             settingsBatch.draw(musicOn, 0 ,0);
@@ -203,6 +218,9 @@ public class SettingsScreen implements Screen {
             settingsBatch.draw(musicOff, 0 ,0);
         }
     }
+    /**
+     * draw method for language english/finnish button
+     */
     public void drawButtonLang() {
         if(prefs.getString("lang").equals("en")) {
             settingsBatch.draw(langEn, 0 ,0);
@@ -210,6 +228,9 @@ public class SettingsScreen implements Screen {
             settingsBatch.draw(langFi, 0 ,0);
         }
     }
+    /**
+     * draw method for reset button which shows two new buttons for cancel and continue
+     */
     public void drawButtonReset() {
         if(prefs.getString("lang").equals("en")) {
             if(resetPressed) {
