@@ -32,8 +32,6 @@ public class DailyBonus {
 
     public Rectangle continueButton;
 
-    public Preferences prefs = Gdx.app.getPreferences("general");
-
     public BitmapFont font;
 
     public String todaysTip;
