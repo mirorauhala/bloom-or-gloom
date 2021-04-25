@@ -22,11 +22,15 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.google.gson.Gson;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Product;
 import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products;
 
 public class ShopScreen implements Screen {
+    private final HashMap<Product, Button> buttons = new HashMap<>();
     private final Label walletAmount;
     MyGdxGame game;
     ScrollPane scrollpane;
@@ -90,14 +94,16 @@ public class ShopScreen implements Screen {
             buyButton.addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
-                    if(game.score.decrementWallet(product.getPrice())) {
-                        game.inventory.set(product.getType(), product.getId());
-                        Gdx.app.debug("SHOP", "Bought: "+ product.getName() + " for " + product.getPrice() );
-                    } else {
-                        Gdx.app.debug("SHOP", "Cannot buy " + product.getName());
-                    }
+                if(game.score.decrementWallet(product.getPrice())) {
+                    game.inventory.set(product.getType(), product.getId());
+                    Gdx.app.debug("SHOP", "Bought: "+ product.getName() + " for " + product.getPrice() );
+                } else {
+                    Gdx.app.debug("SHOP", "Cannot buy " + product.getName());
+                }
                 }
             });
+
+            buttons.put(product, buyButton);
 
             innerContainer.row();
             innerContainer.add(table).expandX();
@@ -110,7 +116,7 @@ public class ShopScreen implements Screen {
         container.row();
 
         //add the scroll pane to the container
-        container.add(scrollpane).fill().expand();
+        container.add(scrollpane).fill().expand().padBottom(200f);
 
         // setup stage
         stage = new Stage(viewport);
@@ -155,12 +161,32 @@ public class ShopScreen implements Screen {
         return t;
     }
 
+    /**
+     * Update status of the buy buttons.
+     *
+     * If the player doesn't have enough funds, set the buttons to a disabled state.
+     * Otherwise, enable the buttons back.
+     * @param wallet float
+     */
+    private void updateButtons(float wallet) {
+        for (Map.Entry<Product, Button> entry : buttons.entrySet()) {
+            Product p = entry.getKey();
+            Button b = entry.getValue();
+
+            b.setDisabled(p.getPrice() > wallet);
+        }
+    }
+
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(1, 1, 1, 1);    //sets up the clear color (background color) of the screen.
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);  //instructs openGL to actually clear the screen to the newly set clear color.
 
-        walletAmount.setText(game.score.getWallet() + ""); // hack: cast to string
+        float wallet = game.score.getWallet();
+
+        updateButtons(wallet);
+        walletAmount.setText(wallet + ""); // hack: cast to string
+
         stage.draw();
         stage.act(delta);
 
@@ -174,14 +200,12 @@ public class ShopScreen implements Screen {
 
     @Override
     public void show() {
-        // setup input processor (gets clicks and stuff)
         Gdx.input.setInputProcessor(stage);
 
     }
 
     @Override
     public void hide() {
-        //System.out.println("Hide");
 
     }
 
