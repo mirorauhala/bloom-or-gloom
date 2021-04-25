@@ -68,7 +68,7 @@ public class GameScreen implements Screen {
         gameScreenRectangle = new Rectangle(0, 202, 1080, 1920-202);
         stage = new Stage(new ScreenViewport());
         items = game.items;
-        dailyBonus = new DailyBonus();
+        dailyBonus = new DailyBonus(game);
     }
 
     @Override
