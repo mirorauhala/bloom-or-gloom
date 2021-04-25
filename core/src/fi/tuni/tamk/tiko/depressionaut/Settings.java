@@ -22,11 +22,13 @@ public class Settings {
      * @return String
      */
     public String getLang() {
-        return prefs.getString("language");
+        String lang = prefs.getString("language");
+        return !lang.equals("") ? lang : "fi";
     }
 
     /**
      * Set the user's selected language.
+     * @param value String
      */
     public void setLang(String value) {
         prefs.putString("language", value);
@@ -43,7 +45,7 @@ public class Settings {
 
     /**
      * Set the sound on or off.
-     * @return boolean
+     * @param value boolean
      */
     public void setSound(boolean value) {
         prefs.putBoolean("sound", value);
@@ -60,6 +62,7 @@ public class Settings {
 
     /**
      * Set music on or off?
+     * @param value boolean
      */
     public void setMusic(boolean value) {
         prefs.putBoolean("music", value);
@@ -76,6 +79,7 @@ public class Settings {
 
     /**
      * Set has the user seen the startup-comic screen.
+     * @param value boolean
      */
     public void setHasSeenComic(boolean value) {
         prefs.putBoolean("has-seen-comic", value);
@@ -92,6 +96,7 @@ public class Settings {
 
     /**
      * Set the date the player was last seen.
+     * @param value boolean
      */
     public void setLastSeen(String value) {
         prefs.putString("last-seen", value);
@@ -108,6 +113,7 @@ public class Settings {
 
     /**
      * Set the bonus day date.
+     * @param value String
      */
     public void setBonusDay(String value) {
         prefs.putString("bonus-day", value);
