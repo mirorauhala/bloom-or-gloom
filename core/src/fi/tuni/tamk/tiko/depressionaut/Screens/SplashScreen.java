@@ -84,7 +84,7 @@ public class SplashScreen implements Screen {
                 game.setScreen(new Comic(game));
             } else {
                 game.navigation.setActive(Navigation.Screen.GAME);
-                game.setScreen(new GameScreen(game));
+                game.navigation.setScreen(Navigation.Screen.GAME);
             }
         }
 

@@ -109,4 +109,12 @@ public class Navigation {
     public void setActive(Screen screen) {
         this.activeScreen = screen;
     }
+
+    /**
+     * Set the active screen from memory.
+     * @param screen Screen
+     */
+    public void setScreen(Screen screen) {
+        this.game.setScreen(screenPair.get(screen));
+    }
 }

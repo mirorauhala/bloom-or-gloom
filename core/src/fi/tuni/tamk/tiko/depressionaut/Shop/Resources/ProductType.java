@@ -1,6 +1,6 @@
-package fi.tuni.tamk.tiko.depressionaut.Shop;
+package fi.tuni.tamk.tiko.depressionaut.Shop.Resources;
 
-public class Category {
+public class ProductType {
     private int id;
     private String name;
 

@@ -38,11 +38,43 @@ public class GameClock {
 
     }
 
+    /**
+     * checks if the clock is between 6 - 9am
+     * @return true or false
+     */
+    public boolean isMorning() {
+        return hours >= 6 && hours <= 9;
+    }
+
+    /**
+     * checks if the current date is different than the last time played
+     * @return true or false
+     */
     public boolean isFirstOfTheDay() {
         return !strDate.equals(prefs.getString("lastLogin"));
     }
+
+    /**
+     * sets today's date to prefs
+     */
     public void setLastLogin() {
         prefs.putString("lastLogin", strDate);
+        prefs.flush();
+    }
+
+    /**
+     * checks if the player has gotten a daily bonus today
+     * @return true if today is a bonusday
+     */
+    public boolean hasBonus() {
+        return strDate.equals(prefs.getString("bonusDay"));
+    }
+
+    /**
+     * Sets today's date as a bonus day where the player will get a 2x multiplier for this date
+     */
+    public void addBonus() {
+        prefs.putString("bonusDay", strDate);
         prefs.flush();
     }
 

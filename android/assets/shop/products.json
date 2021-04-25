@@ -1,25 +1,9 @@
 {
-  "categories": [
-    {"id": 1, "name": "Clothing" },
-    {"id": 2, "name": "Furniture" },
-    {"id": 3, "name": "Others" }
-  ],
-  "types": [
-    {"id": 1, "name": "Shirt"},
-    {"id": 2, "name": "Hats"},
-    {"id": 3, "name": "Wall"},
-    {"id": 4, "name": "Floor"},
-    {"id": 5, "name": "Bed"},
-    {"id": 6, "name": "Desk"},
-    {"id": 7, "name": "Chair"},
-    {"id": 8, "name": "Handheld"}
-  ],
   "products": [
     {
       "id": 1,
       "name": "Blue Shirt",
       "type": "shirt",
-      "cat": 1,
       "level": 1,
       "price": 10,
       "texture": "wip-product.png",
@@ -30,25 +14,23 @@
     {
       "id": 2,
       "name": "Red Shirt",
-      "type": 1,
-      "cat": 1,
+      "type": "shirt",
       "level": 2,
       "price": 20,
       "texture": "wip-product.png",
       "effect": [
-        {"part": "click-power", "increment": 1}
+        {"method": "click-power", "action": "increment", "amount": 1}
       ]
     },
     {
       "id": 3,
       "name": "Green Shirt",
-      "type": 1,
-      "cat": 1,
+      "type": "shirt",
       "level": 3,
       "price": 30,
       "texture": "wip-product.png",
       "effect": [
-        {"part": "click-power", "increment": 1}
+        {"method": "click-power", "action": "increment", "amount": 1}
       ]
     }
   ]

@@ -12,7 +12,7 @@ import fi.tuni.tamk.tiko.depressionaut.Screens.SplashScreen;
 
 public class MyGdxGame extends Game {
 	// DEBUG ->
-	public static final boolean DEBUG = true;
+	public static final boolean DEBUG = false;
 	// <- DEBUG
 
 	public SpriteBatch gameBatch;
@@ -21,11 +21,13 @@ public class MyGdxGame extends Game {
 	public ScoreCounter score;
 	public Inventory inventory;
 
+
 	public final static float SCREEN_WIDTH = 1080;
 	public final static float SCREEN_HEIGHT = 1920;
 
 	public OrthographicCamera camera;
 	public Preferences prefs;
+	public Items items;
 
 	@Override
 	public void create () {
@@ -40,12 +42,16 @@ public class MyGdxGame extends Game {
 
 		prefs = Gdx.app.getPreferences("general");
 		score = new ScoreCounter();
-		navigation = new Navigation(this);
 		inventory = new Inventory();
+		items = new Items();
+		items.preloadTextures(inventory);
+		navigation = new Navigation(this);
+
+
 
 		if(DEBUG) {
 			navigation.setActive(Navigation.Screen.GAME);
-			setScreen(new GameScreen(this));
+			navigation.setScreen(Navigation.Screen.GAME);
 		} else {
 			setScreen(new SplashScreen(this));
 		}

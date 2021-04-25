@@ -7,7 +7,7 @@ import com.badlogic.gdx.math.MathUtils;
 public class Sounds {
     public com.badlogic.gdx.audio.Sound click = Gdx.audio.newSound(Gdx.files.internal("sounds/click.mp3"));
     public com.badlogic.gdx.audio.Sound menuClick = Gdx.audio.newSound(Gdx.files.internal("sounds/settingsClick.mp3"));
-    public Preferences prefs = Gdx.app.getPreferences("settings");
+    public Preferences prefs = Gdx.app.getPreferences("general");
 
 
     /**

@@ -1,7 +1,6 @@
 package fi.tuni.tamk.tiko.depressionaut.Screens;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
@@ -24,27 +23,24 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.google.gson.Gson;
 
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
-import fi.tuni.tamk.tiko.depressionaut.Shop.Product;
-import fi.tuni.tamk.tiko.depressionaut.Shop.Products;
+import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Product;
+import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products;
 
 public class ShopScreen implements Screen {
-    private final OrthographicCamera camera;
-    private final StretchViewport viewport;
+    private final Label walletAmount;
     MyGdxGame game;
     ScrollPane scrollpane;
     Skin skin;
     Stage stage;
     Table container;
-    private InputMultiplexer multiplexer;
 
     public ShopScreen(final MyGdxGame game){
         this.game = game;
 
-        camera = new OrthographicCamera(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT);
+        OrthographicCamera camera = new OrthographicCamera(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT);
         camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
 
-        viewport = new StretchViewport(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT, camera);
-
+        StretchViewport viewport = new StretchViewport(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT, camera);
 
         FileHandle handle = Gdx.files.internal("shop/products.json");
         String text = handle.readString();
@@ -54,6 +50,8 @@ public class ShopScreen implements Screen {
 
         //setup skin
         skin = new Skin(Gdx.files.internal("UI/uiskin.json"));
+
+        walletAmount = new Label("", skin);
 
         // table that holds the scroll pane
         container = new Table();
@@ -80,27 +78,16 @@ public class ShopScreen implements Screen {
             productName.setFontScale(2);
             float productNameSize = 1080f - texture.getWidth() - 40f - 200f;
 
-            TextButton.TextButtonStyle buttonStyle = new TextButton.TextButtonStyle();
-            buttonStyle.up = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/button-default.png"))));
-            buttonStyle.down = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/button-active.png"))));
-            buttonStyle.disabled = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/button-active.png"))));
-            buttonStyle.font = new BitmapFont(Gdx.files.internal("UI/Quicksand.fnt"));
-
-            Button button2 = new TextButton(product.getPrice() + "e", buttonStyle);
-            button2.setSize(200f,50f);
-            //button2.setPosition(productPriceSize,50f);
+            Button buyButton = createButton(product.getPrice() + "e");
 
             Table table = new Table(skin);
             table.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
-            table.add(new Label("", skin)).width(20f).expandY().fillY();// a spacer
-            table.add(new Image(texture)).width(texture.getWidth()).height(texture.getHeight()).padBottom(20f);
-            table.add(new Label("", skin)).width(20f).expandY().fillY();// a spacer
+            table.add(new Image(texture)).width(texture.getWidth()).height(texture.getHeight()).padBottom(20f).padLeft(20f).padRight(20f);
             table.add(productName).width(productNameSize);
-            table.add(button2).width(180f);
-            table.add(new Label("", skin)).width(20f).expandY().fillY();// a spacer
+            table.add(buyButton).width(180f).padRight(20f);
             table.left().top();
 
-            button2.addListener(new ClickListener() {
+            buyButton.addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
                     if(game.score.decrementWallet(product.getPrice())) {
@@ -116,17 +103,10 @@ public class ShopScreen implements Screen {
             innerContainer.add(table).expandX();
         }
 
-        // create the scrollpane
         scrollpane = new ScrollPane(innerContainer);
-
-        Texture shopNav = new Texture(Gdx.files.internal("shop/shop-clothing.png"));
-
-        Table shopTop = new Table(skin);
-        shopTop.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
-        shopTop.add(new Image(shopNav));
-
-        shopTop.left().top();
-        container.add(shopTop).top().left();
+        Texture headingTexture = new Texture(Gdx.files.internal("shop/ui/en/shop.png"));
+        Table shopTop = createShopTop(skin, headingTexture);
+        container.add(shopTop).top().left().padTop(20f).padBottom(20f).fill();
         container.row();
 
         //add the scroll pane to the container
@@ -141,10 +121,46 @@ public class ShopScreen implements Screen {
 
     }
 
+    /**
+     * Create a button with predefined styles.
+     * @param text String Text to display on the button.
+     * @return Button
+     */
+    private static Button createButton(String text) {
+        TextButton.TextButtonStyle style = new TextButton.TextButtonStyle();
+        style.up = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/ui/button-default.png"))));
+        style.down = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/ui/button-active.png"))));
+        style.disabled = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/ui/button-disabled.png"))));
+        style.font = new BitmapFont(Gdx.files.internal("UI/Quicksand.fnt"));
+
+        Button b = new TextButton(text, style);
+        b.setSize(200f,50f);
+        return b;
+    }
+
+    /**
+     * Create the top of the shop.
+     * @param skin Skin libgdx skin to be used
+     * @param heading Texture
+     * @return Table
+     */
+    private Table createShopTop(Skin skin, Texture heading) {
+        walletAmount.setFontScale(1.5f);
+
+        Table t = new Table(skin);
+        t.setDebug(MyGdxGame.DEBUG);
+        t.add(new Image(heading)).pad(20f).width(heading.getWidth()).expandX().left();
+        t.add(walletAmount).padRight(20f).expand().right();
+
+        return t;
+    }
+
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(1, 1, 1, 1);    //sets up the clear color (background color) of the screen.
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);  //instructs openGL to actually clear the screen to the newly set clear color.
+
+        walletAmount.setText(game.score.getWallet() + ""); // hack: cast to string
         stage.draw();
         stage.act(delta);
 
@@ -183,7 +199,8 @@ public class ShopScreen implements Screen {
 
     @Override
     public void dispose() {
-        System.out.println("dispose");
+        stage.dispose();
+        skin.dispose();
 
     }
 
