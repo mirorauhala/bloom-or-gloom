@@ -116,7 +116,7 @@ public class ShopScreen implements Screen {
         container.row();
 
         //add the scroll pane to the container
-        container.add(scrollpane).fill().expand();
+        container.add(scrollpane).fill().expand().padBottom(200f);
 
         // setup stage
         stage = new Stage(viewport);
