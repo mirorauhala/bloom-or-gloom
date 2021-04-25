@@ -179,8 +179,22 @@ public class SettingsScreen implements Screen {
     }
 
     private void drawStats() {
-        font.getData().setScale(2f, 2f);
-        font.draw(settingsBatch, "Stats", 150, 1150, 780, 1, true);
+        if(!resetPressed) {
+            if(game.settings.getLang().equals("en")) {
+                font.getData().setScale(2f, 2f);
+                font.draw(settingsBatch, "Stats", 150, 1150, 780, 1, true);
+                font.draw(settingsBatch, "Click: " + (int)game.score.getClickPower(), 120, 1050, 420, -1, true);
+                font.draw(settingsBatch, "Multiplier: " + (int)game.score.getMultiplier(), 120, 950, 420, -1, true);
+                font.draw(settingsBatch, "Passive: " + (int)game.score.getPassiveIncome(), 120, 850, 420, -1, true);
+            } else {
+                font.getData().setScale(2f, 2f);
+                font.draw(settingsBatch, "Tilastot", 150, 1150, 780, 1, true);
+                font.draw(settingsBatch, "Klikkaus: " + (int)game.score.getClickPower(), 120, 1050, 420, -1, true);
+                font.draw(settingsBatch, "Kerroin: " + (int)game.score.getMultiplier(), 120, 950, 420, -1, true);
+                font.draw(settingsBatch, "Passiivinen: " + (int)game.score.getPassiveIncome(), 120, 850, 420, -1, true);
+            }
+
+        }
     }
 
     /**
