@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -220,28 +220,34 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#isNight--">isNight</a></span>()</code>
+<div class="block">returns true if clock is between 8pm and 6am</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#setFirstDate--">setFirstDate</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#setLastLogin--">setLastLogin</a></span>()</code>
 <div class="block">sets today's date to prefs</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#skyObjectTimer--">skyObjectTimer</a></span>()</code>
 <div class="block">Timer for creating clouds and birds on the sky layer.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#thoughtBubbleTimer-boolean-">thoughtBubbleTimer</a></span>(boolean&nbsp;debug)</code>
 <div class="block">Timer for creating thought bubbles.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html#timer--">timer</a></span>()</code>
 <div class="block">Main "render loop" updates timers.</div>
@@ -481,7 +487,7 @@ extends java.lang.Object</pre>
 <a name="getDayOpacity--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getDayOpacity</h4>
 <pre>public&nbsp;float&nbsp;getDayOpacity()</pre>
@@ -489,6 +495,20 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>dayOpacity value</dd>
+</dl>
+</li>
+</ul>
+<a name="isNight--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isNight</h4>
+<pre>public&nbsp;boolean&nbsp;isNight()</pre>
+<div class="block">returns true if clock is between 8pm and 6am</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true or false</dd>
 </dl>
 </li>
 </ul>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -132,8 +132,20 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html#click">click</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html" title="class in fi.tuni.tamk.tiko.depressionaut">GameClock</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html#clock">clock</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>com.badlogic.gdx.audio.Music</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html#crickets">crickets</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>com.badlogic.gdx.audio.Sound</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html#menuClick">menuClick</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>com.badlogic.gdx.audio.Music</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html#nature">nature</a></span></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -169,15 +181,25 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html#clicksoundPlay--">clicksoundPlay</a></span>()</code>
-<div class="block">used to play a clicking sound whenever the player clicks the game screen</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html#ambientPlay--">ambientPlay</a></span>()</code>
+<div class="block">used to play crickets during night</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html#clicksoundPlay--">clicksoundPlay</a></span>()</code>
+<div class="block">used to play a clicking sound whenever the player clicks the game screen</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html#menuClicksoudPlay--">menuClicksoudPlay</a></span>()</code>
 <div class="block">used to play a clicking sound whenever the player presses a menu button</div>
 </td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html#stopAmbient--">stopAmbient</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -201,6 +223,15 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Field Detail</h3>
+<a name="clock">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clock</h4>
+<pre>public&nbsp;<a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameClock.html" title="class in fi.tuni.tamk.tiko.depressionaut">GameClock</a> clock</pre>
+</li>
+</ul>
 <a name="click">
 <!--   -->
 </a>
@@ -213,10 +244,28 @@ extends java.lang.Object</pre>
 <a name="menuClick">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>menuClick</h4>
 <pre>public&nbsp;com.badlogic.gdx.audio.Sound menuClick</pre>
+</li>
+</ul>
+<a name="crickets">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>crickets</h4>
+<pre>public&nbsp;com.badlogic.gdx.audio.Music crickets</pre>
+</li>
+</ul>
+<a name="nature">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>nature</h4>
+<pre>public&nbsp;com.badlogic.gdx.audio.Music nature</pre>
 </li>
 </ul>
 </li>
@@ -257,11 +306,30 @@ extends java.lang.Object</pre>
 <a name="menuClicksoudPlay--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>menuClicksoudPlay</h4>
 <pre>public&nbsp;void&nbsp;menuClicksoudPlay()</pre>
 <div class="block">used to play a clicking sound whenever the player presses a menu button</div>
+</li>
+</ul>
+<a name="ambientPlay--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ambientPlay</h4>
+<pre>public&nbsp;void&nbsp;ambientPlay()</pre>
+<div class="block">used to play crickets during night</div>
+</li>
+</ul>
+<a name="stopAmbient--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>stopAmbient</h4>
+<pre>public&nbsp;void&nbsp;stopAmbient()</pre>
 </li>
 </ul>
 </li>
