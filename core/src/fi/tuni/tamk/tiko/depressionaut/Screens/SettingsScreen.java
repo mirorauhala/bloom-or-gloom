@@ -14,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
+import fi.tuni.tamk.tiko.depressionaut.ScoreCounter;
 import fi.tuni.tamk.tiko.depressionaut.Sounds;
 
 /**
@@ -71,6 +72,7 @@ public class SettingsScreen implements Screen {
     private final Texture resetFi = new Texture("Settings/ResetButton/FI/resetFi.png");
     private final Texture resetConfirmationFi = new Texture("Settings/ResetButton/FI/resetConfirmationFi.png");
 
+    public Preferences scorePrefs;
 
     private boolean resetPressed;
 
@@ -78,10 +80,13 @@ public class SettingsScreen implements Screen {
         this.game = game;
         
         prefs = game.prefs;
+        scorePrefs = Gdx.app.getPreferences("score");
+
 
         settingsBatch = game.hudBatch;
         camera = game.camera;
         stage = new Stage(new ScreenViewport());
+
 
         font = new BitmapFont(Gdx.files.internal("UI/QuicksandASCII.fnt"));
 
@@ -263,6 +268,7 @@ public class SettingsScreen implements Screen {
         if(!resetPressed) {
             font.getData().setScale(2.5f, 2.5f);
             font.draw(settingsBatch, "Stats", 150, 1150, 780, 1, true);
+            font.draw(settingsBatch, "Click = " + (int)(prefs.getFloat("click-power") + 1), 150, 1050, 390, 1, true);
         }
 
     }
