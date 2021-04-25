@@ -7,6 +7,7 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
@@ -28,6 +29,10 @@ public class DailyBonus {
 
     public Preferences prefs = Gdx.app.getPreferences("general");
 
+    public BitmapFont font;
+
+    public String todaysTip;
+
 
 
     public GameClock clock;
@@ -36,6 +41,9 @@ public class DailyBonus {
     public DailyBonus() {
 
         continueButton = new Rectangle(230, 380, 620, 240);
+
+        font = new BitmapFont(Gdx.files.internal("UI/QuicksandASCII.fnt"));
+
         txtToArray();
         randomTip();
 
@@ -58,7 +66,7 @@ public class DailyBonus {
 
     public void randomTip() {
         int randomNum = MathUtils.random(emotionTips.length - 1);
-        System.out.println(emotionTips[randomNum]);
+        todaysTip = emotionTips[randomNum];
     }
 
     public void drawWindow(SpriteBatch batch) {
@@ -77,6 +85,18 @@ public class DailyBonus {
                     batch.draw(noBonusFI, 0, 0);
                 }
             }
+            if(todaysTip.length() <= 85) {
+                font.getData().setScale(2.5f, 2.5f); //1.8 = 192 2.5 = 85 1.5 = 261
+                font.draw(batch, todaysTip, 150, 1250, 780, 1, true);
+            } else if (todaysTip.length() <= 192) {
+                font.getData().setScale(1.8f, 1.8f); //1.8 = 192 2.5 = 85 1.5 = 261
+                font.draw(batch, todaysTip, 100, 1275, 880, 1, true);
+            } else {
+                font.getData().setScale(1.5f, 1.5f); //1.8 = 192 2.5 = 85 1.5 = 261
+                font.draw(batch, todaysTip, 100, 1290, 880, 1, true);
+            }
+
+
         }
 
     }
