@@ -109,6 +109,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">DailyBonus</span>
 extends java.lang.Object</pre>
+<div class="block">DailyBonus creates a window every day that the user plays the game for the first time during that day and gives the player a bonus</div>
 </li>
 </ul>
 </div>
@@ -144,6 +145,14 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#continueButton">continueButton</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>com.badlogic.gdx.graphics.g2d.BitmapFont</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#font">font</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#isBonusWindowOnScreen">isBonusWindowOnScreen</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>com.badlogic.gdx.graphics.Texture</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#noBonusEN">noBonusEN</a></span></code>&nbsp;</td>
 </tr>
@@ -158,6 +167,10 @@ extends java.lang.Object</pre>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/Sounds.html" title="class in fi.tuni.tamk.tiko.depressionaut">Sounds</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#sounds">sounds</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#todaysTip">todaysTip</a></span></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -193,19 +206,27 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#checkForTap-com.badlogic.gdx.graphics.Camera-">checkForTap</a></span>(com.badlogic.gdx.graphics.Camera&nbsp;camera)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#checkForTap-com.badlogic.gdx.graphics.Camera-">checkForTap</a></span>(com.badlogic.gdx.graphics.Camera&nbsp;camera)</code>
+<div class="block">checkForTap checks if the player presses the "continue" button on dailybonus window</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#drawWindow-com.badlogic.gdx.graphics.g2d.SpriteBatch-">drawWindow</a></span>(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#drawWindow-com.badlogic.gdx.graphics.g2d.SpriteBatch-">drawWindow</a></span>(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</code>
+<div class="block">drawWindow draws the dailybonus window and all its texts</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#randomTip--">randomTip</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#randomTip--">randomTip</a></span>()</code>
+<div class="block">randomTip() chooses a random string from an array of strings</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#txtToArray--">txtToArray</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/DailyBonus.html#txtToArray--">txtToArray</a></span>()</code>
+<div class="block">txtToArray turns a .txt file into an array of strings divided by line breaks</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -283,6 +304,33 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;com.badlogic.gdx.Preferences prefs</pre>
 </li>
 </ul>
+<a name="font">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>font</h4>
+<pre>public&nbsp;com.badlogic.gdx.graphics.g2d.BitmapFont font</pre>
+</li>
+</ul>
+<a name="todaysTip">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>todaysTip</h4>
+<pre>public&nbsp;java.lang.String todaysTip</pre>
+</li>
+</ul>
+<a name="isBonusWindowOnScreen">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isBonusWindowOnScreen</h4>
+<pre>public&nbsp;boolean isBonusWindowOnScreen</pre>
+</li>
+</ul>
 <a name="clock">
 <!--   -->
 </a>
@@ -333,6 +381,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>txtToArray</h4>
 <pre>public&nbsp;void&nbsp;txtToArray()</pre>
+<div class="block">txtToArray turns a .txt file into an array of strings divided by line breaks</div>
 </li>
 </ul>
 <a name="randomTip--">
@@ -342,6 +391,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>randomTip</h4>
 <pre>public&nbsp;void&nbsp;randomTip()</pre>
+<div class="block">randomTip() chooses a random string from an array of strings</div>
 </li>
 </ul>
 <a name="drawWindow-com.badlogic.gdx.graphics.g2d.SpriteBatch-">
@@ -351,6 +401,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>drawWindow</h4>
 <pre>public&nbsp;void&nbsp;drawWindow(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</pre>
+<div class="block">drawWindow draws the dailybonus window and all its texts</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>batch</code> - </dd>
+</dl>
 </li>
 </ul>
 <a name="checkForTap-com.badlogic.gdx.graphics.Camera-">
@@ -360,6 +415,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>checkForTap</h4>
 <pre>public&nbsp;void&nbsp;checkForTap(com.badlogic.gdx.graphics.Camera&nbsp;camera)</pre>
+<div class="block">checkForTap checks if the player presses the "continue" button on dailybonus window</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>camera</code> - </dd>
+</dl>
 </li>
 </ul>
 </li>
