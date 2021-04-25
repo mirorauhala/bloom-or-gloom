@@ -1,7 +1,6 @@
 package fi.tuni.tamk.tiko.depressionaut.Screens;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
@@ -25,6 +24,7 @@ import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Product;
 import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products;
 
 public class ShopScreen implements Screen {
+    private final Label walletAmount;
     MyGdxGame game;
     ScrollPane scrollpane;
     Skin skin;
@@ -47,6 +47,8 @@ public class ShopScreen implements Screen {
 
         //setup skin
         skin = new Skin(Gdx.files.internal("UI/uiskin.json"));
+
+        walletAmount = new Label("", skin);
 
         // table that holds the scroll pane
         container = new Table();
@@ -78,12 +80,12 @@ public class ShopScreen implements Screen {
 
             Table table = new Table(skin);
             table.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
-            table.add(new Label("", skin)).width(20f).expandY().fillY();// a spacer
+            Shop.addVerticalSpacer(table, 20f, skin);
             table.add(new Image(texture)).width(texture.getWidth()).height(texture.getHeight()).padBottom(20f);
-            table.add(new Label("", skin)).width(20f).expandY().fillY();// a spacer
+            Shop.addVerticalSpacer(table, 20f, skin);
             table.add(productName).width(productNameSize);
             table.add(b).width(180f);
-            table.add(new Label("", skin)).width(20f).expandY().fillY();// a spacer
+            Shop.addVerticalSpacer(table, 20f, skin);
             table.left().top();
 
             b.addListener(new ClickListener() {
@@ -102,17 +104,10 @@ public class ShopScreen implements Screen {
             innerContainer.add(table).expandX();
         }
 
-        // create the scrollpane
         scrollpane = new ScrollPane(innerContainer);
-
-        Texture shopNav = new Texture(Gdx.files.internal("shop/ui/en/shop-clothing.png"));
-
-        Table shopTop = new Table(skin);
-        shopTop.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
-        shopTop.add(new Image(shopNav));
-
-        shopTop.left().top();
-        container.add(shopTop).top().left();
+        Texture headingTexture = new Texture(Gdx.files.internal("shop/ui/en/shop.png"));
+        Table shopTop = createShopTop(skin, headingTexture);
+        container.add(shopTop).top().left().padTop(20f).padBottom(20f).fill();
         container.row();
 
         //add the scroll pane to the container
@@ -127,10 +122,29 @@ public class ShopScreen implements Screen {
 
     }
 
+    /**
+     * Create the top of the shop.
+     * @param skin Skin libgdx skin to be used
+     * @param heading Texture
+     * @return Table
+     */
+    private Table createShopTop(Skin skin, Texture heading) {
+        walletAmount.setFontScale(1.5f);
+
+        Table t = new Table(skin);
+        t.setDebug(MyGdxGame.DEBUG);
+        t.add(new Image(heading)).pad(20f).width(heading.getWidth()).expandX().left();
+        t.add(walletAmount).padRight(20f).expand().right();
+
+        return t;
+    }
+
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(1, 1, 1, 1);    //sets up the clear color (background color) of the screen.
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);  //instructs openGL to actually clear the screen to the newly set clear color.
+
+        walletAmount.setText(game.score.getWallet() + ""); // hack: cast to string
         stage.draw();
         stage.act(delta);
 
@@ -170,6 +184,7 @@ public class ShopScreen implements Screen {
     @Override
     public void dispose() {
         stage.dispose();
+        skin.dispose();
 
     }
 
