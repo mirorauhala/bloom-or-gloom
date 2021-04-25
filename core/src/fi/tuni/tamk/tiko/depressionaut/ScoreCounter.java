@@ -285,6 +285,9 @@ public class ScoreCounter {
         setClickPower(getClickPower() + amount);
     }
 
+    /**
+     * if the player has gotten a daily bonus today, setDailyBonus will add a 2x multiplier for the day
+     */
     public void setDailyBonus() {
         if(clock.hasBonus()) {
             dailyBonus = 2;
@@ -293,6 +296,10 @@ public class ScoreCounter {
         }
     }
 
+    /**
+     * returns dailybonus
+     * @return dailybonus amount
+     */
     public float getDailyBonus() {
         return dailyBonus;
     }
