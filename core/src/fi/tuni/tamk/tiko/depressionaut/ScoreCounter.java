@@ -88,6 +88,7 @@ public class ScoreCounter {
     public void click() {
         incrementScore(countScoreIncrement());
         incrementWallet(countScoreIncrement());
+        incrementTotalClicks(1);
     }
 
     /**
@@ -129,6 +130,34 @@ public class ScoreCounter {
     public void setScore(float amount) {
         prefs.putFloat("score", amount);
         prefs.flush();
+    }
+
+    /**
+     * Get the score.
+     *
+     * @return float The score amount.
+     */
+    public float getTotalClicks() {
+        return prefs.getFloat("total-clicks");
+    }
+
+    /**
+     * Set the total clicks.
+     *
+     * @param amount The score amount.
+     */
+    public void setTotalClicks(float amount) {
+        prefs.putFloat("total-clicks", amount);
+        prefs.flush();
+    }
+
+    /**
+     * Increment the score by the amount.
+     *
+     * @param amount The increment amount.
+     */
+    public void incrementTotalClicks(float amount) {
+        setTotalClicks(getTotalClicks() + amount);
     }
 
     /**

@@ -181,25 +181,27 @@ public class SettingsScreen implements Screen {
     private void drawStats() {
         if(!resetPressed) {
             if(game.settings.getLang().equals("en")) {
-                font.getData().setScale(2f, 2f);
+                font.getData().setScale(2.5f, 2.5f);
                 font.draw(settingsBatch, "Stats", 150, 1150, 780, 1, true);
+                font.getData().setScale(2f, 2f);
                 font.draw(settingsBatch, "Click: " + (int)game.score.getClickPower(), 120, 1050, 420, -1, true);
                 font.draw(settingsBatch, "Multiplier: " + (int)game.score.getMultiplier(), 120, 950, 420, -1, true);
-                font.draw(settingsBatch, "Passive: " + (int)game.score.getPassiveIncome(), 120, 850, 420, -1, true);
+                font.draw(settingsBatch, "e/s: " + (int)game.score.getPassiveIncome(), 120, 850, 420, -1, true);
                 font.draw(settingsBatch, "Total Clicks: ", 540, 1050, 420, -1, true);
-                font.draw(settingsBatch, "52346363" + (int)game.score.getPassiveIncome(), 540, 950, 420, -1, true);
+                font.draw(settingsBatch, (int)game.score.getTotalClicks() + "", 540, 950, 420, -1, true);
                 font.draw(settingsBatch, "Start date: ", 540, 850, 420, -1, true);
-                font.draw(settingsBatch, "12/03/2021", 540, 750, 420, -1, true);
+                font.draw(settingsBatch, game.settings.getFirstDay(), 540, 750, 420, -1, true);
             } else {
-                font.getData().setScale(2f, 2f);
+                font.getData().setScale(2.5f, 2.5f);
                 font.draw(settingsBatch, "Tilastot", 150, 1150, 780, 1, true);
+                font.getData().setScale(2f, 2f);
                 font.draw(settingsBatch, "Klikkaus: " + (int)game.score.getClickPower(), 120, 1050, 420, -1, true);
                 font.draw(settingsBatch, "Kerroin: " + (int)game.score.getMultiplier(), 120, 950, 420, -1, true);
-                font.draw(settingsBatch, "Passiivinen: " + (int)game.score.getPassiveIncome(), 120, 850, 420, -1, true);
+                font.draw(settingsBatch, "e/s: " + (int)game.score.getPassiveIncome(), 120, 850, 420, -1, true);
                 font.draw(settingsBatch, "Klikkimäärä: ", 540, 1050, 420, -1, true);
-                font.draw(settingsBatch, "52346363" + (int)game.score.getPassiveIncome(), 540, 950, 420, -1, true);
+                font.draw(settingsBatch,  (int)game.score.getTotalClicks() + "", 540, 950, 420, -1, true);
                 font.draw(settingsBatch, "Aloituspäivä: ", 540, 850, 420, -1, true);
-                font.draw(settingsBatch, "12/03/2021", 540, 750, 420, -1, true);
+                font.draw(settingsBatch, game.settings.getFirstDay(), 540, 750, 420, -1, true);
             }
 
         }

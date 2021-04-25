@@ -119,4 +119,21 @@ public class Settings {
         prefs.putString("bonus-day", value);
         prefs.flush();
     }
+
+    /**
+     * Get the bonus day date.
+     * @return String
+     */
+    public String getFirstDay() {
+        return prefs.getString("first-day");
+    }
+
+    /**
+     * Set the bonus day date.
+     * @param value String
+     */
+    public void setFirstDay(String value) {
+        prefs.putString("first-day", value);
+        prefs.flush();
+    }
 }

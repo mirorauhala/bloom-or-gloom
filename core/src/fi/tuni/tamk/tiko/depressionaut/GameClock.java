@@ -36,6 +36,7 @@ public class GameClock {
         lastBuffCheck = seconds;
         SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy", Locale.getDefault());
         strDate = formatter.format(date);
+        setFirstDate();
 
     }
 
@@ -77,7 +78,11 @@ public class GameClock {
         game.settings.setBonusDay(strDate);
     }
 
-
+    public void setFirstDate() {
+        if(game.settings.getFirstDay().equals("")) {
+            game.settings.setFirstDay(strDate);
+        }
+    }
 
 
     /**
