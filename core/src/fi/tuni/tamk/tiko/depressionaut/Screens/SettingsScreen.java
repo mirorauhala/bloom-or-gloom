@@ -268,8 +268,9 @@ public class SettingsScreen implements Screen {
         if(!resetPressed) {
             font.getData().setScale(2.0f, 2.0f);
             font.draw(settingsBatch, "Stats", 150, 1150, 780, 1, true);
-            font.draw(settingsBatch, "Click = " + (int)(prefs.getFloat("click-power") + 1), 120, 1050, 420, -1, true);
-            font.draw(settingsBatch, "Multiplier = " + (int)(prefs.getFloat("multiplier") + 100), 120, 950, 420, -1, true);
+            font.draw(settingsBatch, "Click = " + (int)(prefs.getFloat("click-power") + 999), 120, 1050, 420, -1, true);
+            font.draw(settingsBatch, "Multiplier = " + (int)(prefs.getFloat("multiplier") + 999), 120, 950, 420, -1, true);
+            font.draw(settingsBatch, "Passive = " + (int)(prefs.getFloat("passive-income") + 999), 120, 850, 420, -1, true);
         }
 
     }
