@@ -60,7 +60,7 @@ public class ShopScreen implements Screen {
         walletLabel = new Label("", skin);
         walletLabel.setFontScale(1.5f);
 
-        // table that holds the scroll pane
+        // parent of all tables
         container = new Table();
         container.setFillParent(true);
         container.setHeight(MyGdxGame.SCREEN_HEIGHT);
