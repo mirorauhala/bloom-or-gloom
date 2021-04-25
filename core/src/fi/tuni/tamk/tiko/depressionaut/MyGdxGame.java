@@ -49,6 +49,8 @@ public class MyGdxGame extends Game {
 		sounds = new Sounds(this);
 		navigation = new Navigation(this);
 
+		sounds.ambientPlay();
+
 
 
 		if(DEBUG) {

@@ -106,6 +106,12 @@ public class SettingsScreen implements Screen {
             if(musicRectangle.contains(touch.x, touch.y)) {
                 game.settings.setMusic(!game.settings.getMusic());
                 game.sounds.menuClicksoudPlay();
+                if(game.settings.getMusic()) {
+                    game.sounds.ambientPlay();
+                }
+                if(!game.settings.getMusic()) {
+                    game.sounds.stopAmbient();
+                }
             }
             if(finnishRectangle.contains(touch.x, touch.y)) {
 
@@ -203,7 +209,6 @@ public class SettingsScreen implements Screen {
                 font.draw(settingsBatch, "Aloituspäivä: ", 540, 850, 420, -1, true);
                 font.draw(settingsBatch, game.settings.getFirstDay(), 540, 750, 420, -1, true);
             }
-
         }
     }
 
