@@ -40,8 +40,7 @@ public class MyGdxGame extends Game {
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-		prefs = Gdx.app.getPreferences("general");
-		score = new ScoreCounter();
+		settings = new Settings();
 		inventory = new Inventory();
 		items = new Items();
 		items.preloadTextures(inventory);
