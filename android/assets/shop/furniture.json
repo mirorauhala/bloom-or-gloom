@@ -2,195 +2,539 @@
   "products": [
     {
       "id": 1,
-      "name": "Huonekalu",
-      "type": "shirt",
+      "name_fi": "Vaahtomuovipatja",
+      "name_en": "Foam mattress",
+      "type": "bed",
       "price": 100,
-      "level": 1,
-      "texture": "shop/icons/shirts/t1v1.png"
+      "texture": "shop/icons/beds/1.png"
     },
     {
       "id": 2,
-      "name": "Keltainen paita",
-      "type": "shirt",
+      "name_fi": "Vaahtomuovipatja viltillä",
+      "name_en": "Foam mattress with cover",
+      "type": "bed",
       "price": 400,
-      "level": 1,
-      "texture": "shop/icons/shirts/t1v2.png"
+      "texture": "shop/icons/beds/2.png"
     },
     {
       "id": 3,
-      "name": "Vaaleansininen paita",
-      "type": "shirt",
-      "price": 1000,
-      "level": 1,
-      "texture": "shop/icons/shirts/t1v3.png"
+      "name_fi": "Oranssi sänky",
+      "name_en": "Orange bed",
+      "type": "bed",
+      "price": 3000,
+      "texture": "shop/icons/beds/3.png"
     },
     {
       "id": 4,
-      "name": "Sininen pallopaita",
-      "type": "shirt",
-      "price": 3000,
-      "level": 2,
-      "texture": "shop/icons/shirts/t2v4.png"
+      "name_fi": "Ruskea sänky",
+      "name_en": "Brown bed",
+      "type": "bed",
+      "price": 6500,
+      "texture": "shop/icons/beds/4.png"
     },
     {
       "id": 5,
-      "name": "Punainen pallopaita",
-      "type": "shirt",
-      "price": 6500,
-      "level": 2,
-      "texture": "shop/icons/shirts/t2v5.png"
+      "name_fi": "Vihreä sänky",
+      "name_en": "Green bed",
+      "type": "bed",
+      "price": 10000,
+      "texture": "shop/icons/beds/5.png"
     },
     {
       "id": 6,
-      "name": "Vaalean ruskea pallopaita",
-      "type": "shirt",
-      "price": 10000,
-      "level": 2,
-      "texture": "shop/icons/shirts/t2v6.png"
+      "name_fi": "Tummanvihreä sänky",
+      "name_en": "Yellow bed",
+      "type": "bed",
+      "price": 150000,
+      "texture": "shop/icons/beds/6.png"
     },
     {
       "id": 7,
-      "name": "Harmaa pikee",
-      "type": "shirt",
-      "price": 150000,
-      "level": 3,
-      "texture": "shop/icons/shirts/t3v7.png"
+      "name_fi": "Vaaleanvihreä sänky",
+      "name_en": "Dark green bed",
+      "type": "bed",
+      "price": 800000,
+      "texture": "shop/icons/beds/7.png"
     },
     {
       "id": 8,
-      "name": "Sininen pikee",
-      "type": "shirt",
-      "price": 800000,
-      "level": 3,
-      "texture": "shop/icons/shirts/t3v8.png"
+      "name_fi": "Harmaa sänky",
+      "name_en": "Gray bed",
+      "type": "bed",
+      "price": 1000000,
+      "texture": "shop/icons/beds/8.png"
     },
     {
       "id": 9,
-      "name": "Tumma pikee",
-      "type": "shirt",
-      "price": 1000000,
-      "level": 3,
-      "texture": "shop/icons/shirts/t3v9.png"
+      "name_fi": "Tumma violetti sänky",
+      "name_en": "Dark violet bed",
+      "type": "bed",
+      "price": 2000000,
+      "texture": "shop/icons/beds/9.png"
     },
     {
       "id": 10,
-      "name": "Punainen huppari",
-      "type": "shirt",
-      "price": 2000000,
-      "level": 4,
-      "texture": "shop/icons/shirts/t4v10.png"
+      "name_fi": "Pinkki sänky",
+      "name_en": "Pink bed",
+      "type": "bed",
+      "price": 3000000,
+      "texture": "shop/icons/beds/10.png"
     },
     {
       "id": 11,
-      "name": "Vihreä huppari",
-      "type": "shirt",
-      "price": 3000000,
-      "level": 4,
-      "texture": "shop/icons/shirts/t4v11.png"
+      "name_fi": "Musta sänky",
+      "name_en": "Black bed",
+      "type": "bed",
+      "price": 10000000,
+      "texture": "shop/icons/beds/11.png"
     },
     {
       "id": 12,
-      "name": "Sininen huppari",
-      "type": "shirt",
-      "price": 10000000,
-      "level": 4,
-      "texture": "shop/icons/shirts/t4v12.png"
+      "name_fi": "Haalea sänky",
+      "name_en": "Light bed",
+      "type": "bed",
+      "price": 100000000,
+      "texture": "shop/icons/beds/12.png"
     },
     {
       "id": 13,
-      "name": "Punainen raitapaita",
-      "type": "shirt",
-      "price": 100000000,
-      "level": 5,
-      "texture": "shop/icons/shirts/t5v13.png"
+      "name_fi": "Turkoosi sänky",
+      "name_en": "Turquoise bed",
+      "type": "bed",
+      "price": 500000000,
+      "texture": "shop/icons/beds/13.png"
     },
     {
       "id": 14,
-      "name": "Keltainen raitapaita",
-      "type": "shirt",
-      "price": 500000000,
-      "level": 5,
-      "texture": "shop/icons/shirts/t5v14.png"
-    },
-    {
-      "id": 15,
-      "name": "Vaaleansininen raitapaita",
-      "type": "shirt",
+      "name_fi": "Tummansininen sänky",
+      "name_en": "Dark blue bed",
+      "type": "bed",
       "price": 2147483647,
-      "level": 5,
-      "texture": "shop/icons/shirts/t5v15.png"
+      "texture": "shop/icons/beds/14.png"
     },
     {
       "id": 1,
-      "name": "Punainen pipo",
-      "type": "hat",
-      "price": 150000,
-      "level": 3,
-      "texture": "shop/icons/hats/t3v1.png"
+      "name_fi": "Tammipuutuoli",
+      "name_en": "Oak bed",
+      "type": "chair",
+      "price": 500,
+      "texture": "shop/icons/chairs/1.png"
     },
     {
       "id": 2,
-      "name": "Keltainen pipo",
-      "type": "hat",
-      "price": 800000,
-      "level": 3,
-      "texture": "shop/icons/hats/t3v2.png"
+      "name_fi": "Eebenpuutuoli",
+      "name_en": "Ebony bed",
+      "type": "chair",
+      "price": 800,
+      "texture": "shop/icons/chairs/2.png"
     },
     {
       "id": 3,
-      "name": "Sininen pipo",
-      "type": "hat",
-      "price": 1000000,
-      "level": 3,
-      "texture": "shop/icons/hats/t3v3.png"
+      "name_fi": "Punainen työtuoli",
+      "name_en": "Red workchair",
+      "type": "chair",
+      "price": 1500,
+      "texture": "shop/icons/chairs/3.png"
     },
     {
       "id": 4,
-      "name": "Violetti bandana",
-      "type": "hat",
-      "price": 2000000,
-      "level": 4,
-      "texture": "shop/icons/hats/t4v4.png"
+      "name_fi": "Sininen työtuoli",
+      "name_en": "Blue workchair",
+      "type": "chair",
+      "price": 4000,
+      "texture": "shop/icons/chairs/4.png"
     },
     {
       "id": 5,
-      "name": "Sininen bandana",
-      "type": "hat",
-      "price": 3000000,
-      "level": 4,
-      "texture": "shop/icons/hats/t4v5.png"
+      "name_fi": "Musta työtuoli",
+      "name_en": "Black workchair",
+      "type": "chair",
+      "price": 10000,
+      "texture": "shop/icons/chairs/5.png"
     },
     {
       "id": 6,
-      "name": "Punainen bandana",
-      "type": "hat",
-      "price": 10000000,
-      "level": 4,
-      "texture": "shop/icons/hats/t4v6.png"
+      "name_fi": "Turkoosi toimistotuoli",
+      "name_en": "Turquoise office chair",
+      "type": "chair",
+      "price": 150000,
+      "texture": "shop/icons/chairs/6.png"
     },
     {
       "id": 7,
-      "name": "Keltainen lippalakki",
-      "type": "hat",
-      "price": 100000000,
-      "level": 5,
-      "texture": "shop/icons/hats/t5v7.png"
+      "name_fi": "Navyblue toimistotuoli",
+      "name_en": "Navyblue office chair",
+      "type": "chair",
+      "price": 500000,
+      "texture": "shop/icons/chairs/7.png"
     },
     {
       "id": 8,
-      "name": "Sininen lippalakki",
-      "type": "hat",
-      "price": 500000000,
-      "level": 5,
-      "texture": "shop/icons/hats/t5v8.png"
+      "name_fi": "Vaalea toimistotuoli",
+      "name_en": "Light office chair",
+      "type": "chair",
+      "price": 900000,
+      "texture": "shop/icons/chairs/8.png"
     },
     {
       "id": 9,
-      "name": "Punainen lippalakki",
-      "type": "hat",
-      "price": 2147483647,
-      "level": 5,
-      "texture": "shop/icons/hats/t5v9.png"
+      "name_fi": "Vihreä ergo-tuoli",
+      "name_en": "Green ergo-chair",
+      "type": "chair",
+      "price": 3500000,
+      "texture": "shop/icons/chairs/9.png"
+    },
+    {
+      "id": 10,
+      "name_fi": "Tummansininen ergo-tuoli",
+      "name_en": "Dark blue ergo-chair",
+      "type": "chair",
+      "price": 5000000,
+      "texture": "shop/icons/chairs/10.png"
+    },
+    {
+      "id": 11,
+      "name_fi": "Vaaleansininen ergo-tuoli",
+      "name_en": "Light blue ergo-chair",
+      "type": "chair",
+      "price": 10000000,
+      "texture": "shop/icons/chairs/11.png"
+    },
+    {
+      "id": 1,
+      "name_fi": "Vaaleansininen pöytä",
+      "name_en": "Light blue desk",
+      "type": "desk",
+      "price": 100,
+      "texture": "shop/icons/desks/1.png"
+    },
+    {
+      "id": 2,
+      "name_fi": "Valkoinen pöytä",
+      "name_en": "White desk",
+      "type": "desk",
+      "price": 400,
+      "texture": "shop/icons/desks/2.png"
+    },
+    {
+      "id": 3,
+      "name_fi": "Harmaa pöytä",
+      "name_en": "Gray desk",
+      "type": "desk",
+      "price": 1000,
+      "texture": "shop/icons/desks/3.png"
+    },
+    {
+      "id": 4,
+      "name_fi": "Musta pöytä",
+      "name_en": "Black desk",
+      "type": "desk",
+      "price": 3000,
+      "texture": "shop/icons/desks/4.png"
+    },
+    {
+      "id": 5,
+      "name_fi": "Tummanharmaa pöytä",
+      "name_en": "Dark gray desk",
+      "type": "desk",
+      "price": 6500,
+      "texture": "shop/icons/desks/5.png"
+    },
+    {
+      "id": 6,
+      "name_fi": "Harmaa pöytä",
+      "name_en": "Gray desk",
+      "type": "desk",
+      "price": 10000,
+      "texture": "shop/icons/desks/6.png"
+    },
+    {
+      "id": 7,
+      "name_fi": "Eebenpuupöytä",
+      "name_en": "Ebony desk",
+      "type": "desk",
+      "price": 150000,
+      "texture": "shop/icons/desks/7.png"
+    },
+    {
+      "id": 8,
+      "name_fi": "Harmaa pöytä",
+      "name_en": "Gray desk",
+      "type": "desk",
+      "price": 800000,
+      "texture": "shop/icons/desks/8.png"
+    },
+    {
+      "id": 9,
+      "name_fi": "Hiekkapöytä",
+      "name_en": "Sand des",
+      "type": "desk",
+      "price": 1000000,
+      "texture": "shop/icons/desks/9.png"
+    },
+    {
+      "id": 10,
+      "name_fi": "Ruskea pöytä",
+      "name_en": "Brown desk",
+      "type": "desk",
+      "price": 2000000,
+      "texture": "shop/icons/desks/10.png"
+    },
+    {
+      "id": 11,
+      "name_fi": "Harmaa pöytä",
+      "name_en": "Gray desk",
+      "type": "desk",
+      "price": 3000000,
+      "texture": "shop/icons/desks/11.png"
+    },
+    {
+      "id": 12,
+      "name_fi": "Tummanruskea pöytä",
+      "name_en": "Dark brown desk",
+      "type": "desk",
+      "price": 10000000,
+      "texture": "shop/icons/desks/12.png"
+    },
+    {
+      "id": 13,
+      "name_fi": "Valkoinen pöytä",
+      "name_en": "White desk",
+      "type": "desk",
+      "price": 100000000,
+      "texture": "shop/icons/desks/13.png"
+    },
+    {
+      "id": 14,
+      "name_fi": "Musta pöytä",
+      "name_en": "Black desk",
+      "type": "desk",
+      "price": 500000000,
+      "texture": "shop/icons/desks/14.png"
+    },
+    {
+      "id": 1,
+      "name_fi": "Rikkinäinen lattia",
+      "name_en": "Broken floor",
+      "type": "floor",
+      "price": 100,
+      "texture": "shop/icons/floors/1.png"
+    },
+    {
+      "id": 2,
+      "name_fi": "Muovilattia",
+      "name_en": "Plastic floor",
+      "type": "floor",
+      "price": 400,
+      "texture": "shop/icons/floors/2.png"
+    },
+    {
+      "id": 3,
+      "name_fi": "Vaalea parketti",
+      "name_en": "Light parquet",
+      "type": "floor",
+      "price": 1000,
+      "texture": "shop/icons/floors/3.png"
+    },
+    {
+      "id": 4,
+      "name_fi": "Keltainen parketti",
+      "name_en": "Yellow parquet",
+      "type": "floor",
+      "price": 3000,
+      "texture": "shop/icons/floors/4.png"
+    },
+    {
+      "id": 5,
+      "name_fi": "Oranssi parketti",
+      "name_en": "Orange parquet",
+      "type": "floor",
+      "price": 6500,
+      "texture": "shop/icons/floors/5.png"
+    },
+    {
+      "id": 6,
+      "name_fi": "Vaaleanruskea laminaatti",
+      "name_en": "Light brown laminate",
+      "type": "floor",
+      "price": 10000,
+      "texture": "shop/icons/floors/6.png"
+    },
+    {
+      "id": 7,
+      "name_fi": "Ruskea laminaatti",
+      "name_en": "Brown laminate",
+      "type": "floor",
+      "price": 150000,
+      "texture": "shop/icons/floors/7.png"
+    },
+    {
+      "id": 8,
+      "name_fi": "Punertava laminaatti",
+      "name_en": "Redish laminate",
+      "type": "floor",
+      "price": 800000,
+      "texture": "shop/icons/floors/8.png"
+    },
+    {
+      "id": 9,
+      "name_fi": "Vaalea laminaatti",
+      "name_en": "Light laminate",
+      "type": "floor",
+      "price": 1000000,
+      "texture": "shop/icons/floors/9.png"
+    },
+    {
+      "id": 10,
+      "name_fi": "Oranssi laminaatti",
+      "name_en": "Orange laminate",
+      "type": "floor",
+      "price": 2000000,
+      "texture": "shop/icons/floors/10.png"
+    },
+    {
+      "id": 11,
+      "name_fi": "Tummanruskea laminaatti",
+      "name_en": "Dark brown laminate",
+      "type": "floor",
+      "price": 3000000,
+      "texture": "shop/icons/floors/11.png"
+    },
+    {
+      "id": 12,
+      "name_fi": "Vaalea ruudukko",
+      "name_en": "Light grid",
+      "type": "floor",
+      "price": 10000000,
+      "texture": "shop/icons/floors/12.png"
+    },
+    {
+      "id": 13,
+      "name_fi": "Keskitumma ruudukko",
+      "name_en": "Mid-dark grid",
+      "type": "floor",
+      "price": 100000000,
+      "texture": "shop/icons/floors/13.png"
+    },
+    {
+      "id": 14,
+      "name_fi": "Tumma ruudukko",
+      "name_en": "Dark grid",
+      "type": "floor",
+      "price": 500000000,
+      "texture": "shop/icons/floors/14.png"
+    },
+    {
+      "id": 1,
+      "name_fi": "Hajonnut seinä",
+      "name_en": "Broken wall",
+      "type": "wall",
+      "price": 100,
+      "texture": "shop/icons/walls/1.png"
+    },
+    {
+      "id": 2,
+      "name_fi": "Paikattu seinä",
+      "name_en": "Patched wall",
+      "type": "wall",
+      "price": 400,
+      "texture": "shop/icons/walls/2.png"
+    },
+    {
+      "id": 3,
+      "name_fi": "Maalattu seinä",
+      "name_en": "Painted wall",
+      "type": "wall",
+      "price": 1000,
+      "texture": "shop/icons/walls/3.png"
+    },
+    {
+      "id": 4,
+      "name_fi": "Vaaleanvihreä seinä",
+      "name_en": "Light green wall",
+      "type": "wall",
+      "price": 3000,
+      "texture": "shop/icons/walls/4.png"
+    },
+    {
+      "id": 5,
+      "name_fi": "Minttu seinä",
+      "name_en": "Mint wall",
+      "type": "wall",
+      "price": 6500,
+      "texture": "shop/icons/walls/5.png"
+    },
+    {
+      "id": 6,
+      "name_fi": "Harmaa seinä",
+      "name_en": "Gray wall",
+      "type": "wall",
+      "price": 10000,
+      "texture": "shop/icons/walls/6.png"
+    },
+    {
+      "id": 7,
+      "name_fi": "Vihreä seinä",
+      "name_en": "Green wall",
+      "type": "wall",
+      "price": 150000,
+      "texture": "shop/icons/walls/7.png"
+    },
+    {
+      "id": 8,
+      "name_fi": "Harmaa seinä",
+      "name_en": "Gray wall",
+      "type": "wall",
+      "price": 800000,
+      "texture": "shop/icons/walls/8.png"
+    },
+    {
+      "id": 9,
+      "name_fi": "Sinertävä seinä",
+      "name_en": "Blueish wall",
+      "type": "wall",
+      "price": 1000000,
+      "texture": "shop/icons/walls/9.png"
+    },
+    {
+      "id": 10,
+      "name_fi": "Harmaa seinä",
+      "name_en": "Gray wall",
+      "type": "wall",
+      "price": 2000000,
+      "texture": "shop/icons/walls/10.png"
+    },
+    {
+      "id": 11,
+      "name_fi": "Minttu seinä verhoilla",
+      "name_en": "Mint wall with drapes",
+      "type": "wall",
+      "price": 3000000,
+      "texture": "shop/icons/walls/11.png"
+    },
+    {
+      "id": 12,
+      "name_fi": "Harmaa seinä verhoilla",
+      "name_en": "Gray wall with drapes",
+      "type": "wall",
+      "price": 10000000,
+      "texture": "shop/icons/walls/12.png"
+    },
+    {
+      "id": 13,
+      "name_fi": "Vaalea seinä verhoilla",
+      "name_en": "Light wall with drapes",
+      "type": "wall",
+      "price": 100000000,
+      "texture": "shop/icons/walls/13.png"
+    },
+    {
+      "id": 14,
+      "name_fi": "Tummansininen seinä verhoilla",
+      "name_en": "Dark blue wall with drapes",
+      "type": "wall",
+      "price": 500000000,
+      "texture": "shop/icons/walls/14.png"
     }
   ]
 }

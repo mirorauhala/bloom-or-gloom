@@ -2,195 +2,195 @@
   "products": [
     {
       "id": 1,
-      "name": "Oranssi paita",
+      "name_fi": "Oranssi paita",
+      "name_en": "Orange shirt",
       "type": "shirt",
       "price": 100,
-      "level": 1,
-      "texture": "shop/icons/shirts/t1v1.png"
+      "texture": "shop/icons/shirts/1.png"
     },
     {
       "id": 2,
-      "name": "Keltainen paita",
+      "name_fi": "Keltainen paita",
+      "name_en": "Yellow shirt",
       "type": "shirt",
       "price": 400,
-      "level": 1,
-      "texture": "shop/icons/shirts/t1v2.png"
+      "texture": "shop/icons/shirts/2.png"
     },
     {
       "id": 3,
-      "name": "Vaaleansininen paita",
+      "name_fi": "Vaaleansininen paita",
+      "name_en": "Light blue shirt",
       "type": "shirt",
       "price": 1000,
-      "level": 1,
-      "texture": "shop/icons/shirts/t1v3.png"
+      "texture": "shop/icons/shirts/3.png"
     },
     {
       "id": 4,
-      "name": "Sininen pallopaita",
+      "name_fi": "Sininen pallopaita",
+      "name_en": "Blue polkadot",
       "type": "shirt",
       "price": 3000,
-      "level": 2,
-      "texture": "shop/icons/shirts/t2v4.png"
+      "texture": "shop/icons/shirts/4.png"
     },
     {
       "id": 5,
-      "name": "Punainen pallopaita",
+      "name_fi": "Punainen pallopaita",
+      "name_en": "Red polkadot",
       "type": "shirt",
       "price": 6500,
-      "level": 2,
-      "texture": "shop/icons/shirts/t2v5.png"
+      "texture": "shop/icons/shirts/5.png"
     },
     {
       "id": 6,
-      "name": "Vaalean ruskea pallopaita",
+      "name_fi": "Vaalean ruskea pallopaita",
+      "name_en": "Light brown polkadot",
       "type": "shirt",
       "price": 10000,
-      "level": 2,
-      "texture": "shop/icons/shirts/t2v6.png"
+      "texture": "shop/icons/shirts/6.png"
     },
     {
       "id": 7,
-      "name": "Harmaa pikee",
+      "name_fi": "Harmaa pikee",
+      "name_en": "Gray polo",
       "type": "shirt",
       "price": 150000,
-      "level": 3,
-      "texture": "shop/icons/shirts/t3v7.png"
+      "texture": "shop/icons/shirts/7.png"
     },
     {
       "id": 8,
-      "name": "Sininen pikee",
+      "name_fi": "Sininen pikee",
+      "name_en": "Blue polo",
       "type": "shirt",
       "price": 800000,
-      "level": 3,
-      "texture": "shop/icons/shirts/t3v8.png"
+      "texture": "shop/icons/shirts/8.png"
     },
     {
       "id": 9,
-      "name": "Tumma pikee",
+      "name_fi": "Tumma pikee",
+      "name_en": "Dark polo",
       "type": "shirt",
       "price": 1000000,
-      "level": 3,
-      "texture": "shop/icons/shirts/t3v9.png"
+      "texture": "shop/icons/shirts/9.png"
     },
     {
       "id": 10,
-      "name": "Punainen huppari",
+      "name_fi": "Punainen huppari",
+      "name_en": "Red hoodie",
       "type": "shirt",
       "price": 2000000,
-      "level": 4,
-      "texture": "shop/icons/shirts/t4v10.png"
+      "texture": "shop/icons/shirts/10.png"
     },
     {
       "id": 11,
-      "name": "Vihreä huppari",
+      "name_fi": "Vihreä huppari",
+      "name_en": "Green hoodie",
       "type": "shirt",
       "price": 3000000,
-      "level": 4,
-      "texture": "shop/icons/shirts/t4v11.png"
+      "texture": "shop/icons/shirts/11.png"
     },
     {
       "id": 12,
-      "name": "Sininen huppari",
+      "name_fi": "Sininen huppari",
+      "name_en": "Blue hoodie",
       "type": "shirt",
       "price": 10000000,
-      "level": 4,
-      "texture": "shop/icons/shirts/t4v12.png"
+      "texture": "shop/icons/shirts/12.png"
     },
     {
       "id": 13,
-      "name": "Punainen raitapaita",
+      "name_fi": "Punainen raitapaita",
+      "name_en": "Red striped hoodie",
       "type": "shirt",
       "price": 100000000,
-      "level": 5,
-      "texture": "shop/icons/shirts/t5v13.png"
+      "texture": "shop/icons/shirts/13.png"
     },
     {
       "id": 14,
-      "name": "Keltainen raitapaita",
+      "name_fi": "Keltainen raitapaita",
+      "name_en": "Yellow striped hoodie",
       "type": "shirt",
       "price": 500000000,
-      "level": 5,
-      "texture": "shop/icons/shirts/t5v14.png"
+      "texture": "shop/icons/shirts/14.png"
     },
     {
       "id": 15,
-      "name": "Vaaleansininen raitapaita",
+      "name_fi": "Vaaleansininen raitapaita",
+      "name_en": "Light blue striped hoodie",
       "type": "shirt",
       "price": 2147483647,
-      "level": 5,
-      "texture": "shop/icons/shirts/t5v15.png"
+      "texture": "shop/icons/shirts/15.png"
     },
     {
       "id": 1,
-      "name": "Punainen pipo",
+      "name_fi": "Punainen pipo",
+      "name_en": "Red beanie",
       "type": "hat",
       "price": 150000,
-      "level": 3,
-      "texture": "shop/icons/hats/t3v1.png"
+      "texture": "shop/icons/hats/1.png"
     },
     {
       "id": 2,
-      "name": "Keltainen pipo",
+      "name_fi": "Keltainen pipo",
+      "name_en": "Yellow beanie",
       "type": "hat",
       "price": 800000,
-      "level": 3,
-      "texture": "shop/icons/hats/t3v2.png"
+      "texture": "shop/icons/hats/2.png"
     },
     {
       "id": 3,
-      "name": "Sininen pipo",
+      "name_fi": "Sininen pipo",
+      "name_en": "Blue beanie",
       "type": "hat",
       "price": 1000000,
-      "level": 3,
-      "texture": "shop/icons/hats/t3v3.png"
+      "texture": "shop/icons/hats/3.png"
     },
     {
       "id": 4,
-      "name": "Violetti bandana",
+      "name_fi": "Violetti bandana",
+      "name_en": "Violet bandana",
       "type": "hat",
       "price": 2000000,
-      "level": 4,
-      "texture": "shop/icons/hats/t4v4.png"
+      "texture": "shop/icons/hats/4.png"
     },
     {
       "id": 5,
-      "name": "Sininen bandana",
+      "name_fi": "Sininen bandana",
+      "name_en": "Blue bandana",
       "type": "hat",
       "price": 3000000,
-      "level": 4,
-      "texture": "shop/icons/hats/t4v5.png"
+      "texture": "shop/icons/hats/5.png"
     },
     {
       "id": 6,
-      "name": "Punainen bandana",
+      "name_fi": "Punainen bandana",
+      "name_en": "Red bandana",
       "type": "hat",
       "price": 10000000,
-      "level": 4,
-      "texture": "shop/icons/hats/t4v6.png"
+      "texture": "shop/icons/hats/6.png"
     },
     {
       "id": 7,
-      "name": "Keltainen lippalakki",
+      "name_fi": "Keltainen lippalakki",
+      "name_en": "Yellow baseball cap",
       "type": "hat",
       "price": 100000000,
-      "level": 5,
-      "texture": "shop/icons/hats/t5v7.png"
+      "texture": "shop/icons/hats/7.png"
     },
     {
       "id": 8,
-      "name": "Sininen lippalakki",
+      "name_fi": "Sininen lippalakki",
+      "name_en": "Blue baseball cap",
       "type": "hat",
       "price": 500000000,
-      "level": 5,
-      "texture": "shop/icons/hats/t5v8.png"
+      "texture": "shop/icons/hats/8.png"
     },
     {
       "id": 9,
-      "name": "Punainen lippalakki",
+      "name_fi": "Punainen lippalakki",
+      "name_en": "Red baseball cap",
       "type": "hat",
       "price": 2147483647,
-      "level": 5,
-      "texture": "shop/icons/hats/t5v9.png"
+      "texture": "shop/icons/hats/9.png"
     }
   ]
 }

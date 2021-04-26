@@ -2,195 +2,147 @@
   "products": [
     {
       "id": 1,
-      "name": "Muu paita",
-      "type": "shirt",
+      "name_fi": "Roskis",
+      "name_en": "Trashcan",
+      "type": "other",
       "price": 100,
-      "level": 1,
-      "texture": "shop/icons/shirts/t1v1.png"
+      "texture": "shop/icons/others/1.png"
     },
     {
       "id": 2,
-      "name": "Keltainen paita",
-      "type": "shirt",
+      "name_fi": "Taulu",
+      "name_en": "Painting",
+      "type": "other",
       "price": 400,
-      "level": 1,
-      "texture": "shop/icons/shirts/t1v2.png"
+      "texture": "shop/icons/others/2.png"
     },
     {
       "id": 3,
-      "name": "Vaaleansininen paita",
-      "type": "shirt",
+      "name_fi": "Painot",
+      "name_en": "Weights",
+      "type": "other",
       "price": 1000,
-      "level": 1,
-      "texture": "shop/icons/shirts/t1v3.png"
+      "texture": "shop/icons/others/3.png"
     },
     {
       "id": 4,
-      "name": "Sininen pallopaita",
-      "type": "shirt",
+      "name_fi": "Kahvikuppi",
+      "name_en": "Coffee mug",
+      "type": "other",
       "price": 3000,
-      "level": 2,
-      "texture": "shop/icons/shirts/t2v4.png"
+      "texture": "shop/icons/others/4.png"
     },
     {
       "id": 5,
-      "name": "Punainen pallopaita",
-      "type": "shirt",
+      "name_fi": "Kasvi",
+      "name_en": "Plant",
+      "type": "other",
       "price": 6500,
-      "level": 2,
-      "texture": "shop/icons/shirts/t2v5.png"
+      "texture": "shop/icons/others/5.png"
     },
     {
       "id": 6,
-      "name": "Vaalean ruskea pallopaita",
-      "type": "shirt",
+      "name_fi": "Puhelin",
+      "name_en": "Phone",
+      "type": "other",
       "price": 10000,
-      "level": 2,
-      "texture": "shop/icons/shirts/t2v6.png"
+      "texture": "shop/icons/others/6.png"
     },
     {
       "id": 7,
-      "name": "Harmaa pikee",
-      "type": "shirt",
+      "name_fi": "Kirja",
+      "name_en": "Book",
+      "type": "other",
       "price": 150000,
-      "level": 3,
-      "texture": "shop/icons/shirts/t3v7.png"
+      "texture": "shop/icons/others/7.png"
     },
     {
       "id": 8,
-      "name": "Sininen pikee",
-      "type": "shirt",
+      "name_fi": "Pearbook Pro",
+      "name_en": "Pearbook Pro",
+      "type": "other",
       "price": 800000,
-      "level": 3,
-      "texture": "shop/icons/shirts/t3v8.png"
+      "texture": "shop/icons/others/8.png"
     },
     {
       "id": 9,
-      "name": "Tumma pikee",
-      "type": "shirt",
+      "name_fi": "Pelitietokone",
+      "name_en": "Gaming PC",
+      "type": "other",
       "price": 1000000,
-      "level": 3,
-      "texture": "shop/icons/shirts/t3v9.png"
+      "texture": "shop/icons/others/9.png"
     },
     {
       "id": 10,
-      "name": "Punainen huppari",
-      "type": "shirt",
-      "price": 2000000,
-      "level": 4,
-      "texture": "shop/icons/shirts/t4v10.png"
+      "name_fi": "Lue kirja",
+      "name_en": "Read a book",
+      "type": "other",
+      "price": 10000000,
+      "texture": "shop/icons/others/10.png"
     },
     {
       "id": 11,
-      "name": "Vihreä huppari",
-      "type": "shirt",
-      "price": 3000000,
-      "level": 4,
-      "texture": "shop/icons/shirts/t4v11.png"
+      "name_fi": "Pelaa peliä",
+      "name_en": "Play a game",
+      "type": "other",
+      "price": 10000000,
+      "texture": "shop/icons/others/11.png"
     },
     {
       "id": 12,
-      "name": "Sininen huppari",
-      "type": "shirt",
+      "name_fi": "Meditoi",
+      "name_en": "Meditate",
+      "type": "other",
       "price": 10000000,
-      "level": 4,
-      "texture": "shop/icons/shirts/t4v12.png"
+      "texture": "shop/icons/others/12.png"
     },
     {
       "id": 13,
-      "name": "Punainen raitapaita",
-      "type": "shirt",
-      "price": 100000000,
-      "level": 5,
-      "texture": "shop/icons/shirts/t5v13.png"
+      "name_fi": "Kuuntele musiikkia",
+      "name_en": "Listen to music",
+      "type": "other",
+      "price": 10000000,
+      "texture": "shop/icons/others/13.png"
     },
     {
       "id": 14,
-      "name": "Keltainen raitapaita",
-      "type": "shirt",
-      "price": 500000000,
-      "level": 5,
-      "texture": "shop/icons/shirts/t5v14.png"
+      "name_fi": "Mene ulos",
+      "name_en": "Go outside",
+      "type": "other",
+      "price": 10000000,
+      "texture": "shop/icons/others/14.png"
     },
     {
       "id": 15,
-      "name": "Vaaleansininen raitapaita",
-      "type": "shirt",
-      "price": 2147483647,
-      "level": 5,
-      "texture": "shop/icons/shirts/t5v15.png"
-    },
-    {
-      "id": 1,
-      "name": "Punainen pipo",
-      "type": "hat",
-      "price": 150000,
-      "level": 3,
-      "texture": "shop/icons/hats/t3v1.png"
-    },
-    {
-      "id": 2,
-      "name": "Keltainen pipo",
-      "type": "hat",
-      "price": 800000,
-      "level": 3,
-      "texture": "shop/icons/hats/t3v2.png"
-    },
-    {
-      "id": 3,
-      "name": "Sininen pipo",
-      "type": "hat",
-      "price": 1000000,
-      "level": 3,
-      "texture": "shop/icons/hats/t3v3.png"
-    },
-    {
-      "id": 4,
-      "name": "Violetti bandana",
-      "type": "hat",
-      "price": 2000000,
-      "level": 4,
-      "texture": "shop/icons/hats/t4v4.png"
-    },
-    {
-      "id": 5,
-      "name": "Sininen bandana",
-      "type": "hat",
-      "price": 3000000,
-      "level": 4,
-      "texture": "shop/icons/hats/t4v5.png"
-    },
-    {
-      "id": 6,
-      "name": "Punainen bandana",
-      "type": "hat",
+      "name_fi": "Soita puhelu",
+      "name_en": "Make a call",
+      "type": "other",
       "price": 10000000,
-      "level": 4,
-      "texture": "shop/icons/hats/t4v6.png"
+      "texture": "shop/icons/others/15.png"
     },
     {
-      "id": 7,
-      "name": "Keltainen lippalakki",
-      "type": "hat",
-      "price": 100000000,
-      "level": 5,
-      "texture": "shop/icons/hats/t5v7.png"
+      "id": 16,
+      "name_fi": "Nuku",
+      "name_en": "Sleep",
+      "type": "other",
+      "price": 10000000,
+      "texture": "shop/icons/others/16.png"
     },
     {
-      "id": 8,
-      "name": "Sininen lippalakki",
-      "type": "hat",
-      "price": 500000000,
-      "level": 5,
-      "texture": "shop/icons/hats/t5v8.png"
+      "id": 17,
+      "name_fi": "Juo",
+      "name_en": "Drink",
+      "type": "other",
+      "price": 10000000,
+      "texture": "shop/icons/others/17.png"
     },
     {
-      "id": 9,
-      "name": "Punainen lippalakki",
-      "type": "hat",
-      "price": 2147483647,
-      "level": 5,
-      "texture": "shop/icons/hats/t5v9.png"
+      "id": 18,
+      "name_fi": "Voimistele",
+      "name_en": "Workout",
+      "type": "other",
+      "price": 10000000,
+      "texture": "shop/icons/others/18.png"
     }
   ]
 }
