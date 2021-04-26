@@ -29,13 +29,8 @@ import fi.tuni.tamk.tiko.depressionaut.Thoughts.ThoughtBubble;
 public class GameScreen implements Screen {
     private final Stage stage;
     private final Items items;
-    final private float x = 0;
-    final private float y = 0;
-
     private final GameCharacter character;
     public Rectangle gameScreenRectangle;
-
-
     public ScoreMeter scoreMeter;
     private TapParticle particle = new TapParticle();
     private ThoughtBubble bubble = new ThoughtBubble();
@@ -89,6 +84,8 @@ public class GameScreen implements Screen {
         batch.setColor(clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,clock.getDayOpacity()+0.25f,1); // lighting effect
 
         // Background layer:
+        float x = 0;
+        float y = 0;
         batch.draw(items.getItem("wall", wallTier), x, y);
         batch.draw(items.getItem("floor", wallTier), x, y);
 
