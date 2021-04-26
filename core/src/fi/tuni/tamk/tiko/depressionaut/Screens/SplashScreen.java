@@ -81,7 +81,7 @@ public class SplashScreen implements Screen {
         if (Gdx.input.justTouched() || TimeUnit.MILLISECONDS.convert(System.nanoTime() - splashTimer, TimeUnit.NANOSECONDS) > 7500) {
 
             if(!game.settings.getHasSeenComic() && !MyGdxGame.DEBUG) {
-                game.setScreen(new Comic(game));
+                game.setScreen(new ComicScreen(game));
             } else {
                 game.navigation.setActive(Navigation.Screen.GAME);
                 game.navigation.setScreen(Navigation.Screen.GAME);

@@ -2,7 +2,6 @@ package fi.tuni.tamk.tiko.depressionaut.Screens;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -14,8 +13,6 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
-import fi.tuni.tamk.tiko.depressionaut.Settings;
-import fi.tuni.tamk.tiko.depressionaut.Sounds;
 
 /**
  * SettingsScreen houses all of the settings and stats of the player
@@ -134,7 +131,7 @@ public class SettingsScreen implements Screen {
             }
             if(comicRectangle.contains(touch.x, touch.y)) {
                 game.navigation.setActive(null);
-                game.setScreen(new Comic(game));
+                game.setScreen(new ComicScreen(game));
             }
 
             if(resetRectangle.contains(touch.x, touch.y)) {
