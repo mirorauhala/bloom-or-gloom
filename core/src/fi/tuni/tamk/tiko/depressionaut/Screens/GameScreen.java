@@ -126,6 +126,7 @@ public class GameScreen implements Screen {
         // Daily Bonus
         dailyBonus.drawWindow(batch);
         dailyBonus.checkForTap(camera);
+        dailyBonus.drawIndicator(batch);
 
         batch.end();
 

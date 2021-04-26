@@ -29,6 +29,8 @@ public class DailyBonus {
     public Texture bonusWindowFI = new Texture("UI/Dailybonus/BonuswindowFI.png");
     public Texture noBonusEN = new Texture("UI/Dailybonus/NobonusEN.png");
     public Texture noBonusFI = new Texture("UI/Dailybonus/NobonusFI.png");
+    private Texture indicatorEN = new Texture("UI/Dailybonus/IndicatorEN.png");
+    private Texture indicatorFI = new Texture("UI/Dailybonus/IndicatorFI.png");
 
     public Rectangle continueButton;
 
@@ -81,7 +83,7 @@ public class DailyBonus {
 
     /**
      * drawWindow draws the dailybonus window and all its texts
-     * @param batch
+     * @param batch spritebatch
      */
     public void drawWindow(SpriteBatch batch) {
         if(clock.isFirstOfTheDay()) {
@@ -116,9 +118,18 @@ public class DailyBonus {
 
     }
 
+    public void drawIndicator(SpriteBatch batch) {
+        if (game.settings.getBonusDay().equals(clock.strDate)) {
+            if (game.settings.getLang().equals("en")) {
+                batch.draw(indicatorEN, 0, 0);
+            } else {
+                batch.draw(indicatorFI, 0, 0);
+            }
+        }
+    }
     /**
      * checkForTap checks if the player presses the "continue" button on dailybonus window
-     * @param camera
+     * @param camera camera
      */
     public void checkForTap(Camera camera) {
         if(Gdx.input.justTouched() && clock.isFirstOfTheDay()) {
