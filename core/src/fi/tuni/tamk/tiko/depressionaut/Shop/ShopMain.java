@@ -150,7 +150,7 @@ public class ShopMain {
                     if(game.score.decrementWallet(product.getPrice())) {
                         game.inventory.set(product.getType(), product.getId());
                         Gdx.app.debug("SHOP", "Bought: "+ product.getName() + " for " + product.getPrice() );
-                        game.sounds.menuClicksoudPlay();
+                        game.sounds.buySoundPlay();
 
                     } else {
                         Gdx.app.debug("SHOP", "Cannot buy " + product.getName());
