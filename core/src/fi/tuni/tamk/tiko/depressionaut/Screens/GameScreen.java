@@ -49,7 +49,6 @@ public class GameScreen implements Screen {
     private int stuffTier;
     private int chairTier;
     private int deskTier;
-    private int smileTier;
 
     public GameScreen(MyGdxGame game) {
         this.game = game;
@@ -228,7 +227,6 @@ public class GameScreen implements Screen {
         stuffTier = game.inventory.get("stuff");
         chairTier = game.inventory.get("chair");
         deskTier = game.inventory.get("desk");
-        smileTier = game.inventory.get("smile");
         character.setShirt(game.inventory.get("shirt"));
         character.setHat(game.inventory.get("hat"));
     }
