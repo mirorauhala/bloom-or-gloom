@@ -53,6 +53,13 @@ public class Settings {
     }
 
     /**
+     * checks if sound settings have been set
+     * @return true or false
+     */
+    public boolean containsSound() {
+        return prefs.contains("sound");
+    }
+    /**
      * Is music on or off?
      * @return boolean
      */
@@ -67,6 +74,13 @@ public class Settings {
     public void setMusic(boolean value) {
         prefs.putBoolean("music", value);
         prefs.flush();
+    }
+    /**
+     * checks if music settings have been set
+     * @return true or false
+     */
+    public boolean containsMusic() {
+        return prefs.contains("music");
     }
 
     /**
