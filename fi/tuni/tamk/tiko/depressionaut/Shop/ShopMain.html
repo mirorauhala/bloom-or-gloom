@@ -146,7 +146,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>com.badlogic.gdx.scenes.scene2d.ui.Table</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/ShopMain.html#createShopNav--">createShopNav</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/ShopMain.html#createShopNav-java.lang.String-">createShopNav</a></span>(java.lang.String&nbsp;area)</code>
 <div class="block">Create the navigation for the shop.</div>
 </td>
 </tr>
@@ -176,7 +176,8 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>com.badlogic.gdx.scenes.scene2d.Stage</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/ShopMain.html#getStage-fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products-">getStage</a></span>(<a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/Resources/Products.html" title="class in fi.tuni.tamk.tiko.depressionaut.Shop.Resources">Products</a>&nbsp;products)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/ShopMain.html#getStage-fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products-java.lang.String-">getStage</a></span>(<a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/Resources/Products.html" title="class in fi.tuni.tamk.tiko.depressionaut.Shop.Resources">Products</a>&nbsp;products,
+        java.lang.String&nbsp;area)</code>
 <div class="block">Build the main stage of the shop screen.</div>
 </td>
 </tr>
@@ -231,18 +232,21 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="getStage-fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products-">
+<a name="getStage-fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getStage</h4>
-<pre>public&nbsp;com.badlogic.gdx.scenes.scene2d.Stage&nbsp;getStage(<a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/Resources/Products.html" title="class in fi.tuni.tamk.tiko.depressionaut.Shop.Resources">Products</a>&nbsp;products)</pre>
+<pre>public&nbsp;com.badlogic.gdx.scenes.scene2d.Stage&nbsp;getStage(<a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/Resources/Products.html" title="class in fi.tuni.tamk.tiko.depressionaut.Shop.Resources">Products</a>&nbsp;products,
+                                                      java.lang.String&nbsp;area)</pre>
 <div class="block">Build the main stage of the shop screen.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>products</code> - </dd>
+<dd><code>products</code> - Products</dd>
+<dd><code>area</code> - String area of the shop view</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
+<dd>Stage</dd>
 </dl>
 </li>
 </ul>
@@ -290,15 +294,17 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a name="createShopNav--">
+<a name="createShopNav-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>createShopNav</h4>
-<pre>public&nbsp;com.badlogic.gdx.scenes.scene2d.ui.Table&nbsp;createShopNav()</pre>
+<pre>public&nbsp;com.badlogic.gdx.scenes.scene2d.ui.Table&nbsp;createShopNav(java.lang.String&nbsp;area)</pre>
 <div class="block">Create the navigation for the shop.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>area</code> - String area of the shop view</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Table</dd>
 </dl>
