@@ -11,6 +11,7 @@ public class Sounds {
     public com.badlogic.gdx.audio.Sound menuClick = Gdx.audio.newSound(Gdx.files.internal("sounds/settingsClick.mp3"));
     public com.badlogic.gdx.audio.Music crickets = Gdx.audio.newMusic(Gdx.files.internal("sounds/crickets.mp3"));
     public com.badlogic.gdx.audio.Music nature = Gdx.audio.newMusic(Gdx.files.internal("sounds/nature.mp3"));
+    public com.badlogic.gdx.audio.Music music = Gdx.audio.newMusic(Gdx.files.internal("sounds/bgmusic.mp3"));
 
     public Sounds(MyGdxGame game) {
         this.game = game;
@@ -58,6 +59,20 @@ public class Sounds {
         if(nature.isPlaying()) {
             nature.stop();
         }
+    }
+
+    public void musicPlay() {
+        if(game.settings.getMusic()) {
+            music.setLooping(true);
+            music.setVolume(0.1f);
+            music.play();
+        }
+    }
+    public void stopMusic() {
+        if(music.isPlaying()) {
+            music.stop();
+        }
+
     }
 }
 
