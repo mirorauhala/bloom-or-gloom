@@ -199,7 +199,7 @@ public class GameCharacter {
      *
      * @return Return the hat's index.
      */
-    public int getHatIndex() {
+    public int getHat() {
         return hatIndex;
     }
 

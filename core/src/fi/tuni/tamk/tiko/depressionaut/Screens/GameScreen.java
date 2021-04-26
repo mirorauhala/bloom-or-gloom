@@ -179,9 +179,9 @@ public class GameScreen implements Screen {
 
             Gdx.app.debug("Character", "Happiness level: " + game.score.getHappinessLevel());
             Gdx.app.debug("Character", "Item: " + character.getItem());
-            Gdx.app.debug("Character", "Shirt: " + character.getHatLevel());
+            Gdx.app.debug("Character", "Shirt: " + character.getShirt());
             Gdx.app.debug("Character", "Sleeve: " + character.getSleeveIndex());
-            Gdx.app.debug("Character", "Hat: " + character.getHatLevel());
+            Gdx.app.debug("Character", "Hat: " + character.getHat());
         }
     }
     
