@@ -143,10 +143,11 @@ public class Items {
         List<String> items = Arrays.asList(
                 "wall",
                 "floor",
+                "stuff",
                 "bed",
                 "chair",
                 "desk"
-        );
+        );  
 
         for (String item : items) {
             getItem(item, inventory.get(item));
