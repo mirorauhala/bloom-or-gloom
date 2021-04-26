@@ -114,6 +114,13 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">ThoughtBubble</span>
 extends com.badlogic.gdx.scenes.scene2d.Actor</pre>
+<div class="block">Class for the thought bubbles that appear around the player every minute.
+
+ There are two types of thought bubbles that can appear around the player:
+ negative and positive. When on the screen, the negative bubbles will disable
+ the player's ability to tap the screen to earn points until the bubble is
+ popped. The positive bubbles increase the tap multiplier by one for 30
+ seconds and can be stacked.</div>
 </li>
 </ul>
 </div>
@@ -171,36 +178,54 @@ extends com.badlogic.gdx.scenes.scene2d.Actor</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.Emotion.html" title="enum in fi.tuni.tamk.tiko.depressionaut.Thoughts">ThoughtBubble.Emotion</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#checkForClear-float-float-">checkForClear</a></span>(float&nbsp;x,
-             float&nbsp;y)</code>&nbsp;</td>
+             float&nbsp;y)</code>
+<div class="block">Checks if given coordinates are inside a bubble and returns
+ corresponding emotion.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#createThought-float-">createThought</a></span>(float&nbsp;offset)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#createThought-float-">createThought</a></span>(float&nbsp;offset)</code>
+<div class="block">Creates a new bubble when called and when there are less than 3 bubbles
+ on the screen.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>com.badlogic.gdx.graphics.Texture</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#getBubbleTexture--">getBubbleTexture</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#getBubbleTexture--">getBubbleTexture</a></span>()</code>
+<div class="block">Returns the texture of a bubble depending on its emotion.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#getNegThoughtsAmount--">getNegThoughtsAmount</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#getNegThoughtsAmount--">getNegThoughtsAmount</a></span>()</code>
+<div class="block">Returns the number of negative thought bubbles.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>com.badlogic.gdx.math.Vector2</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#getPosition-int-float-">getPosition</a></span>(int&nbsp;index,
-           float&nbsp;offset)</code>&nbsp;</td>
+           float&nbsp;offset)</code>
+<div class="block">Returns the coordinates of one of the possible positions for the bubbles.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#isListFull--">isListFull</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#isListFull--">isListFull</a></span>()</code>
+<div class="block">Checks if the list containing the bubbles is full.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#render-com.badlogic.gdx.graphics.g2d.SpriteBatch-">render</a></span>(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#render-com.badlogic.gdx.graphics.g2d.SpriteBatch-">render</a></span>(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</code>
+<div class="block">Draws the bubbles and calls supporting methods.</div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#scale--">scale</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.html#scale--">scale</a></span>()</code>
+<div class="block">Scales the textures of the bubbles up until they reach 100% scale.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -255,6 +280,13 @@ extends com.badlogic.gdx.scenes.scene2d.Actor</pre>
 <li class="blockList">
 <h4>createThought</h4>
 <pre>public&nbsp;void&nbsp;createThought(float&nbsp;offset)</pre>
+<div class="block">Creates a new bubble when called and when there are less than 3 bubbles
+ on the screen.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>offset</code> - Character's position offset to ensure the bubbles
+               correctly form around the player's head.</dd>
+</dl>
 </li>
 </ul>
 <a name="render-com.badlogic.gdx.graphics.g2d.SpriteBatch-">
@@ -264,6 +296,11 @@ extends com.badlogic.gdx.scenes.scene2d.Actor</pre>
 <li class="blockList">
 <h4>render</h4>
 <pre>public&nbsp;void&nbsp;render(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</pre>
+<div class="block">Draws the bubbles and calls supporting methods.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>batch</code> - SpriteBatch needed for the draw() method.</dd>
+</dl>
 </li>
 </ul>
 <a name="scale--">
@@ -273,6 +310,7 @@ extends com.badlogic.gdx.scenes.scene2d.Actor</pre>
 <li class="blockList">
 <h4>scale</h4>
 <pre>public&nbsp;void&nbsp;scale()</pre>
+<div class="block">Scales the textures of the bubbles up until they reach 100% scale.</div>
 </li>
 </ul>
 <a name="checkForClear-float-float-">
@@ -283,6 +321,15 @@ extends com.badlogic.gdx.scenes.scene2d.Actor</pre>
 <h4>checkForClear</h4>
 <pre>public&nbsp;<a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Thoughts/ThoughtBubble.Emotion.html" title="enum in fi.tuni.tamk.tiko.depressionaut.Thoughts">ThoughtBubble.Emotion</a>&nbsp;checkForClear(float&nbsp;x,
                                            float&nbsp;y)</pre>
+<div class="block">Checks if given coordinates are inside a bubble and returns
+ corresponding emotion.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - touch position x</dd>
+<dd><code>y</code> - touch position y</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Returns emotion of the bubble hit.</dd>
+</dl>
 </li>
 </ul>
 <a name="getPosition-int-float-">
@@ -293,6 +340,15 @@ extends com.badlogic.gdx.scenes.scene2d.Actor</pre>
 <h4>getPosition</h4>
 <pre>public&nbsp;com.badlogic.gdx.math.Vector2&nbsp;getPosition(int&nbsp;index,
                                                  float&nbsp;offset)</pre>
+<div class="block">Returns the coordinates of one of the possible positions for the bubbles.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - A bubble's index.</dd>
+<dd><code>offset</code> - Character's position offset to ensure the bubbles
+               correctly form around the player's head.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Returns the coordinates.</dd>
+</dl>
 </li>
 </ul>
 <a name="isListFull--">
@@ -302,6 +358,11 @@ extends com.badlogic.gdx.scenes.scene2d.Actor</pre>
 <li class="blockList">
 <h4>isListFull</h4>
 <pre>public&nbsp;boolean&nbsp;isListFull()</pre>
+<div class="block">Checks if the list containing the bubbles is full. (max. 3)</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Returns boolean depending on the results.</dd>
+</dl>
 </li>
 </ul>
 <a name="getBubbleTexture--">
@@ -311,6 +372,11 @@ extends com.badlogic.gdx.scenes.scene2d.Actor</pre>
 <li class="blockList">
 <h4>getBubbleTexture</h4>
 <pre>public&nbsp;com.badlogic.gdx.graphics.Texture&nbsp;getBubbleTexture()</pre>
+<div class="block">Returns the texture of a bubble depending on its emotion.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The texture of the bubble.</dd>
+</dl>
 </li>
 </ul>
 <a name="getNegThoughtsAmount--">
@@ -320,6 +386,11 @@ extends com.badlogic.gdx.scenes.scene2d.Actor</pre>
 <li class="blockList">
 <h4>getNegThoughtsAmount</h4>
 <pre>public&nbsp;int&nbsp;getNegThoughtsAmount()</pre>
+<div class="block">Returns the number of negative thought bubbles.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>amount</dd>
+</dl>
 </li>
 </ul>
 </li>
