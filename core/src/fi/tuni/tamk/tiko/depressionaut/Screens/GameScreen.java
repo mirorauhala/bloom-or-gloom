@@ -74,7 +74,7 @@ public class GameScreen implements Screen {
         // Checks if a thought bubble should be created, and creates one if more
         // than one minute has passed.
         if (clock.thoughtBubbleTimer(false)) {
-            bubble.createThought(character.getTierOffset(character.getTier()));
+            bubble.createThought(character.getTierOffset(game.score.getHappinessLevel()));
         }
 
         batch.begin();
@@ -131,7 +131,7 @@ public class GameScreen implements Screen {
     }
 
     public void checkForTap() {
-        Vector2 headPos = new Vector2(character.getHeadPosition(character.getTier()));
+        Vector2 headPos = new Vector2(character.getHeadPosition(game.score.getHappinessLevel()));
         headPos.x += character.head.getWidth() / 2f;
         headPos.y += character.head.getHeight() / 2f;
 
@@ -178,7 +178,7 @@ public class GameScreen implements Screen {
             character.setSleeveIndex((int)(Math.random()*16));
             character.setHatIndex((int)(Math.random()*10));
 
-            Gdx.app.debug("Character", "Tier: " + character.getTier());
+            Gdx.app.debug("Character", "Happiness level: " + game.score.getHappinessLevel());
             Gdx.app.debug("Character", "Item: " + character.getItem());
             Gdx.app.debug("Character", "Shirt: " + character.getShirtTier());
             Gdx.app.debug("Character", "Sleeve: " + character.getSleeveIndex());
