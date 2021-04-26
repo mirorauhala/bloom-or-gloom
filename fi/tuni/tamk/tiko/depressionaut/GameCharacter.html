@@ -109,6 +109,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">GameCharacter</span>
 extends java.lang.Object</pre>
+<div class="block">Class for the drawing and functioning of the character.</div>
 </li>
 </ul>
 </div>
@@ -169,7 +170,9 @@ extends java.lang.Object</pre>
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#GameCharacter--">GameCharacter</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#GameCharacter--">GameCharacter</a></span>()</code>
+<div class="block">Constructor puts the textures for held items in a hashMap for easier access.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -188,68 +191,101 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#blink-com.badlogic.gdx.graphics.g2d.SpriteBatch-int-">blink</a></span>(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch,
-     int&nbsp;tier)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#blink-com.badlogic.gdx.graphics.g2d.SpriteBatch-">blink</a></span>(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</code>
+<div class="block">Makes the character blink by periodically changing the texture of the eyes.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#draw-com.badlogic.gdx.graphics.g2d.SpriteBatch-">draw</a></span>(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#draw-com.badlogic.gdx.graphics.g2d.SpriteBatch-">draw</a></span>(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</code>
+<div class="block">Draws all textures related to the character.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHatIndex--">getHatIndex</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHatIndex--">getHatIndex</a></span>()</code>
+<div class="block">Gets hat tier.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>com.badlogic.gdx.math.Vector2</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHeadCenter-int-">getHeadCenter</a></span>(int&nbsp;tier)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHeadCenter-int-">getHeadCenter</a></span>(int&nbsp;tier)</code>
+<div class="block">Get's the position of the center of the character's head.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>com.badlogic.gdx.math.Vector2</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHeadPosition-int-">getHeadPosition</a></span>(int&nbsp;tier)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHeadPosition-int-">getHeadPosition</a></span>(int&nbsp;tier)</code>
+<div class="block">Returns the position of the head depending on the character's tier.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.heldItem.html" title="enum in fi.tuni.tamk.tiko.depressionaut">GameCharacter.heldItem</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getItem--">getItem</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getItem--">getItem</a></span>()</code>
+<div class="block">Gets current item</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getShirtTier--">getShirtTier</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getShirtTier--">getShirtTier</a></span>()</code>
+<div class="block">Gets shirt tier.</div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getSleeveIndex--">getSleeveIndex</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getSleeveIndex--">getSleeveIndex</a></span>()</code>
+<div class="block">Gets sleeve index needed for different poses.</div>
+</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>float</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getStandingOffset--">getStandingOffset</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getStandingOffset--">getStandingOffset</a></span>()</code>
+<div class="block">Returns standing offset in tier 5 needed for textures that move up
+ with the character when it stands up.</div>
+</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getTier--">getTier</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getTier--">getTier</a></span>()</code>
+<div class="block">Gets character's tier.</div>
+</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getTierOffset-int-">getTierOffset</a></span>(int&nbsp;tier)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getTierOffset-int-">getTierOffset</a></span>(int&nbsp;tier)</code>
+<div class="block">Returns the character's head's position relative to it's starting
+ position in tier 1.</div>
+</td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setHatIndex-int-">setHatIndex</a></span>(int&nbsp;index)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setHatIndex-int-">setHatIndex</a></span>(int&nbsp;index)</code>
+<div class="block">Sets hat tier.</div>
+</td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setItem-fi.tuni.tamk.tiko.depressionaut.GameCharacter.heldItem-">setItem</a></span>(<a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.heldItem.html" title="enum in fi.tuni.tamk.tiko.depressionaut">GameCharacter.heldItem</a>&nbsp;item)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setItem-fi.tuni.tamk.tiko.depressionaut.GameCharacter.heldItem-">setItem</a></span>(<a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.heldItem.html" title="enum in fi.tuni.tamk.tiko.depressionaut">GameCharacter.heldItem</a>&nbsp;item)</code>
+<div class="block">Sets held item.</div>
+</td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setShirtTier-int-">setShirtTier</a></span>(int&nbsp;index)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setShirtTier-int-">setShirtTier</a></span>(int&nbsp;index)</code>
+<div class="block">Sets shirt tier.</div>
+</td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setSleeveIndex-int-">setSleeveIndex</a></span>(int&nbsp;index)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setSleeveIndex-int-">setSleeveIndex</a></span>(int&nbsp;index)</code>
+<div class="block">Sets sleeve index needed for different poses.</div>
+</td>
 </tr>
 <tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setTier-int-">setTier</a></span>(int&nbsp;tier)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setTier-int-">setTier</a></span>(int&nbsp;tier)</code>
+<div class="block">Sets character's tier.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -306,6 +342,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>GameCharacter</h4>
 <pre>public&nbsp;GameCharacter()</pre>
+<div class="block">Constructor puts the textures for held items in a hashMap for easier access.</div>
 </li>
 </ul>
 </li>
@@ -323,16 +360,25 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>draw</h4>
 <pre>public&nbsp;void&nbsp;draw(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</pre>
+<div class="block">Draws all textures related to the character.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>batch</code> - SpriteBatch needed for the draw() method.</dd>
+</dl>
 </li>
 </ul>
-<a name="blink-com.badlogic.gdx.graphics.g2d.SpriteBatch-int-">
+<a name="blink-com.badlogic.gdx.graphics.g2d.SpriteBatch-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>blink</h4>
-<pre>public&nbsp;void&nbsp;blink(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch,
-                  int&nbsp;tier)</pre>
+<pre>public&nbsp;void&nbsp;blink(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</pre>
+<div class="block">Makes the character blink by periodically changing the texture of the eyes.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>batch</code> - SpriteBatch needed for the draw() method.</dd>
+</dl>
 </li>
 </ul>
 <a name="setItem-fi.tuni.tamk.tiko.depressionaut.GameCharacter.heldItem-">
@@ -342,6 +388,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setItem</h4>
 <pre>public&nbsp;void&nbsp;setItem(<a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.heldItem.html" title="enum in fi.tuni.tamk.tiko.depressionaut">GameCharacter.heldItem</a>&nbsp;item)</pre>
+<div class="block">Sets held item.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>item</code> - enum heldItem</dd>
+</dl>
 </li>
 </ul>
 <a name="getItem--">
@@ -351,6 +402,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getItem</h4>
 <pre>public&nbsp;<a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.heldItem.html" title="enum in fi.tuni.tamk.tiko.depressionaut">GameCharacter.heldItem</a>&nbsp;getItem()</pre>
+<div class="block">Gets current item</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>enum heldItem</dd>
+</dl>
 </li>
 </ul>
 <a name="setShirtTier-int-">
@@ -360,6 +416,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setShirtTier</h4>
 <pre>public&nbsp;void&nbsp;setShirtTier(int&nbsp;index)</pre>
+<div class="block">Sets shirt tier.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - Index</dd>
+</dl>
 </li>
 </ul>
 <a name="getShirtTier--">
@@ -369,6 +430,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getShirtTier</h4>
 <pre>public&nbsp;int&nbsp;getShirtTier()</pre>
+<div class="block">Gets shirt tier.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Shirt's tier</dd>
+</dl>
 </li>
 </ul>
 <a name="setHatIndex-int-">
@@ -378,6 +444,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setHatIndex</h4>
 <pre>public&nbsp;void&nbsp;setHatIndex(int&nbsp;index)</pre>
+<div class="block">Sets hat tier.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - Hat's tier</dd>
+</dl>
 </li>
 </ul>
 <a name="getHatIndex--">
@@ -387,6 +458,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getHatIndex</h4>
 <pre>public&nbsp;int&nbsp;getHatIndex()</pre>
+<div class="block">Gets hat tier.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Hat's tier</dd>
+</dl>
 </li>
 </ul>
 <a name="setSleeveIndex-int-">
@@ -396,6 +472,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setSleeveIndex</h4>
 <pre>public&nbsp;void&nbsp;setSleeveIndex(int&nbsp;index)</pre>
+<div class="block">Sets sleeve index needed for different poses.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - </dd>
+</dl>
 </li>
 </ul>
 <a name="getSleeveIndex--">
@@ -405,6 +486,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getSleeveIndex</h4>
 <pre>public&nbsp;int&nbsp;getSleeveIndex()</pre>
+<div class="block">Gets sleeve index needed for different poses.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
 </li>
 </ul>
 <a name="setTier-int-">
@@ -414,6 +499,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setTier</h4>
 <pre>public&nbsp;void&nbsp;setTier(int&nbsp;tier)</pre>
+<div class="block">Sets character's tier.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tier</code> - </dd>
+</dl>
 </li>
 </ul>
 <a name="getTier--">
@@ -423,6 +513,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getTier</h4>
 <pre>public&nbsp;int&nbsp;getTier()</pre>
+<div class="block">Gets character's tier.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
 </li>
 </ul>
 <a name="getTierOffset-int-">
@@ -432,6 +526,14 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getTierOffset</h4>
 <pre>public&nbsp;int&nbsp;getTierOffset(int&nbsp;tier)</pre>
+<div class="block">Returns the character's head's position relative to it's starting
+ position in tier 1.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tier</code> - Current tier</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>offset</dd>
+</dl>
 </li>
 </ul>
 <a name="getStandingOffset--">
@@ -441,6 +543,12 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getStandingOffset</h4>
 <pre>public&nbsp;float&nbsp;getStandingOffset()</pre>
+<div class="block">Returns standing offset in tier 5 needed for textures that move up
+ with the character when it stands up.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>offset</dd>
+</dl>
 </li>
 </ul>
 <a name="getHeadPosition-int-">
@@ -450,6 +558,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getHeadPosition</h4>
 <pre>public&nbsp;com.badlogic.gdx.math.Vector2&nbsp;getHeadPosition(int&nbsp;tier)</pre>
+<div class="block">Returns the position of the head depending on the character's tier.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tier</code> - Current tier</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Head's position</dd>
+</dl>
 </li>
 </ul>
 <a name="getHeadCenter-int-">
@@ -459,6 +574,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getHeadCenter</h4>
 <pre>public&nbsp;com.badlogic.gdx.math.Vector2&nbsp;getHeadCenter(int&nbsp;tier)</pre>
+<div class="block">Get's the position of the center of the character's head.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tier</code> - Current tier</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Position of the center of the head.</dd>
+</dl>
 </li>
 </ul>
 </li>
