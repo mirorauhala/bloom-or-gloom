@@ -32,6 +32,7 @@ public class SettingsScreen implements Screen {
     private Rectangle comicRectangle;
     private Rectangle confirmRectangle;
     private Rectangle cancelRectangle;
+    private Rectangle guideContinueRectangle;
 
     private OrthographicCamera camera;
 
@@ -59,6 +60,9 @@ public class SettingsScreen implements Screen {
     private final Texture resetOnFi = new Texture("Settings/ResetButton/FI/resetOnFi.png");
     private final Texture resetFi = new Texture("Settings/ResetButton/FI/resetFi.png");
     private final Texture resetConfirmationFi = new Texture("Settings/ResetButton/FI/resetConfirmationFi.png");
+
+    private final Texture guideFI = new Texture("Settings/GuideFI.png");
+    private final Texture guideEN = new Texture("Settings/GuideEN.png");
 
 
     private boolean resetPressed;
