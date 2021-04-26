@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -196,50 +196,58 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#draw-com.badlogic.gdx.graphics.g2d.SpriteBatch-">draw</a></span>(com.badlogic.gdx.graphics.g2d.SpriteBatch&nbsp;batch)</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>com.badlogic.gdx.math.Vector2</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHeadCenter-int-">getHeadCenter</a></span>(int&nbsp;tier)</code>&nbsp;</td>
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHatIndex--">getHatIndex</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>com.badlogic.gdx.math.Vector2</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHeadPosition-int-">getHeadPosition</a></span>(int&nbsp;tier)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHeadCenter-int-">getHeadCenter</a></span>(int&nbsp;tier)</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code>com.badlogic.gdx.math.Vector2</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHeadPosition-int-">getHeadPosition</a></span>(int&nbsp;tier)</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.heldItem.html" title="enum in fi.tuni.tamk.tiko.depressionaut">GameCharacter.heldItem</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getItem--">getItem</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getShirtIndex--">getShirtIndex</a></span>()</code>&nbsp;</td>
-</tr>
 <tr id="i6" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getShirtTier--">getShirtTier</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getSleeveIndex--">getSleeveIndex</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getStandingOffset--">getStandingOffset</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getTier--">getTier</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getTierOffset-int-">getTierOffset</a></span>(int&nbsp;tier)</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setItem-fi.tuni.tamk.tiko.depressionaut.GameCharacter.heldItem-">setItem</a></span>(<a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.heldItem.html" title="enum in fi.tuni.tamk.tiko.depressionaut">GameCharacter.heldItem</a>&nbsp;item)</code>&nbsp;</td>
-</tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setShirtIndex-int-">setShirtIndex</a></span>(int&nbsp;index)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setHatIndex-int-">setHatIndex</a></span>(int&nbsp;index)</code>&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setSleeveIndex-int-">setSleeveIndex</a></span>(int&nbsp;index)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setItem-fi.tuni.tamk.tiko.depressionaut.GameCharacter.heldItem-">setItem</a></span>(<a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.heldItem.html" title="enum in fi.tuni.tamk.tiko.depressionaut">GameCharacter.heldItem</a>&nbsp;item)</code>&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setShirtTier-int-">setShirtTier</a></span>(int&nbsp;index)</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setSleeveIndex-int-">setSleeveIndex</a></span>(int&nbsp;index)</code>&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setTier-int-">setTier</a></span>(int&nbsp;tier)</code>&nbsp;</td>
 </tr>
@@ -345,22 +353,40 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;<a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.heldItem.html" title="enum in fi.tuni.tamk.tiko.depressionaut">GameCharacter.heldItem</a>&nbsp;getItem()</pre>
 </li>
 </ul>
-<a name="setShirtIndex-int-">
+<a name="setShirtTier-int-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setShirtIndex</h4>
-<pre>public&nbsp;void&nbsp;setShirtIndex(int&nbsp;index)</pre>
+<h4>setShirtTier</h4>
+<pre>public&nbsp;void&nbsp;setShirtTier(int&nbsp;index)</pre>
 </li>
 </ul>
-<a name="getShirtIndex--">
+<a name="getShirtTier--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getShirtIndex</h4>
-<pre>public&nbsp;int&nbsp;getShirtIndex()</pre>
+<h4>getShirtTier</h4>
+<pre>public&nbsp;int&nbsp;getShirtTier()</pre>
+</li>
+</ul>
+<a name="setHatIndex-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setHatIndex</h4>
+<pre>public&nbsp;void&nbsp;setHatIndex(int&nbsp;index)</pre>
+</li>
+</ul>
+<a name="getHatIndex--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHatIndex</h4>
+<pre>public&nbsp;int&nbsp;getHatIndex()</pre>
 </li>
 </ul>
 <a name="setSleeveIndex-int-">
