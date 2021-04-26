@@ -87,10 +87,10 @@ public class GameScreen implements Screen {
         float x = 0;
         float y = 0;
         batch.draw(items.getItem("wall", wallTier), x, y);
-        batch.draw(items.getItem("floor", wallTier), x, y);
+        batch.draw(items.getItem("floor", floorTier), x, y);
 
         // Furniture layer:
-        batch.draw(items.getItem("bed", wallTier), x, y);
+        batch.draw(items.getItem("bed", bedTier), x, y);
         for (int i = 0; i < stuffTier; i++) {
             batch.draw(items.getItem("stuff", i), x, y);
             // TODO: Make sure this is the correct texture:
@@ -105,8 +105,8 @@ public class GameScreen implements Screen {
                 }
             }
         }
-        batch.draw(items.getItem("chair", wallTier), x, y);
-        batch.draw(items.getItem("desk", wallTier), x, character.getStandingOffset());
+        batch.draw(items.getItem("chair", chairTier), x, y);
+        batch.draw(items.getItem("desk", deskTier), x, character.getStandingOffset());
         
         // Character layer:
         character.draw(batch);
