@@ -38,7 +38,8 @@ public class ComicScreen implements Screen {
 
         pages = new Texture[] {new Texture("comic/page1.jpg"),
                 new Texture("comic/page2.jpg"),
-                new Texture("comic/page3.jpg")};
+                new Texture("comic/page3.jpg"),
+                new Texture("comic/guidePage.png")};
 
         currentPage = pages[0];
     }
