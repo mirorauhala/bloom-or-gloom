@@ -199,6 +199,7 @@ public class SettingsScreen implements Screen {
                 font.draw(settingsBatch, "Click: " + (int)game.score.getClickPower(), 120, 1050, 420, -1, true);
                 font.draw(settingsBatch, "Multiplier: " + (int)game.score.getMultiplier(), 120, 950, 420, -1, true);
                 font.draw(settingsBatch, "e/s: " + (int)game.score.getPassiveIncome(), 120, 850, 420, -1, true);
+                font.draw(settingsBatch, "Happiness: " + game.score.getHappinessLevel() + 1, 120, 750, 420, -1, true);
                 font.draw(settingsBatch, "Total Clicks: ", 540, 1050, 420, -1, true);
                 font.draw(settingsBatch, (int)game.score.getTotalClicks() + "", 540, 950, 420, -1, true);
                 font.draw(settingsBatch, "Start date: ", 540, 850, 420, -1, true);
@@ -210,6 +211,7 @@ public class SettingsScreen implements Screen {
                 font.draw(settingsBatch, "Klikkaus: " + (int)game.score.getClickPower(), 120, 1050, 420, -1, true);
                 font.draw(settingsBatch, "Kerroin: " + (int)game.score.getMultiplier(), 120, 950, 420, -1, true);
                 font.draw(settingsBatch, "e/s: " + (int)game.score.getPassiveIncome(), 120, 850, 420, -1, true);
+                font.draw(settingsBatch, "Onni: " + game.score.getHappinessLevel() + 1, 120, 750, 420, -1, true);
                 font.draw(settingsBatch, "Klikkimäärä: ", 540, 1050, 420, -1, true);
                 font.draw(settingsBatch,  (int)game.score.getTotalClicks() + "", 540, 950, 420, -1, true);
                 font.draw(settingsBatch, "Aloituspäivä: ", 540, 850, 420, -1, true);
