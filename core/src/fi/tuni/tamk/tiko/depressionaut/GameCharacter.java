@@ -15,6 +15,7 @@ import java.util.List;
 public class GameCharacter {
     private final MyGdxGame game;
     public Texture head = new Texture("character/head/head.png"); // head texture
+    public Texture stache = new Texture("character/smile/stache.png");
     private Shirts shirts = new Shirts(); // shirt textures
     private int shirtIndex;
     private int sleeveIndex;
@@ -113,6 +114,12 @@ public class GameCharacter {
         batch.draw(smiles.get(game.score.getHappinessLevel()),
                 0,
                 0);
+
+
+        if(!game.settings.getSound() && game.settings.getMusic() && game.settings.getLang().equals("en")) {
+            batch.draw(stache, 0, getHappinessLevelOffset(game.score.getHappinessLevel()));
+        }
+
 
         // draw eyes
         blink(batch);
