@@ -120,15 +120,15 @@ public class GameCharacter {
         // draw hands
         batch.draw(hands.get(currentItem),
                 0,
-                getTierOffset(game.score.getHappinessLevel()));
+                getHappinessLevelOffset(game.score.getHappinessLevel()));
         batch.draw(shirts.sleeves.get(getSleeveIndex()).get(shirtIndex),
                 0,
-                getTierOffset(game.score.getHappinessLevel()));
+                getHappinessLevelOffset(game.score.getHappinessLevel()));
 
         // draw hats
         batch.draw(hats.get(hatIndex),
                 0,
-                getTierOffset(game.score.getHappinessLevel()));
+                getHappinessLevelOffset(game.score.getHappinessLevel()));
     }
 
     /**
@@ -142,9 +142,9 @@ public class GameCharacter {
             blinkTimer = 0;
         }
         if(blinkTimer > 390) {
-            batch.draw(eyes.get(1), 0, getTierOffset(game.score.getHappinessLevel()));
+            batch.draw(eyes.get(1), 0, getHappinessLevelOffset(game.score.getHappinessLevel()));
         } else {
-            batch.draw(eyes.get(0), 0, getTierOffset(game.score.getHappinessLevel()));
+            batch.draw(eyes.get(0), 0, getHappinessLevelOffset(game.score.getHappinessLevel()));
         }
 
     }
@@ -232,15 +232,15 @@ public class GameCharacter {
      * Returns the character's head's position relative to it's starting
      * position in Happiness Level 1.
      *
-     * @param tier Current tier
+     * @param level Current Happiness Level
      * @return offset
      */
-    public int getTierOffset(int tier) {
-        return (int) (getHeadPosition(tier).y - getHeadPosition(0).y);
+    public int getHappinessLevelOffset(int level) {
+        return (int) (getHeadPosition(level).y - getHeadPosition(0).y);
     }
 
     /**
-     * Returns standing offset in tier 5 needed for textures that move up
+     * Returns standing offset in happiness-level 5 needed for textures that move up
      * with the character when it stands up.
      *
      * @return offset
@@ -254,13 +254,13 @@ public class GameCharacter {
     }
 
     /**
-     * Returns the position of the head depending on the character's tier.
+     * Returns the position of the head depending on the character's Happiness Level.
      *
-     * @param tier Current tier
+     * @param level Current Happiness Level
      * @return Head's position
      */
-    public Vector2 getHeadPosition(int tier) {
-        switch (tier) {
+    public Vector2 getHeadPosition(int level) {
+        switch (level) {
             case 0: return new Vector2(514,1920 - 1336);
             case 1: return new Vector2(514,1920 - 1285);
             case 2:
@@ -274,13 +274,13 @@ public class GameCharacter {
     /**
      * Get's the position of the center of the character's head.
      *
-     * @param tier Current tier
+     * @param level Current Happiness Level
      * @return Position of the center of the head.
      */
-    public Vector2 getHeadCenter(int tier) {
+    public Vector2 getHeadCenter(int level) {
         return new Vector2(
-                getHeadPosition(tier).x + (head.getWidth() / 2f),
-                getHeadPosition(tier).y + head.getHeight() / 2f
+                getHeadPosition(level).x + (head.getWidth() / 2f),
+                getHeadPosition(level).y + head.getHeight() / 2f
         );
     }
 

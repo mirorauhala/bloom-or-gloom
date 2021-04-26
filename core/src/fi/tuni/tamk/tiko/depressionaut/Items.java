@@ -122,14 +122,14 @@ public class Items {
      * Caches the texture for later use.
      *
      * @param item  String name of the item
-     * @param tier int tier of the item
+     * @param level int level of the item
      * @return Texture
      */
-    public Texture getItem(String item, int tier) {
+    public Texture getItem(String item, int level) {
         Integer currentItemIndex = currentIndex.get(item);
-        if(currentItemIndex == null || currentItemIndex != tier) {
-            currentIndex.put(item, tier);
-            currentTextures.put(item, new Texture(items.get(item).get(tier)));
+        if(currentItemIndex == null || currentItemIndex != level) {
+            currentIndex.put(item, level);
+            currentTextures.put(item, new Texture(items.get(item).get(level)));
         }
 
         return currentTextures.get(item);
