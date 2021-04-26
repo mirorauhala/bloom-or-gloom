@@ -14,8 +14,9 @@ public class ShopFurnitureScreen implements Screen {
 
     public ShopFurnitureScreen(final MyGdxGame game){
         this.game = game;
-        Products products = game.shop.getProductsFor("furniture");
-        stage = game.shop.getStage(products);
+        String area = "furniture";
+        Products products = game.shop.getProductsFor(area);
+        stage = game.shop.getStage(products, area);
     }
 
     @Override

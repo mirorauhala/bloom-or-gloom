@@ -14,8 +14,9 @@ public class ShopClothingScreen implements Screen {
 
     public ShopClothingScreen(final MyGdxGame game){
         this.game = game;
+        String area = "clothing";
         Products products = game.shop.getProductsFor("clothing");
-        stage = game.shop.getStage(products);
+        stage = game.shop.getStage(products, area);
     }
 
     @Override
