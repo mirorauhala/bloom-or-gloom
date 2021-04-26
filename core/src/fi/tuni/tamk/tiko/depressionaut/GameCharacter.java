@@ -75,7 +75,6 @@ public class GameCharacter {
     }
 
     private heldItem currentItem = heldItem.EMPTY;
-    private int tier;
 
     // timer for random blinks
     private int blinkTimer = 0;
@@ -98,20 +97,20 @@ public class GameCharacter {
      */
     public void draw(SpriteBatch batch) {
         // draw body
-        batch.draw(bodies.get(getTier()),
+        batch.draw(bodies.get(game.score.getHappinessLevel()),
                 0,
                 0);
-        batch.draw(shirts.shirts.get(tier).get(shirtIndex),
+        batch.draw(shirts.shirts.get(game.score.getHappinessLevel()).get(shirtIndex),
                 0,
                 0);
 
         // draw head
         batch.draw(head,
-                getHeadPosition(getTier()).x,
-                getHeadPosition(getTier()).y);
+                getHeadPosition(game.score.getHappinessLevel()).x,
+                getHeadPosition(game.score.getHappinessLevel()).y);
 
         // draw mouth:
-        batch.draw(smiles.get(getTier()),
+        batch.draw(smiles.get(game.score.getHappinessLevel()),
                 0,
                 0);
 
@@ -121,15 +120,15 @@ public class GameCharacter {
         // draw hands
         batch.draw(hands.get(currentItem),
                 0,
-                getTierOffset(getTier()));
+                getTierOffset(game.score.getHappinessLevel()));
         batch.draw(shirts.sleeves.get(getSleeveIndex()).get(shirtIndex),
                 0,
-                getTierOffset(getTier()));
+                getTierOffset(game.score.getHappinessLevel()));
 
         // draw hats
         batch.draw(hats.get(hatIndex),
                 0,
-                getTierOffset(getTier()));
+                getTierOffset(game.score.getHappinessLevel()));
     }
 
     /**
@@ -143,9 +142,9 @@ public class GameCharacter {
             blinkTimer = 0;
         }
         if(blinkTimer > 390) {
-            batch.draw(eyes.get(1), 0, getTierOffset(tier));
+            batch.draw(eyes.get(1), 0, getTierOffset(game.score.getHappinessLevel()));
         } else {
-            batch.draw(eyes.get(0), 0, getTierOffset(tier));
+            batch.draw(eyes.get(0), 0, getTierOffset(game.score.getHappinessLevel()));
         }
 
     }
@@ -169,45 +168,45 @@ public class GameCharacter {
     }
 
     /**
-     * Sets shirt tier.
+     * Sets shirt index.
      *
      * @param index Index
      */
-    public void setShirtTier(int index) {
+    public void setShirt(int index) {
         shirtIndex = index;
     }
 
     /**
-     * Gets shirt tier.
+     * Gets shirt index.
      *
-     * @return Shirt's tier
+     * @return Return the shirt's index.
      */
-    public int getShirtTier() {
+    public int getShirt() {
         return shirtIndex;
     }
 
     /**
-     * Sets hat tier.
+     * Sets hat index.
      *
-     * @param index Hat's tier
+     * @param index int hat's index
      */
-    public void setHatIndex(int index) {
+    public void setHat(int index) {
         hatIndex = index;
     }
 
     /**
-     * Gets hat tier.
+     * Gets hat index.
      *
-     * @return Hat's tier
+     * @return Return the hat's index.
      */
-    public int getHatIndex() {
+    public int getHat() {
         return hatIndex;
     }
 
     /**
      * Sets sleeve index needed for different poses.
      *
-     * @param index 
+     * @param index Sleeve index.
      */
     public void setSleeveIndex(int index) {
         sleeveIndex = index;
@@ -216,7 +215,7 @@ public class GameCharacter {
     /**
      * Gets sleeve index needed for different poses.
      *
-     * @return
+     * @return Return the sleeve's index.
      */
     public int getSleeveIndex() {
         switch (currentItem) {
@@ -230,26 +229,8 @@ public class GameCharacter {
     }
 
     /**
-     * Sets character's tier.
-     *
-     * @param tier
-     */
-    public void setTier(int tier) {
-        this.tier = tier;
-    }
-
-    /**
-     * Gets character's tier.
-     *
-     * @return
-     */
-    public int getTier() {
-        return tier;
-    }
-
-    /**
      * Returns the character's head's position relative to it's starting
-     * position in tier 1.
+     * position in Happiness Level 1.
      *
      * @param tier Current tier
      * @return offset
@@ -265,7 +246,7 @@ public class GameCharacter {
      * @return offset
      */
     public float getStandingOffset() {
-        if (getTier() >= 4) {
+        if (game.score.getHappinessLevel() >= 4) {
             return 100;
         } else {
             return 0;

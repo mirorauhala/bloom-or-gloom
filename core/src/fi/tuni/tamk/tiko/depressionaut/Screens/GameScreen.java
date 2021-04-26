@@ -49,7 +49,6 @@ public class GameScreen implements Screen {
     private int stuffTier;
     private int chairTier;
     private int deskTier;
-    private int smileTier;
 
     public GameScreen(MyGdxGame game) {
         this.game = game;
@@ -74,7 +73,7 @@ public class GameScreen implements Screen {
         // Checks if a thought bubble should be created, and creates one if more
         // than one minute has passed.
         if (clock.thoughtBubbleTimer(false)) {
-            bubble.createThought(character.getTierOffset(character.getTier()));
+            bubble.createThought(character.getTierOffset(game.score.getHappinessLevel()));
         }
 
         batch.begin();
@@ -87,10 +86,10 @@ public class GameScreen implements Screen {
         float x = 0;
         float y = 0;
         batch.draw(items.getItem("wall", wallTier), x, y);
-        batch.draw(items.getItem("floor", wallTier), x, y);
+        batch.draw(items.getItem("floor", floorTier), x, y);
 
         // Furniture layer:
-        batch.draw(items.getItem("bed", wallTier), x, y);
+        batch.draw(items.getItem("bed", bedTier), x, y);
         for (int i = 0; i < stuffTier; i++) {
             batch.draw(items.getItem("stuff", i), x, y);
             // TODO: Make sure this is the correct texture:
@@ -105,8 +104,8 @@ public class GameScreen implements Screen {
                 }
             }
         }
-        batch.draw(items.getItem("chair", wallTier), x, y);
-        batch.draw(items.getItem("desk", wallTier), x, character.getStandingOffset());
+        batch.draw(items.getItem("chair", chairTier), x, y);
+        batch.draw(items.getItem("desk", deskTier), x, character.getStandingOffset());
         
         // Character layer:
         character.draw(batch);
@@ -131,7 +130,7 @@ public class GameScreen implements Screen {
     }
 
     public void checkForTap() {
-        Vector2 headPos = new Vector2(character.getHeadPosition(character.getTier()));
+        Vector2 headPos = new Vector2(character.getHeadPosition(game.score.getHappinessLevel()));
         headPos.x += character.head.getWidth() / 2f;
         headPos.y += character.head.getHeight() / 2f;
 
@@ -162,7 +161,6 @@ public class GameScreen implements Screen {
      */
     public void characterDebug(boolean debug) {
         if (debug) {
-            character.setTier((int)(Math.random()*5));
             int rand = (int)(Math.random()*5);
             switch (rand) {
                 case 0: character.setItem(GameCharacter.heldItem.EMPTY);
@@ -174,15 +172,15 @@ public class GameScreen implements Screen {
                 case 3: character.setItem(GameCharacter.heldItem.LAPTOP);
                     break;
             }
-            character.setShirtTier((int)(Math.random()*16));
+            character.setShirt((int)(Math.random()*16));
             character.setSleeveIndex((int)(Math.random()*16));
-            character.setHatIndex((int)(Math.random()*10));
+            character.setHat((int)(Math.random()*10));
 
-            Gdx.app.debug("Character", "Tier: " + character.getTier());
+            Gdx.app.debug("Character", "Happiness level: " + game.score.getHappinessLevel());
             Gdx.app.debug("Character", "Item: " + character.getItem());
-            Gdx.app.debug("Character", "Shirt: " + character.getShirtTier());
+            Gdx.app.debug("Character", "Shirt: " + character.getShirt());
             Gdx.app.debug("Character", "Sleeve: " + character.getSleeveIndex());
-            Gdx.app.debug("Character", "Hat: " + character.getHatIndex());
+            Gdx.app.debug("Character", "Hat: " + character.getHat());
         }
     }
     
@@ -226,13 +224,10 @@ public class GameScreen implements Screen {
         wallTier = game.inventory.get("wall");
         floorTier = game.inventory.get("floor");
         bedTier = game.inventory.get("bed");
-
-        // TODO: Add to inventory system:
-        // stuffTier = game.inventory.get("stuff");
-
+        stuffTier = game.inventory.get("stuff");
         chairTier = game.inventory.get("chair");
         deskTier = game.inventory.get("desk");
-        smileTier = game.inventory.get("smile");
-        character.setTier(game.inventory.get("character"));
+        character.setShirt(game.inventory.get("shirt"));
+        character.setHat(game.inventory.get("hat"));
     }
 }
