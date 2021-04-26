@@ -75,9 +75,11 @@ public class Items {
         ));
 
         items.put("stuff", Arrays.asList(
-            "barbells.png",
-            "plant.png",
-            "moreStuff.png"
+            "furniture/other/t1.png",
+            "furniture/other/t2.png",
+            "furniture/other/t3.png",
+            "furniture/other/t4.png",
+            "furniture/other/t5.png"
         ));
 
         items.put("chair", Arrays.asList(
@@ -141,10 +143,11 @@ public class Items {
         List<String> items = Arrays.asList(
                 "wall",
                 "floor",
+                "stuff",
                 "bed",
                 "chair",
                 "desk"
-        );
+        );  
 
         for (String item : items) {
             getItem(item, inventory.get(item));
