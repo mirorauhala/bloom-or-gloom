@@ -66,6 +66,7 @@ public class SettingsScreen implements Screen {
 
 
     private boolean resetPressed;
+    private boolean guidePressed;
 
     public SettingsScreen(MyGdxGame game) {
         this.game = game;
@@ -76,6 +77,7 @@ public class SettingsScreen implements Screen {
         font = new BitmapFont(Gdx.files.internal("UI/QuicksandASCII.fnt"));
 
         resetPressed = false;
+        guidePressed = false;
 
         soundRectangle = new Rectangle(200, 1550, 300, 300);
         musicRectangle = new Rectangle(580, 1550, 300, 300);
@@ -85,6 +87,7 @@ public class SettingsScreen implements Screen {
         resetRectangle = new Rectangle(240, 240, 600, 230);
         cancelRectangle = new Rectangle(120, 550, 380, 150);
         confirmRectangle = new Rectangle(580, 550, 380, 150);
+        guideContinueRectangle = new Rectangle(240, 270, 600, 230);
 
 
     }
@@ -99,64 +102,71 @@ public class SettingsScreen implements Screen {
             Vector3 touch = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
             camera.unproject(touch);
 
-
-            if(soundRectangle.contains(touch.x, touch.y)) {
-                game.settings.setSound(!game.settings.getSound());
-                game.sounds.menuClicksoudPlay();
-            }
-            if(musicRectangle.contains(touch.x, touch.y)) {
-                game.settings.setMusic(!game.settings.getMusic());
-                game.sounds.menuClicksoudPlay();
-                if(game.settings.getMusic()) {
-                    game.sounds.ambientPlay();
-                    game.sounds.musicPlay();
-                }
-                if(!game.settings.getMusic()) {
-                    game.sounds.stopAmbient();
-                    game.sounds.stopMusic();
-                }
-            }
-            if(finnishRectangle.contains(touch.x, touch.y)) {
-
-                if(game.settings.getLang().equals("en")) {
-                    game.settings.setLang("fi");
-                } else {
-                    game.settings.setLang("en");
-                }
-                game.sounds.menuClicksoudPlay();
-            }
-            if(englishRectangle.contains(touch.x, touch.y)) {
-                if(game.settings.getLang().equals("en")) {
-                    game.settings.setLang("fi");
-                } else {
-                    game.settings.setLang("en");
-                }
-                game.sounds.menuClicksoudPlay();
-            }
-            if(comicRectangle.contains(touch.x, touch.y)) {
-                game.navigation.setActive(null);
-                game.setScreen(new ComicScreen(game));
-            }
-
-            if(resetRectangle.contains(touch.x, touch.y)) {
-                if(!resetPressed) {
-                    resetPressed = true;
+            if(!guidePressed) {
+                if(soundRectangle.contains(touch.x, touch.y)) {
+                    game.settings.setSound(!game.settings.getSound());
                     game.sounds.menuClicksoudPlay();
                 }
-            }
-            if(cancelRectangle.contains(touch.x, touch.y)) {
-                if(resetPressed) {
+                if(musicRectangle.contains(touch.x, touch.y)) {
+                    game.settings.setMusic(!game.settings.getMusic());
                     game.sounds.menuClicksoudPlay();
-                    resetPressed = false;
+                    if(game.settings.getMusic()) {
+                        game.sounds.ambientPlay();
+                        game.sounds.musicPlay();
+                    }
+                    if(!game.settings.getMusic()) {
+                        game.sounds.stopAmbient();
+                        game.sounds.stopMusic();
+                    }
+                }
+                if(finnishRectangle.contains(touch.x, touch.y)) {
+
+                    if(game.settings.getLang().equals("en")) {
+                        game.settings.setLang("fi");
+                    } else {
+                        game.settings.setLang("en");
+                    }
+                    game.sounds.menuClicksoudPlay();
+                }
+                if(englishRectangle.contains(touch.x, touch.y)) {
+                    if(game.settings.getLang().equals("en")) {
+                        game.settings.setLang("fi");
+                    } else {
+                        game.settings.setLang("en");
+                    }
+                    game.sounds.menuClicksoudPlay();
+                }
+                if(comicRectangle.contains(touch.x, touch.y)) {
+                    game.sounds.menuClicksoudPlay();
+                    guidePressed = true;
+                }
+
+                if(resetRectangle.contains(touch.x, touch.y)) {
+                    if(!resetPressed) {
+                        resetPressed = true;
+                        game.sounds.menuClicksoudPlay();
+                    }
+                }
+                if(cancelRectangle.contains(touch.x, touch.y)) {
+                    if(resetPressed) {
+                        game.sounds.menuClicksoudPlay();
+                        resetPressed = false;
+                    }
+                }
+                if(confirmRectangle.contains(touch.x, touch.y)) {
+                    if(resetPressed) {
+                        game.sounds.menuClicksoudPlay();
+                        game.settings.resetHasSeenComic();
+                        game.score.emptyScorePrefs();
+                        game.inventory.removeInventoryPrefs();
+                        resetPressed = false;
+                    }
                 }
             }
-            if(confirmRectangle.contains(touch.x, touch.y)) {
-                if(resetPressed) {
+            if(guideContinueRectangle.contains(touch.x, touch.y)) {
+                if(guidePressed) {
                     game.sounds.menuClicksoudPlay();
-                    game.settings.resetHasSeenComic();
-                    game.score.emptyScorePrefs();
-                    game.inventory.removeInventoryPrefs();
-                    resetPressed = false;
+                    guidePressed = false;
                 }
             }
         }
@@ -187,6 +197,7 @@ public class SettingsScreen implements Screen {
         settingsBatch.draw(infoBox, 0, 0);
         drawButtonReset();
         drawStats();
+        drawGuide();
         settingsBatch.end();
         checkForTap();
     }
@@ -199,7 +210,7 @@ public class SettingsScreen implements Screen {
                 font.getData().setScale(2f, 2f);
                 font.draw(settingsBatch, "Click: " + (int)game.score.getClickPower(), 120, 1050, 420, -1, true);
                 font.draw(settingsBatch, "Multiplier: " + (int)game.score.getMultiplier(), 120, 950, 420, -1, true);
-                font.draw(settingsBatch, "e/s: " + (int)game.score.getPassiveIncome(), 120, 850, 420, -1, true);
+                font.draw(settingsBatch, "h/s: " + (int)game.score.getPassiveIncome(), 120, 850, 420, -1, true);
                 font.draw(settingsBatch, "Happiness: " + (game.score.getHappinessLevel() + 1), 120, 750, 420, -1, true);
                 font.draw(settingsBatch, "Total Clicks: ", 540, 1050, 420, -1, true);
                 font.draw(settingsBatch, (int)game.score.getTotalClicks() + "", 540, 950, 420, -1, true);
@@ -211,7 +222,7 @@ public class SettingsScreen implements Screen {
                 font.getData().setScale(2f, 2f);
                 font.draw(settingsBatch, "Klikkaus: " + (int)game.score.getClickPower(), 120, 1050, 420, -1, true);
                 font.draw(settingsBatch, "Kerroin: " + (int)game.score.getMultiplier(), 120, 950, 420, -1, true);
-                font.draw(settingsBatch, "e/s: " + (int)game.score.getPassiveIncome(), 120, 850, 420, -1, true);
+                font.draw(settingsBatch, "h/s: " + (int)game.score.getPassiveIncome(), 120, 850, 420, -1, true);
                 font.draw(settingsBatch, "Onni: " + (game.score.getHappinessLevel() + 1), 120, 750, 420, -1, true);
                 font.draw(settingsBatch, "Klikkimäärä: ", 540, 1050, 420, -1, true);
                 font.draw(settingsBatch,  (int)game.score.getTotalClicks() + "", 540, 950, 420, -1, true);
@@ -273,6 +284,16 @@ public class SettingsScreen implements Screen {
             }
         }
 
+    }
+
+    public void drawGuide() {
+        if(guidePressed) {
+            if(game.settings.getLang().equals("en")) {
+                settingsBatch.draw(guideEN, 0, 0);
+            } else {
+                settingsBatch.draw(guideFI, 0, 0);
+            }
+        }
     }
 
     /**
