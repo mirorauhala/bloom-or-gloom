@@ -43,12 +43,12 @@ public class GameScreen implements Screen {
     public DailyBonus dailyBonus;
 
     private OrthographicCamera camera;
-    private int wallTier;
-    private int floorTier;
-    private int bedTier;
-    private int stuffTier;
-    private int chairTier;
-    private int deskTier;
+    private int wallIndex;
+    private int floorIndex;
+    private int bedIndex;
+    private int stuffIndex;
+    private int chairIndex;
+    private int deskIndex;
 
     public GameScreen(MyGdxGame game) {
         this.game = game;
@@ -73,7 +73,7 @@ public class GameScreen implements Screen {
         // Checks if a thought bubble should be created, and creates one if more
         // than one minute has passed.
         if (clock.thoughtBubbleTimer(false)) {
-            bubble.createThought(character.getTierOffset(game.score.getHappinessLevel()));
+            bubble.createThought(character.getHappinessLevelOffset(game.score.getHappinessLevel()));
         }
 
         batch.begin();
@@ -85,27 +85,27 @@ public class GameScreen implements Screen {
         // Background layer:
         float x = 0;
         float y = 0;
-        batch.draw(items.getItem("wall", wallTier), x, y);
-        batch.draw(items.getItem("floor", floorTier), x, y);
+        batch.draw(items.getItem("wall", wallIndex), x, y);
+        batch.draw(items.getItem("floor", floorIndex), x, y);
 
         // Furniture layer:
-        batch.draw(items.getItem("bed", bedTier), x, y);
-        for (int i = 0; i < stuffTier; i++) {
+        batch.draw(items.getItem("bed", bedIndex), x, y);
+        for (int i = 0; i < stuffIndex; i++) {
             batch.draw(items.getItem("stuff", i), x, y);
             // TODO: Make sure this is the correct texture:
             if (i == 4) {
                 batch.draw(items.getItem("stuff", i), x, character.getStandingOffset());
             } else if (i == 5) {
-                // TODO: Make sure correct tier for bedside table:
-                if (bedTier >= 12) {
+                // TODO: Make sure correct happiness level for bedside table:
+                if (bedIndex >= 12) {
                     batch.draw(items.getItem("stuff", i), x, y);
                 } else {
                     batch.draw(items.getItem("stuff", i), x, -200);
                 }
             }
         }
-        batch.draw(items.getItem("chair", chairTier), x, y);
-        batch.draw(items.getItem("desk", deskTier), x, character.getStandingOffset());
+        batch.draw(items.getItem("chair", chairIndex), x, y);
+        batch.draw(items.getItem("desk", deskIndex), x, character.getStandingOffset());
         
         // Character layer:
         character.draw(batch);
@@ -189,7 +189,7 @@ public class GameScreen implements Screen {
         // setup input processor (gets clicks and stuff)
         Gdx.input.setInputProcessor(stage);
 
-        applyCurrentTierTextures();
+        applyCurrentShopIndexes();
     }
 
     @Override
@@ -218,15 +218,15 @@ public class GameScreen implements Screen {
     }
     
     /**
-     * Fetches the current tiers for all textures from the Inventory.
+     * Fetches the current indexes for all textures from the Inventory.
      */
-    private void applyCurrentTierTextures() {
-        wallTier = game.inventory.get("wall");
-        floorTier = game.inventory.get("floor");
-        bedTier = game.inventory.get("bed");
-        stuffTier = game.inventory.get("stuff");
-        chairTier = game.inventory.get("chair");
-        deskTier = game.inventory.get("desk");
+    private void applyCurrentShopIndexes() {
+        wallIndex = game.inventory.get("wall");
+        floorIndex = game.inventory.get("floor");
+        bedIndex = game.inventory.get("bed");
+        stuffIndex = game.inventory.get("stuff");
+        chairIndex = game.inventory.get("chair");
+        deskIndex = game.inventory.get("desk");
         character.setShirt(game.inventory.get("shirt"));
         character.setHat(game.inventory.get("hat"));
     }

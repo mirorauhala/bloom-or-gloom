@@ -5,12 +5,9 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 /**
@@ -56,7 +53,7 @@ public class ScoreMeter {
 
         batch.draw(meterBase, 0, 0);
         batch.draw(meterBackground, 22, 1920 - 358, meter.getWidth(), meter.getHeight());
-        for (int i = 0; i <= meter.getHeight() * getProgressToNextTier(); i++) {
+        for (int i = 0; i <= meter.getHeight() * getProgressToNextHappinessLevel(); i++) {
             batch.draw(meterColor,
                     rectangles.get(i).getX(),
                     rectangles.get(i).getY(),
@@ -71,7 +68,7 @@ public class ScoreMeter {
 
     }
 
-    public float getProgressToNextTier() {
+    public float getProgressToNextHappinessLevel() {
         return score.getScore() / score.getScoreForNextLevel(score.getHappinessLevel());
     }
 
