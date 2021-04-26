@@ -378,4 +378,11 @@ public class ScoreCounter {
             default: return 1000;
         }
     }
+
+    /**
+     * Empties score prefs
+     */
+    public void emptyScorePrefs() {
+        prefs.clear();
+    }
 }

@@ -36,4 +36,11 @@ public class Inventory {
         return prefs.getInteger(key);
     }
 
+    /**
+     * Removes all inventory prefs
+     */
+    public void removeInventoryPrefs() {
+        prefs.clear();
+    }
+
 }

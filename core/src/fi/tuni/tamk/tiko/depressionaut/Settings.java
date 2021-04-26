@@ -136,4 +136,8 @@ public class Settings {
         prefs.putString("first-day", value);
         prefs.flush();
     }
+
+    public void resetHasSeenComic() {
+        prefs.remove("has-seen-comic");
+    }
 }
