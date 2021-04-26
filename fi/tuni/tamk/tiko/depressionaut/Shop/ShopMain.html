@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -152,7 +152,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>com.badlogic.gdx.scenes.scene2d.ui.Table</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/ShopMain.html#createShopTop--">createShopTop</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/ShopMain.html#createShopTop-com.badlogic.gdx.scenes.scene2d.ui.Label-">createShopTop</a></span>(com.badlogic.gdx.scenes.scene2d.ui.Label&nbsp;walletLabel)</code>
 <div class="block">Create the top of the shop.</div>
 </td>
 </tr>
@@ -176,20 +176,27 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>com.badlogic.gdx.scenes.scene2d.Stage</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/ShopMain.html#getStage-fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products-java.lang.String-">getStage</a></span>(<a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/Resources/Products.html" title="class in fi.tuni.tamk.tiko.depressionaut.Shop.Resources">Products</a>&nbsp;products,
-        java.lang.String&nbsp;area)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/ShopMain.html#getStage-fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products-java.lang.String-com.badlogic.gdx.scenes.scene2d.ui.Label-">getStage</a></span>(<a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/Resources/Products.html" title="class in fi.tuni.tamk.tiko.depressionaut.Shop.Resources">Products</a>&nbsp;products,
+        java.lang.String&nbsp;area,
+        com.badlogic.gdx.scenes.scene2d.ui.Label&nbsp;walletLabel)</code>
 <div class="block">Build the main stage of the shop screen.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
+<td class="colFirst"><code>com.badlogic.gdx.scenes.scene2d.ui.Label</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/ShopMain.html#getWalletLabel--">getWalletLabel</a></span>()</code>
+<div class="block">Return the wallet label for shop screen for housekeeping.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/ShopMain.html#updateButtons--">updateButtons</a></span>()</code>
 <div class="block">Update status of the buy buttons.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/ShopMain.html#updateWallet--">updateWallet</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/ShopMain.html#updateWallet-com.badlogic.gdx.scenes.scene2d.ui.Label-">updateWallet</a></span>(com.badlogic.gdx.scenes.scene2d.ui.Label&nbsp;walletLabel)</code>
 <div class="block">Get the current wallet amount and set it to the label.</div>
 </td>
 </tr>
@@ -232,19 +239,35 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="getStage-fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products-java.lang.String-">
+<a name="getWalletLabel--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWalletLabel</h4>
+<pre>public&nbsp;com.badlogic.gdx.scenes.scene2d.ui.Label&nbsp;getWalletLabel()</pre>
+<div class="block">Return the wallet label for shop screen for housekeeping.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Label</dd>
+</dl>
+</li>
+</ul>
+<a name="getStage-fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products-java.lang.String-com.badlogic.gdx.scenes.scene2d.ui.Label-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getStage</h4>
 <pre>public&nbsp;com.badlogic.gdx.scenes.scene2d.Stage&nbsp;getStage(<a href="../../../../../../fi/tuni/tamk/tiko/depressionaut/Shop/Resources/Products.html" title="class in fi.tuni.tamk.tiko.depressionaut.Shop.Resources">Products</a>&nbsp;products,
-                                                      java.lang.String&nbsp;area)</pre>
+                                                      java.lang.String&nbsp;area,
+                                                      com.badlogic.gdx.scenes.scene2d.ui.Label&nbsp;walletLabel)</pre>
 <div class="block">Build the main stage of the shop screen.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>products</code> - Products</dd>
 <dd><code>area</code> - String area of the shop view</dd>
+<dd><code>walletLabel</code> - Label</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Stage</dd>
 </dl>
@@ -280,13 +303,13 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a name="createShopTop--">
+<a name="createShopTop-com.badlogic.gdx.scenes.scene2d.ui.Label-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>createShopTop</h4>
-<pre>public&nbsp;com.badlogic.gdx.scenes.scene2d.ui.Table&nbsp;createShopTop()</pre>
+<pre>public&nbsp;com.badlogic.gdx.scenes.scene2d.ui.Table&nbsp;createShopTop(com.badlogic.gdx.scenes.scene2d.ui.Label&nbsp;walletLabel)</pre>
 <div class="block">Create the top of the shop.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -323,13 +346,13 @@ extends java.lang.Object</pre>
  Otherwise, enable the buttons back.</div>
 </li>
 </ul>
-<a name="updateWallet--">
+<a name="updateWallet-com.badlogic.gdx.scenes.scene2d.ui.Label-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>updateWallet</h4>
-<pre>public&nbsp;void&nbsp;updateWallet()</pre>
+<pre>public&nbsp;void&nbsp;updateWallet(com.badlogic.gdx.scenes.scene2d.ui.Label&nbsp;walletLabel)</pre>
 <div class="block">Get the current wallet amount and set it to the label.</div>
 </li>
 </ul>
