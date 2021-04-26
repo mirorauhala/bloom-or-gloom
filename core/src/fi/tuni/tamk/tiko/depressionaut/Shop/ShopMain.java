@@ -39,7 +39,6 @@ public class ShopMain {
     private Texture shopOtherTexture;
     private Texture shopHeadingTexture;
     private float walletAmount;
-    private Label walletLabel;
     private Skin skin;
     private Table container;
     private Viewport viewport;
@@ -55,19 +54,27 @@ public class ShopMain {
         //setup skin
         skin = new Skin(Gdx.files.internal("UI/uiskin.json"));
 
-        // initialize empty walletLabel
-        walletLabel = new Label("", skin);
+    }
+
+    /**
+     * Return the wallet label for shop screen for housekeeping.
+     * @return Label
+     */
+    public Label getWalletLabel() {
+        Label walletLabel = new Label("", skin);
         walletLabel.setFontScale(1.5f);
 
+        return walletLabel;
     }
 
     /**
      * Build the main stage of the shop screen.
      * @param products Products
      * @param area String area of the shop view
+     * @param walletLabel Label
      * @return Stage
      */
-    public Stage getStage(Products products, String area) {
+    public Stage getStage(Products products, String area, Label walletLabel) {
         container = new Table();
         container.setFillParent(true);
         container.setHeight(MyGdxGame.SCREEN_HEIGHT);
@@ -77,7 +84,7 @@ public class ShopMain {
 
         Table productsTable = game.shop.getProductsTable(products);
 
-        Table shopTop = game.shop.createShopTop();
+        Table shopTop = game.shop.createShopTop(walletLabel);
 
         container.add(shopTop)
                 .top()
@@ -192,7 +199,7 @@ public class ShopMain {
      * Create the top of the shop.
      * @return Table
      */
-    public Table createShopTop() {
+    public Table createShopTop(Label walletLabel) {
         shopHeadingTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/shop.png"));
 
         Table table = new Table(skin);
@@ -321,7 +328,7 @@ public class ShopMain {
     /**
      * Get the current wallet amount and set it to the label.
      */
-    public void updateWallet() {
+    public void updateWallet(Label walletLabel) {
         walletAmount = game.score.getWallet();
         walletLabel.setText(walletAmount + ""); // hack: cast to string
     }
