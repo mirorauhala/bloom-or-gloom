@@ -95,6 +95,17 @@ public class GameScreen implements Screen {
         batch.draw(items.getItem("bed", wallTier), x, y);
         for (int i = 0; i < stuffTier; i++) {
             batch.draw(items.getItem("stuff", i), x, y);
+            // TODO: Make sure this is the correct texture:
+            if (i == 4) {
+                batch.draw(items.getItem("stuff", i), x, character.getStandingOffset());
+            } else if (i == 5) {
+                // TODO: Make sure correct tier for bedside table:
+                if (bedTier >= 12) {
+                    batch.draw(items.getItem("stuff", i), x, y);
+                } else {
+                    batch.draw(items.getItem("stuff", i), x, -200);
+                }
+            }
         }
         batch.draw(items.getItem("chair", wallTier), x, y);
         batch.draw(items.getItem("desk", wallTier), x, character.getStandingOffset());
