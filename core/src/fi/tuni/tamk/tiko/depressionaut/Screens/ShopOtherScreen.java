@@ -14,8 +14,9 @@ public class ShopOtherScreen implements Screen {
 
     public ShopOtherScreen(final MyGdxGame game){
         this.game = game;
-        Products products = game.shop.getProductsFor("other");
-        stage = game.shop.getStage(products);
+        String area = "other";
+        Products products = game.shop.getProductsFor(area);
+        stage = game.shop.getStage(products, area);
     }
 
     @Override

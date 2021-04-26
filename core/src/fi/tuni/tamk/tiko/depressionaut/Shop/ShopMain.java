@@ -63,16 +63,16 @@ public class ShopMain {
 
     /**
      * Build the main stage of the shop screen.
-     * @param products
-     * @return
+     * @param products Products
+     * @param area String area of the shop view
+     * @return Stage
      */
-    public Stage getStage(Products products) {
-        // parent of all tables
+    public Stage getStage(Products products, String area) {
         container = new Table();
         container.setFillParent(true);
         container.setHeight(MyGdxGame.SCREEN_HEIGHT);
         container.setWidth(MyGdxGame.SCREEN_WIDTH);
-        container.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
+        container.setDebug(MyGdxGame.DEBUG);
         container.left().top();
 
         Table productsTable = game.shop.getProductsTable(products);
@@ -89,7 +89,7 @@ public class ShopMain {
 
         container.row();
 
-        Table shopNav = game.shop.createShopNav();
+        Table shopNav = game.shop.createShopNav(area);
 
         container.add(shopNav)
                 .top()
@@ -230,11 +230,16 @@ public class ShopMain {
     /**
      * Create the navigation for the shop.
      * @return Table
+     * @param area String area of the shop view
      */
-    public Table createShopNav() {
-        shopClothingTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/clothing-text.png"));
-        shopFurnitureTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/furniture-text.png"));
-        shopOtherTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/other-text.png"));
+    public Table createShopNav(String area) {
+        String clothingFile = area.equals("clothing") ? "clothing-button.png" : "clothing-text.png";
+        String furnitureFile = area.equals("furniture") ? "furniture-button.png" : "furniture-text.png";
+        String otherFile = area.equals("other") ? "other-button.png" : "other-text.png";
+
+        shopClothingTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/" + clothingFile));
+        shopFurnitureTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/"+ furnitureFile));
+        shopOtherTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/" + otherFile));
 
         Table table = new Table(skin);
         table.setDebug(MyGdxGame.DEBUG);
