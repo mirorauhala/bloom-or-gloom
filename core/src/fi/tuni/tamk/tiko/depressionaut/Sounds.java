@@ -9,9 +9,12 @@ public class Sounds {
     public GameClock clock;
     public com.badlogic.gdx.audio.Sound click = Gdx.audio.newSound(Gdx.files.internal("sounds/click.mp3"));
     public com.badlogic.gdx.audio.Sound menuClick = Gdx.audio.newSound(Gdx.files.internal("sounds/settingsClick.mp3"));
+    public com.badlogic.gdx.audio.Sound buySound = Gdx.audio.newSound(Gdx.files.internal("sounds/buySound.mp3"));
+
     public com.badlogic.gdx.audio.Music crickets = Gdx.audio.newMusic(Gdx.files.internal("sounds/crickets.mp3"));
     public com.badlogic.gdx.audio.Music nature = Gdx.audio.newMusic(Gdx.files.internal("sounds/nature.mp3"));
     public com.badlogic.gdx.audio.Music music = Gdx.audio.newMusic(Gdx.files.internal("sounds/bgmusic.mp3"));
+
 
     public Sounds(MyGdxGame game) {
         this.game = game;
@@ -35,6 +38,14 @@ public class Sounds {
     public void menuClicksoudPlay() {
         if(game.settings.getSound()) {
             menuClick.play(0.1f, MathUtils.random(0.95f, 1.05f), 0);
+        }
+    }
+    /**
+     * used to play buysound
+     */
+    public void buySoundPlay() {
+        if(game.settings.getSound()) {
+            buySound.play(0.1f);
         }
     }
     /**
