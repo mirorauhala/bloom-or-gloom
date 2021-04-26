@@ -45,7 +45,7 @@ public class Sounds {
      */
     public void buySoundPlay() {
         if(game.settings.getSound()) {
-            buySound.play(0.1f);
+            buySound.play(0.6f);
         }
     }
     /**
