@@ -145,7 +145,8 @@ public class ShopMain {
 
             Texture texture = new Texture(Gdx.files.internal(product.getTexture()));
 
-            Label productName = new Label(product.getName(), skin);
+            final String productNameStr = game.settings.getLang().equals("fi") ? product.getNameFi() : product.getNameEn();
+            Label productName = new Label(productNameStr, skin);
             productName.setWrap(true);
             productName.setFontScale(2);
             float productNameSize = 1080f - texture.getWidth() - 40f - 200f;
@@ -156,11 +157,11 @@ public class ShopMain {
                 public void clicked(InputEvent event, float x, float y) {
                     if(game.score.decrementWallet(product.getPrice())) {
                         game.inventory.set(product.getType(), product.getId());
-                        Gdx.app.debug("SHOP", "Bought: "+ product.getName() + " for " + product.getPrice() );
+                        Gdx.app.debug("SHOP", "Bought: "+ productNameStr + " for " + product.getPrice() );
                         game.sounds.buySoundPlay();
 
                     } else {
-                        Gdx.app.debug("SHOP", "Cannot buy " + product.getName());
+                        Gdx.app.debug("SHOP", "Cannot buy " + productNameStr);
                     }
                 }
             });
