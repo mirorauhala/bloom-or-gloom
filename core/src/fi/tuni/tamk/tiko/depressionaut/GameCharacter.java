@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.Vector2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class GameCharacter {
 
@@ -14,6 +15,7 @@ public class GameCharacter {
     private Shirts shirts = new Shirts();
     private int shirtIndex;
     private int sleeveIndex;
+    private int hatIndex;
 
     public HashMap<heldItem, Texture> hands = new HashMap<heldItem, Texture>();
 
@@ -25,6 +27,19 @@ public class GameCharacter {
                     new Texture("character/body/tier4/tier4.png"),
                     new Texture("character/body/tier5/tier5.png")
             )
+    );
+
+    private List<Texture> hats = Arrays.asList(
+            new Texture("character/hats/t1v0.png"),
+            new Texture("character/hats/t3v1.png"),
+            new Texture("character/hats/t3v2.png"),
+            new Texture("character/hats/t3v3.png"),
+            new Texture("character/hats/t4v4.png"),
+            new Texture("character/hats/t4v5.png"),
+            new Texture("character/hats/t4v6.png"),
+            new Texture("character/hats/t5v7.png"),
+            new Texture("character/hats/t5v8.png"),
+            new Texture("character/hats/t5v9.png")
     );
 
     private ArrayList<Texture> smiles = new ArrayList<Texture>(
@@ -94,6 +109,11 @@ public class GameCharacter {
         batch.draw(shirts.sleeves.get(getSleeveIndex()).get(shirtIndex),
                 0,
                 getTierOffset(getTier()));
+
+        // draw hats
+        batch.draw(hats.get(hatIndex),
+                0,
+                getTierOffset(getTier()));
     }
 
     public void blink(SpriteBatch batch, int tier) {
@@ -117,12 +137,20 @@ public class GameCharacter {
         return currentItem;
     }
 
-    public void setShirtIndex(int index) {
+    public void setShirtTier(int index) {
         shirtIndex = index;
     }
 
-    public int getShirtIndex() {
+    public int getShirtTier() {
         return shirtIndex;
+    }
+
+    public void setHatIndex(int index) {
+        hatIndex = index;
+    }
+
+    public int getHatIndex() {
+        return hatIndex;
     }
 
     public void setSleeveIndex(int index) {
