@@ -8,6 +8,15 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 
 import java.util.ArrayList;
 
+/**
+ * Class for the thought bubbles that appear around the player every minute.
+ *
+ * There are two types of thought bubbles that can appear around the player:
+ * negative and positive. When on the screen, the negative bubbles will disable
+ * the player's ability to tap the screen to earn points until the bubble is
+ * popped. The positive bubbles increase the tap multiplier by one for 30
+ * seconds and can be stacked.
+ */
 public class ThoughtBubble extends Actor {
     // Textures
     private final Texture posBubble = new Texture("thoughts/positiveBubble.png");
@@ -16,6 +25,7 @@ public class ThoughtBubble extends Actor {
     // List containing thought bubbles
     private ThoughtBubble[] thoughts = new ThoughtBubble[3];
 
+    // Values for bubbles.
     private Vector2 position;
     private Emotion emotion;
     private Rectangle hitbox;
@@ -26,6 +36,13 @@ public class ThoughtBubble extends Actor {
         NEGATIVE;
     }
 
+    /**
+     * Creates a new bubble when called and when there are less than 3 bubbles
+     * on the screen.
+     *
+     * @param offset Character's position offset to ensure the bubbles
+     *               correctly form around the player's head.
+     */
     public void createThought(float offset) {
         // Randomize bubble position
         int randInt = 0;
@@ -54,6 +71,11 @@ public class ThoughtBubble extends Actor {
         }
     }
 
+    /**
+     * Draws the bubbles and calls supporting methods.
+     *
+     * @param batch SpriteBatch needed for the draw() method.
+     */
     public void render(SpriteBatch batch) {
         for (ThoughtBubble bubble : thoughts) {
             if (bubble != null) {
@@ -80,12 +102,22 @@ public class ThoughtBubble extends Actor {
         }
     }
 
+    /**
+     * Scales the textures of the bubbles up until they reach 100% scale.
+     */
     public void scale() {
         if (this.scale <= 1) {
             this.scale *= 1.1;
         }
     }
 
+    /**
+     * Checks if given coordinates are inside a bubble and returns
+     * corresponding emotion.
+     * @param x touch position x
+     * @param y touch position y
+     * @return Returns emotion of the bubble hit.
+     */
     public Emotion checkForClear(float x, float y) {
         Emotion tempEmotion = null;
         for (int i = 0; i < thoughts.length; i++) {
@@ -99,6 +131,14 @@ public class ThoughtBubble extends Actor {
         return tempEmotion;
     }
 
+    /**
+     * Returns the coordinates of one of the possible positions for the bubbles.
+     *
+     * @param index A bubble's index.
+     * @param offset Character's position offset to ensure the bubbles
+     *               correctly form around the player's head.
+     * @return Returns the coordinates.
+     */
     public Vector2 getPosition(int index, float offset) {
         switch (index) {
             case 0: return new Vector2(180, 1920 - 1380 + offset);
@@ -108,6 +148,10 @@ public class ThoughtBubble extends Actor {
         return new Vector2();
     }
 
+    /**
+     * Checks if the list containing the bubbles is full. (max. 3)
+     * @return Returns boolean depending on the results.
+     */
     public boolean isListFull() {
         for (ThoughtBubble thought : thoughts) {
             if (thought == null) {
@@ -117,6 +161,11 @@ public class ThoughtBubble extends Actor {
         return true;
     }
 
+    /**
+     * Returns the texture of a bubble depending on its emotion.
+     *
+     * @return The texture of the bubble.
+     */
     public Texture getBubbleTexture() {
         if (this.emotion == Emotion.POSITIVE) {
             return posBubble;
@@ -125,6 +174,11 @@ public class ThoughtBubble extends Actor {
         }
     }
 
+    /**
+     * Returns the number of negative thought bubbles.
+     *
+     * @return amount
+     */
     public int getNegThoughtsAmount() {
         int amount = 0;
         for (ThoughtBubble thought : thoughts) {

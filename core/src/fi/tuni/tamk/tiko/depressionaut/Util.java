@@ -3,6 +3,9 @@ package fi.tuni.tamk.tiko.depressionaut;
 import java.security.SecureRandom;
 import java.util.Random;
 
+/**
+ * A util class for various methods.
+ */
 public class Util {
     /**
      * Randomizes a float between given values.

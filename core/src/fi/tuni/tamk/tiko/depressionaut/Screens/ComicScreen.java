@@ -10,7 +10,10 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 import fi.tuni.tamk.tiko.depressionaut.Navigation;
 
-public class Comic implements Screen {
+/**
+ * ComicScreen is a screen class that shows the comic of the story of the game
+ */
+public class ComicScreen implements Screen {
     MyGdxGame game;
 
     // Textures:
@@ -22,7 +25,13 @@ public class Comic implements Screen {
     SpriteBatch batch;
     private OrthographicCamera camera;
 
-    public Comic(MyGdxGame game) {
+    /**
+     * The constructor puts the textures into the pages array and sets the
+     * first page as the currentPage.
+     *
+     * @param game Related to the functionality of the Screen interface.
+     */
+    public ComicScreen(MyGdxGame game) {
         this.game = game;
         batch = game.gameBatch;
         camera = game.camera;
@@ -34,6 +43,11 @@ public class Comic implements Screen {
         currentPage = pages[0];
     }
 
+    /**
+     * The method that draws the textures and calls other supporting methods.
+     *
+     * @param delta Related to the functionality of the Screen interface.
+     */
     @Override
     public void render(float delta) {
         batch.setProjectionMatrix(camera.combined);
@@ -55,7 +69,9 @@ public class Comic implements Screen {
         batch.end();
     }
 
-    // Turns the page.
+    /**
+     * Turns the comic to the next page.
+     */
     public void nextPage() {
         pageNum++;
         currentPage = pages[pageNum - 1];

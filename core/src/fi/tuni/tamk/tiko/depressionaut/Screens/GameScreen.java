@@ -74,7 +74,9 @@ public class GameScreen implements Screen {
         ScreenUtils.clear(0.8f, 0.8f, 1, 1);
 
         checkForTap();
-        clock.timer();
+        clock.timer(); // updates clock
+        // Checks if a thought bubble should be created, and creates one if more
+        // than one minute has passed.
         if (clock.thoughtBubbleTimer(false)) {
             bubble.createThought(character.getTierOffset(character.getTier()));
         }
@@ -155,6 +157,11 @@ public class GameScreen implements Screen {
         }
     }
 
+    /**
+     * Used to test the functionality of the character.
+     *
+     * @param debug Debug boolean to toggle the usage of the method.
+     */
     public void characterDebug(boolean debug) {
         if (debug) {
             character.setTier((int)(Math.random()*5));
