@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -203,8 +203,8 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHatIndex--">getHatIndex</a></span>()</code>
-<div class="block">Gets hat tier.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHat--">getHat</a></span>()</code>
+<div class="block">Gets hat index.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -227,8 +227,8 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getShirtTier--">getShirtTier</a></span>()</code>
-<div class="block">Gets shirt tier.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getShirt--">getShirt</a></span>()</code>
+<div class="block">Gets shirt index.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -246,45 +246,33 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getTier--">getTier</a></span>()</code>
-<div class="block">Gets character's tier.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getTierOffset-int-">getTierOffset</a></span>(int&nbsp;tier)</code>
+<div class="block">Returns the character's head's position relative to it's starting
+ position in Happiness Level 1.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getTierOffset-int-">getTierOffset</a></span>(int&nbsp;tier)</code>
-<div class="block">Returns the character's head's position relative to it's starting
- position in tier 1.</div>
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setHat-int-">setHat</a></span>(int&nbsp;index)</code>
+<div class="block">Sets hat index.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setHatIndex-int-">setHatIndex</a></span>(int&nbsp;index)</code>
-<div class="block">Sets hat tier.</div>
-</td>
-</tr>
-<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setItem-fi.tuni.tamk.tiko.depressionaut.GameCharacter.heldItem-">setItem</a></span>(<a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.heldItem.html" title="enum in fi.tuni.tamk.tiko.depressionaut">GameCharacter.heldItem</a>&nbsp;item)</code>
 <div class="block">Sets held item.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setShirtTier-int-">setShirtTier</a></span>(int&nbsp;index)</code>
-<div class="block">Sets shirt tier.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setShirt-int-">setShirt</a></span>(int&nbsp;index)</code>
+<div class="block">Sets shirt index.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setSleeveIndex-int-">setSleeveIndex</a></span>(int&nbsp;index)</code>
 <div class="block">Sets sleeve index needed for different poses.</div>
-</td>
-</tr>
-<tr id="i15" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#setTier-int-">setTier</a></span>(int&nbsp;tier)</code>
-<div class="block">Sets character's tier.</div>
 </td>
 </tr>
 </table>
@@ -409,59 +397,59 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a name="setShirtTier-int-">
+<a name="setShirt-int-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setShirtTier</h4>
-<pre>public&nbsp;void&nbsp;setShirtTier(int&nbsp;index)</pre>
-<div class="block">Sets shirt tier.</div>
+<h4>setShirt</h4>
+<pre>public&nbsp;void&nbsp;setShirt(int&nbsp;index)</pre>
+<div class="block">Sets shirt index.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>index</code> - Index</dd>
 </dl>
 </li>
 </ul>
-<a name="getShirtTier--">
+<a name="getShirt--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getShirtTier</h4>
-<pre>public&nbsp;int&nbsp;getShirtTier()</pre>
-<div class="block">Gets shirt tier.</div>
+<h4>getShirt</h4>
+<pre>public&nbsp;int&nbsp;getShirt()</pre>
+<div class="block">Gets shirt index.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>Shirt's tier</dd>
+<dd>Return the shirt's index.</dd>
 </dl>
 </li>
 </ul>
-<a name="setHatIndex-int-">
+<a name="setHat-int-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setHatIndex</h4>
-<pre>public&nbsp;void&nbsp;setHatIndex(int&nbsp;index)</pre>
-<div class="block">Sets hat tier.</div>
+<h4>setHat</h4>
+<pre>public&nbsp;void&nbsp;setHat(int&nbsp;index)</pre>
+<div class="block">Sets hat index.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>index</code> - Hat's tier</dd>
+<dd><code>index</code> - int hat's index</dd>
 </dl>
 </li>
 </ul>
-<a name="getHatIndex--">
+<a name="getHat--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getHatIndex</h4>
-<pre>public&nbsp;int&nbsp;getHatIndex()</pre>
-<div class="block">Gets hat tier.</div>
+<h4>getHat</h4>
+<pre>public&nbsp;int&nbsp;getHat()</pre>
+<div class="block">Gets hat index.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>Hat's tier</dd>
+<dd>Return the hat's index.</dd>
 </dl>
 </li>
 </ul>
@@ -475,7 +463,7 @@ extends java.lang.Object</pre>
 <div class="block">Sets sleeve index needed for different poses.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>index</code> - </dd>
+<dd><code>index</code> - Sleeve index.</dd>
 </dl>
 </li>
 </ul>
@@ -489,33 +477,7 @@ extends java.lang.Object</pre>
 <div class="block">Gets sleeve index needed for different poses.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-</dl>
-</li>
-</ul>
-<a name="setTier-int-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setTier</h4>
-<pre>public&nbsp;void&nbsp;setTier(int&nbsp;tier)</pre>
-<div class="block">Sets character's tier.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>tier</code> - </dd>
-</dl>
-</li>
-</ul>
-<a name="getTier--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getTier</h4>
-<pre>public&nbsp;int&nbsp;getTier()</pre>
-<div class="block">Gets character's tier.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Return the sleeve's index.</dd>
 </dl>
 </li>
 </ul>
@@ -527,7 +489,7 @@ extends java.lang.Object</pre>
 <h4>getTierOffset</h4>
 <pre>public&nbsp;int&nbsp;getTierOffset(int&nbsp;tier)</pre>
 <div class="block">Returns the character's head's position relative to it's starting
- position in tier 1.</div>
+ position in Happiness Level 1.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>tier</code> - Current tier</dd>
