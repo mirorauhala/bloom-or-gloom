@@ -159,6 +159,7 @@ public class SettingsScreen implements Screen {
                         game.settings.resetHasSeenComic();
                         game.score.emptyScorePrefs();
                         game.inventory.removeInventoryPrefs();
+                        game.settings.setFirstDay(game.settings.getLastSeen());
                         resetPressed = false;
                     }
                 }
