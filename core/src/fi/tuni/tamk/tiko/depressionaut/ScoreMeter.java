@@ -69,7 +69,13 @@ public class ScoreMeter {
     }
 
     public float getProgressToNextHappinessLevel() {
-        return score.getScore() / score.getScoreForNextLevel(score.getHappinessLevel());
+        // percentage of the progress to next happiness level:
+        float progress = score.getScore() / score.getScoreForNextLevel(score.getHappinessLevel());
+        if (progress > 1) {
+            return 1;
+        } else {
+            return progress;
+        }
     }
 
     public float getFillerWidth(int index) {
