@@ -233,7 +233,7 @@ public class GameClock {
      * @return true or false
      */
     public boolean isNight() {
-        return hours <= 6 || hours >= 20;
+        return hours < 6 || hours >= 20;
     }
 
 }
