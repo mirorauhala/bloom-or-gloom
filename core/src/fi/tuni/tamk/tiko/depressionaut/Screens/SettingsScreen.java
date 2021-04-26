@@ -237,7 +237,7 @@ public class SettingsScreen implements Screen {
      * draw method for sound on/off button
      */
     public void drawButtonSound() {
-        if(game.settings.getSound()) {
+        if(game.settings.getSound() || !game.settings.containsSound()) {
             settingsBatch.draw(soundOn, 0 ,0);
         } else {
             settingsBatch.draw(soundOff, 0 ,0);
@@ -247,7 +247,7 @@ public class SettingsScreen implements Screen {
      * draw method for music on/off button
      */
     public void drawButtonMusic() {
-        if(game.settings.getMusic()) {
+        if(game.settings.getMusic() || !game.settings.containsMusic()) {
             settingsBatch.draw(musicOn, 0 ,0);
         } else {
             settingsBatch.draw(musicOff, 0 ,0);

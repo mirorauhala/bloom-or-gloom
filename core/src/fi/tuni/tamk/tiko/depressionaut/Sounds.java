@@ -25,7 +25,7 @@ public class Sounds {
      * used to play a clicking sound whenever the player clicks the game screen
      */
     public void clicksoundPlay() {
-        if(game.settings.getSound()) {
+        if(game.settings.getSound() || !game.settings.containsSound()) {
             click.play(0.1f, MathUtils.random(0.95f, 1.05f), 0);
         }
 
@@ -36,7 +36,7 @@ public class Sounds {
      * used to play a clicking sound whenever the player presses a menu button
      */
     public void menuClicksoudPlay() {
-        if(game.settings.getSound()) {
+        if(game.settings.getSound() || !game.settings.containsSound()) {
             menuClick.play(0.1f, MathUtils.random(0.95f, 1.05f), 0);
         }
     }
@@ -44,7 +44,7 @@ public class Sounds {
      * used to play buysound
      */
     public void buySoundPlay() {
-        if(game.settings.getSound()) {
+        if(game.settings.getSound() || !game.settings.containsSound()) {
             buySound.play(0.6f);
         }
     }
@@ -52,10 +52,11 @@ public class Sounds {
      * used to play crickets during night
      */
     public void ambientPlay() {
-        if(clock.isNight() && game.settings.getMusic()) {
+        if(clock.isNight() && (game.settings.getMusic() || !game.settings.containsMusic()) ) {
             crickets.setLooping(true);
             crickets.setVolume(0.01f);
             crickets.play();
+            System.out.println(clock.isNight());
         } else {
             nature.setLooping(true);
             nature.setVolume(0.02f);
