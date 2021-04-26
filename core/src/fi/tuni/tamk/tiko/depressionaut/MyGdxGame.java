@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import fi.tuni.tamk.tiko.depressionaut.Screens.GameScreen;
 import fi.tuni.tamk.tiko.depressionaut.Screens.SplashScreen;
+import fi.tuni.tamk.tiko.depressionaut.Shop.ShopMain;
 
 public class MyGdxGame extends Game {
 	// DEBUG ->
@@ -29,6 +30,7 @@ public class MyGdxGame extends Game {
 	public Settings settings;
 	public Items items;
 	public Sounds sounds;
+	public ShopMain shop;
 
 	@Override
 	public void create () {
@@ -47,6 +49,7 @@ public class MyGdxGame extends Game {
 		items.preloadTextures(inventory);
 		score = new ScoreCounter(this);
 		sounds = new Sounds(this);
+		shop = new ShopMain(this);
 		navigation = new Navigation(this);
 
 		sounds.ambientPlay();

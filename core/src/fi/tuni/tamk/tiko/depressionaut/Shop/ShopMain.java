@@ -1,9 +1,7 @@
-package fi.tuni.tamk.tiko.depressionaut.Screens;
+package fi.tuni.tamk.tiko.depressionaut.Shop;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -20,49 +18,55 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 import com.google.gson.Gson;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
+import fi.tuni.tamk.tiko.depressionaut.Screens.ShopClothingScreen;
+import fi.tuni.tamk.tiko.depressionaut.Screens.ShopFurnitureScreen;
+import fi.tuni.tamk.tiko.depressionaut.Screens.ShopOtherScreen;
 import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Product;
 import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products;
 
-public class ShopScreen implements Screen {
+public class ShopMain {
+    private final MyGdxGame game;
     private final HashMap<Product, Button> buttons = new HashMap<>();
-    private float walletAmount;
-    private final Label walletLabel;
-    MyGdxGame game;
-    ScrollPane scrollpane;
-    Skin skin;
-    Stage stage;
-    Table container;
-    Texture shopHeadingTexture;
     private Texture shopClothingTexture;
     private Texture shopFurnitureTexture;
     private Texture shopOtherTexture;
+    private Texture shopHeadingTexture;
+    private float walletAmount;
+    private Label walletLabel;
+    private Skin skin;
+    private Table container;
+    private Viewport viewport;
+    private Stage stage;
 
-    public ShopScreen(final MyGdxGame game){
+    public ShopMain(MyGdxGame game) {
         this.game = game;
-
         OrthographicCamera camera = new OrthographicCamera(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT);
         camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
 
-        StretchViewport viewport = new StretchViewport(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT, camera);
-
-        FileHandle handle = Gdx.files.internal("shop/clothing.json");
-        String text = handle.readString();
-
-        Gson gson = new Gson();
-        Products products = gson.fromJson(text, Products.class);
+        viewport = new StretchViewport(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT, camera);
 
         //setup skin
         skin = new Skin(Gdx.files.internal("UI/uiskin.json"));
 
+        // initialize empty walletLabel
         walletLabel = new Label("", skin);
         walletLabel.setFontScale(1.5f);
 
+    }
+
+    /**
+     * Build the main stage of the shop screen.
+     * @param products
+     * @return
+     */
+    public Stage getStage(Products products) {
         // parent of all tables
         container = new Table();
         container.setFillParent(true);
@@ -71,15 +75,66 @@ public class ShopScreen implements Screen {
         container.setDebug(MyGdxGame.DEBUG); // turn on all debug lines (table, cell, and widget)
         container.left().top();
 
-        int height = Gdx.graphics.getHeight()/4;
-        int width = Gdx.graphics.getWidth()/4;
+        Table productsTable = game.shop.getProductsTable(products);
 
-        // inner table that is used as a makeshift list.
-        Table innerContainer = new Table();
-        innerContainer.top().left();
+        Table shopTop = game.shop.createShopTop();
+
+        container.add(shopTop)
+                .top()
+                .left()
+                .padTop(20f)
+                .padBottom(20f)
+                .fill()
+                .expand();
+
+        container.row();
+
+        Table shopNav = game.shop.createShopNav();
+
+        container.add(shopNav)
+                .top()
+                .left()
+                .padBottom(20f)
+                .fill();
+
+        container.row();
+
+        ScrollPane scrollPane = new ScrollPane(productsTable);
+
+        //add the scroll pane to the container
+        container.add(scrollPane).fill().expand().padBottom(200f);
+
+        // setup stage
+        stage = new Stage(viewport);
+        stage.setDebugAll(MyGdxGame.DEBUG);
+
+        // add container to the stage
+        stage.addActor(container);
+        return stage;
+    }
+
+    /**
+     * Return the products for the given area.
+     * @param area Area of the shop to give products for.
+     * @return Products
+     */
+    public Products getProductsFor(String area) {
+        FileHandle handle = Gdx.files.internal("shop/"+area+".json");
+        String text = handle.readString();
+
+        Gson gson = new Gson();
+        return gson.fromJson(text, Products.class);
+    }
+
+    /**
+     * Return the scene2d.ui.Table of the Products.
+     * @param products Table
+     */
+    public Table getProductsTable(Products products) {
+        Table productsTable = new Table();
+        productsTable.top().left();
 
         for (final Product product : products.getProducts()) {
-            Gdx.app.debug("NAV", product.getName());
 
             Texture texture = new Texture(Gdx.files.internal(product.getTexture()));
 
@@ -126,43 +181,33 @@ public class ShopScreen implements Screen {
 
             buttons.put(product, buyButton);
 
-            innerContainer.row();
-            innerContainer.add(table).expandX();
+            productsTable.row();
+            productsTable.add(table).expandX();
         }
 
-        scrollpane = new ScrollPane(innerContainer);
-        Table shopTop = createShopTop(skin);
+        return productsTable;
+    }
 
-        container.add(shopTop)
-                .top()
-                .left()
-                .padTop(20f)
-                .padBottom(20f)
-                .fill()
-                .expand();
+    /**
+     * Create the top of the shop.
+     * @return Table
+     */
+    public Table createShopTop() {
+        shopHeadingTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/shop.png"));
 
-        container.row();
+        Table table = new Table(skin);
+        table.setDebug(MyGdxGame.DEBUG);
 
-        Table shopNav = createShopNav(skin);
+        table.add(new Image(shopHeadingTexture))
+                .pad(20f)
+                .width(shopHeadingTexture.getWidth())
+                .height(shopHeadingTexture.getHeight())
+                .expandY()
+                .left();
 
-        container.add(shopNav)
-                .top()
-                .left()
-                .padBottom(20f)
-                .fill();
+        table.add(walletLabel).padRight(20f).expand().right();
 
-        container.row();
-
-        //add the scroll pane to the container
-        container.add(scrollpane).fill().expand().padBottom(200f);
-
-        // setup stage
-        stage = new Stage(viewport);
-        stage.setDebugAll(MyGdxGame.DEBUG);
-
-        // add container to the stage
-        stage.addActor(container);
-
+        return table;
     }
 
     /**
@@ -183,34 +228,10 @@ public class ShopScreen implements Screen {
     }
 
     /**
-     * Create the top of the shop.
-     * @param skin Skin libgdx skin to be used
-     * @return Table
-     */
-    private Table createShopTop(Skin skin) {
-        shopHeadingTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/shop.png"));
-
-        Table table = new Table(skin);
-        table.setDebug(MyGdxGame.DEBUG);
-
-        table.add(new Image(shopHeadingTexture))
-                .pad(20f)
-                .width(shopHeadingTexture.getWidth())
-                .height(shopHeadingTexture.getHeight())
-                .expandY()
-                .left();
-
-        table.add(walletLabel).padRight(20f).expand().right();
-
-        return table;
-    }
-
-    /**
      * Create the navigation for the shop.
-     * @param skin Skin libgdx skin to be used
      * @return Table
      */
-    private Table createShopNav(Skin skin) {
+    public Table createShopNav() {
         shopClothingTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/clothing-text.png"));
         shopFurnitureTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/furniture-text.png"));
         shopOtherTexture = new Texture(Gdx.files.internal("shop/ui/" + game.settings.getLang() + "/other-text.png"));
@@ -218,30 +239,64 @@ public class ShopScreen implements Screen {
         Table table = new Table(skin);
         table.setDebug(MyGdxGame.DEBUG);
 
-        table.add(new Image(shopClothingTexture))
+        Table clothingButton = new Table();
+        clothingButton.add(new Image(shopClothingTexture))
                 .pad(20f)
                 .width(shopClothingTexture.getWidth())
                 .height(shopClothingTexture.getHeight())
                 .expandY()
                 .left();
 
-        table.add(new Image(shopFurnitureTexture))
+        clothingButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                game.setScreen(new ShopClothingScreen(game));
+            }
+        });
+
+        Table furnitureButton = new Table();
+        furnitureButton.add(new Image(shopFurnitureTexture))
                 .pad(20f)
                 .width(shopFurnitureTexture.getWidth())
                 .height(shopFurnitureTexture.getHeight())
                 .expandY()
                 .left();
 
-        table.add(new Image(shopOtherTexture))
+        furnitureButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                Gdx.app.debug("SHOP", "clicked on furniture");
+                game.setScreen(new ShopFurnitureScreen(game));
+
+            }
+        });
+
+        Table otherButton = new Table();
+        otherButton.add(new Image(shopOtherTexture))
                 .pad(20f)
                 .width(shopOtherTexture.getWidth())
                 .height(shopOtherTexture.getHeight())
                 .expandY()
                 .left();
 
+        otherButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                Gdx.app.debug("SHOP", "clicked on other");
+                game.setScreen(new ShopOtherScreen(game));
+
+            }
+        });
+
+        table.add(clothingButton);
+        table.add(furnitureButton);
+        table.add(otherButton);
+
         return table;
     }
-
 
     /**
      * Update status of the buy buttons.
@@ -249,7 +304,7 @@ public class ShopScreen implements Screen {
      * If the player doesn't have enough funds, set the buttons to a disabled state.
      * Otherwise, enable the buttons back.
      */
-    private void updateButtons() {
+    public void updateButtons() {
         for (Map.Entry<Product, Button> entry : buttons.entrySet()) {
             Product p = entry.getKey();
             Button b = entry.getValue();
@@ -261,58 +316,19 @@ public class ShopScreen implements Screen {
     /**
      * Get the current wallet amount and set it to the label.
      */
-    private void updateWallet() {
+    public void updateWallet() {
         walletAmount = game.score.getWallet();
         walletLabel.setText(walletAmount + ""); // hack: cast to string
     }
 
-    @Override
-    public void render(float delta) {
-        Gdx.gl.glClearColor(1, 1, 1, 1); //sets up the clear color (background color) of the screen.
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); //instructs openGL to actually clear the screen to the newly set clear color.
-
-        updateWallet();
-        updateButtons();
-
-        stage.draw();
-        stage.act(delta);
-
-    }
-
-    @Override
-    public void resize(int width, int height) {
-        //System.out.println("resize");
-
-    }
-
-    @Override
-    public void show() {
-        Gdx.input.setInputProcessor(stage);
-
-    }
-
-    @Override
-    public void hide() {
-
-    }
-
-    @Override
-    public void pause() {
-        System.out.println("pause");
-
-    }
-
-    @Override
-    public void resume() {
-        System.out.println("resume");
-
-    }
-
-    @Override
+    /**
+     * Disposes assets.
+     */
     public void dispose() {
         stage.dispose();
         skin.dispose();
-
+        shopClothingTexture.dispose();
+        shopFurnitureTexture.dispose();
+        shopOtherTexture.dispose();
     }
-
 }

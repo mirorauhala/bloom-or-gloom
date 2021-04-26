@@ -1,0 +1,196 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Huonekalu",
+      "type": "shirt",
+      "price": 100,
+      "level": 1,
+      "texture": "shop/icons/shirts/t1v1.png"
+    },
+    {
+      "id": 2,
+      "name": "Keltainen paita",
+      "type": "shirt",
+      "price": 400,
+      "level": 1,
+      "texture": "shop/icons/shirts/t1v2.png"
+    },
+    {
+      "id": 3,
+      "name": "Vaaleansininen paita",
+      "type": "shirt",
+      "price": 1000,
+      "level": 1,
+      "texture": "shop/icons/shirts/t1v3.png"
+    },
+    {
+      "id": 4,
+      "name": "Sininen pallopaita",
+      "type": "shirt",
+      "price": 3000,
+      "level": 2,
+      "texture": "shop/icons/shirts/t2v4.png"
+    },
+    {
+      "id": 5,
+      "name": "Punainen pallopaita",
+      "type": "shirt",
+      "price": 6500,
+      "level": 2,
+      "texture": "shop/icons/shirts/t2v5.png"
+    },
+    {
+      "id": 6,
+      "name": "Vaalean ruskea pallopaita",
+      "type": "shirt",
+      "price": 10000,
+      "level": 2,
+      "texture": "shop/icons/shirts/t2v6.png"
+    },
+    {
+      "id": 7,
+      "name": "Harmaa pikee",
+      "type": "shirt",
+      "price": 150000,
+      "level": 3,
+      "texture": "shop/icons/shirts/t3v7.png"
+    },
+    {
+      "id": 8,
+      "name": "Sininen pikee",
+      "type": "shirt",
+      "price": 800000,
+      "level": 3,
+      "texture": "shop/icons/shirts/t3v8.png"
+    },
+    {
+      "id": 9,
+      "name": "Tumma pikee",
+      "type": "shirt",
+      "price": 1000000,
+      "level": 3,
+      "texture": "shop/icons/shirts/t3v9.png"
+    },
+    {
+      "id": 10,
+      "name": "Punainen huppari",
+      "type": "shirt",
+      "price": 2000000,
+      "level": 4,
+      "texture": "shop/icons/shirts/t4v10.png"
+    },
+    {
+      "id": 11,
+      "name": "Vihreä huppari",
+      "type": "shirt",
+      "price": 3000000,
+      "level": 4,
+      "texture": "shop/icons/shirts/t4v11.png"
+    },
+    {
+      "id": 12,
+      "name": "Sininen huppari",
+      "type": "shirt",
+      "price": 10000000,
+      "level": 4,
+      "texture": "shop/icons/shirts/t4v12.png"
+    },
+    {
+      "id": 13,
+      "name": "Punainen raitapaita",
+      "type": "shirt",
+      "price": 100000000,
+      "level": 5,
+      "texture": "shop/icons/shirts/t5v13.png"
+    },
+    {
+      "id": 14,
+      "name": "Keltainen raitapaita",
+      "type": "shirt",
+      "price": 500000000,
+      "level": 5,
+      "texture": "shop/icons/shirts/t5v14.png"
+    },
+    {
+      "id": 15,
+      "name": "Vaaleansininen raitapaita",
+      "type": "shirt",
+      "price": 2147483647,
+      "level": 5,
+      "texture": "shop/icons/shirts/t5v15.png"
+    },
+    {
+      "id": 1,
+      "name": "Punainen pipo",
+      "type": "hat",
+      "price": 150000,
+      "level": 3,
+      "texture": "shop/icons/hats/t3v1.png"
+    },
+    {
+      "id": 2,
+      "name": "Keltainen pipo",
+      "type": "hat",
+      "price": 800000,
+      "level": 3,
+      "texture": "shop/icons/hats/t3v2.png"
+    },
+    {
+      "id": 3,
+      "name": "Sininen pipo",
+      "type": "hat",
+      "price": 1000000,
+      "level": 3,
+      "texture": "shop/icons/hats/t3v3.png"
+    },
+    {
+      "id": 4,
+      "name": "Violetti bandana",
+      "type": "hat",
+      "price": 2000000,
+      "level": 4,
+      "texture": "shop/icons/hats/t4v4.png"
+    },
+    {
+      "id": 5,
+      "name": "Sininen bandana",
+      "type": "hat",
+      "price": 3000000,
+      "level": 4,
+      "texture": "shop/icons/hats/t4v5.png"
+    },
+    {
+      "id": 6,
+      "name": "Punainen bandana",
+      "type": "hat",
+      "price": 10000000,
+      "level": 4,
+      "texture": "shop/icons/hats/t4v6.png"
+    },
+    {
+      "id": 7,
+      "name": "Keltainen lippalakki",
+      "type": "hat",
+      "price": 100000000,
+      "level": 5,
+      "texture": "shop/icons/hats/t5v7.png"
+    },
+    {
+      "id": 8,
+      "name": "Sininen lippalakki",
+      "type": "hat",
+      "price": 500000000,
+      "level": 5,
+      "texture": "shop/icons/hats/t5v8.png"
+    },
+    {
+      "id": 9,
+      "name": "Punainen lippalakki",
+      "type": "hat",
+      "price": 2147483647,
+      "level": 5,
+      "texture": "shop/icons/hats/t5v9.png"
+    }
+  ]
+}

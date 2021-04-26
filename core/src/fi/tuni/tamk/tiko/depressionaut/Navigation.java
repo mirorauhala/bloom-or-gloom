@@ -1,6 +1,5 @@
 package fi.tuni.tamk.tiko.depressionaut;
 
-import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -12,7 +11,7 @@ import java.util.HashMap;
 
 import fi.tuni.tamk.tiko.depressionaut.Screens.GameScreen;
 import fi.tuni.tamk.tiko.depressionaut.Screens.SettingsScreen;
-import fi.tuni.tamk.tiko.depressionaut.Screens.ShopScreen;
+import fi.tuni.tamk.tiko.depressionaut.Screens.ShopClothingScreen;
 
 public class Navigation {
     private OrthographicCamera camera;
@@ -63,7 +62,7 @@ public class Navigation {
 
         // pair the actual gdx screen along with the corresponding enum
         this.screenPair.put(Screen.GAME, new GameScreen(game));
-        this.screenPair.put(Screen.SHOP, new ShopScreen(game));
+        this.screenPair.put(Screen.SHOP, new ShopClothingScreen(game));
         this.screenPair.put(Screen.SETTINGS, new SettingsScreen(game));
     }
 
