@@ -9,16 +9,20 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Class for the drawing and functioning of the character.
+ */
 public class GameCharacter {
 
-    public Texture head = new Texture("character/head/head.png");
-    private Shirts shirts = new Shirts();
+    public Texture head = new Texture("character/head/head.png"); // head texture
+    private Shirts shirts = new Shirts(); // shirt textures
     private int shirtIndex;
     private int sleeveIndex;
     private int hatIndex;
 
-    public HashMap<heldItem, Texture> hands = new HashMap<heldItem, Texture>();
+    public HashMap<heldItem, Texture> hands = new HashMap<heldItem, Texture>(); // textures for held items
 
+    // body textures
     private ArrayList<Texture> bodies = new ArrayList<Texture>(
             Arrays.asList(
                     new Texture("character/body/tier1/tier1.png"),
@@ -29,6 +33,7 @@ public class GameCharacter {
             )
     );
 
+    // hat textures
     private List<Texture> hats = Arrays.asList(
             new Texture("character/hats/t1v0.png"),
             new Texture("character/hats/t3v1.png"),
@@ -42,6 +47,7 @@ public class GameCharacter {
             new Texture("character/hats/t5v9.png")
     );
 
+    // mouth textures
     private ArrayList<Texture> smiles = new ArrayList<Texture>(
             Arrays.asList(
                     new Texture("character/smile/tier1.png"),
@@ -52,7 +58,7 @@ public class GameCharacter {
             )
     );
 
-
+    // eye textures
     private ArrayList<Texture> eyes = new ArrayList<Texture>(
             Arrays.asList(
                     new Texture("character/eyes/open.png"),
@@ -71,8 +77,12 @@ public class GameCharacter {
     private heldItem currentItem = heldItem.EMPTY;
     private int tier;
 
+    // timer for random blinks
     private int blinkTimer = 0;
 
+    /**
+     * Constructor puts the textures for held items in a hashMap for easier access.
+     */
     public GameCharacter() {
         hands.put(heldItem.EMPTY, new Texture("character/hands/empty.png"));
         hands.put(heldItem.PHONE, new Texture("character/hands/phone.png"));
@@ -80,6 +90,11 @@ public class GameCharacter {
         hands.put(heldItem.LAPTOP, new Texture("character/hands/laptop.png"));
     }
 
+    /**
+     * Draws all textures related to the character.
+     *
+     * @param batch SpriteBatch needed for the draw() method.
+     */
     public void draw(SpriteBatch batch) {
         // draw body
         batch.draw(bodies.get(getTier()),
@@ -100,7 +115,7 @@ public class GameCharacter {
                 0);
 
         // draw eyes
-        blink(batch, getTier());
+        blink(batch);
 
         // draw hands
         batch.draw(hands.get(currentItem),
@@ -116,7 +131,12 @@ public class GameCharacter {
                 getTierOffset(getTier()));
     }
 
-    public void blink(SpriteBatch batch, int tier) {
+    /**
+     * Makes the character blink by periodically changing the texture of the eyes.
+     *
+     * @param batch SpriteBatch needed for the draw() method.
+     */
+    public void blink(SpriteBatch batch) {
         blinkTimer++;
         if(blinkTimer > 400) {
             blinkTimer = 0;
@@ -129,34 +149,74 @@ public class GameCharacter {
 
     }
 
+    /**
+     * Sets held item.
+     *
+     * @param item enum heldItem
+     */
     public void setItem(heldItem item) {
         currentItem = item;
     }
 
+    /**
+     * Gets current item
+     *
+     * @return enum heldItem
+     */
     public heldItem getItem() {
         return currentItem;
     }
 
+    /**
+     * Sets shirt tier.
+     *
+     * @param index Index
+     */
     public void setShirtTier(int index) {
         shirtIndex = index;
     }
 
+    /**
+     * Gets shirt tier.
+     *
+     * @return Shirt's tier
+     */
     public int getShirtTier() {
         return shirtIndex;
     }
 
+    /**
+     * Sets hat tier.
+     *
+     * @param index Hat's tier
+     */
     public void setHatIndex(int index) {
         hatIndex = index;
     }
 
+    /**
+     * Gets hat tier.
+     *
+     * @return Hat's tier
+     */
     public int getHatIndex() {
         return hatIndex;
     }
 
+    /**
+     * Sets sleeve index needed for different poses.
+     *
+     * @param index 
+     */
     public void setSleeveIndex(int index) {
         sleeveIndex = index;
     }
 
+    /**
+     * Gets sleeve index needed for different poses.
+     *
+     * @return
+     */
     public int getSleeveIndex() {
         switch (currentItem) {
             case EMPTY: return 0;
@@ -168,18 +228,41 @@ public class GameCharacter {
         return -1;
     }
 
+    /**
+     * Sets character's tier.
+     *
+     * @param tier
+     */
     public void setTier(int tier) {
         this.tier = tier;
     }
 
+    /**
+     * Gets character's tier.
+     *
+     * @return
+     */
     public int getTier() {
         return tier;
     }
 
+    /**
+     * Returns the character's head's position relative to it's starting
+     * position in tier 1.
+     *
+     * @param tier Current tier
+     * @return offset
+     */
     public int getTierOffset(int tier) {
         return (int) (getHeadPosition(tier).y - getHeadPosition(0).y);
     }
 
+    /**
+     * Returns standing offset in tier 5 needed for textures that move up
+     * with the character when it stands up.
+     *
+     * @return offset
+     */
     public float getStandingOffset() {
         if (getTier() >= 4) {
             return 100;
@@ -188,6 +271,12 @@ public class GameCharacter {
         }
     }
 
+    /**
+     * Returns the position of the head depending on the character's tier.
+     *
+     * @param tier Current tier
+     * @return Head's position
+     */
     public Vector2 getHeadPosition(int tier) {
         switch (tier) {
             case 0: return new Vector2(514,1920 - 1336);
@@ -200,6 +289,12 @@ public class GameCharacter {
         return new Vector2();
     }
 
+    /**
+     * Get's the position of the center of the character's head.
+     *
+     * @param tier Current tier
+     * @return Position of the center of the head.
+     */
     public Vector2 getHeadCenter(int tier) {
         return new Vector2(
                 getHeadPosition(tier).x + (head.getWidth() / 2f),
