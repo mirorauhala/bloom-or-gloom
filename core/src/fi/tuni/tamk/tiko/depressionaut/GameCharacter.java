@@ -13,7 +13,7 @@ import java.util.List;
  * Class for the drawing and functioning of the character.
  */
 public class GameCharacter {
-
+    private final MyGdxGame game;
     public Texture head = new Texture("character/head/head.png"); // head texture
     private Shirts shirts = new Shirts(); // shirt textures
     private int shirtIndex;
@@ -83,7 +83,8 @@ public class GameCharacter {
     /**
      * Constructor puts the textures for held items in a hashMap for easier access.
      */
-    public GameCharacter() {
+    public GameCharacter(MyGdxGame game) {
+        this.game = game;
         hands.put(heldItem.EMPTY, new Texture("character/hands/empty.png"));
         hands.put(heldItem.PHONE, new Texture("character/hands/phone.png"));
         hands.put(heldItem.BOOK, new Texture("character/hands/book.png"));

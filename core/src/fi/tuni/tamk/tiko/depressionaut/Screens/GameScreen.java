@@ -29,10 +29,10 @@ import fi.tuni.tamk.tiko.depressionaut.Thoughts.ThoughtBubble;
 public class GameScreen implements Screen {
     private final Stage stage;
     private final Items items;
-    private GameCharacter character = new GameCharacter();
     final private float x = 0;
     final private float y = 0;
 
+    private final GameCharacter character;
     public Rectangle gameScreenRectangle;
 
 
@@ -66,6 +66,7 @@ public class GameScreen implements Screen {
         items = game.items;
         dailyBonus = new DailyBonus(game);
         clock = new GameClock(game);
+        character = new GameCharacter(game);
     }
 
     @Override
