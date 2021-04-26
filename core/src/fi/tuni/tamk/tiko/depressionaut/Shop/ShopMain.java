@@ -263,6 +263,7 @@ public class ShopMain {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
+                game.sounds.menuClicksoudPlay();
                 game.setScreen(new ShopClothingScreen(game));
             }
         });
@@ -279,9 +280,8 @@ public class ShopMain {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                Gdx.app.debug("SHOP", "clicked on furniture");
+                game.sounds.menuClicksoudPlay();
                 game.setScreen(new ShopFurnitureScreen(game));
-
             }
         });
 
@@ -297,9 +297,8 @@ public class ShopMain {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                Gdx.app.debug("SHOP", "clicked on other");
+                game.sounds.menuClicksoudPlay();
                 game.setScreen(new ShopOtherScreen(game));
-
             }
         });
 
