@@ -203,52 +203,52 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHappinessLevelOffset-int-">getHappinessLevelOffset</a></span>(int&nbsp;level)</code>
+<div class="block">Returns the character's head's position relative to it's starting
+ position in Happiness Level 1.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHat--">getHat</a></span>()</code>
 <div class="block">Gets hat index.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>com.badlogic.gdx.math.Vector2</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHeadCenter-int-">getHeadCenter</a></span>(int&nbsp;tier)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHeadCenter-int-">getHeadCenter</a></span>(int&nbsp;level)</code>
 <div class="block">Get's the position of the center of the character's head.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>com.badlogic.gdx.math.Vector2</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHeadPosition-int-">getHeadPosition</a></span>(int&nbsp;tier)</code>
-<div class="block">Returns the position of the head depending on the character's tier.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getHeadPosition-int-">getHeadPosition</a></span>(int&nbsp;level)</code>
+<div class="block">Returns the position of the head depending on the character's Happiness Level.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.heldItem.html" title="enum in fi.tuni.tamk.tiko.depressionaut">GameCharacter.heldItem</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getItem--">getItem</a></span>()</code>
 <div class="block">Gets current item</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getShirt--">getShirt</a></span>()</code>
 <div class="block">Gets shirt index.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getSleeveIndex--">getSleeveIndex</a></span>()</code>
 <div class="block">Gets sleeve index needed for different poses.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getStandingOffset--">getStandingOffset</a></span>()</code>
-<div class="block">Returns standing offset in tier 5 needed for textures that move up
+<div class="block">Returns standing offset in happiness-level 5 needed for textures that move up
  with the character when it stands up.</div>
-</td>
-</tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/depressionaut/GameCharacter.html#getTierOffset-int-">getTierOffset</a></span>(int&nbsp;tier)</code>
-<div class="block">Returns the character's head's position relative to it's starting
- position in Happiness Level 1.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
@@ -481,18 +481,18 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a name="getTierOffset-int-">
+<a name="getHappinessLevelOffset-int-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getTierOffset</h4>
-<pre>public&nbsp;int&nbsp;getTierOffset(int&nbsp;tier)</pre>
+<h4>getHappinessLevelOffset</h4>
+<pre>public&nbsp;int&nbsp;getHappinessLevelOffset(int&nbsp;level)</pre>
 <div class="block">Returns the character's head's position relative to it's starting
  position in Happiness Level 1.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>tier</code> - Current tier</dd>
+<dd><code>level</code> - Current Happiness Level</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>offset</dd>
 </dl>
@@ -505,7 +505,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getStandingOffset</h4>
 <pre>public&nbsp;float&nbsp;getStandingOffset()</pre>
-<div class="block">Returns standing offset in tier 5 needed for textures that move up
+<div class="block">Returns standing offset in happiness-level 5 needed for textures that move up
  with the character when it stands up.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -519,11 +519,11 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getHeadPosition</h4>
-<pre>public&nbsp;com.badlogic.gdx.math.Vector2&nbsp;getHeadPosition(int&nbsp;tier)</pre>
-<div class="block">Returns the position of the head depending on the character's tier.</div>
+<pre>public&nbsp;com.badlogic.gdx.math.Vector2&nbsp;getHeadPosition(int&nbsp;level)</pre>
+<div class="block">Returns the position of the head depending on the character's Happiness Level.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>tier</code> - Current tier</dd>
+<dd><code>level</code> - Current Happiness Level</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Head's position</dd>
 </dl>
@@ -535,11 +535,11 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getHeadCenter</h4>
-<pre>public&nbsp;com.badlogic.gdx.math.Vector2&nbsp;getHeadCenter(int&nbsp;tier)</pre>
+<pre>public&nbsp;com.badlogic.gdx.math.Vector2&nbsp;getHeadCenter(int&nbsp;level)</pre>
 <div class="block">Get's the position of the center of the character's head.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>tier</code> - Current tier</dd>
+<dd><code>level</code> - Current Happiness Level</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Position of the center of the head.</dd>
 </dl>
