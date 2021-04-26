@@ -168,36 +168,36 @@ public class GameCharacter {
     }
 
     /**
-     * Sets shirt tier.
+     * Sets shirt index.
      *
      * @param index Index
      */
-    public void setShirtTier(int index) {
+    public void setShirt(int index) {
         shirtIndex = index;
     }
 
     /**
-     * Gets shirt tier.
+     * Gets shirt index.
      *
-     * @return Shirt's tier
+     * @return Return the shirt's index.
      */
-    public int getShirtTier() {
+    public int getShirt() {
         return shirtIndex;
     }
 
     /**
-     * Sets hat tier.
+     * Sets hat index.
      *
-     * @param index Hat's tier
+     * @param index int hat's index
      */
-    public void setHatIndex(int index) {
+    public void setHat(int index) {
         hatIndex = index;
     }
 
     /**
-     * Gets hat tier.
+     * Gets hat index.
      *
-     * @return Hat's tier
+     * @return Return the hat's index.
      */
     public int getHatIndex() {
         return hatIndex;
@@ -206,7 +206,7 @@ public class GameCharacter {
     /**
      * Sets sleeve index needed for different poses.
      *
-     * @param index 
+     * @param index Sleeve index.
      */
     public void setSleeveIndex(int index) {
         sleeveIndex = index;
@@ -215,7 +215,7 @@ public class GameCharacter {
     /**
      * Gets sleeve index needed for different poses.
      *
-     * @return
+     * @return Return the sleeve's index.
      */
     public int getSleeveIndex() {
         switch (currentItem) {

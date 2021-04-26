@@ -162,7 +162,6 @@ public class GameScreen implements Screen {
      */
     public void characterDebug(boolean debug) {
         if (debug) {
-            character.setTier((int)(Math.random()*5));
             int rand = (int)(Math.random()*5);
             switch (rand) {
                 case 0: character.setItem(GameCharacter.heldItem.EMPTY);
@@ -174,15 +173,15 @@ public class GameScreen implements Screen {
                 case 3: character.setItem(GameCharacter.heldItem.LAPTOP);
                     break;
             }
-            character.setShirtTier((int)(Math.random()*16));
+            character.setShirt((int)(Math.random()*16));
             character.setSleeveIndex((int)(Math.random()*16));
-            character.setHatIndex((int)(Math.random()*10));
+            character.setHat((int)(Math.random()*10));
 
             Gdx.app.debug("Character", "Happiness level: " + game.score.getHappinessLevel());
             Gdx.app.debug("Character", "Item: " + character.getItem());
-            Gdx.app.debug("Character", "Shirt: " + character.getShirtTier());
+            Gdx.app.debug("Character", "Shirt: " + character.getHatLevel());
             Gdx.app.debug("Character", "Sleeve: " + character.getSleeveIndex());
-            Gdx.app.debug("Character", "Hat: " + character.getHatIndex());
+            Gdx.app.debug("Character", "Hat: " + character.getHatLevel());
         }
     }
     
@@ -226,13 +225,11 @@ public class GameScreen implements Screen {
         wallTier = game.inventory.get("wall");
         floorTier = game.inventory.get("floor");
         bedTier = game.inventory.get("bed");
-
-        // TODO: Add to inventory system:
-        // stuffTier = game.inventory.get("stuff");
-
+        stuffTier = game.inventory.get("stuff");
         chairTier = game.inventory.get("chair");
         deskTier = game.inventory.get("desk");
         smileTier = game.inventory.get("smile");
-        character.setTier(game.inventory.get("character"));
+        character.setShirt(game.inventory.get("shirt"));
+        character.setHat(game.inventory.get("hat"));
     }
 }
