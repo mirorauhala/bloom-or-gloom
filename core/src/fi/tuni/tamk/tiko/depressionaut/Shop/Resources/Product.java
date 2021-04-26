@@ -1,5 +1,7 @@
 package fi.tuni.tamk.tiko.depressionaut.Shop.Resources;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 /**
@@ -7,7 +9,10 @@ import java.util.List;
  */
 public class Product {
     private int id;
-    private String name;
+    @SerializedName("name_en")
+    private String nameEn;
+    @SerializedName("name_fi")
+    private String nameFi;
     private String type;
     private int level;
     private int price;
@@ -23,11 +28,19 @@ public class Product {
     }
 
     /**
-     * Returns the product's name.
+     * Returns the product's name in English.
      * @return String
      */
-    public String getName() {
-        return name;
+    public String getNameEn() {
+        return nameEn;
+    }
+
+    /**
+     * Returns the product's name in Finnish.
+     * @return String
+     */
+    public String getNameFi() {
+        return nameFi;
     }
 
     /**
