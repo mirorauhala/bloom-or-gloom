@@ -3,7 +3,6 @@ package fi.tuni.tamk.tiko.depressionaut.Screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
@@ -19,7 +18,6 @@ import fi.tuni.tamk.tiko.depressionaut.Items;
 import fi.tuni.tamk.tiko.depressionaut.MyGdxGame;
 import fi.tuni.tamk.tiko.depressionaut.ScoreMeter;
 import fi.tuni.tamk.tiko.depressionaut.Sky.Sky;
-import fi.tuni.tamk.tiko.depressionaut.Sounds;
 import fi.tuni.tamk.tiko.depressionaut.TapParticle;
 import fi.tuni.tamk.tiko.depressionaut.Thoughts.ThoughtBubble;
 
@@ -171,12 +169,15 @@ public class GameScreen implements Screen {
                 case 3: character.setItem(GameCharacter.heldItem.LAPTOP);
                     break;
             }
-            character.setShirtIndex((int)(Math.random()*16));
+            character.setShirtTier((int)(Math.random()*16));
             character.setSleeveIndex((int)(Math.random()*16));
+            character.setHatIndex((int)(Math.random()*10));
+
             Gdx.app.debug("Character", "Tier: " + character.getTier());
             Gdx.app.debug("Character", "Item: " + character.getItem());
-            Gdx.app.debug("Character", "Shirt: " + character.getShirtIndex());
+            Gdx.app.debug("Character", "Shirt: " + character.getShirtTier());
             Gdx.app.debug("Character", "Sleeve: " + character.getSleeveIndex());
+            Gdx.app.debug("Character", "Hat: " + character.getHatIndex());
         }
     }
     
