@@ -8,7 +8,7 @@
       "price": 100,
       "texture": "shop/icons/others/1.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 1}
+        {"method": "multiplier", "action": "increment", "amount": 1}
       ]
     },
     {

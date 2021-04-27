@@ -166,10 +166,16 @@ public class ShopMain {
                             String action = pe.getAction();
                             int amount = pe.getAmount();
 
-                            if(method.equals("click-power")) {
-                                game.score.incrementClickPower(amount);
-                            } else if(method.equals("passive-income")) {
-                                game.score.incrementPassiveIncome(amount);
+                            switch (method) {
+                                case "click-power":
+                                    game.score.incrementClickPower(amount);
+                                    break;
+                                case "passive-income":
+                                    game.score.incrementPassiveIncome(amount);
+                                    break;
+                                case "multiplier":
+                                    game.score.incrementMultiplier(amount);
+                                    break;
                             }
                         }
 
