@@ -151,7 +151,8 @@ public class Settings {
         prefs.flush();
     }
 
-    public void resetHasSeenComic() {
+    public void reset() {
         prefs.remove("has-seen-comic");
+        prefs.remove("bonus-day");
     }
 }

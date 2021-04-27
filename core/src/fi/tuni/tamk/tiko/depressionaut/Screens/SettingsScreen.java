@@ -156,7 +156,7 @@ public class SettingsScreen implements Screen {
                 if(confirmRectangle.contains(touch.x, touch.y)) {
                     if(resetPressed) {
                         game.sounds.menuClicksoudPlay();
-                        game.settings.resetHasSeenComic();
+                        game.settings.reset();
                         game.score.emptyScorePrefs();
                         game.inventory.removeInventoryPrefs();
                         game.settings.setFirstDay(game.settings.getLastSeen());
