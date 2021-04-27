@@ -46,9 +46,14 @@ public class GameScreen implements Screen {
     private int wallIndex;
     private int floorIndex;
     private int bedIndex;
-    private int stuffIndex;
+    private int itemsIndex;
     private int chairIndex;
     private int deskIndex;
+    private int trashcanIndex;
+    private int paintingIndex;
+    private int weightsIndex;
+    private int mugIndex;
+    private int plantIndex;
 
     public GameScreen(MyGdxGame game) {
         this.game = game;
@@ -87,28 +92,23 @@ public class GameScreen implements Screen {
         float y = 0;
         batch.draw(items.getItem("wall", wallIndex), x, y);
         batch.draw(items.getItem("floor", floorIndex), x, y);
-
-        // Furniture layer:
-        batch.draw(items.getItem("bed", bedIndex), x, y);
-        for (int i = 0; i < stuffIndex; i++) {
-            batch.draw(items.getItem("stuff", i), x, y);
-            // TODO: Make sure this is the correct texture:
-            if (i == 4) {
-                batch.draw(items.getItem("stuff", i), x, character.getStandingOffset());
-            } else if (i == 5) {
-                // TODO: Make sure correct happiness level for bedside table:
-                if (bedIndex >= 12) {
-                    batch.draw(items.getItem("stuff", i), x, y);
-                } else {
-                    batch.draw(items.getItem("stuff", i), x, -200);
-                }
-            }
-        }
         batch.draw(items.getItem("chair", chairIndex), x, y);
         batch.draw(items.getItem("desk", deskIndex), x, character.getStandingOffset());
         
         // Character layer:
         character.draw(batch);
+
+        // Furniture layer:
+        batch.draw(items.getItem("trashcan", trashcanIndex), x, y);
+        batch.draw(items.getItem("painting", paintingIndex), x, y);
+        batch.draw(items.getItem("weights", weightsIndex), x, y);
+        batch.draw(items.getItem("mug", mugIndex), x, character.getStandingOffset());
+
+        if (bedIndex >= 12) {
+            batch.draw(items.getItem("plant", plantIndex), x, y);
+        } else {
+            batch.draw(items.getItem("plant", plantIndex), x, -200);
+        }
 
         // Top layer:
         particle.renderParticles(batch, delta);
@@ -224,10 +224,14 @@ public class GameScreen implements Screen {
         wallIndex = game.inventory.get("wall");
         floorIndex = game.inventory.get("floor");
         bedIndex = game.inventory.get("bed");
-        stuffIndex = game.inventory.get("stuff");
         chairIndex = game.inventory.get("chair");
         deskIndex = game.inventory.get("desk");
         character.setShirt(game.inventory.get("shirt"));
         character.setHat(game.inventory.get("hat"));
+        trashcanIndex = game.inventory.get("trashcan");
+        paintingIndex = game.inventory.get("painting");
+        weightsIndex = game.inventory.get("weights");
+        mugIndex = game.inventory.get("mug");
+        plantIndex = game.inventory.get("plant");
     }
 }
