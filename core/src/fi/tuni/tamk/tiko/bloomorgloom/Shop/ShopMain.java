@@ -158,6 +158,7 @@ public class ShopMain {
                 public void clicked(InputEvent event, float x, float y) {
                     if(game.score.decrementWallet(product.getPrice())) {
                         Gdx.app.debug("SHOP", "Bought: "+ productNameStr + " for " + product.getPrice() );
+                        Gdx.app.debug("test", "" + product.getTier());
                         game.inventory.set(product.getType(), product.getId());
                         game.sounds.buySoundPlay();
 

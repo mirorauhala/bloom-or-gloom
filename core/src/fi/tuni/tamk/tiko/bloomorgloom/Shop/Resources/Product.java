@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class Product {
     private int id;
+    private int tier;
     @SerializedName("name_en")
     private String nameEn;
     @SerializedName("name_fi")
@@ -25,6 +26,14 @@ public class Product {
      */
     public int getId() {
         return id;
+    }
+
+    /**
+     * Returns the product's tier.
+     * @return int
+     */
+    public int getTier() {
+        return tier;
     }
 
     /**

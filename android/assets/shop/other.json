@@ -19,7 +19,7 @@
       "price": 400,
       "texture": "shop/icons/others/2.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 5}
+        {"method": "multiplier", "action": "increment", "amount": 5}
       ]
     },
     {
@@ -30,7 +30,7 @@
       "price": 1000,
       "texture": "shop/icons/others/3.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 10}
+        {"method": "multiplier", "action": "increment", "amount": 10}
       ]
     },
     {
@@ -41,7 +41,7 @@
       "price": 3000,
       "texture": "shop/icons/others/4.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 15}
+        {"method": "multiplier", "action": "increment", "amount": 15}
       ]
     },
     {
@@ -52,7 +52,7 @@
       "price": 6500,
       "texture": "shop/icons/others/5.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 20}
+        {"method": "multiplier", "action": "increment", "amount": 20}
       ]
     },
     {
@@ -63,7 +63,7 @@
       "price": 10000,
       "texture": "shop/icons/others/6.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 25}
+        {"method": "multiplier", "action": "increment", "amount": 25}
       ]
     },
     {
@@ -74,7 +74,7 @@
       "price": 150000,
       "texture": "shop/icons/others/7.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 30}
+        {"method": "multiplier", "action": "increment", "amount": 30}
       ]
     },
     {
@@ -85,7 +85,7 @@
       "price": 800000,
       "texture": "shop/icons/others/8.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 35}
+        {"method": "multiplier", "action": "increment", "amount": 35}
       ]
     },
     {
@@ -96,7 +96,7 @@
       "price": 1000000,
       "texture": "shop/icons/others/9.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 45}
+        {"method": "multiplier", "action": "increment", "amount": 45}
       ]
     },
     {
@@ -107,7 +107,7 @@
       "price": 10000000,
       "texture": "shop/icons/others/10.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 50}
+        {"method": "multiplier", "action": "increment", "amount": 50}
       ]
     },
     {
@@ -118,7 +118,7 @@
       "price": 10000000,
       "texture": "shop/icons/others/11.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 55}
+        {"method": "multiplier", "action": "increment", "amount": 55}
       ]
     },
     {
@@ -129,7 +129,7 @@
       "price": 10000000,
       "texture": "shop/icons/others/12.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 60}
+        {"method": "multiplier", "action": "increment", "amount": 60}
       ]
     },
     {
@@ -140,7 +140,7 @@
       "price": 10000000,
       "texture": "shop/icons/others/13.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 65}
+        {"method": "multiplier", "action": "increment", "amount": 65}
       ]
     },
     {
@@ -151,7 +151,7 @@
       "price": 10000000,
       "texture": "shop/icons/others/14.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 70}
+        {"method": "multiplier", "action": "increment", "amount": 70}
       ]
     },
     {
@@ -162,7 +162,7 @@
       "price": 10000000,
       "texture": "shop/icons/others/15.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 75}
+        {"method": "multiplier", "action": "increment", "amount": 75}
       ]
     },
     {
@@ -173,7 +173,7 @@
       "price": 10000000,
       "texture": "shop/icons/others/16.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 80}
+        {"method": "multiplier", "action": "increment", "amount": 80}
       ]
     },
     {
@@ -184,7 +184,7 @@
       "price": 10000000,
       "texture": "shop/icons/others/17.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 85}
+        {"method": "multiplier", "action": "increment", "amount": 85}
       ]
     },
     {
@@ -195,7 +195,7 @@
       "price": 10000000,
       "texture": "shop/icons/others/18.png",
       "effects":[
-        {"method": "click-power", "action": "increment", "amount": 90}
+        {"method": "multiplier", "action": "increment", "amount": 90}
       ]
     }
   ]
