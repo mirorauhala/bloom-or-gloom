@@ -152,7 +152,7 @@ public class ShopMain {
             productName.setFontScale(2);
             float productNameSize = 1080f - texture.getWidth() - 40f - 200f;
 
-            Button buyButton = createButton(product.getPrice() + "e");
+            Button buyButton = createButton(game.score.getRationalizedValue(product.getPrice(), 2));
             buyButton.addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
@@ -342,8 +342,7 @@ public class ShopMain {
      * Get the current wallet amount and set it to the label.
      */
     public void updateWallet(Label walletLabel) {
-        walletAmount = game.score.getWallet();
-        walletLabel.setText(walletAmount + ""); // hack: cast to string
+        walletLabel.setText(game.score.getRationalizedValue(game.score.getWallet(), 2));
     }
 
     /**
