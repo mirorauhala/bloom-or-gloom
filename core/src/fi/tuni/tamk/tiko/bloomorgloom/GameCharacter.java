@@ -89,6 +89,7 @@ public class GameCharacter {
         hands.put(heldItem.PHONE, new Texture("character/hands/phone.png"));
         hands.put(heldItem.BOOK, new Texture("character/hands/book.png"));
         hands.put(heldItem.LAPTOP, new Texture("character/hands/laptop.png"));
+        hands.put(heldItem.COMPUTER, new Texture("character/hands/computer.png"));
     }
 
     /**
@@ -159,10 +160,16 @@ public class GameCharacter {
     /**
      * Sets held item.
      *
-     * @param item enum heldItem
+     * @param index item index
      */
-    public void setItem(heldItem item) {
-        currentItem = item;
+    public void setItem(int index) {
+        switch (index) {
+            case 0: currentItem = heldItem.EMPTY;
+            case 1: currentItem = heldItem.PHONE;
+            case 2: currentItem = heldItem.BOOK;
+            case 3: currentItem = heldItem.LAPTOP;
+            case 4: currentItem = heldItem.COMPUTER;
+        }
     }
 
     /**
