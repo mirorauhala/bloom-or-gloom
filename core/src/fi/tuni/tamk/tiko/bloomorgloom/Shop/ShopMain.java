@@ -161,7 +161,7 @@ public class ShopMain {
             productName.setWrap(true);
             productName.setFontScale(2);
             float productNameSize = 1080f - texture.getWidth() - 40f - 200f;
-            game.score.incrementWallet(100);
+
             Button buyButton = createButton(game.score.getRationalizedValue(product.getPrice(), 2));
             buyButton.addListener(new ClickListener() {
                 @Override
