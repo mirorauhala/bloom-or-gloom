@@ -342,6 +342,7 @@ public class ShopMain {
      * Get the current wallet amount and set it to the label.
      */
     public void updateWallet(Label walletLabel) {
+        walletAmount = game.score.getWallet();
         walletLabel.setText(game.score.getRationalizedValue(game.score.getWallet(), 2));
     }
 
