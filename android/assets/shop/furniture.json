@@ -2,6 +2,7 @@
   "products": [
     {
       "id": 1,
+	  "tier": 1,
       "name_fi": "Vaahtomuovipatja",
       "name_en": "Foam mattress",
       "type": "bed",
@@ -13,6 +14,7 @@
     },
     {
       "id": 2,
+	  "tier": 1,
       "name_fi": "Vaahtomuovipatja viltillä",
       "name_en": "Foam mattress with cover",
       "type": "bed",
@@ -24,6 +26,7 @@
     },
     {
       "id": 3,
+	  "tier": 2,
       "name_fi": "Oranssi sänky",
       "name_en": "Orange bed",
       "type": "bed",
@@ -35,6 +38,7 @@
     },
     {
       "id": 4,
+	  "tier": 2,
       "name_fi": "Ruskea sänky",
       "name_en": "Brown bed",
       "type": "bed",
@@ -46,6 +50,7 @@
     },
     {
       "id": 5,
+	  "tier": 2,
       "name_fi": "Vihreä sänky",
       "name_en": "Green bed",
       "type": "bed",
@@ -57,8 +62,9 @@
     },
     {
       "id": 6,
+	  "tier": 3,
       "name_fi": "Tummanvihreä sänky",
-      "name_en": "Yellow bed",
+      "name_en": "Dark green bed",
       "type": "bed",
       "price": 150000,
       "texture": "shop/icons/beds/6.png",
@@ -68,8 +74,9 @@
     },
     {
       "id": 7,
+	  "tier": 3,
       "name_fi": "Vaaleanvihreä sänky",
-      "name_en": "Dark green bed",
+      "name_en": "Light green bed",
       "type": "bed",
       "price": 800000,
       "texture": "shop/icons/beds/7.png",
@@ -79,6 +86,7 @@
     },
     {
       "id": 8,
+	  "tier": 3,
       "name_fi": "Harmaa sänky",
       "name_en": "Gray bed",
       "type": "bed",
@@ -90,6 +98,7 @@
     },
     {
       "id": 9,
+	  "tier": 4,
       "name_fi": "Tumma violetti sänky",
       "name_en": "Dark violet bed",
       "type": "bed",
@@ -101,6 +110,7 @@
     },
     {
       "id": 10,
+	  "tier": 4,
       "name_fi": "Pinkki sänky",
       "name_en": "Pink bed",
       "type": "bed",
@@ -112,6 +122,7 @@
     },
     {
       "id": 11,
+	  "tier": 4,
       "name_fi": "Musta sänky",
       "name_en": "Black bed",
       "type": "bed",
@@ -123,6 +134,7 @@
     },
     {
       "id": 12,
+	  "tier": 5,
       "name_fi": "Haalea sänky",
       "name_en": "Light bed",
       "type": "bed",
@@ -134,6 +146,7 @@
     },
     {
       "id": 13,
+	  "tier": 5,
       "name_fi": "Turkoosi sänky",
       "name_en": "Turquoise bed",
       "type": "bed",
@@ -145,6 +158,7 @@
     },
     {
       "id": 14,
+	  "tier": 5,
       "name_fi": "Tummansininen sänky",
       "name_en": "Dark blue bed",
       "type": "bed",
@@ -156,6 +170,7 @@
     },
     {
       "id": 1,
+	  "tier": 1,
       "name_fi": "Tammipuutuoli",
       "name_en": "Oak bed",
       "type": "chair",
@@ -167,6 +182,7 @@
     },
     {
       "id": 2,
+	  "tier": 1,
       "name_fi": "Eebenpuutuoli",
       "name_en": "Ebony bed",
       "type": "chair",
@@ -178,6 +194,7 @@
     },
     {
       "id": 3,
+	  "tier": 2,
       "name_fi": "Punainen työtuoli",
       "name_en": "Red workchair",
       "type": "chair",
@@ -189,6 +206,7 @@
     },
     {
       "id": 4,
+	  "tier": 2,
       "name_fi": "Sininen työtuoli",
       "name_en": "Blue workchair",
       "type": "chair",
@@ -200,6 +218,7 @@
     },
     {
       "id": 5,
+	  "tier": 2,
       "name_fi": "Musta työtuoli",
       "name_en": "Black workchair",
       "type": "chair",
@@ -211,6 +230,7 @@
     },
     {
       "id": 6,
+	  "tier": 3,
       "name_fi": "Turkoosi toimistotuoli",
       "name_en": "Turquoise office chair",
       "type": "chair",
@@ -222,6 +242,7 @@
     },
     {
       "id": 7,
+	  "tier": 3,
       "name_fi": "Navyblue toimistotuoli",
       "name_en": "Navyblue office chair",
       "type": "chair",
@@ -233,6 +254,7 @@
     },
     {
       "id": 8,
+	  "tier": 3,
       "name_fi": "Vaalea toimistotuoli",
       "name_en": "Light office chair",
       "type": "chair",
@@ -244,6 +266,7 @@
     },
     {
       "id": 9,
+	  "tier": 4,
       "name_fi": "Vihreä ergo-tuoli",
       "name_en": "Green ergo-chair",
       "type": "chair",
@@ -255,6 +278,7 @@
     },
     {
       "id": 10,
+	  "tier": 4,
       "name_fi": "Tummansininen ergo-tuoli",
       "name_en": "Dark blue ergo-chair",
       "type": "chair",
@@ -266,6 +290,7 @@
     },
     {
       "id": 11,
+	  "tier": 4,
       "name_fi": "Vaaleansininen ergo-tuoli",
       "name_en": "Light blue ergo-chair",
       "type": "chair",
@@ -277,6 +302,7 @@
     },
     {
       "id": 1,
+	  "tier": 1,
       "name_fi": "Vaaleansininen pöytä",
       "name_en": "Light blue desk",
       "type": "desk",
@@ -288,6 +314,7 @@
     },
     {
       "id": 2,
+	  "tier": 1,
       "name_fi": "Valkoinen pöytä",
       "name_en": "White desk",
       "type": "desk",
@@ -299,6 +326,7 @@
     },
     {
       "id": 3,
+	  "tier": 2,
       "name_fi": "Harmaa pöytä",
       "name_en": "Gray desk",
       "type": "desk",
@@ -310,6 +338,7 @@
     },
     {
       "id": 4,
+	  "tier": 2,
       "name_fi": "Musta pöytä",
       "name_en": "Black desk",
       "type": "desk",
@@ -321,6 +350,7 @@
     },
     {
       "id": 5,
+	  "tier": 2,
       "name_fi": "Tummanharmaa pöytä",
       "name_en": "Dark gray desk",
       "type": "desk",
@@ -332,6 +362,7 @@
     },
     {
       "id": 6,
+	  "tier": 3,
       "name_fi": "Harmaa pöytä",
       "name_en": "Gray desk",
       "type": "desk",
@@ -343,6 +374,7 @@
     },
     {
       "id": 7,
+	  "tier": 3,
       "name_fi": "Eebenpuupöytä",
       "name_en": "Ebony desk",
       "type": "desk",
@@ -354,6 +386,7 @@
     },
     {
       "id": 8,
+	  "tier": 3,
       "name_fi": "Harmaa pöytä",
       "name_en": "Gray desk",
       "type": "desk",
@@ -365,6 +398,7 @@
     },
     {
       "id": 9,
+	  "tier": 4,
       "name_fi": "Hiekkapöytä",
       "name_en": "Sand des",
       "type": "desk",
@@ -376,6 +410,7 @@
     },
     {
       "id": 10,
+	  "tier": 4,
       "name_fi": "Ruskea pöytä",
       "name_en": "Brown desk",
       "type": "desk",
@@ -387,6 +422,7 @@
     },
     {
       "id": 11,
+	  "tier": 4,
       "name_fi": "Harmaa pöytä",
       "name_en": "Gray desk",
       "type": "desk",
@@ -398,6 +434,7 @@
     },
     {
       "id": 12,
+	  "tier": 5,
       "name_fi": "Tummanruskea pöytä",
       "name_en": "Dark brown desk",
       "type": "desk",
@@ -409,6 +446,7 @@
     },
     {
       "id": 13,
+	  "tier": 5,
       "name_fi": "Valkoinen pöytä",
       "name_en": "White desk",
       "type": "desk",
@@ -420,6 +458,7 @@
     },
     {
       "id": 14,
+	  "tier": 5,
       "name_fi": "Musta pöytä",
       "name_en": "Black desk",
       "type": "desk",
@@ -431,6 +470,7 @@
     },
     {
       "id": 1,
+	  "tier": 1,
       "name_fi": "Rikkinäinen lattia",
       "name_en": "Broken floor",
       "type": "floor",
@@ -442,6 +482,7 @@
     },
     {
       "id": 2,
+	  "tier": 1,
       "name_fi": "Muovilattia",
       "name_en": "Plastic floor",
       "type": "floor",
@@ -453,6 +494,7 @@
     },
     {
       "id": 3,
+	  "tier": 2,
       "name_fi": "Vaalea parketti",
       "name_en": "Light parquet",
       "type": "floor",
@@ -464,6 +506,7 @@
     },
     {
       "id": 4,
+	  "tier": 2,
       "name_fi": "Keltainen parketti",
       "name_en": "Yellow parquet",
       "type": "floor",
@@ -475,6 +518,7 @@
     },
     {
       "id": 5,
+	  "tier": 2,
       "name_fi": "Oranssi parketti",
       "name_en": "Orange parquet",
       "type": "floor",
@@ -486,6 +530,7 @@
     },
     {
       "id": 6,
+	  "tier": 3,
       "name_fi": "Vaaleanruskea laminaatti",
       "name_en": "Light brown laminate",
       "type": "floor",
@@ -497,6 +542,7 @@
     },
     {
       "id": 7,
+	  "tier": 3,
       "name_fi": "Ruskea laminaatti",
       "name_en": "Brown laminate",
       "type": "floor",
@@ -508,6 +554,7 @@
     },
     {
       "id": 8,
+	  "tier": 3,
       "name_fi": "Punertava laminaatti",
       "name_en": "Redish laminate",
       "type": "floor",
@@ -519,6 +566,7 @@
     },
     {
       "id": 9,
+	  "tier": 4,
       "name_fi": "Vaalea laminaatti",
       "name_en": "Light laminate",
       "type": "floor",
@@ -530,6 +578,7 @@
     },
     {
       "id": 10,
+	  "tier": 4,
       "name_fi": "Oranssi laminaatti",
       "name_en": "Orange laminate",
       "type": "floor",
@@ -541,6 +590,7 @@
     },
     {
       "id": 11,
+	  "tier": 4,
       "name_fi": "Tummanruskea laminaatti",
       "name_en": "Dark brown laminate",
       "type": "floor",
@@ -552,6 +602,7 @@
     },
     {
       "id": 12,
+	  "tier": 5,
       "name_fi": "Vaalea ruudukko",
       "name_en": "Light grid",
       "type": "floor",
@@ -563,6 +614,7 @@
     },
     {
       "id": 13,
+	  "tier": 5,
       "name_fi": "Keskitumma ruudukko",
       "name_en": "Mid-dark grid",
       "type": "floor",
@@ -574,6 +626,7 @@
     },
     {
       "id": 14,
+	  "tier": 5,
       "name_fi": "Tumma ruudukko",
       "name_en": "Dark grid",
       "type": "floor",
@@ -585,6 +638,7 @@
     },
     {
       "id": 1,
+	  "tier": 1,
       "name_fi": "Hajonnut seinä",
       "name_en": "Broken wall",
       "type": "wall",
@@ -596,6 +650,7 @@
     },
     {
       "id": 2,
+	  "tier": 1,
       "name_fi": "Paikattu seinä",
       "name_en": "Patched wall",
       "type": "wall",
@@ -607,6 +662,7 @@
     },
     {
       "id": 3,
+	  "tier": 2,
       "name_fi": "Maalattu seinä",
       "name_en": "Painted wall",
       "type": "wall",
@@ -618,6 +674,7 @@
     },
     {
       "id": 4,
+	  "tier": 2,
       "name_fi": "Vaaleanvihreä seinä",
       "name_en": "Light green wall",
       "type": "wall",
@@ -629,6 +686,7 @@
     },
     {
       "id": 5,
+	  "tier": 2,
       "name_fi": "Minttu seinä",
       "name_en": "Mint wall",
       "type": "wall",
@@ -640,6 +698,7 @@
     },
     {
       "id": 6,
+	  "tier": 3,
       "name_fi": "Harmaa seinä",
       "name_en": "Gray wall",
       "type": "wall",
@@ -651,6 +710,7 @@
     },
     {
       "id": 7,
+	  "tier": 3,
       "name_fi": "Vihreä seinä",
       "name_en": "Green wall",
       "type": "wall",
@@ -662,6 +722,7 @@
     },
     {
       "id": 8,
+	  "tier": 3,
       "name_fi": "Harmaa seinä",
       "name_en": "Gray wall",
       "type": "wall",
@@ -673,8 +734,9 @@
     },
     {
       "id": 9,
-      "name_fi": "Sinertävä seinä",
-      "name_en": "Blueish wall",
+	  "tier": 4,
+      "name_fi": "Sinertävä seinä verhoilla",
+      "name_en": "Blueish wall with drapes",
       "type": "wall",
       "price": 1000000,
       "texture": "shop/icons/walls/9.png",
@@ -684,8 +746,9 @@
     },
     {
       "id": 10,
-      "name_fi": "Harmaa seinä",
-      "name_en": "Gray wall",
+	  "tier": 4,
+      "name_fi": "Harmaa seinä verhoilla",
+      "name_en": "Gray wall with drapes",
       "type": "wall",
       "price": 2000000,
       "texture": "shop/icons/walls/10.png",
@@ -695,6 +758,7 @@
     },
     {
       "id": 11,
+	  "tier": 4,
       "name_fi": "Minttu seinä verhoilla",
       "name_en": "Mint wall with drapes",
       "type": "wall",
@@ -706,6 +770,7 @@
     },
     {
       "id": 12,
+	  "tier": 5,
       "name_fi": "Harmaa seinä verhoilla",
       "name_en": "Gray wall with drapes",
       "type": "wall",
@@ -717,6 +782,7 @@
     },
     {
       "id": 13,
+	  "tier": 5,
       "name_fi": "Vaalea seinä verhoilla",
       "name_en": "Light wall with drapes",
       "type": "wall",
@@ -728,6 +794,7 @@
     },
     {
       "id": 14,
+	  "tier": 5,
       "name_fi": "Tummansininen seinä verhoilla",
       "name_en": "Dark blue wall with drapes",
       "type": "wall",

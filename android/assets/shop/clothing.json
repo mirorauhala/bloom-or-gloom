@@ -2,6 +2,7 @@
   "products": [
     {
       "id": 1,
+	  "tier": 1,
       "name_fi": "Oranssi paita",
       "name_en": "Orange shirt",
       "type": "shirt",
@@ -13,6 +14,7 @@
     },
     {
       "id": 2,
+	  "tier": 1,
       "name_fi": "Keltainen paita",
       "name_en": "Yellow shirt",
       "type": "shirt",
@@ -24,6 +26,7 @@
     },
     {
       "id": 3,
+	  "tier": 1,
       "name_fi": "Vaaleansininen paita",
       "name_en": "Light blue shirt",
       "type": "shirt",
@@ -35,6 +38,7 @@
     },
     {
       "id": 4,
+	  "tier": 2,
       "name_fi": "Sininen pallopaita",
       "name_en": "Blue polkadot",
       "type": "shirt",
@@ -46,6 +50,7 @@
     },
     {
       "id": 5,
+	  "tier": 2,
       "name_fi": "Punainen pallopaita",
       "name_en": "Red polkadot",
       "type": "shirt",
@@ -57,6 +62,7 @@
     },
     {
       "id": 6,
+	  "tier": 2,
       "name_fi": "Vaalean ruskea pallopaita",
       "name_en": "Light brown polkadot",
       "type": "shirt",
@@ -68,6 +74,7 @@
     },
     {
       "id": 7,
+	  "tier": 3,
       "name_fi": "Harmaa pikee",
       "name_en": "Gray polo",
       "type": "shirt",
@@ -79,6 +86,7 @@
     },
     {
       "id": 8,
+	  "tier": 3,
       "name_fi": "Sininen pikee",
       "name_en": "Blue polo",
       "type": "shirt",
@@ -90,6 +98,7 @@
     },
     {
       "id": 9,
+	  "tier": 3,
       "name_fi": "Tumma pikee",
       "name_en": "Dark polo",
       "type": "shirt",
@@ -101,6 +110,7 @@
     },
     {
       "id": 10,
+	  "tier": 4,
       "name_fi": "Punainen huppari",
       "name_en": "Red hoodie",
       "type": "shirt",
@@ -112,6 +122,7 @@
     },
     {
       "id": 11,
+	  "tier": 4,
       "name_fi": "Vihreä huppari",
       "name_en": "Green hoodie",
       "type": "shirt",
@@ -123,6 +134,7 @@
     },
     {
       "id": 12,
+	  "tier": 4,
       "name_fi": "Sininen huppari",
       "name_en": "Blue hoodie",
       "type": "shirt",
@@ -134,6 +146,7 @@
     },
     {
       "id": 13,
+	  "tier": 5,
       "name_fi": "Punainen raitapaita",
       "name_en": "Red striped hoodie",
       "type": "shirt",
@@ -145,6 +158,7 @@
     },
     {
       "id": 14,
+	  "tier": 5,
       "name_fi": "Keltainen raitapaita",
       "name_en": "Yellow striped hoodie",
       "type": "shirt",
@@ -156,6 +170,7 @@
     },
     {
       "id": 15,
+	  "tier": 5,
       "name_fi": "Vaaleansininen raitapaita",
       "name_en": "Light blue striped hoodie",
       "type": "shirt",
@@ -167,6 +182,7 @@
     },
     {
       "id": 1,
+	  "tier": 3,
       "name_fi": "Punainen pipo",
       "name_en": "Red beanie",
       "type": "hat",
@@ -178,6 +194,7 @@
     },
     {
       "id": 2,
+	  "tier": 3,
       "name_fi": "Keltainen pipo",
       "name_en": "Yellow beanie",
       "type": "hat",
@@ -189,6 +206,7 @@
     },
     {
       "id": 3,
+	  "tier": 3,
       "name_fi": "Sininen pipo",
       "name_en": "Blue beanie",
       "type": "hat",
@@ -200,6 +218,7 @@
     },
     {
       "id": 4,
+	  "tier": 4,
       "name_fi": "Violetti bandana",
       "name_en": "Violet bandana",
       "type": "hat",
@@ -211,6 +230,7 @@
     },
     {
       "id": 5,
+	  "tier": 4,
       "name_fi": "Sininen bandana",
       "name_en": "Blue bandana",
       "type": "hat",
@@ -222,6 +242,7 @@
     },
     {
       "id": 6,
+	  "tier": 4,
       "name_fi": "Punainen bandana",
       "name_en": "Red bandana",
       "type": "hat",
@@ -233,6 +254,7 @@
     },
     {
       "id": 7,
+	  "tier": 5,
       "name_fi": "Keltainen lippalakki",
       "name_en": "Yellow baseball cap",
       "type": "hat",
@@ -244,6 +266,7 @@
     },
     {
       "id": 8,
+	  "tier": 5,
       "name_fi": "Sininen lippalakki",
       "name_en": "Blue baseball cap",
       "type": "hat",
@@ -255,6 +278,7 @@
     },
     {
       "id": 9,
+	  "tier": 5,
       "name_fi": "Punainen lippalakki",
       "name_en": "Red baseball cap",
       "type": "hat",
