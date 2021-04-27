@@ -29,6 +29,7 @@ import fi.tuni.tamk.tiko.depressionaut.Screens.ShopClothingScreen;
 import fi.tuni.tamk.tiko.depressionaut.Screens.ShopFurnitureScreen;
 import fi.tuni.tamk.tiko.depressionaut.Screens.ShopOtherScreen;
 import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Product;
+import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.ProductEffect;
 import fi.tuni.tamk.tiko.depressionaut.Shop.Resources.Products;
 
 public class ShopMain {
@@ -156,9 +157,21 @@ public class ShopMain {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
                     if(game.score.decrementWallet(product.getPrice())) {
-                        game.inventory.set(product.getType(), product.getId());
                         Gdx.app.debug("SHOP", "Bought: "+ productNameStr + " for " + product.getPrice() );
+                        game.inventory.set(product.getType(), product.getId());
                         game.sounds.buySoundPlay();
+
+                        for (ProductEffect pe : product.getEffects()) {
+                            String method = pe.getMethod();
+                            String action = pe.getAction();
+                            int amount = pe.getAmount();
+
+                            if(method.equals("click-power")) {
+                                game.score.incrementClickPower(amount);
+                            } else if(method.equals("passive-income")) {
+                                game.score.incrementPassiveIncome(amount);
+                            }
+                        }
 
                     } else {
                         Gdx.app.debug("SHOP", "Cannot buy " + productNameStr);
