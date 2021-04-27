@@ -6,7 +6,7 @@ package fi.tuni.tamk.tiko.depressionaut.Shop.Resources;
 public class ProductEffect {
     private String method;
     private String action;
-    private String amount;
+    private int amount;
 
     /**
      * Returns the effect's method.
@@ -26,9 +26,9 @@ public class ProductEffect {
 
     /**
      * Returns the effect's amount.
-     * @return String
+     * @return int
      */
-    public String getAmount() {
+    public int getAmount() {
         return amount;
     }
 }
