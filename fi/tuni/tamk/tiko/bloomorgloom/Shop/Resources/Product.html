@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -146,54 +146,60 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>java.util.List&lt;<a href="../../../../../../../fi/tuni/tamk/tiko/bloomorgloom/Shop/Resources/ProductEffect.html" title="class in fi.tuni.tamk.tiko.bloomorgloom.Shop.Resources">ProductEffect</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../fi/tuni/tamk/tiko/bloomorgloom/Shop/Resources/Product.html#getEffects--">getEffects</a></span>()</code>
-<div class="block">Returns the product's effects.</div>
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../fi/tuni/tamk/tiko/bloomorgloom/Shop/Resources/Product.html#getEffectAmount--">getEffectAmount</a></span>()</code>
+<div class="block">Returns the product's effect amount.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../fi/tuni/tamk/tiko/bloomorgloom/Shop/Resources/Product.html#getEffectMethod--">getEffectMethod</a></span>()</code>
+<div class="block">Returns the product's effect method.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../fi/tuni/tamk/tiko/bloomorgloom/Shop/Resources/Product.html#getHappinessLevel--">getHappinessLevel</a></span>()</code>
 <div class="block">Returns the product's tier.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../fi/tuni/tamk/tiko/bloomorgloom/Shop/Resources/Product.html#getId--">getId</a></span>()</code>
 <div class="block">Returns the product's id.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../fi/tuni/tamk/tiko/bloomorgloom/Shop/Resources/Product.html#getLevel--">getLevel</a></span>()</code>
 <div class="block">Returns the product's level.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../fi/tuni/tamk/tiko/bloomorgloom/Shop/Resources/Product.html#getNameEn--">getNameEn</a></span>()</code>
 <div class="block">Returns the product's name in English.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../fi/tuni/tamk/tiko/bloomorgloom/Shop/Resources/Product.html#getNameFi--">getNameFi</a></span>()</code>
 <div class="block">Returns the product's name in Finnish.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../fi/tuni/tamk/tiko/bloomorgloom/Shop/Resources/Product.html#getPrice--">getPrice</a></span>()</code>
 <div class="block">Returns the product's texture.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../fi/tuni/tamk/tiko/bloomorgloom/Shop/Resources/Product.html#getTexture--">getTexture</a></span>()</code>
 <div class="block">Returns the product's texture.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../../fi/tuni/tamk/tiko/bloomorgloom/Shop/Resources/Product.html#getType--">getType</a></span>()</code>
 <div class="block">Return the product's name.</div>
@@ -350,17 +356,31 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a name="getEffects--">
+<a name="getEffectMethod--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEffectMethod</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getEffectMethod()</pre>
+<div class="block">Returns the product's effect method.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>effect method</dd>
+</dl>
+</li>
+</ul>
+<a name="getEffectAmount--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getEffects</h4>
-<pre>public&nbsp;java.util.List&lt;<a href="../../../../../../../fi/tuni/tamk/tiko/bloomorgloom/Shop/Resources/ProductEffect.html" title="class in fi.tuni.tamk.tiko.bloomorgloom.Shop.Resources">ProductEffect</a>&gt;&nbsp;getEffects()</pre>
-<div class="block">Returns the product's effects.</div>
+<h4>getEffectAmount</h4>
+<pre>public&nbsp;int&nbsp;getEffectAmount()</pre>
+<div class="block">Returns the product's effect amount.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>List</dd>
+<dd>effect amount</dd>
 </dl>
 </li>
 </ul>
