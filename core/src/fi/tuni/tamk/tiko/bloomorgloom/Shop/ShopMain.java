@@ -21,13 +21,19 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import fi.tuni.tamk.tiko.bloomorgloom.MyGdxGame;
 import fi.tuni.tamk.tiko.bloomorgloom.Screens.ShopClothingScreen;
 import fi.tuni.tamk.tiko.bloomorgloom.Screens.ShopFurnitureScreen;
 import fi.tuni.tamk.tiko.bloomorgloom.Screens.ShopOtherScreen;
+import fi.tuni.tamk.tiko.bloomorgloom.Shop.Resources.OwnedProducts;
 import fi.tuni.tamk.tiko.bloomorgloom.Shop.Resources.Product;
 import fi.tuni.tamk.tiko.bloomorgloom.Shop.Resources.ProductEffect;
 import fi.tuni.tamk.tiko.bloomorgloom.Shop.Resources.Products;
@@ -137,29 +143,54 @@ public class ShopMain {
      * Return the scene2d.ui.Table of the Products.
      * @param products Table
      */
-    public Table getProductsTable(Products products) {
+    public Table getProductsTable(final Products products) {
         Table productsTable = new Table();
         productsTable.top().left();
+
+        final String ownedProductsJson = game.inventory.getOwnedProducts();
+        Gson gson = new Gson();
+        final OwnedProducts ownedProducts = gson.fromJson(ownedProductsJson, OwnedProducts.class);
 
         for (final Product product : products.getProducts()) {
 
             Texture texture = new Texture(Gdx.files.internal(product.getTexture()));
 
             final String productNameStr = game.settings.getLang().equals("fi") ? product.getNameFi() : product.getNameEn();
-            Label productName = new Label(productNameStr, skin);
+            final Label productName = new Label(productNameStr, skin);
             productName.setWrap(true);
             productName.setFontScale(2);
             float productNameSize = 1080f - texture.getWidth() - 40f - 200f;
-
+            game.score.incrementWallet(100);
             Button buyButton = createButton(game.score.getRationalizedValue(product.getPrice(), 2));
             buyButton.addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
                     if(game.score.decrementWallet(product.getPrice())) {
-                        Gdx.app.debug("SHOP", "Bought: "+ productNameStr + " for " + product.getPrice() );
-                        Gdx.app.debug("test", "" + product.getHappinessLevel());
-                        game.inventory.set(product.getType(), product.getId());
+                        Gdx.app.debug("SHOP", "Bought: "+ productNameStr + " for " + product.getPrice());
+
                         game.sounds.buySoundPlay();
+                        game.inventory.set(product.getType(), product.getId());
+
+                        // Create new empty object
+                        OwnedProducts emptyOwnedProduct = new OwnedProducts();
+                        emptyOwnedProduct.setProducts(ownedProducts.getProducts());
+
+                        // get all current products
+                        HashMap<String, ArrayList<Integer>> currentOwnedProducts = emptyOwnedProduct.getProducts();
+
+                        // get all of current type, e.g. shirt
+                        if(currentOwnedProducts.containsKey(product.getType())) {
+                            ArrayList<Integer> ownedOfCurrentType = currentOwnedProducts.get(product.getType());
+                            ownedOfCurrentType.add(product.getId());
+                        } else {
+                            currentOwnedProducts.put(product.getType(), new ArrayList<Integer>(
+                                    Collections.singletonList(1)
+                            ));
+                        }
+
+                        // Save
+                        Gson newGsonThingy = new Gson();
+                        game.inventory.setOwnedProducts(newGsonThingy.toJson(emptyOwnedProduct));
 
                         String method = product.getEffectMethod();
                         int amount = product.getEffectAmount();

@@ -14,6 +14,24 @@ public class Inventory {
     }
 
     /**
+     * Set purchased items.
+     * @param values map of purchased items
+     */
+    public void setOwnedProducts(String values) {
+        prefs.putString("owned-products", values);
+        prefs.flush();
+    }
+
+    /**
+     * Get purchased items.
+     * @return
+     */
+    public String getOwnedProducts() {
+        String json = prefs.getString("owned-products");
+        return json.equals("") ? "{}" : json;
+    }
+
+    /**
      * Add an item to the user's inventory.
      *
      * @param key String The name of the item.
@@ -43,5 +61,4 @@ public class Inventory {
         prefs.clear();
         prefs.flush();
     }
-
 }
