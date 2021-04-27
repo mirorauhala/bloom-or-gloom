@@ -15,6 +15,7 @@ public class GameClock {
     int hours, minutes, seconds;
     int lastBubble;
     int lastSkyObject;
+    int lastSecond;
     private ArrayList<Integer> buffs = new ArrayList<>();
     int lastBuffCheck;
     float dayOpacity;
@@ -137,6 +138,21 @@ public class GameClock {
             return true;
         } else if (seconds < lastSkyObject) {
             lastSkyObject = 0;
+        }
+        return false;
+    }
+
+    /**
+     * Returns "true" once every second.
+     *
+     * @return Returns true if a second has passed
+     */
+    public boolean secondTimer() {
+        if (seconds - lastSecond >= 1) {
+            lastSecond = seconds;
+            return true;
+        } else if (seconds < lastSecond) {
+            lastSecond = 0;
         }
         return false;
     }

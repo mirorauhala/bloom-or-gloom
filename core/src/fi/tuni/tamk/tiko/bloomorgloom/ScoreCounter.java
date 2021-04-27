@@ -340,9 +340,9 @@ public class ScoreCounter {
     public String getRationalizedScore() {
         if(getWallet() >= 1000000) {
             //return Double.parseDouble(String.format("%.3f", (double)getScore())) + "M";
-            return ((double)getScore() / 100000) + "M";
+            return Util.roundDouble(((double)getScore() / 100000), 3) + "M";
         } else if(getWallet() >= 10000) {
-            return ((double)getScore() / 1000) + "K";
+            return Util.roundDouble(((double)getScore() / 1000), 3) + "K";
         }
 
         return "" + (int)getScore();

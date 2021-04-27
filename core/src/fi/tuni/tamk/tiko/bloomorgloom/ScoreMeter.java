@@ -26,6 +26,7 @@ public class ScoreMeter {
     private Rectangle meterFiller;
     private Texture meter;
     private Texture meterColor;
+    private String rationalizedScore = "";
 
     public BitmapFont font;
 
@@ -48,7 +49,7 @@ public class ScoreMeter {
         createFillerRectangles();
     }
 
-    public void draw(SpriteBatch batch) {
+    public void draw(SpriteBatch batch, GameClock clock) {
         //determineMeterHeight();
 
         batch.draw(meterBase, 0, 0);
@@ -62,7 +63,10 @@ public class ScoreMeter {
         }
         batch.draw(meter, 22, 1920 - 358, meter.getWidth(), meter.getHeight());
         font.getData().setScale(3.5f, 3.5f);
-        font.draw(batch, score.getRationalizedScore(), 540, 1875);
+        if (clock.secondTimer()) {
+            rationalizedScore = score.getRationalizedScore();
+        }
+        font.draw(batch, rationalizedScore, 540, 1875);
         font.getData().setScale(2f, 2f);
         font.draw(batch, "h/s " + score.getPassiveIncome(), 410, 1740);
 
