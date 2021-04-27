@@ -41,6 +41,7 @@ public class Inventory {
      */
     public void removeInventoryPrefs() {
         prefs.clear();
+        prefs.flush();
     }
 
 }

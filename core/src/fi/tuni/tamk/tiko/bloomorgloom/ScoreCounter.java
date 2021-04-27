@@ -396,5 +396,6 @@ public class ScoreCounter {
      */
     public void emptyScorePrefs() {
         prefs.clear();
+        prefs.flush();
     }
 }
