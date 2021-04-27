@@ -74,12 +74,29 @@ public class Items {
             "furniture/bed/t5v15.png"
         ));
 
-        items.put("stuff", Arrays.asList(
-            "furniture/other/t1.png",
-            "furniture/other/t2.png",
-            "furniture/other/t3.png",
-            "furniture/other/t4.png",
-            "furniture/other/t5.png"
+        items.put("trashcan", Arrays.asList(
+            "empty.png",
+            "furniture/items/trashcan.png"
+        ));
+
+        items.put("painting", Arrays.asList(
+            "empty.png",
+            "furniture/items/painting.png"
+        ));
+
+        items.put("weights", Arrays.asList(
+            "empty.png",
+            "furniture/items/weights.png"
+        ));
+
+        items.put("mug", Arrays.asList(
+            "empty.png",
+            "furniture/items/mug.png"
+        ));
+
+        items.put("plant", Arrays.asList(
+            "empty.png",
+            "furniture/items/plant.png"
         ));
 
         items.put("chair", Arrays.asList(
@@ -143,10 +160,14 @@ public class Items {
         List<String> items = Arrays.asList(
                 "wall",
                 "floor",
-                "stuff",
                 "bed",
                 "chair",
-                "desk"
+                "desk",
+                "trashcan",
+                "painting",
+                "weights",
+                "mug",
+                "plant"
         );  
 
         for (String item : items) {
