@@ -93,6 +93,7 @@ public class GameScreen implements Screen {
         batch.draw(items.getItem("wall", wallIndex), x, y);
         batch.draw(items.getItem("floor", floorIndex), x, y);
         batch.draw(items.getItem("chair", chairIndex), x, y);
+        batch.draw(items.getItem("bed", chairIndex), x, y);
         batch.draw(items.getItem("desk", deskIndex), x, character.getStandingOffset());
         
         // Character layer:
@@ -162,6 +163,7 @@ public class GameScreen implements Screen {
     public void characterDebug(boolean debug) {
         if (debug) {
             int rand = (int)(Math.random()*5);
+            /*
             switch (rand) {
                 case 0: character.setItem(GameCharacter.heldItem.EMPTY);
                     break;
@@ -172,6 +174,7 @@ public class GameScreen implements Screen {
                 case 3: character.setItem(GameCharacter.heldItem.LAPTOP);
                     break;
             }
+             */
             character.setShirt((int)(Math.random()*16));
             character.setSleeveIndex((int)(Math.random()*16));
             character.setHat((int)(Math.random()*10));
@@ -228,6 +231,7 @@ public class GameScreen implements Screen {
         deskIndex = game.inventory.get("desk");
         character.setShirt(game.inventory.get("shirt"));
         character.setHat(game.inventory.get("hat"));
+        character.setItem(game.inventory.get("hands"));
         trashcanIndex = game.inventory.get("trashcan");
         paintingIndex = game.inventory.get("painting");
         weightsIndex = game.inventory.get("weights");
