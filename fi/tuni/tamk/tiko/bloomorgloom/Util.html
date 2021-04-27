@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9};
+var methods = {"i0":9,"i1":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -152,6 +152,13 @@ extends java.lang.Object</pre>
 <div class="block">Randomizes a float between given values.</div>
 </td>
 </tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../fi/tuni/tamk/tiko/bloomorgloom/Util.html#roundDouble-double-int-">roundDouble</a></span>(double&nbsp;value,
+           int&nbsp;places)</code>
+<div class="block">Rounds a double to specified decimals.</div>
+</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -194,7 +201,7 @@ extends java.lang.Object</pre>
 <a name="randomFloat-float-float-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>randomFloat</h4>
 <pre>public static&nbsp;float&nbsp;randomFloat(float&nbsp;min,
@@ -206,6 +213,24 @@ extends java.lang.Object</pre>
 <dd><code>max</code> - Maximum value of randomized number.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Returns the randomized float.</dd>
+</dl>
+</li>
+</ul>
+<a name="roundDouble-double-int-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>roundDouble</h4>
+<pre>public static&nbsp;double&nbsp;roundDouble(double&nbsp;value,
+                                 int&nbsp;places)</pre>
+<div class="block">Rounds a double to specified decimals.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>value</code> - Given double</dd>
+<dd><code>places</code> - Desired number of decimals</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Rounded double</dd>
 </dl>
 </li>
 </ul>
