@@ -25,7 +25,7 @@ public class Sounds {
      */
     public void clicksoundPlay() {
         if(game.settings.getSound() || !game.settings.containsSound()) {
-            click.play(0.1f, MathUtils.random(0.95f, 1.05f), 0);
+            click.play(0.07f * game.soundVolume, MathUtils.random(0.95f, 1.05f), 0);
         }
 
     }
@@ -36,7 +36,7 @@ public class Sounds {
      */
     public void menuClicksoudPlay() {
         if(game.settings.getSound() || !game.settings.containsSound()) {
-            menuClick.play(0.1f, MathUtils.random(0.95f, 1.05f), 0);
+            menuClick.play(0.1f * game.soundVolume, MathUtils.random(0.95f, 1.05f), 0);
         }
     }
     /**
@@ -44,7 +44,7 @@ public class Sounds {
      */
     public void buySoundPlay() {
         if(game.settings.getSound() || !game.settings.containsSound()) {
-            buySound.play(0.6f);
+            buySound.play(1f * game.soundVolume);
         }
     }
     /**
@@ -53,12 +53,12 @@ public class Sounds {
     public void ambientPlay() {
         if(clock.isNight() && (game.settings.getMusic() || !game.settings.containsMusic()) ) {
             crickets.setLooping(true);
-            crickets.setVolume(0.01f);
+            crickets.setVolume(0.01f * game.musicVolume);
             crickets.play();
             System.out.println(clock.isNight());
         } else {
             nature.setLooping(true);
-            nature.setVolume(0.02f);
+            nature.setVolume(0.02f * game.musicVolume);
             nature.play();
         }
     }
@@ -75,7 +75,7 @@ public class Sounds {
     public void musicPlay() {
         if(game.settings.getMusic()) {
             music.setLooping(true);
-            music.setVolume(0.1f);
+            music.setVolume(0.1f * game.musicVolume);
             music.play();
         }
     }

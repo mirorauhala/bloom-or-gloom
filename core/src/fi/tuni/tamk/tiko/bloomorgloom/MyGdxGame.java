@@ -29,6 +29,8 @@ public class MyGdxGame extends Game {
 	public Items items;
 	public Sounds sounds;
 	public ShopMain shop;
+	public float soundVolume = 10f;
+	public float musicVolume = 7f;
 
 	@Override
 	public void create () {

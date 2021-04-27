@@ -334,18 +334,32 @@ public class ScoreCounter {
     }
 
     /**
-     * getRationalizedScore() rounds the score for when it gets printed to the UI
-     * @return boolean
+     * Rounds the given value and adds a suffix to the end if needed.
+     *
+     * @param value Given value
+     * @param type 1 = main, 2 = shop
+     * @return Rounded value
      */
-    public String getRationalizedScore() {
-        if(getWallet() >= 1000000) {
-            //return Double.parseDouble(String.format("%.3f", (double)getScore())) + "M";
-            return Util.roundDouble(((double)getScore() / 100000), 3) + "M";
-        } else if(getWallet() >= 10000) {
-            return Util.roundDouble(((double)getScore() / 1000), 3) + "K";
+    public String getRationalizedValue(double value, int type) {
+        if (value >= 1000000000) {
+            value = Util.roundDouble((value / 1000000000), 3);
+            if (value % 1 == 0) {
+                return (int) value + "B";
+            } else {
+                return value + "B";
+            }
+        } else if(value >= 1000000) {
+            value = Util.roundDouble((value / 1000000), 3);
+            if (value % 1 == 0) {
+                return (int) value + "M";
+            } else {
+                return value + "M";
+            }
+        } else if(value >= 1000 && type != 1) {
+            return (int)Util.roundDouble((value / 1000), 3) + "K";
         }
 
-        return "" + (int)getScore();
+        return "" + (int)value;
     }
 
     /**
