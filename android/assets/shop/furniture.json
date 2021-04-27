@@ -6,7 +6,7 @@
       "name_en": "Foam mattress",
       "type": "bed",
       "happiness_level": 0,
-      "price": 50,
+      "price": 300,
       "texture": "shop/icons/beds/1.png",
       "effect_method": "passive-income",
       "effect_amount": 1
@@ -17,7 +17,7 @@
       "name_en": "Foam mattress with cover",
       "type": "bed",
       "happiness_level": 0,
-      "price": 65,
+      "price": 375,
       "texture": "shop/icons/beds/2.png",
       "effect_method": "passive-income",
       "effect_amount": 1
@@ -28,7 +28,7 @@
       "name_en": "Oak bed",
       "type": "chair",
       "happiness_level": 0,
-      "price": 84,
+      "price": 468,
       "texture": "shop/icons/chairs/1.png",
       "effect_method": "passive-income",
       "effect_amount": 1
@@ -39,7 +39,7 @@
       "name_en": "Ebony bed",
       "type": "chair",
       "happiness_level": 0,
-      "price": 109,
+      "price": 585,
       "texture": "shop/icons/chairs/2.png",
       "effect_method": "passive-income",
       "effect_amount": 1
@@ -50,7 +50,7 @@
       "name_en": "Light blue desk",
       "type": "desk",
       "happiness_level": 0,
-      "price": 142,
+      "price": 732,
       "texture": "shop/icons/desks/1.png",
       "effect_method": "passive-income",
       "effect_amount": 1
@@ -61,7 +61,7 @@
       "name_en": "White desk",
       "type": "desk",
       "happiness_level": 0,
-      "price": 185,
+      "price": 915,
       "texture": "shop/icons/desks/2.png",
       "effect_method": "passive-income",
       "effect_amount": 1
@@ -72,7 +72,7 @@
       "name_en": "Broken floor",
       "type": "floor",
       "happiness_level": 0,
-      "price": 241,
+      "price": 1144,
       "texture": "shop/icons/floors/1.png",
       "effect_method": "passive-income",
       "effect_amount": 1
@@ -83,7 +83,7 @@
       "name_en": "Plastic floor",
       "type": "floor",
       "happiness_level": 0,
-      "price": 313,
+      "price": 1430,
       "texture": "shop/icons/floors/2.png",
       "effect_method": "passive-income",
       "effect_amount": 1
@@ -94,10 +94,10 @@
       "name_en": "Broken wall",
       "type": "wall",
       "happiness_level": 0,
-      "price": 407,
+      "price": 1788,
       "texture": "shop/icons/walls/1.png",
       "effect_method": "passive-income",
-      "effect_amount": 1
+      "effect_amount": 2
     },
     {
       "id": 2,
@@ -105,10 +105,10 @@
       "name_en": "Patched wall",
       "type": "wall",
       "happiness_level": 0,
-      "price": 530,
+      "price": 2235,
       "texture": "shop/icons/walls/2.png",
       "effect_method": "passive-income",
-      "effect_amount": 0
+      "effect_amount": 2
     },
     {
       "id": 3,
@@ -116,10 +116,10 @@
       "name_en": "Orange bed",
       "type": "bed",
       "happiness_level": 1,
-      "price": 689,
+      "price": 2793,
       "texture": "shop/icons/beds/3.png",
       "effect_method": "passive-income",
-      "effect_amount": 0
+      "effect_amount": 2
     },
     {
       "id": 4,
@@ -127,10 +127,10 @@
       "name_en": "Brown bed",
       "type": "bed",
       "happiness_level": 1,
-      "price": 896,
+      "price": 3492,
       "texture": "shop/icons/beds/4.png",
       "effect_method": "passive-income",
-      "effect_amount": 0
+      "effect_amount": 2
     },
     {
       "id": 5,
@@ -138,10 +138,10 @@
       "name_en": "Green bed",
       "type": "bed",
       "happiness_level": 1,
-      "price": 1164,
+      "price": 4365,
       "texture": "shop/icons/beds/5.png",
       "effect_method": "passive-income",
-      "effect_amount": 1
+      "effect_amount": 3
     },
     {
       "id": 3,
@@ -149,10 +149,10 @@
       "name_en": "Red workchair",
       "type": "chair",
       "happiness_level": 1,
-      "price": 1514,
+      "price": 5456,
       "texture": "shop/icons/chairs/3.png",
       "effect_method": "passive-income",
-      "effect_amount": 1
+      "effect_amount": 3
     },
     {
       "id": 4,
@@ -160,10 +160,10 @@
       "name_en": "Blue workchair",
       "type": "chair",
       "happiness_level": 1,
-      "price": 1968,
+      "price": 6821,
       "texture": "shop/icons/chairs/4.png",
       "effect_method": "passive-income",
-      "effect_amount": 1
+      "effect_amount": 3
     },
     {
       "id": 5,
@@ -171,10 +171,10 @@
       "name_en": "Black workchair",
       "type": "chair",
       "happiness_level": 1,
-      "price": 2559,
+      "price": 8526,
       "texture": "shop/icons/chairs/5.png",
       "effect_method": "passive-income",
-      "effect_amount": 2
+      "effect_amount": 4
     },
     {
       "id": 3,
@@ -182,10 +182,10 @@
       "name_en": "Gray desk",
       "type": "desk",
       "happiness_level": 1,
-      "price": 3327,
+      "price": 10658,
       "texture": "shop/icons/desks/3.png",
       "effect_method": "passive-income",
-      "effect_amount": 3
+      "effect_amount": 4
     },
     {
       "id": 4,
@@ -193,10 +193,10 @@
       "name_en": "Black desk",
       "type": "desk",
       "happiness_level": 1,
-      "price": 4325,
+      "price": 13322,
       "texture": "shop/icons/desks/4.png",
       "effect_method": "passive-income",
-      "effect_amount": 4
+      "effect_amount": 5
     },
     {
       "id": 5,
@@ -204,7 +204,7 @@
       "name_en": "Dark gray desk",
       "type": "desk",
       "happiness_level": 1,
-      "price": 5622,
+      "price": 16653,
       "texture": "shop/icons/desks/5.png",
       "effect_method": "passive-income",
       "effect_amount": 5
@@ -215,10 +215,10 @@
       "name_en": "Light parquet",
       "type": "floor",
       "happiness_level": 1,
-      "price": 7309,
+      "price": 20816,
       "texture": "shop/icons/floors/3.png",
       "effect_method": "passive-income",
-      "effect_amount": 7
+      "effect_amount": 6
     },
     {
       "id": 4,
@@ -226,10 +226,10 @@
       "name_en": "Yellow parquet",
       "type": "floor",
       "happiness_level": 1,
-      "price": 9502,
+      "price": 26020,
       "texture": "shop/icons/floors/4.png",
       "effect_method": "passive-income",
-      "effect_amount": 9
+      "effect_amount": 6
     },
     {
       "id": 5,
@@ -237,10 +237,10 @@
       "name_en": "Orange parquet",
       "type": "floor",
       "happiness_level": 1,
-      "price": 12353,
+      "price": 32526,
       "texture": "shop/icons/floors/5.png",
       "effect_method": "passive-income",
-      "effect_amount": 12
+      "effect_amount": 7
     },
     {
       "id": 3,
@@ -248,10 +248,10 @@
       "name_en": "Painted wall",
       "type": "wall",
       "happiness_level": 1,
-      "price": 16059,
+      "price": 40657,
       "texture": "shop/icons/walls/3.png",
       "effect_method": "passive-income",
-      "effect_amount": 16
+      "effect_amount": 8
     },
     {
       "id": 4,
@@ -259,10 +259,10 @@
       "name_en": "Light green wall",
       "type": "wall",
       "happiness_level": 1,
-      "price": 20876,
+      "price": 50821,
       "texture": "shop/icons/walls/4.png",
       "effect_method": "passive-income",
-      "effect_amount": 20
+      "effect_amount": 8
     },
     {
       "id": 5,
@@ -270,10 +270,10 @@
       "name_en": "Mint wall",
       "type": "wall",
       "happiness_level": 1,
-      "price": 27140,
+      "price": 63527,
       "texture": "shop/icons/walls/5.png",
       "effect_method": "passive-income",
-      "effect_amount": 27
+      "effect_amount": 9
     },
     {
       "id": 6,
@@ -281,10 +281,10 @@
       "name_en": "Yellow bed",
       "type": "bed",
       "happiness_level": 2,
-      "price": 35282,
+      "price": 79409,
       "texture": "shop/icons/beds/6.png",
       "effect_method": "passive-income",
-      "effect_amount": 35
+      "effect_amount": 10
     },
     {
       "id": 7,
@@ -292,10 +292,10 @@
       "name_en": "Dark green bed",
       "type": "bed",
       "happiness_level": 2,
-      "price": 45866,
+      "price": 99261,
       "texture": "shop/icons/beds/7.png",
       "effect_method": "passive-income",
-      "effect_amount": 45
+      "effect_amount": 11
     },
     {
       "id": 8,
@@ -303,10 +303,10 @@
       "name_en": "Gray bed",
       "type": "bed",
       "happiness_level": 2,
-      "price": 59626,
+      "price": 124077,
       "texture": "shop/icons/beds/8.png",
       "effect_method": "passive-income",
-      "effect_amount": 59
+      "effect_amount": 13
     },
     {
       "id": 6,
@@ -314,10 +314,10 @@
       "name_en": "Turquoise office chair",
       "type": "chair",
       "happiness_level": 2,
-      "price": 77514,
+      "price": 155096,
       "texture": "shop/icons/chairs/6.png",
       "effect_method": "passive-income",
-      "effect_amount": 77
+      "effect_amount": 14
     },
     {
       "id": 7,
@@ -325,10 +325,10 @@
       "name_en": "Navyblue office chair",
       "type": "chair",
       "happiness_level": 2,
-      "price": 100769,
+      "price": 193870,
       "texture": "shop/icons/chairs/7.png",
       "effect_method": "passive-income",
-      "effect_amount": 100
+      "effect_amount": 15
     },
     {
       "id": 8,
@@ -336,10 +336,10 @@
       "name_en": "Light office chair",
       "type": "chair",
       "happiness_level": 2,
-      "price": 130999,
+      "price": 242338,
       "texture": "shop/icons/chairs/8.png",
       "effect_method": "passive-income",
-      "effect_amount": 130
+      "effect_amount": 17
     },
     {
       "id": 6,
@@ -347,10 +347,10 @@
       "name_en": "Gray desk",
       "type": "desk",
       "happiness_level": 2,
-      "price": 170299,
+      "price": 302922,
       "texture": "shop/icons/desks/6.png",
       "effect_method": "passive-income",
-      "effect_amount": 170
+      "effect_amount": 19
     },
     {
       "id": 7,
@@ -358,10 +358,10 @@
       "name_en": "Ebony desk",
       "type": "desk",
       "happiness_level": 2,
-      "price": 221389,
+      "price": 378653,
       "texture": "shop/icons/desks/7.png",
       "effect_method": "passive-income",
-      "effect_amount": 221
+      "effect_amount": 21
     },
     {
       "id": 8,
@@ -369,10 +369,10 @@
       "name_en": "Gray desk",
       "type": "desk",
       "happiness_level": 2,
-      "price": 287806,
+      "price": 473316,
       "texture": "shop/icons/desks/8.png",
       "effect_method": "passive-income",
-      "effect_amount": 287
+      "effect_amount": 23
     },
     {
       "id": 6,
@@ -380,10 +380,10 @@
       "name_en": "Light brown laminate",
       "type": "floor",
       "happiness_level": 2,
-      "price": 374148,
+      "price": 591645,
       "texture": "shop/icons/floors/6.png",
       "effect_method": "passive-income",
-      "effect_amount": 374
+      "effect_amount": 25
     },
     {
       "id": 7,
@@ -391,10 +391,10 @@
       "name_en": "Brown laminate",
       "type": "floor",
       "happiness_level": 2,
-      "price": 486393,
+      "price": 739557,
       "texture": "shop/icons/floors/7.png",
       "effect_method": "passive-income",
-      "effect_amount": 486
+      "effect_amount": 28
     },
     {
       "id": 8,
@@ -402,10 +402,10 @@
       "name_en": "Redish laminate",
       "type": "floor",
       "happiness_level": 2,
-      "price": 632310,
+      "price": 924446,
       "texture": "shop/icons/floors/8.png",
       "effect_method": "passive-income",
-      "effect_amount": 632
+      "effect_amount": 30
     },
     {
       "id": 6,
@@ -413,10 +413,10 @@
       "name_en": "Gray wall",
       "type": "wall",
       "happiness_level": 2,
-      "price": 822004,
+      "price": 1155557,
       "texture": "shop/icons/walls/6.png",
       "effect_method": "passive-income",
-      "effect_amount": 822
+      "effect_amount": 34
     },
     {
       "id": 7,
@@ -424,10 +424,10 @@
       "name_en": "Green wall",
       "type": "wall",
       "happiness_level": 2,
-      "price": 1068605,
+      "price": 1444447,
       "texture": "shop/icons/walls/7.png",
       "effect_method": "passive-income",
-      "effect_amount": 1068
+      "effect_amount": 37
     },
     {
       "id": 8,
@@ -435,10 +435,10 @@
       "name_en": "Gray wall",
       "type": "wall",
       "happiness_level": 2,
-      "price": 1389187,
+      "price": 1805559,
       "texture": "shop/icons/walls/8.png",
       "effect_method": "passive-income",
-      "effect_amount": 1389
+      "effect_amount": 41
     },
     {
       "id": 9,
@@ -446,10 +446,10 @@
       "name_en": "Dark violet bed",
       "type": "bed",
       "happiness_level": 3,
-      "price": 1805943,
+      "price": 2256949,
       "texture": "shop/icons/beds/9.png",
       "effect_method": "passive-income",
-      "effect_amount": 1805
+      "effect_amount": 45
     },
     {
       "id": 10,
@@ -457,10 +457,10 @@
       "name_en": "Pink bed",
       "type": "bed",
       "happiness_level": 3,
-      "price": 2347726,
+      "price": 2821186,
       "texture": "shop/icons/beds/10.png",
       "effect_method": "passive-income",
-      "effect_amount": 2347
+      "effect_amount": 49
     },
     {
       "id": 11,
@@ -468,10 +468,10 @@
       "name_en": "Black bed",
       "type": "bed",
       "happiness_level": 3,
-      "price": 3052044,
+      "price": 3526483,
       "texture": "shop/icons/beds/11.png",
       "effect_method": "passive-income",
-      "effect_amount": 3052
+      "effect_amount": 54
     },
     {
       "id": 9,
@@ -479,10 +479,10 @@
       "name_en": "Green ergo-chair",
       "type": "chair",
       "happiness_level": 3,
-      "price": 3967657,
+      "price": 4408103,
       "texture": "shop/icons/chairs/9.png",
       "effect_method": "passive-income",
-      "effect_amount": 3967
+      "effect_amount": 60
     },
     {
       "id": 10,
@@ -490,10 +490,10 @@
       "name_en": "Dark blue ergo-chair",
       "type": "chair",
       "happiness_level": 3,
-      "price": 5157954,
+      "price": 5510129,
       "texture": "shop/icons/chairs/10.png",
       "effect_method": "passive-income",
-      "effect_amount": 5157
+      "effect_amount": 66
     },
     {
       "id": 11,
@@ -501,10 +501,10 @@
       "name_en": "Light blue ergo-chair",
       "type": "chair",
       "happiness_level": 3,
-      "price": 6705340,
+      "price": 6887662,
       "texture": "shop/icons/chairs/11.png",
       "effect_method": "passive-income",
-      "effect_amount": 6705
+      "effect_amount": 72
     },
     {
       "id": 9,
@@ -512,10 +512,10 @@
       "name_en": "Sand des",
       "type": "desk",
       "happiness_level": 3,
-      "price": 8716943,
+      "price": 8609577,
       "texture": "shop/icons/desks/9.png",
       "effect_method": "passive-income",
-      "effect_amount": 8716
+      "effect_amount": 80
     },
     {
       "id": 10,
@@ -523,10 +523,10 @@
       "name_en": "Brown desk",
       "type": "desk",
       "happiness_level": 3,
-      "price": 11332026,
+      "price": 10761972,
       "texture": "shop/icons/desks/10.png",
       "effect_method": "passive-income",
-      "effect_amount": 11332
+      "effect_amount": 88
     },
     {
       "id": 11,
@@ -534,10 +534,10 @@
       "name_en": "Gray desk",
       "type": "desk",
       "happiness_level": 3,
-      "price": 14731633,
+      "price": 13452465,
       "texture": "shop/icons/desks/11.png",
       "effect_method": "passive-income",
-      "effect_amount": 14731
+      "effect_amount": 97
     },
     {
       "id": 9,
@@ -545,10 +545,10 @@
       "name_en": "Light laminate",
       "type": "floor",
       "happiness_level": 3,
-      "price": 19151123,
+      "price": 16815581,
       "texture": "shop/icons/floors/9.png",
       "effect_method": "passive-income",
-      "effect_amount": 19151
+      "effect_amount": 106
     },
     {
       "id": 10,
@@ -556,10 +556,10 @@
       "name_en": "Orange laminate",
       "type": "floor",
       "happiness_level": 3,
-      "price": 24896461,
+      "price": 21019476,
       "texture": "shop/icons/floors/10.png",
       "effect_method": "passive-income",
-      "effect_amount": 24896
+      "effect_amount": 117
     },
     {
       "id": 11,
@@ -567,10 +567,10 @@
       "name_en": "Dark brown laminate",
       "type": "floor",
       "happiness_level": 3,
-      "price": 32365399,
+      "price": 26274346,
       "texture": "shop/icons/floors/11.png",
       "effect_method": "passive-income",
-      "effect_amount": 32365
+      "effect_amount": 129
     },
     {
       "id": 9,
@@ -578,10 +578,10 @@
       "name_en": "Blueish wall",
       "type": "wall",
       "happiness_level": 3,
-      "price": 42075019,
+      "price": 32842932,
       "texture": "shop/icons/walls/9.png",
       "effect_method": "passive-income",
-      "effect_amount": 42075
+      "effect_amount": 142
     },
     {
       "id": 10,
@@ -589,10 +589,10 @@
       "name_en": "Gray wall",
       "type": "wall",
       "happiness_level": 3,
-      "price": 54697525,
+      "price": 41053665,
       "texture": "shop/icons/walls/10.png",
       "effect_method": "passive-income",
-      "effect_amount": 54697
+      "effect_amount": 156
     },
     {
       "id": 11,
@@ -600,10 +600,10 @@
       "name_en": "Mint wall with drapes",
       "type": "wall",
       "happiness_level": 3,
-      "price": 71106782,
+      "price": 51317082,
       "texture": "shop/icons/walls/11.png",
       "effect_method": "passive-income",
-      "effect_amount": 71106
+      "effect_amount": 171
     },
     {
       "id": 12,
@@ -611,10 +611,10 @@
       "name_en": "Light bed",
       "type": "bed",
       "happiness_level": 4,
-      "price": 92438817,
+      "price": 64146353,
       "texture": "shop/icons/beds/12.png",
       "effect_method": "passive-income",
-      "effect_amount": 92438
+      "effect_amount": 189
     },
     {
       "id": 13,
@@ -622,10 +622,10 @@
       "name_en": "Turquoise bed",
       "type": "bed",
       "happiness_level": 4,
-      "price": 120170462,
+      "price": 80182941,
       "texture": "shop/icons/beds/13.png",
       "effect_method": "passive-income",
-      "effect_amount": 120170
+      "effect_amount": 207
     },
     {
       "id": 14,
@@ -633,10 +633,10 @@
       "name_en": "Dark blue bed",
       "type": "bed",
       "happiness_level": 4,
-      "price": 156221601,
+      "price": 100228676,
       "texture": "shop/icons/beds/14.png",
       "effect_method": "passive-income",
-      "effect_amount": 156221
+      "effect_amount": 228
     },
     {
       "id": 12,
@@ -644,10 +644,10 @@
       "name_en": "Dark brown desk",
       "type": "desk",
       "happiness_level": 4,
-      "price": 203088082,
+      "price": 125285845,
       "texture": "shop/icons/desks/12.png",
       "effect_method": "passive-income",
-      "effect_amount": 203088
+      "effect_amount": 251
     },
     {
       "id": 13,
@@ -655,10 +655,10 @@
       "name_en": "White desk",
       "type": "desk",
       "happiness_level": 4,
-      "price": 264014506,
+      "price": 156607307,
       "texture": "shop/icons/desks/13.png",
       "effect_method": "passive-income",
-      "effect_amount": 264014
+      "effect_amount": 276
     },
     {
       "id": 14,
@@ -666,10 +666,10 @@
       "name_en": "Black desk",
       "type": "desk",
       "happiness_level": 4,
-      "price": 343218858,
+      "price": 195759134,
       "texture": "shop/icons/desks/14.png",
       "effect_method": "passive-income",
-      "effect_amount": 343218
+      "effect_amount": 304
     },
     {
       "id": 12,
@@ -677,10 +677,10 @@
       "name_en": "Light grid",
       "type": "floor",
       "happiness_level": 4,
-      "price": 446184516,
+      "price": 244698917,
       "texture": "shop/icons/floors/12.png",
       "effect_method": "passive-income",
-      "effect_amount": 446184
+      "effect_amount": 334
     },
     {
       "id": 13,
@@ -688,10 +688,10 @@
       "name_en": "Mid-dark grid",
       "type": "floor",
       "happiness_level": 4,
-      "price": 580039871,
+      "price": 305873646,
       "texture": "shop/icons/floors/13.png",
       "effect_method": "passive-income",
-      "effect_amount": 580039
+      "effect_amount": 368
     },
     {
       "id": 14,
@@ -699,10 +699,10 @@
       "name_en": "Dark grid",
       "type": "floor",
       "happiness_level": 4,
-      "price": 754051832,
+      "price": 382342058,
       "texture": "shop/icons/floors/14.png",
       "effect_method": "passive-income",
-      "effect_amount": 754051
+      "effect_amount": 405
     },
     {
       "id": 12,
@@ -710,10 +710,10 @@
       "name_en": "Gray wall with drapes",
       "type": "wall",
       "happiness_level": 4,
-      "price": 980267382,
+      "price": 477927573,
       "texture": "shop/icons/walls/12.png",
       "effect_method": "passive-income",
-      "effect_amount": 980267
+      "effect_amount": 445
     },
     {
       "id": 13,
@@ -721,10 +721,10 @@
       "name_en": "Light wall with drapes",
       "type": "wall",
       "happiness_level": 4,
-      "price": 1274347596,
+      "price": 597409466,
       "texture": "shop/icons/walls/13.png",
       "effect_method": "passive-income",
-      "effect_amount": 1274347
+      "effect_amount": 490
     },
     {
       "id": 14,
@@ -732,10 +732,10 @@
       "name_en": "Dark blue wall with drapes",
       "type": "wall",
       "happiness_level": 4,
-      "price": 1656651875,
+      "price": 746761833,
       "texture": "shop/icons/walls/14.png",
       "effect_method": "passive-income",
-      "effect_amount": 1656651
+      "effect_amount": 539
     }
   ]
 }

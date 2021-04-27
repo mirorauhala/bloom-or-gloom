@@ -20,7 +20,7 @@
       "price": 1200,
       "texture": "shop/icons/others/actions_0.png",
       "effect_method": "multiplier",
-      "effect_amount": 2
+      "effect_amount": 1
     },
     {
       "id": 1,
@@ -31,7 +31,7 @@
       "price": 2880,
       "texture": "shop/icons/others/items_1.png",
       "effect_method": "multiplier",
-      "effect_amount": 3
+      "effect_amount": 1
     },
     {
       "id": 1,
@@ -42,7 +42,7 @@
       "price": 6912,
       "texture": "shop/icons/others/hands_0.png",
       "effect_method": "multiplier",
-      "effect_amount": 4
+      "effect_amount": 1
     },
     {
       "id": 11,
@@ -53,7 +53,7 @@
       "price": 16588,
       "texture": "shop/icons/others/actions_1.png",
       "effect_method": "multiplier",
-      "effect_amount": 5
+      "effect_amount": 1
     },
     {
       "id": 12,
@@ -64,7 +64,7 @@
       "price": 39813,
       "texture": "shop/icons/others/actions_2.png",
       "effect_method": "multiplier",
-      "effect_amount": 6
+      "effect_amount": 1
     },
     {
       "id": 1,
@@ -75,7 +75,7 @@
       "price": 95551,
       "texture": "shop/icons/others/items_2.png",
       "effect_method": "multiplier",
-      "effect_amount": 7
+      "effect_amount": 1
     },
     {
       "id": 2,
@@ -86,7 +86,7 @@
       "price": 229323,
       "texture": "shop/icons/others/hands_1.png",
       "effect_method": "multiplier",
-      "effect_amount": 8
+      "effect_amount": 1
     },
     {
       "id": 13,
@@ -97,7 +97,7 @@
       "price": 550376,
       "texture": "shop/icons/others/actions_3.png",
       "effect_method": "multiplier",
-      "effect_amount": 9
+      "effect_amount": 1
     },
     {
       "id": 14,
@@ -108,7 +108,7 @@
       "price": 1320903,
       "texture": "shop/icons/others/actions_4.png",
       "effect_method": "multiplier",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 1,
@@ -119,7 +119,7 @@
       "price": 3170169,
       "texture": "shop/icons/others/items_3.png",
       "effect_method": "multiplier",
-      "effect_amount": 11
+      "effect_amount": 1
     },
     {
       "id": 3,
@@ -130,7 +130,7 @@
       "price": 7608405,
       "texture": "shop/icons/others/hands_2.png",
       "effect_method": "multiplier",
-      "effect_amount": 12
+      "effect_amount": 1
     },
     {
       "id": 15,
@@ -141,7 +141,7 @@
       "price": 18260173,
       "texture": "shop/icons/others/actions_5.png",
       "effect_method": "multiplier",
-      "effect_amount": 13
+      "effect_amount": 1
     },
     {
       "id": 16,
@@ -152,7 +152,7 @@
       "price": 43824416,
       "texture": "shop/icons/others/actions_6.png",
       "effect_method": "multiplier",
-      "effect_amount": 14
+      "effect_amount": 1
     },
     {
       "id": 1,
@@ -163,7 +163,7 @@
       "price": 105178600,
       "texture": "shop/icons/others/items_4.png",
       "effect_method": "multiplier",
-      "effect_amount": 15
+      "effect_amount": 1
     },
     {
       "id": 4,
@@ -174,7 +174,7 @@
       "price": 252428641,
       "texture": "shop/icons/others/hands_3.png",
       "effect_method": "multiplier",
-      "effect_amount": 16
+      "effect_amount": 1
     },
     {
       "id": 17,
@@ -185,7 +185,7 @@
       "price": 605828739,
       "texture": "shop/icons/others/actions_7.png",
       "effect_method": "multiplier",
-      "effect_amount": 17
+      "effect_amount": 1
     },
     {
       "id": 18,
@@ -196,7 +196,7 @@
       "price": 1453988974,
       "texture": "shop/icons/others/actions_8.png",
       "effect_method": "multiplier",
-      "effect_amount": 18
+      "effect_amount": 1
     }
   ]
 }
