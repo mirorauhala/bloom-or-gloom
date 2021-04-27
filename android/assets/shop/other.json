@@ -50,7 +50,7 @@
       "name_en": "Play a game",
       "type": "actions",
       "happiness_level": 1,
-      "price": 16588.8,
+      "price": 16588,
       "texture": "shop/icons/others/actions_1.png",
       "effect_method": "multiplier",
       "effect_amount": 5
@@ -61,7 +61,7 @@
       "name_en": "Meditate",
       "type": "actions",
       "happiness_level": 1,
-      "price": 39813.119999999995,
+      "price": 39813,
       "texture": "shop/icons/others/actions_2.png",
       "effect_method": "multiplier",
       "effect_amount": 6
@@ -72,7 +72,7 @@
       "name_en": "Weights",
       "type": "weights",
       "happiness_level": 2,
-      "price": 95551.48799999998,
+      "price": 95551,
       "texture": "shop/icons/others/items_2.png",
       "effect_method": "multiplier",
       "effect_amount": 7
@@ -83,7 +83,7 @@
       "name_en": "Book",
       "type": "hands",
       "happiness_level": 2,
-      "price": 229323.57119999995,
+      "price": 229323,
       "texture": "shop/icons/others/hands_1.png",
       "effect_method": "multiplier",
       "effect_amount": 8
@@ -94,7 +94,7 @@
       "name_en": "Listen to music",
       "type": "actions",
       "happiness_level": 2,
-      "price": 550376.5708799999,
+      "price": 550376,
       "texture": "shop/icons/others/actions_3.png",
       "effect_method": "multiplier",
       "effect_amount": 9
@@ -105,7 +105,7 @@
       "name_en": "Go outside",
       "type": "actions",
       "happiness_level": 2,
-      "price": 1320903.7701119997,
+      "price": 1320903,
       "texture": "shop/icons/others/actions_4.png",
       "effect_method": "multiplier",
       "effect_amount": 10
@@ -116,7 +116,7 @@
       "name_en": "Coffee mug",
       "type": "mug",
       "happiness_level": 3,
-      "price": 3170169.048268799,
+      "price": 3170169,
       "texture": "shop/icons/others/items_3.png",
       "effect_method": "multiplier",
       "effect_amount": 11
@@ -127,7 +127,7 @@
       "name_en": "Pearbook Pro",
       "type": "hands",
       "happiness_level": 3,
-      "price": 7608405.715845117,
+      "price": 7608405,
       "texture": "shop/icons/others/hands_2.png",
       "effect_method": "multiplier",
       "effect_amount": 12
@@ -138,7 +138,7 @@
       "name_en": "Make a call",
       "type": "actions",
       "happiness_level": 3,
-      "price": 18260173.71802828,
+      "price": 18260173,
       "texture": "shop/icons/others/actions_5.png",
       "effect_method": "multiplier",
       "effect_amount": 13
@@ -149,7 +149,7 @@
       "name_en": "Sleep",
       "type": "actions",
       "happiness_level": 3,
-      "price": 43824416.92326787,
+      "price": 43824416,
       "texture": "shop/icons/others/actions_6.png",
       "effect_method": "multiplier",
       "effect_amount": 14
@@ -160,7 +160,7 @@
       "name_en": "Plant",
       "type": "plant",
       "happiness_level": 4,
-      "price": 105178600.6158429,
+      "price": 105178600,
       "texture": "shop/icons/others/items_4.png",
       "effect_method": "multiplier",
       "effect_amount": 15
@@ -171,7 +171,7 @@
       "name_en": "Gaming PC",
       "type": "hands",
       "happiness_level": 4,
-      "price": 252428641.47802293,
+      "price": 252428641,
       "texture": "shop/icons/others/hands_3.png",
       "effect_method": "multiplier",
       "effect_amount": 16
@@ -182,7 +182,7 @@
       "name_en": "Drink",
       "type": "actions",
       "happiness_level": 4,
-      "price": 605828739.547255,
+      "price": 605828739,
       "texture": "shop/icons/others/actions_7.png",
       "effect_method": "multiplier",
       "effect_amount": 17
@@ -193,7 +193,7 @@
       "name_en": "Workout",
       "type": "actions",
       "happiness_level": 4,
-      "price": 1453988974.913412,
+      "price": 1453988974,
       "texture": "shop/icons/others/actions_8.png",
       "effect_method": "multiplier",
       "effect_amount": 18
