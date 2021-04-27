@@ -55,7 +55,6 @@ public class Sounds {
             crickets.setLooping(true);
             crickets.setVolume(0.01f * game.musicVolume);
             crickets.play();
-            System.out.println(clock.isNight());
         } else {
             nature.setLooping(true);
             nature.setVolume(0.02f * game.musicVolume);
