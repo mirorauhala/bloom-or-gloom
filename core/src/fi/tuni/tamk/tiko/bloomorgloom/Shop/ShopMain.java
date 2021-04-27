@@ -161,22 +161,19 @@ public class ShopMain {
                         game.inventory.set(product.getType(), product.getId());
                         game.sounds.buySoundPlay();
 
-                        for (ProductEffect pe : product.getEffects()) {
-                            String method = pe.getMethod();
-                            String action = pe.getAction();
-                            int amount = pe.getAmount();
+                        String method = product.getEffectMethod();
+                        int amount = product.getEffectAmount();
 
-                            switch (method) {
-                                case "click-power":
-                                    game.score.incrementClickPower(amount);
-                                    break;
-                                case "passive-income":
-                                    game.score.incrementPassiveIncome(amount);
-                                    break;
-                                case "multiplier":
-                                    game.score.incrementMultiplier(amount);
-                                    break;
-                            }
+                        switch (method) {
+                            case "click-power":
+                                game.score.incrementClickPower(amount);
+                                break;
+                            case "passive-income":
+                                game.score.incrementPassiveIncome(amount);
+                                break;
+                            case "multiplier":
+                                game.score.incrementMultiplier(amount);
+                                break;
                         }
 
                     } else {

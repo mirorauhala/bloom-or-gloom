@@ -19,7 +19,10 @@ public class Product {
     private int level;
     private int price;
     private String texture;
-    private List<ProductEffect> effects;
+    @SerializedName("effect_method")
+    private String effectMethod;
+    @SerializedName("effect_amount")
+    private int effectAmount;
 
     /**
      * Returns the product's id.
@@ -86,10 +89,18 @@ public class Product {
     }
 
     /**
-     * Returns the product's effects.
-     * @return List
+     * Returns the product's effect method.
+     * @return effect method
      */
-    public List<ProductEffect> getEffects() {
-        return effects;
+    public String getEffectMethod() {
+        return effectMethod;
+    }
+
+    /**
+     * Returns the product's effect amount.
+     * @return effect amount
+     */
+    public int getEffectAmount() {
+        return effectAmount;
     }
 }

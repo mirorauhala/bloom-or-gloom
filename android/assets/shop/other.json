@@ -2,210 +2,201 @@
   "products": [
     {
       "id": 1,
-      "happiness_level": 0,
       "name_fi": "Roskis",
       "name_en": "Trashcan",
       "type": "trashcan",
+      "happiness_level": 0,
       "price": 100,
-      "texture": "shop/icons/others/1.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 1}
-      ]
+      "texture": "shop/icons/others/items_0.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
       "id": 1,
-      "happiness_level": 1,
       "name_fi": "Taulu",
       "name_en": "Painting",
       "type": "painting",
+      "happiness_level": 1,
       "price": 400,
-      "texture": "shop/icons/others/2.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 5}
-      ]
+      "texture": "shop/icons/others/items_1.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
       "id": 1,
-      "happiness_level": 2,
       "name_fi": "Painot",
       "name_en": "Weights",
       "type": "weights",
+      "happiness_level": 2,
       "price": 1000,
-      "texture": "shop/icons/others/3.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 10}
-      ]
+      "texture": "shop/icons/others/items_2.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
       "id": 1,
-      "happiness_level": 3,
       "name_fi": "Kahvikuppi",
       "name_en": "Coffee mug",
       "type": "mug",
+      "happiness_level": 3,
       "price": 3000,
-      "texture": "shop/icons/others/4.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 15}
-      ]
+      "texture": "shop/icons/others/items_3.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
       "id": 1,
-      "happiness_level": 4,
       "name_fi": "Kasvi",
       "name_en": "Plant",
       "type": "plant",
+      "happiness_level": 4,
       "price": 6500,
-      "texture": "shop/icons/others/5.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 20}
-      ]
+      "texture": "shop/icons/others/items_4.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
-      "id": 6,
-      "happiness_level": 1,
+      "id": 1,
       "name_fi": "Puhelin",
       "name_en": "Phone",
-      "type": "hand",
+      "type": "hands",
+      "happiness_level": 1,
       "price": 10000,
-      "texture": "shop/icons/others/6.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 25}
-      ]
+      "texture": "shop/icons/others/hands_0.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
-      "id": 7,
-      "happiness_level": 2,
+      "id": 2,
       "name_fi": "Kirja",
       "name_en": "Book",
-      "type": "hand",
+      "type": "hands",
+      "happiness_level": 2,
       "price": 150000,
-      "texture": "shop/icons/others/7.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 30}
-      ]
+      "texture": "shop/icons/others/hands_1.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
-      "id": 8,
-      "happiness_level": 3,
+      "id": 3,
       "name_fi": "Pearbook Pro",
       "name_en": "Pearbook Pro",
-      "type": "hand",
+      "type": "hands",
+      "happiness_level": 3,
       "price": 800000,
-      "texture": "shop/icons/others/8.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 35}
-      ]
+      "texture": "shop/icons/others/hands_2.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
-      "id": 9,
-      "happiness_level": 4,
+      "id": 4,
       "name_fi": "Pelitietokone",
       "name_en": "Gaming PC",
-      "type": "hand",
+      "type": "hands",
+      "happiness_level": 4,
       "price": 1000000,
-      "texture": "shop/icons/others/9.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 45}
-      ]
+      "texture": "shop/icons/others/hands_3.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
       "id": 10,
       "name_fi": "Lue kirja",
       "name_en": "Read a book",
-      "type": "immaterial",
+      "type": "actions",
+      "happiness_level": 0,
       "price": 10000000,
-      "texture": "shop/icons/others/10.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 50}
-      ]
+      "texture": "shop/icons/others/actions_0.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
       "id": 11,
       "name_fi": "Pelaa peliä",
       "name_en": "Play a game",
-      "type": "immaterial",
+      "type": "actions",
+      "happiness_level": 1,
       "price": 10000000,
-      "texture": "shop/icons/others/11.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 55}
-      ]
+      "texture": "shop/icons/others/actions_1.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
       "id": 12,
       "name_fi": "Meditoi",
       "name_en": "Meditate",
-      "type": "immaterial",
+      "type": "actions",
+      "happiness_level": 1,
       "price": 10000000,
-      "texture": "shop/icons/others/12.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 60}
-      ]
+      "texture": "shop/icons/others/actions_2.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
       "id": 13,
       "name_fi": "Kuuntele musiikkia",
       "name_en": "Listen to music",
-      "type": "immaterial",
+      "type": "actions",
+      "happiness_level": 2,
       "price": 10000000,
-      "texture": "shop/icons/others/13.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 65}
-      ]
+      "texture": "shop/icons/others/actions_3.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
       "id": 14,
       "name_fi": "Mene ulos",
       "name_en": "Go outside",
-      "type": "immaterial",
+      "type": "actions",
+      "happiness_level": 2,
       "price": 10000000,
-      "texture": "shop/icons/others/14.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 70}
-      ]
+      "texture": "shop/icons/others/actions_4.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
       "id": 15,
       "name_fi": "Soita puhelu",
       "name_en": "Make a call",
-      "type": "immaterial",
+      "type": "actions",
+      "happiness_level": 3,
       "price": 10000000,
-      "texture": "shop/icons/others/15.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 75}
-      ]
+      "texture": "shop/icons/others/actions_5.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
       "id": 16,
       "name_fi": "Nuku",
       "name_en": "Sleep",
-      "type": "immaterial",
+      "type": "actions",
+      "happiness_level": 3,
       "price": 10000000,
-      "texture": "shop/icons/others/16.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 80}
-      ]
+      "texture": "shop/icons/others/actions_6.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
       "id": 17,
       "name_fi": "Juo",
       "name_en": "Drink",
-      "type": "immaterial",
+      "type": "actions",
+      "happiness_level": 4,
       "price": 10000000,
-      "texture": "shop/icons/others/17.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 85}
-      ]
+      "texture": "shop/icons/others/actions_7.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     },
     {
       "id": 18,
       "name_fi": "Voimistele",
       "name_en": "Workout",
-      "type": "immaterial",
+      "type": "actions",
+      "happiness_level": 4,
       "price": 10000000,
-      "texture": "shop/icons/others/18.png",
-      "effects":[
-        {"method": "multiplier", "action": "increment", "amount": 90}
-      ]
+      "texture": "shop/icons/others/actions_8.png",
+      "effect_method": "multiplier",
+      "effect_amount": 2
     }
   ]
 }
