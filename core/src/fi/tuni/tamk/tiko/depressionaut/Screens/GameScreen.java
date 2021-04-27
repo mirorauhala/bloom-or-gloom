@@ -117,7 +117,7 @@ public class GameScreen implements Screen {
         batch.setColor(1,1,1,1); // reset batch color
 
         // Hud layer:
-        scoreMeter.draw(batch);
+        scoreMeter.draw(batch, clock);
         game.score.setTempMultiplier(clock.amountOfBuffs());
 
         // Daily Bonus
