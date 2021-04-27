@@ -2,6 +2,7 @@
   "products": [
     {
       "id": 1,
+	  "tier": 1,
       "name_fi": "Roskis",
       "name_en": "Trashcan",
       "type": "other",
@@ -13,6 +14,7 @@
     },
     {
       "id": 2,
+	  "tier": 2,
       "name_fi": "Taulu",
       "name_en": "Painting",
       "type": "other",
@@ -24,6 +26,7 @@
     },
     {
       "id": 3,
+	  "tier": 3,
       "name_fi": "Painot",
       "name_en": "Weights",
       "type": "other",
@@ -35,6 +38,7 @@
     },
     {
       "id": 4,
+	  "tier": 4,
       "name_fi": "Kahvikuppi",
       "name_en": "Coffee mug",
       "type": "other",
@@ -46,6 +50,7 @@
     },
     {
       "id": 5,
+	  "tier": 5,
       "name_fi": "Kasvi",
       "name_en": "Plant",
       "type": "other",
@@ -57,6 +62,7 @@
     },
     {
       "id": 6,
+	  "tier": 2,
       "name_fi": "Puhelin",
       "name_en": "Phone",
       "type": "other",
@@ -68,6 +74,7 @@
     },
     {
       "id": 7,
+	  "tier": 3,
       "name_fi": "Kirja",
       "name_en": "Book",
       "type": "other",
@@ -79,6 +86,7 @@
     },
     {
       "id": 8,
+	  "tier": 4,
       "name_fi": "Pearbook Pro",
       "name_en": "Pearbook Pro",
       "type": "other",
@@ -90,6 +98,7 @@
     },
     {
       "id": 9,
+	  "tier": 5,
       "name_fi": "Pelitietokone",
       "name_en": "Gaming PC",
       "type": "other",
