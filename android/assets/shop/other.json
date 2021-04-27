@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-	  "happiness_level": 1,
+      "happiness_level": 0,
       "name_fi": "Roskis",
       "name_en": "Trashcan",
       "type": "other",
@@ -14,7 +14,7 @@
     },
     {
       "id": 2,
-	  "happiness_level": 2,
+      "happiness_level": 1,
       "name_fi": "Taulu",
       "name_en": "Painting",
       "type": "other",
@@ -26,7 +26,7 @@
     },
     {
       "id": 3,
-	  "happiness_level": 3,
+      "happiness_level": 2,
       "name_fi": "Painot",
       "name_en": "Weights",
       "type": "other",
@@ -38,7 +38,7 @@
     },
     {
       "id": 4,
-	  "happiness_level": 4,
+      "happiness_level": 3,
       "name_fi": "Kahvikuppi",
       "name_en": "Coffee mug",
       "type": "other",
@@ -50,7 +50,7 @@
     },
     {
       "id": 5,
-	  "happiness_level": 5,
+      "happiness_level": 4,
       "name_fi": "Kasvi",
       "name_en": "Plant",
       "type": "other",
@@ -62,7 +62,7 @@
     },
     {
       "id": 6,
-	  "happiness_level": 2,
+      "happiness_level": 1,
       "name_fi": "Puhelin",
       "name_en": "Phone",
       "type": "other",
@@ -74,7 +74,7 @@
     },
     {
       "id": 7,
-	  "happiness_level": 3,
+      "happiness_level": 2,
       "name_fi": "Kirja",
       "name_en": "Book",
       "type": "other",
@@ -86,7 +86,7 @@
     },
     {
       "id": 8,
-	  "happiness_level": 4,
+      "happiness_level": 3,
       "name_fi": "Pearbook Pro",
       "name_en": "Pearbook Pro",
       "type": "other",
@@ -98,7 +98,7 @@
     },
     {
       "id": 9,
-	  "happiness_level": 5,
+      "happiness_level": 4,
       "name_fi": "Pelitietokone",
       "name_en": "Gaming PC",
       "type": "other",

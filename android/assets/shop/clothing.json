@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-	  "happiness_level": 1,
+      "happiness_level": 0,
       "name_fi": "Oranssi paita",
       "name_en": "Orange shirt",
       "type": "shirt",
@@ -14,7 +14,7 @@
     },
     {
       "id": 2,
-	  "happiness_level": 1,
+      "happiness_level": 0,
       "name_fi": "Keltainen paita",
       "name_en": "Yellow shirt",
       "type": "shirt",
@@ -26,7 +26,7 @@
     },
     {
       "id": 3,
-	  "happiness_level": 1,
+      "happiness_level": 0,
       "name_fi": "Vaaleansininen paita",
       "name_en": "Light blue shirt",
       "type": "shirt",
@@ -38,7 +38,7 @@
     },
     {
       "id": 4,
-	  "happiness_level": 2,
+      "happiness_level": 1,
       "name_fi": "Sininen pallopaita",
       "name_en": "Blue polkadot",
       "type": "shirt",
@@ -50,7 +50,7 @@
     },
     {
       "id": 5,
-	  "happiness_level": 2,
+      "happiness_level": 1,
       "name_fi": "Punainen pallopaita",
       "name_en": "Red polkadot",
       "type": "shirt",
@@ -62,7 +62,7 @@
     },
     {
       "id": 6,
-	  "happiness_level": 2,
+      "happiness_level": 1,
       "name_fi": "Vaalean ruskea pallopaita",
       "name_en": "Light brown polkadot",
       "type": "shirt",
@@ -74,7 +74,7 @@
     },
     {
       "id": 7,
-	  "happiness_level": 3,
+      "happiness_level": 2,
       "name_fi": "Harmaa pikee",
       "name_en": "Gray polo",
       "type": "shirt",
@@ -86,7 +86,7 @@
     },
     {
       "id": 8,
-	  "happiness_level": 3,
+      "happiness_level": 2,
       "name_fi": "Sininen pikee",
       "name_en": "Blue polo",
       "type": "shirt",
@@ -98,7 +98,7 @@
     },
     {
       "id": 9,
-	  "happiness_level": 3,
+      "happiness_level": 2,
       "name_fi": "Tumma pikee",
       "name_en": "Dark polo",
       "type": "shirt",
@@ -110,7 +110,7 @@
     },
     {
       "id": 10,
-	  "happiness_level": 4,
+      "happiness_level": 3,
       "name_fi": "Punainen huppari",
       "name_en": "Red hoodie",
       "type": "shirt",
@@ -122,7 +122,7 @@
     },
     {
       "id": 11,
-	  "happiness_level": 4,
+      "happiness_level": 3,
       "name_fi": "Vihreä huppari",
       "name_en": "Green hoodie",
       "type": "shirt",
@@ -134,7 +134,7 @@
     },
     {
       "id": 12,
-	  "happiness_level": 4,
+      "happiness_level": 3,
       "name_fi": "Sininen huppari",
       "name_en": "Blue hoodie",
       "type": "shirt",
@@ -146,7 +146,7 @@
     },
     {
       "id": 13,
-	  "happiness_level": 5,
+      "happiness_level": 4,
       "name_fi": "Punainen raitapaita",
       "name_en": "Red striped hoodie",
       "type": "shirt",
@@ -158,7 +158,7 @@
     },
     {
       "id": 14,
-	  "happiness_level": 5,
+      "happiness_level": 4,
       "name_fi": "Keltainen raitapaita",
       "name_en": "Yellow striped hoodie",
       "type": "shirt",
@@ -170,7 +170,7 @@
     },
     {
       "id": 15,
-	  "happiness_level": 5,
+      "happiness_level": 4,
       "name_fi": "Vaaleansininen raitapaita",
       "name_en": "Light blue striped hoodie",
       "type": "shirt",
@@ -182,7 +182,7 @@
     },
     {
       "id": 1,
-	  "happiness_level": 3,
+      "happiness_level": 2,
       "name_fi": "Punainen pipo",
       "name_en": "Red beanie",
       "type": "hat",
@@ -194,7 +194,7 @@
     },
     {
       "id": 2,
-	  "happiness_level": 3,
+      "happiness_level": 2,
       "name_fi": "Keltainen pipo",
       "name_en": "Yellow beanie",
       "type": "hat",
@@ -206,7 +206,7 @@
     },
     {
       "id": 3,
-	  "happiness_level": 3,
+      "happiness_level": 2,
       "name_fi": "Sininen pipo",
       "name_en": "Blue beanie",
       "type": "hat",
@@ -218,7 +218,7 @@
     },
     {
       "id": 4,
-	  "happiness_level": 4,
+      "happiness_level": 3,
       "name_fi": "Violetti bandana",
       "name_en": "Violet bandana",
       "type": "hat",
@@ -230,7 +230,7 @@
     },
     {
       "id": 5,
-	  "happiness_level": 4,
+      "happiness_level": 3,
       "name_fi": "Sininen bandana",
       "name_en": "Blue bandana",
       "type": "hat",
@@ -242,7 +242,7 @@
     },
     {
       "id": 6,
-	  "happiness_level": 4,
+      "happiness_level": 3,
       "name_fi": "Punainen bandana",
       "name_en": "Red bandana",
       "type": "hat",
@@ -254,7 +254,7 @@
     },
     {
       "id": 7,
-	  "happiness_level": 5,
+      "happiness_level": 4,
       "name_fi": "Keltainen lippalakki",
       "name_en": "Yellow baseball cap",
       "type": "hat",
@@ -266,7 +266,7 @@
     },
     {
       "id": 8,
-	  "happiness_level": 5,
+      "happiness_level": 4,
       "name_fi": "Sininen lippalakki",
       "name_en": "Blue baseball cap",
       "type": "hat",
@@ -278,7 +278,7 @@
     },
     {
       "id": 9,
-	  "happiness_level": 5,
+      "happiness_level": 4,
       "name_fi": "Punainen lippalakki",
       "name_en": "Red baseball cap",
       "type": "hat",
