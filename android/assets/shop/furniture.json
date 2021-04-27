@@ -6,10 +6,10 @@
       "name_en": "Foam mattress",
       "type": "bed",
       "happiness_level": 0,
-      "price": 100,
+      "price": 50,
       "texture": "shop/icons/beds/1.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 2,
@@ -17,142 +17,10 @@
       "name_en": "Foam mattress with cover",
       "type": "bed",
       "happiness_level": 0,
-      "price": 400,
+      "price": 65,
       "texture": "shop/icons/beds/2.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 3,
-      "name_fi": "Oranssi sänky",
-      "name_en": "Orange bed",
-      "type": "bed",
-      "happiness_level": 1,
-      "price": 3000,
-      "texture": "shop/icons/beds/3.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 4,
-      "name_fi": "Ruskea sänky",
-      "name_en": "Brown bed",
-      "type": "bed",
-      "happiness_level": 1,
-      "price": 6500,
-      "texture": "shop/icons/beds/4.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 5,
-      "name_fi": "Vihreä sänky",
-      "name_en": "Green bed",
-      "type": "bed",
-      "happiness_level": 1,
-      "price": 10000,
-      "texture": "shop/icons/beds/5.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 6,
-      "name_fi": "Tummanvihreä sänky",
-      "name_en": "Yellow bed",
-      "type": "bed",
-      "happiness_level": 2,
-      "price": 150000,
-      "texture": "shop/icons/beds/6.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 7,
-      "name_fi": "Vaaleanvihreä sänky",
-      "name_en": "Dark green bed",
-      "type": "bed",
-      "happiness_level": 2,
-      "price": 800000,
-      "texture": "shop/icons/beds/7.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 8,
-      "name_fi": "Harmaa sänky",
-      "name_en": "Gray bed",
-      "type": "bed",
-      "happiness_level": 2,
-      "price": 1000000,
-      "texture": "shop/icons/beds/8.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 9,
-      "name_fi": "Tumma violetti sänky",
-      "name_en": "Dark violet bed",
-      "type": "bed",
-      "happiness_level": 3,
-      "price": 2000000,
-      "texture": "shop/icons/beds/9.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 10,
-      "name_fi": "Pinkki sänky",
-      "name_en": "Pink bed",
-      "type": "bed",
-      "happiness_level": 3,
-      "price": 3000000,
-      "texture": "shop/icons/beds/10.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 11,
-      "name_fi": "Musta sänky",
-      "name_en": "Black bed",
-      "type": "bed",
-      "happiness_level": 3,
-      "price": 10000000,
-      "texture": "shop/icons/beds/11.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 12,
-      "name_fi": "Haalea sänky",
-      "name_en": "Light bed",
-      "type": "bed",
-      "happiness_level": 4,
-      "price": 100000000,
-      "texture": "shop/icons/beds/12.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 13,
-      "name_fi": "Turkoosi sänky",
-      "name_en": "Turquoise bed",
-      "type": "bed",
-      "happiness_level": 4,
-      "price": 500000000,
-      "texture": "shop/icons/beds/13.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 14,
-      "name_fi": "Tummansininen sänky",
-      "name_en": "Dark blue bed",
-      "type": "bed",
-      "happiness_level": 4,
-      "price": 2147483647,
-      "texture": "shop/icons/beds/14.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 1,
@@ -160,10 +28,10 @@
       "name_en": "Oak bed",
       "type": "chair",
       "happiness_level": 0,
-      "price": 500,
+      "price": 84.5,
       "texture": "shop/icons/chairs/1.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 2,
@@ -171,109 +39,10 @@
       "name_en": "Ebony bed",
       "type": "chair",
       "happiness_level": 0,
-      "price": 800,
+      "price": 109.85000000000001,
       "texture": "shop/icons/chairs/2.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 3,
-      "name_fi": "Punainen työtuoli",
-      "name_en": "Red workchair",
-      "type": "chair",
-      "happiness_level": 1,
-      "price": 1500,
-      "texture": "shop/icons/chairs/3.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 4,
-      "name_fi": "Sininen työtuoli",
-      "name_en": "Blue workchair",
-      "type": "chair",
-      "happiness_level": 1,
-      "price": 4000,
-      "texture": "shop/icons/chairs/4.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 5,
-      "name_fi": "Musta työtuoli",
-      "name_en": "Black workchair",
-      "type": "chair",
-      "happiness_level": 1,
-      "price": 10000,
-      "texture": "shop/icons/chairs/5.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 6,
-      "name_fi": "Turkoosi toimistotuoli",
-      "name_en": "Turquoise office chair",
-      "type": "chair",
-      "happiness_level": 2,
-      "price": 150000,
-      "texture": "shop/icons/chairs/6.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 7,
-      "name_fi": "Navyblue toimistotuoli",
-      "name_en": "Navyblue office chair",
-      "type": "chair",
-      "happiness_level": 2,
-      "price": 500000,
-      "texture": "shop/icons/chairs/7.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 8,
-      "name_fi": "Vaalea toimistotuoli",
-      "name_en": "Light office chair",
-      "type": "chair",
-      "happiness_level": 2,
-      "price": 900000,
-      "texture": "shop/icons/chairs/8.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 9,
-      "name_fi": "Vihreä ergo-tuoli",
-      "name_en": "Green ergo-chair",
-      "type": "chair",
-      "happiness_level": 3,
-      "price": 3500000,
-      "texture": "shop/icons/chairs/9.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 10,
-      "name_fi": "Tummansininen ergo-tuoli",
-      "name_en": "Dark blue ergo-chair",
-      "type": "chair",
-      "happiness_level": 3,
-      "price": 5000000,
-      "texture": "shop/icons/chairs/10.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 11,
-      "name_fi": "Vaaleansininen ergo-tuoli",
-      "name_en": "Light blue ergo-chair",
-      "type": "chair",
-      "happiness_level": 3,
-      "price": 10000000,
-      "texture": "shop/icons/chairs/11.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 1,
@@ -281,10 +50,10 @@
       "name_en": "Light blue desk",
       "type": "desk",
       "happiness_level": 0,
-      "price": 100,
+      "price": 142.805,
       "texture": "shop/icons/desks/1.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 2,
@@ -292,142 +61,10 @@
       "name_en": "White desk",
       "type": "desk",
       "happiness_level": 0,
-      "price": 400,
+      "price": 185.6465,
       "texture": "shop/icons/desks/2.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 3,
-      "name_fi": "Harmaa pöytä",
-      "name_en": "Gray desk",
-      "type": "desk",
-      "happiness_level": 1,
-      "price": 1000,
-      "texture": "shop/icons/desks/3.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 4,
-      "name_fi": "Musta pöytä",
-      "name_en": "Black desk",
-      "type": "desk",
-      "happiness_level": 1,
-      "price": 3000,
-      "texture": "shop/icons/desks/4.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 5,
-      "name_fi": "Tummanharmaa pöytä",
-      "name_en": "Dark gray desk",
-      "type": "desk",
-      "happiness_level": 1,
-      "price": 6500,
-      "texture": "shop/icons/desks/5.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 6,
-      "name_fi": "Harmaa pöytä",
-      "name_en": "Gray desk",
-      "type": "desk",
-      "happiness_level": 2,
-      "price": 10000,
-      "texture": "shop/icons/desks/6.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 7,
-      "name_fi": "Eebenpuupöytä",
-      "name_en": "Ebony desk",
-      "type": "desk",
-      "happiness_level": 2,
-      "price": 150000,
-      "texture": "shop/icons/desks/7.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 8,
-      "name_fi": "Harmaa pöytä",
-      "name_en": "Gray desk",
-      "type": "desk",
-      "happiness_level": 2,
-      "price": 800000,
-      "texture": "shop/icons/desks/8.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 9,
-      "name_fi": "Hiekkapöytä",
-      "name_en": "Sand des",
-      "type": "desk",
-      "happiness_level": 3,
-      "price": 1000000,
-      "texture": "shop/icons/desks/9.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 10,
-      "name_fi": "Ruskea pöytä",
-      "name_en": "Brown desk",
-      "type": "desk",
-      "happiness_level": 3,
-      "price": 2000000,
-      "texture": "shop/icons/desks/10.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 11,
-      "name_fi": "Harmaa pöytä",
-      "name_en": "Gray desk",
-      "type": "desk",
-      "happiness_level": 3,
-      "price": 3000000,
-      "texture": "shop/icons/desks/11.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 12,
-      "name_fi": "Tummanruskea pöytä",
-      "name_en": "Dark brown desk",
-      "type": "desk",
-      "happiness_level": 4,
-      "price": 10000000,
-      "texture": "shop/icons/desks/12.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 13,
-      "name_fi": "Valkoinen pöytä",
-      "name_en": "White desk",
-      "type": "desk",
-      "happiness_level": 4,
-      "price": 100000000,
-      "texture": "shop/icons/desks/13.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 14,
-      "name_fi": "Musta pöytä",
-      "name_en": "Black desk",
-      "type": "desk",
-      "happiness_level": 4,
-      "price": 500000000,
-      "texture": "shop/icons/desks/14.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 1,
@@ -435,10 +72,10 @@
       "name_en": "Broken floor",
       "type": "floor",
       "happiness_level": 0,
-      "price": 100,
+      "price": 241.34045,
       "texture": "shop/icons/floors/1.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 2,
@@ -446,142 +83,10 @@
       "name_en": "Plastic floor",
       "type": "floor",
       "happiness_level": 0,
-      "price": 400,
+      "price": 313.742585,
       "texture": "shop/icons/floors/2.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 3,
-      "name_fi": "Vaalea parketti",
-      "name_en": "Light parquet",
-      "type": "floor",
-      "happiness_level": 1,
-      "price": 1000,
-      "texture": "shop/icons/floors/3.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 4,
-      "name_fi": "Keltainen parketti",
-      "name_en": "Yellow parquet",
-      "type": "floor",
-      "happiness_level": 1,
-      "price": 3000,
-      "texture": "shop/icons/floors/4.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 5,
-      "name_fi": "Oranssi parketti",
-      "name_en": "Orange parquet",
-      "type": "floor",
-      "happiness_level": 1,
-      "price": 6500,
-      "texture": "shop/icons/floors/5.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 6,
-      "name_fi": "Vaaleanruskea laminaatti",
-      "name_en": "Light brown laminate",
-      "type": "floor",
-      "happiness_level": 2,
-      "price": 10000,
-      "texture": "shop/icons/floors/6.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 7,
-      "name_fi": "Ruskea laminaatti",
-      "name_en": "Brown laminate",
-      "type": "floor",
-      "happiness_level": 2,
-      "price": 150000,
-      "texture": "shop/icons/floors/7.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 8,
-      "name_fi": "Punertava laminaatti",
-      "name_en": "Redish laminate",
-      "type": "floor",
-      "happiness_level": 2,
-      "price": 800000,
-      "texture": "shop/icons/floors/8.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 9,
-      "name_fi": "Vaalea laminaatti",
-      "name_en": "Light laminate",
-      "type": "floor",
-      "happiness_level": 3,
-      "price": 1000000,
-      "texture": "shop/icons/floors/9.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 10,
-      "name_fi": "Oranssi laminaatti",
-      "name_en": "Orange laminate",
-      "type": "floor",
-      "happiness_level": 3,
-      "price": 2000000,
-      "texture": "shop/icons/floors/10.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 11,
-      "name_fi": "Tummanruskea laminaatti",
-      "name_en": "Dark brown laminate",
-      "type": "floor",
-      "happiness_level": 3,
-      "price": 3000000,
-      "texture": "shop/icons/floors/11.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 12,
-      "name_fi": "Vaalea ruudukko",
-      "name_en": "Light grid",
-      "type": "floor",
-      "happiness_level": 4,
-      "price": 10000000,
-      "texture": "shop/icons/floors/12.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 13,
-      "name_fi": "Keskitumma ruudukko",
-      "name_en": "Mid-dark grid",
-      "type": "floor",
-      "happiness_level": 4,
-      "price": 100000000,
-      "texture": "shop/icons/floors/13.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
-    },
-    {
-      "id": 14,
-      "name_fi": "Tumma ruudukko",
-      "name_en": "Dark grid",
-      "type": "floor",
-      "happiness_level": 4,
-      "price": 500000000,
-      "texture": "shop/icons/floors/14.png",
-      "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 1,
@@ -589,10 +94,10 @@
       "name_en": "Broken wall",
       "type": "wall",
       "happiness_level": 0,
-      "price": 100,
+      "price": 407.86536050000007,
       "texture": "shop/icons/walls/1.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 2,
@@ -600,10 +105,142 @@
       "name_en": "Patched wall",
       "type": "wall",
       "happiness_level": 0,
-      "price": 400,
+      "price": 530.22496865,
       "texture": "shop/icons/walls/2.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 0.53022496865
+    },
+    {
+      "id": 3,
+      "name_fi": "Oranssi sänky",
+      "name_en": "Orange bed",
+      "type": "bed",
+      "happiness_level": 1,
+      "price": 689.2924592450001,
+      "texture": "shop/icons/beds/3.png",
+      "effect_method": "passive-income",
+      "effect_amount": 0.6892924592450002
+    },
+    {
+      "id": 4,
+      "name_fi": "Ruskea sänky",
+      "name_en": "Brown bed",
+      "type": "bed",
+      "happiness_level": 1,
+      "price": 896.0801970185003,
+      "texture": "shop/icons/beds/4.png",
+      "effect_method": "passive-income",
+      "effect_amount": 0.8960801970185003
+    },
+    {
+      "id": 5,
+      "name_fi": "Vihreä sänky",
+      "name_en": "Green bed",
+      "type": "bed",
+      "happiness_level": 1,
+      "price": 1164.9042561240503,
+      "texture": "shop/icons/beds/5.png",
+      "effect_method": "passive-income",
+      "effect_amount": 1.1649042561240504
+    },
+    {
+      "id": 3,
+      "name_fi": "Punainen työtuoli",
+      "name_en": "Red workchair",
+      "type": "chair",
+      "happiness_level": 1,
+      "price": 1514.3755329612654,
+      "texture": "shop/icons/chairs/3.png",
+      "effect_method": "passive-income",
+      "effect_amount": 1.5143755329612654
+    },
+    {
+      "id": 4,
+      "name_fi": "Sininen työtuoli",
+      "name_en": "Blue workchair",
+      "type": "chair",
+      "happiness_level": 1,
+      "price": 1968.688192849645,
+      "texture": "shop/icons/chairs/4.png",
+      "effect_method": "passive-income",
+      "effect_amount": 1.968688192849645
+    },
+    {
+      "id": 5,
+      "name_fi": "Musta työtuoli",
+      "name_en": "Black workchair",
+      "type": "chair",
+      "happiness_level": 1,
+      "price": 2559.2946507045385,
+      "texture": "shop/icons/chairs/5.png",
+      "effect_method": "passive-income",
+      "effect_amount": 2.5592946507045387
+    },
+    {
+      "id": 3,
+      "name_fi": "Harmaa pöytä",
+      "name_en": "Gray desk",
+      "type": "desk",
+      "happiness_level": 1,
+      "price": 3327.0830459159,
+      "texture": "shop/icons/desks/3.png",
+      "effect_method": "passive-income",
+      "effect_amount": 3.3270830459159
+    },
+    {
+      "id": 4,
+      "name_fi": "Musta pöytä",
+      "name_en": "Black desk",
+      "type": "desk",
+      "happiness_level": 1,
+      "price": 4325.207959690671,
+      "texture": "shop/icons/desks/4.png",
+      "effect_method": "passive-income",
+      "effect_amount": 4.325207959690671
+    },
+    {
+      "id": 5,
+      "name_fi": "Tummanharmaa pöytä",
+      "name_en": "Dark gray desk",
+      "type": "desk",
+      "happiness_level": 1,
+      "price": 5622.770347597872,
+      "texture": "shop/icons/desks/5.png",
+      "effect_method": "passive-income",
+      "effect_amount": 5.622770347597872
+    },
+    {
+      "id": 3,
+      "name_fi": "Vaalea parketti",
+      "name_en": "Light parquet",
+      "type": "floor",
+      "happiness_level": 1,
+      "price": 7309.6014518772345,
+      "texture": "shop/icons/floors/3.png",
+      "effect_method": "passive-income",
+      "effect_amount": 7.309601451877234
+    },
+    {
+      "id": 4,
+      "name_fi": "Keltainen parketti",
+      "name_en": "Yellow parquet",
+      "type": "floor",
+      "happiness_level": 1,
+      "price": 9502.481887440405,
+      "texture": "shop/icons/floors/4.png",
+      "effect_method": "passive-income",
+      "effect_amount": 9.502481887440405
+    },
+    {
+      "id": 5,
+      "name_fi": "Oranssi parketti",
+      "name_en": "Orange parquet",
+      "type": "floor",
+      "happiness_level": 1,
+      "price": 12353.226453672527,
+      "texture": "shop/icons/floors/5.png",
+      "effect_method": "passive-income",
+      "effect_amount": 12.353226453672526
     },
     {
       "id": 3,
@@ -611,10 +248,10 @@
       "name_en": "Painted wall",
       "type": "wall",
       "happiness_level": 1,
-      "price": 1000,
+      "price": 16059.194389774286,
       "texture": "shop/icons/walls/3.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 16.059194389774287
     },
     {
       "id": 4,
@@ -622,10 +259,10 @@
       "name_en": "Light green wall",
       "type": "wall",
       "happiness_level": 1,
-      "price": 3000,
+      "price": 20876.952706706572,
       "texture": "shop/icons/walls/4.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 20.87695270670657
     },
     {
       "id": 5,
@@ -633,10 +270,142 @@
       "name_en": "Mint wall",
       "type": "wall",
       "happiness_level": 1,
-      "price": 6500,
+      "price": 27140.038518718546,
       "texture": "shop/icons/walls/5.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 27.140038518718544
+    },
+    {
+      "id": 6,
+      "name_fi": "Tummanvihreä sänky",
+      "name_en": "Yellow bed",
+      "type": "bed",
+      "happiness_level": 2,
+      "price": 35282.05007433411,
+      "texture": "shop/icons/beds/6.png",
+      "effect_method": "passive-income",
+      "effect_amount": 35.28205007433411
+    },
+    {
+      "id": 7,
+      "name_fi": "Vaaleanvihreä sänky",
+      "name_en": "Dark green bed",
+      "type": "bed",
+      "happiness_level": 2,
+      "price": 45866.665096634344,
+      "texture": "shop/icons/beds/7.png",
+      "effect_method": "passive-income",
+      "effect_amount": 45.86666509663434
+    },
+    {
+      "id": 8,
+      "name_fi": "Harmaa sänky",
+      "name_en": "Gray bed",
+      "type": "bed",
+      "happiness_level": 2,
+      "price": 59626.664625624646,
+      "texture": "shop/icons/beds/8.png",
+      "effect_method": "passive-income",
+      "effect_amount": 59.62666462562465
+    },
+    {
+      "id": 6,
+      "name_fi": "Turkoosi toimistotuoli",
+      "name_en": "Turquoise office chair",
+      "type": "chair",
+      "happiness_level": 2,
+      "price": 77514.66401331204,
+      "texture": "shop/icons/chairs/6.png",
+      "effect_method": "passive-income",
+      "effect_amount": 77.51466401331204
+    },
+    {
+      "id": 7,
+      "name_fi": "Navyblue toimistotuoli",
+      "name_en": "Navyblue office chair",
+      "type": "chair",
+      "happiness_level": 2,
+      "price": 100769.06321730565,
+      "texture": "shop/icons/chairs/7.png",
+      "effect_method": "passive-income",
+      "effect_amount": 100.76906321730566
+    },
+    {
+      "id": 8,
+      "name_fi": "Vaalea toimistotuoli",
+      "name_en": "Light office chair",
+      "type": "chair",
+      "happiness_level": 2,
+      "price": 130999.78218249735,
+      "texture": "shop/icons/chairs/8.png",
+      "effect_method": "passive-income",
+      "effect_amount": 130.99978218249734
+    },
+    {
+      "id": 6,
+      "name_fi": "Harmaa pöytä",
+      "name_en": "Gray desk",
+      "type": "desk",
+      "happiness_level": 2,
+      "price": 170299.71683724655,
+      "texture": "shop/icons/desks/6.png",
+      "effect_method": "passive-income",
+      "effect_amount": 170.29971683724656
+    },
+    {
+      "id": 7,
+      "name_fi": "Eebenpuupöytä",
+      "name_en": "Ebony desk",
+      "type": "desk",
+      "happiness_level": 2,
+      "price": 221389.63188842052,
+      "texture": "shop/icons/desks/7.png",
+      "effect_method": "passive-income",
+      "effect_amount": 221.38963188842052
+    },
+    {
+      "id": 8,
+      "name_fi": "Harmaa pöytä",
+      "name_en": "Gray desk",
+      "type": "desk",
+      "happiness_level": 2,
+      "price": 287806.5214549467,
+      "texture": "shop/icons/desks/8.png",
+      "effect_method": "passive-income",
+      "effect_amount": 287.80652145494673
+    },
+    {
+      "id": 6,
+      "name_fi": "Vaaleanruskea laminaatti",
+      "name_en": "Light brown laminate",
+      "type": "floor",
+      "happiness_level": 2,
+      "price": 374148.4778914307,
+      "texture": "shop/icons/floors/6.png",
+      "effect_method": "passive-income",
+      "effect_amount": 374.14847789143073
+    },
+    {
+      "id": 7,
+      "name_fi": "Ruskea laminaatti",
+      "name_en": "Brown laminate",
+      "type": "floor",
+      "happiness_level": 2,
+      "price": 486393.02125885995,
+      "texture": "shop/icons/floors/7.png",
+      "effect_method": "passive-income",
+      "effect_amount": 486.39302125885996
+    },
+    {
+      "id": 8,
+      "name_fi": "Punertava laminaatti",
+      "name_en": "Redish laminate",
+      "type": "floor",
+      "happiness_level": 2,
+      "price": 632310.9276365179,
+      "texture": "shop/icons/floors/8.png",
+      "effect_method": "passive-income",
+      "effect_amount": 632.3109276365179
     },
     {
       "id": 6,
@@ -644,10 +413,10 @@
       "name_en": "Gray wall",
       "type": "wall",
       "happiness_level": 2,
-      "price": 10000,
+      "price": 822004.2059274733,
       "texture": "shop/icons/walls/6.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 822.0042059274732
     },
     {
       "id": 7,
@@ -655,10 +424,10 @@
       "name_en": "Green wall",
       "type": "wall",
       "happiness_level": 2,
-      "price": 150000,
+      "price": 1068605.4677057152,
       "texture": "shop/icons/walls/7.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 1068.6054677057152
     },
     {
       "id": 8,
@@ -666,10 +435,142 @@
       "name_en": "Gray wall",
       "type": "wall",
       "happiness_level": 2,
-      "price": 800000,
+      "price": 1389187.10801743,
       "texture": "shop/icons/walls/8.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 1389.1871080174299
+    },
+    {
+      "id": 9,
+      "name_fi": "Tumma violetti sänky",
+      "name_en": "Dark violet bed",
+      "type": "bed",
+      "happiness_level": 3,
+      "price": 1805943.240422659,
+      "texture": "shop/icons/beds/9.png",
+      "effect_method": "passive-income",
+      "effect_amount": 1805.943240422659
+    },
+    {
+      "id": 10,
+      "name_fi": "Pinkki sänky",
+      "name_en": "Pink bed",
+      "type": "bed",
+      "happiness_level": 3,
+      "price": 2347726.212549457,
+      "texture": "shop/icons/beds/10.png",
+      "effect_method": "passive-income",
+      "effect_amount": 2347.7262125494567
+    },
+    {
+      "id": 11,
+      "name_fi": "Musta sänky",
+      "name_en": "Black bed",
+      "type": "bed",
+      "happiness_level": 3,
+      "price": 3052044.0763142942,
+      "texture": "shop/icons/beds/11.png",
+      "effect_method": "passive-income",
+      "effect_amount": 3052.044076314294
+    },
+    {
+      "id": 9,
+      "name_fi": "Vihreä ergo-tuoli",
+      "name_en": "Green ergo-chair",
+      "type": "chair",
+      "happiness_level": 3,
+      "price": 3967657.299208583,
+      "texture": "shop/icons/chairs/9.png",
+      "effect_method": "passive-income",
+      "effect_amount": 3967.657299208583
+    },
+    {
+      "id": 10,
+      "name_fi": "Tummansininen ergo-tuoli",
+      "name_en": "Dark blue ergo-chair",
+      "type": "chair",
+      "happiness_level": 3,
+      "price": 5157954.488971158,
+      "texture": "shop/icons/chairs/10.png",
+      "effect_method": "passive-income",
+      "effect_amount": 5157.954488971158
+    },
+    {
+      "id": 11,
+      "name_fi": "Vaaleansininen ergo-tuoli",
+      "name_en": "Light blue ergo-chair",
+      "type": "chair",
+      "happiness_level": 3,
+      "price": 6705340.835662506,
+      "texture": "shop/icons/chairs/11.png",
+      "effect_method": "passive-income",
+      "effect_amount": 6705.340835662506
+    },
+    {
+      "id": 9,
+      "name_fi": "Hiekkapöytä",
+      "name_en": "Sand des",
+      "type": "desk",
+      "happiness_level": 3,
+      "price": 8716943.086361257,
+      "texture": "shop/icons/desks/9.png",
+      "effect_method": "passive-income",
+      "effect_amount": 8716.943086361258
+    },
+    {
+      "id": 10,
+      "name_fi": "Ruskea pöytä",
+      "name_en": "Brown desk",
+      "type": "desk",
+      "happiness_level": 3,
+      "price": 11332026.012269635,
+      "texture": "shop/icons/desks/10.png",
+      "effect_method": "passive-income",
+      "effect_amount": 11332.026012269635
+    },
+    {
+      "id": 11,
+      "name_fi": "Harmaa pöytä",
+      "name_en": "Gray desk",
+      "type": "desk",
+      "happiness_level": 3,
+      "price": 14731633.815950526,
+      "texture": "shop/icons/desks/11.png",
+      "effect_method": "passive-income",
+      "effect_amount": 14731.633815950527
+    },
+    {
+      "id": 9,
+      "name_fi": "Vaalea laminaatti",
+      "name_en": "Light laminate",
+      "type": "floor",
+      "happiness_level": 3,
+      "price": 19151123.960735686,
+      "texture": "shop/icons/floors/9.png",
+      "effect_method": "passive-income",
+      "effect_amount": 19151.123960735687
+    },
+    {
+      "id": 10,
+      "name_fi": "Oranssi laminaatti",
+      "name_en": "Orange laminate",
+      "type": "floor",
+      "happiness_level": 3,
+      "price": 24896461.148956392,
+      "texture": "shop/icons/floors/10.png",
+      "effect_method": "passive-income",
+      "effect_amount": 24896.46114895639
+    },
+    {
+      "id": 11,
+      "name_fi": "Tummanruskea laminaatti",
+      "name_en": "Dark brown laminate",
+      "type": "floor",
+      "happiness_level": 3,
+      "price": 32365399.49364331,
+      "texture": "shop/icons/floors/11.png",
+      "effect_method": "passive-income",
+      "effect_amount": 32365.39949364331
     },
     {
       "id": 9,
@@ -677,10 +578,10 @@
       "name_en": "Blueish wall",
       "type": "wall",
       "happiness_level": 3,
-      "price": 1000000,
+      "price": 42075019.3417363,
       "texture": "shop/icons/walls/9.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 42075.019341736304
     },
     {
       "id": 10,
@@ -688,10 +589,10 @@
       "name_en": "Gray wall",
       "type": "wall",
       "happiness_level": 3,
-      "price": 2000000,
+      "price": 54697525.144257195,
       "texture": "shop/icons/walls/10.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 54697.5251442572
     },
     {
       "id": 11,
@@ -699,10 +600,109 @@
       "name_en": "Mint wall with drapes",
       "type": "wall",
       "happiness_level": 3,
-      "price": 3000000,
+      "price": 71106782.68753436,
       "texture": "shop/icons/walls/11.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 71106.78268753436
+    },
+    {
+      "id": 12,
+      "name_fi": "Haalea sänky",
+      "name_en": "Light bed",
+      "type": "bed",
+      "happiness_level": 4,
+      "price": 92438817.49379468,
+      "texture": "shop/icons/beds/12.png",
+      "effect_method": "passive-income",
+      "effect_amount": 92438.81749379468
+    },
+    {
+      "id": 13,
+      "name_fi": "Turkoosi sänky",
+      "name_en": "Turquoise bed",
+      "type": "bed",
+      "happiness_level": 4,
+      "price": 120170462.74193309,
+      "texture": "shop/icons/beds/13.png",
+      "effect_method": "passive-income",
+      "effect_amount": 120170.4627419331
+    },
+    {
+      "id": 14,
+      "name_fi": "Tummansininen sänky",
+      "name_en": "Dark blue bed",
+      "type": "bed",
+      "happiness_level": 4,
+      "price": 156221601.56451303,
+      "texture": "shop/icons/beds/14.png",
+      "effect_method": "passive-income",
+      "effect_amount": 156221.60156451302
+    },
+    {
+      "id": 12,
+      "name_fi": "Tummanruskea pöytä",
+      "name_en": "Dark brown desk",
+      "type": "desk",
+      "happiness_level": 4,
+      "price": 203088082.03386694,
+      "texture": "shop/icons/desks/12.png",
+      "effect_method": "passive-income",
+      "effect_amount": 203088.08203386693
+    },
+    {
+      "id": 13,
+      "name_fi": "Valkoinen pöytä",
+      "name_en": "White desk",
+      "type": "desk",
+      "happiness_level": 4,
+      "price": 264014506.64402702,
+      "texture": "shop/icons/desks/13.png",
+      "effect_method": "passive-income",
+      "effect_amount": 264014.506644027
+    },
+    {
+      "id": 14,
+      "name_fi": "Musta pöytä",
+      "name_en": "Black desk",
+      "type": "desk",
+      "happiness_level": 4,
+      "price": 343218858.63723516,
+      "texture": "shop/icons/desks/14.png",
+      "effect_method": "passive-income",
+      "effect_amount": 343218.8586372352
+    },
+    {
+      "id": 12,
+      "name_fi": "Vaalea ruudukko",
+      "name_en": "Light grid",
+      "type": "floor",
+      "happiness_level": 4,
+      "price": 446184516.2284057,
+      "texture": "shop/icons/floors/12.png",
+      "effect_method": "passive-income",
+      "effect_amount": 446184.5162284057
+    },
+    {
+      "id": 13,
+      "name_fi": "Keskitumma ruudukko",
+      "name_en": "Mid-dark grid",
+      "type": "floor",
+      "happiness_level": 4,
+      "price": 580039871.0969274,
+      "texture": "shop/icons/floors/13.png",
+      "effect_method": "passive-income",
+      "effect_amount": 580039.8710969274
+    },
+    {
+      "id": 14,
+      "name_fi": "Tumma ruudukko",
+      "name_en": "Dark grid",
+      "type": "floor",
+      "happiness_level": 4,
+      "price": 754051832.4260056,
+      "texture": "shop/icons/floors/14.png",
+      "effect_method": "passive-income",
+      "effect_amount": 754051.8324260056
     },
     {
       "id": 12,
@@ -710,10 +710,10 @@
       "name_en": "Gray wall with drapes",
       "type": "wall",
       "happiness_level": 4,
-      "price": 10000000,
+      "price": 980267382.1538073,
       "texture": "shop/icons/walls/12.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 980267.3821538073
     },
     {
       "id": 13,
@@ -721,10 +721,10 @@
       "name_en": "Light wall with drapes",
       "type": "wall",
       "happiness_level": 4,
-      "price": 100000000,
+      "price": 1274347596.7999494,
       "texture": "shop/icons/walls/13.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 1274347.5967999494
     },
     {
       "id": 14,
@@ -732,10 +732,10 @@
       "name_en": "Dark blue wall with drapes",
       "type": "wall",
       "happiness_level": 4,
-      "price": 500000000,
+      "price": 1656651875.8399343,
       "texture": "shop/icons/walls/14.png",
       "effect_method": "passive-income",
-      "effect_amount": 10
+      "effect_amount": 1656651.8758399345
     }
   ]
 }

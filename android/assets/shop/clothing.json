@@ -6,10 +6,10 @@
       "name_en": "Orange shirt",
       "type": "shirt",
       "happiness_level": 0,
-      "price": 100,
+      "price": 50,
       "texture": "shop/icons/shirts/1.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 2,
@@ -17,10 +17,10 @@
       "name_en": "Yellow shirt",
       "type": "shirt",
       "happiness_level": 0,
-      "price": 400,
+      "price": 100,
       "texture": "shop/icons/shirts/2.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 3,
@@ -28,10 +28,10 @@
       "name_en": "Light blue shirt",
       "type": "shirt",
       "happiness_level": 0,
-      "price": 1000,
+      "price": 200,
       "texture": "shop/icons/shirts/3.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 4,
@@ -39,10 +39,10 @@
       "name_en": "Blue polkadot",
       "type": "shirt",
       "happiness_level": 1,
-      "price": 3000,
+      "price": 400,
       "texture": "shop/icons/shirts/4.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 5,
@@ -50,10 +50,10 @@
       "name_en": "Red polkadot",
       "type": "shirt",
       "happiness_level": 1,
-      "price": 6500,
+      "price": 800,
       "texture": "shop/icons/shirts/5.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 1
     },
     {
       "id": 6,
@@ -61,10 +61,10 @@
       "name_en": "Light brown polkadot",
       "type": "shirt",
       "happiness_level": 1,
-      "price": 10000,
+      "price": 1600,
       "texture": "shop/icons/shirts/6.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 2
     },
     {
       "id": 7,
@@ -72,98 +72,10 @@
       "name_en": "Gray polo",
       "type": "shirt",
       "happiness_level": 2,
-      "price": 150000,
+      "price": 3200,
       "texture": "shop/icons/shirts/7.png",
       "effect_method": "click-power",
-      "effect_amount": 10
-    },
-    {
-      "id": 8,
-      "name_fi": "Sininen pikee",
-      "name_en": "Blue polo",
-      "type": "shirt",
-      "happiness_level": 2,
-      "price": 800000,
-      "texture": "shop/icons/shirts/8.png",
-      "effect_method": "click-power",
-      "effect_amount": 10
-    },
-    {
-      "id": 9,
-      "name_fi": "Tumma pikee",
-      "name_en": "Dark polo",
-      "type": "shirt",
-      "happiness_level": 2,
-      "price": 1000000,
-      "texture": "shop/icons/shirts/9.png",
-      "effect_method": "click-power",
-      "effect_amount": 10
-    },
-    {
-      "id": 10,
-      "name_fi": "Punainen huppari",
-      "name_en": "Red hoodie",
-      "type": "shirt",
-      "happiness_level": 3,
-      "price": 2000000,
-      "texture": "shop/icons/shirts/10.png",
-      "effect_method": "click-power",
-      "effect_amount": 10
-    },
-    {
-      "id": 11,
-      "name_fi": "Vihreä huppari",
-      "name_en": "Green hoodie",
-      "type": "shirt",
-      "happiness_level": 3,
-      "price": 3000000,
-      "texture": "shop/icons/shirts/11.png",
-      "effect_method": "click-power",
-      "effect_amount": 10
-    },
-    {
-      "id": 12,
-      "name_fi": "Sininen huppari",
-      "name_en": "Blue hoodie",
-      "type": "shirt",
-      "happiness_level": 3,
-      "price": 10000000,
-      "texture": "shop/icons/shirts/12.png",
-      "effect_method": "click-power",
-      "effect_amount": 10
-    },
-    {
-      "id": 13,
-      "name_fi": "Punainen raitapaita",
-      "name_en": "Red striped hoodie",
-      "type": "shirt",
-      "happiness_level": 4,
-      "price": 100000000,
-      "texture": "shop/icons/shirts/13.png",
-      "effect_method": "click-power",
-      "effect_amount": 10
-    },
-    {
-      "id": 14,
-      "name_fi": "Keltainen raitapaita",
-      "name_en": "Yellow striped hoodie",
-      "type": "shirt",
-      "happiness_level": 4,
-      "price": 500000000,
-      "texture": "shop/icons/shirts/14.png",
-      "effect_method": "click-power",
-      "effect_amount": 10
-    },
-    {
-      "id": 15,
-      "name_fi": "Vaaleansininen raitapaita",
-      "name_en": "Light blue striped hoodie",
-      "type": "shirt",
-      "happiness_level": 4,
-      "price": 2147483647,
-      "texture": "shop/icons/shirts/15.png",
-      "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 3
     },
     {
       "id": 1,
@@ -171,10 +83,21 @@
       "name_en": "Red beanie",
       "type": "hat",
       "happiness_level": 2,
-      "price": 150000,
+      "price": 6400,
       "texture": "shop/icons/hats/1.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 6
+    },
+    {
+      "id": 8,
+      "name_fi": "Sininen pikee",
+      "name_en": "Blue polo",
+      "type": "shirt",
+      "happiness_level": 2,
+      "price": 12800,
+      "texture": "shop/icons/shirts/8.png",
+      "effect_method": "click-power",
+      "effect_amount": 12
     },
     {
       "id": 2,
@@ -182,10 +105,21 @@
       "name_en": "Yellow beanie",
       "type": "hat",
       "happiness_level": 2,
-      "price": 800000,
+      "price": 25600,
       "texture": "shop/icons/hats/2.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 25
+    },
+    {
+      "id": 9,
+      "name_fi": "Tumma pikee",
+      "name_en": "Dark polo",
+      "type": "shirt",
+      "happiness_level": 2,
+      "price": 51200,
+      "texture": "shop/icons/shirts/9.png",
+      "effect_method": "click-power",
+      "effect_amount": 51
     },
     {
       "id": 3,
@@ -193,10 +127,21 @@
       "name_en": "Blue beanie",
       "type": "hat",
       "happiness_level": 2,
-      "price": 1000000,
+      "price": 102000,
       "texture": "shop/icons/hats/3.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 102
+    },
+    {
+      "id": 10,
+      "name_fi": "Punainen huppari",
+      "name_en": "Red hoodie",
+      "type": "shirt",
+      "happiness_level": 3,
+      "price": 204000,
+      "texture": "shop/icons/shirts/10.png",
+      "effect_method": "click-power",
+      "effect_amount": 204
     },
     {
       "id": 4,
@@ -204,10 +149,21 @@
       "name_en": "Violet bandana",
       "type": "hat",
       "happiness_level": 3,
-      "price": 2000000,
+      "price": 409000,
       "texture": "shop/icons/hats/4.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 409
+    },
+    {
+      "id": 11,
+      "name_fi": "Vihreä huppari",
+      "name_en": "Green hoodie",
+      "type": "shirt",
+      "happiness_level": 3,
+      "price": 819000,
+      "texture": "shop/icons/shirts/11.png",
+      "effect_method": "click-power",
+      "effect_amount": 819
     },
     {
       "id": 5,
@@ -215,10 +171,21 @@
       "name_en": "Blue bandana",
       "type": "hat",
       "happiness_level": 3,
-      "price": 3000000,
+      "price": 1630000,
       "texture": "shop/icons/hats/5.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 1630
+    },
+    {
+      "id": 12,
+      "name_fi": "Sininen huppari",
+      "name_en": "Blue hoodie",
+      "type": "shirt",
+      "happiness_level": 3,
+      "price": 3270000,
+      "texture": "shop/icons/shirts/12.png",
+      "effect_method": "click-power",
+      "effect_amount": 3270
     },
     {
       "id": 6,
@@ -226,10 +193,21 @@
       "name_en": "Red bandana",
       "type": "hat",
       "happiness_level": 3,
-      "price": 10000000,
+      "price": 6550000,
       "texture": "shop/icons/hats/6.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 6550
+    },
+    {
+      "id": 13,
+      "name_fi": "Punainen raitapaita",
+      "name_en": "Red striped hoodie",
+      "type": "shirt",
+      "happiness_level": 4,
+      "price": 13100000,
+      "texture": "shop/icons/shirts/13.png",
+      "effect_method": "click-power",
+      "effect_amount": 13100
     },
     {
       "id": 7,
@@ -237,10 +215,21 @@
       "name_en": "Yellow baseball cap",
       "type": "hat",
       "happiness_level": 4,
-      "price": 100000000,
+      "price": 26200000,
       "texture": "shop/icons/hats/7.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 26200
+    },
+    {
+      "id": 14,
+      "name_fi": "Keltainen raitapaita",
+      "name_en": "Yellow striped hoodie",
+      "type": "shirt",
+      "happiness_level": 4,
+      "price": 52400000,
+      "texture": "shop/icons/shirts/14.png",
+      "effect_method": "click-power",
+      "effect_amount": 52400
     },
     {
       "id": 8,
@@ -248,10 +237,21 @@
       "name_en": "Blue baseball cap",
       "type": "hat",
       "happiness_level": 4,
-      "price": 500000000,
+      "price": 104000000,
       "texture": "shop/icons/hats/8.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 104000
+    },
+    {
+      "id": 15,
+      "name_fi": "Vaaleansininen raitapaita",
+      "name_en": "Light blue striped hoodie",
+      "type": "shirt",
+      "happiness_level": 4,
+      "price": 209000000,
+      "texture": "shop/icons/shirts/15.png",
+      "effect_method": "click-power",
+      "effect_amount": 209000
     },
     {
       "id": 9,
@@ -259,10 +259,10 @@
       "name_en": "Red baseball cap",
       "type": "hat",
       "happiness_level": 4,
-      "price": 2147483647,
+      "price": 419000000,
       "texture": "shop/icons/hats/9.png",
       "effect_method": "click-power",
-      "effect_amount": 10
+      "effect_amount": 419000
     }
   ]
 }
