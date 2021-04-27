@@ -5,7 +5,7 @@
       "happiness_level": 0,
       "name_fi": "Roskis",
       "name_en": "Trashcan",
-      "type": "other",
+      "type": "trashcan",
       "price": 100,
       "texture": "shop/icons/others/1.png",
       "effects":[
@@ -13,11 +13,11 @@
       ]
     },
     {
-      "id": 2,
+      "id": 1,
       "happiness_level": 1,
       "name_fi": "Taulu",
       "name_en": "Painting",
-      "type": "other",
+      "type": "painting",
       "price": 400,
       "texture": "shop/icons/others/2.png",
       "effects":[
@@ -25,11 +25,11 @@
       ]
     },
     {
-      "id": 3,
+      "id": 1,
       "happiness_level": 2,
       "name_fi": "Painot",
       "name_en": "Weights",
-      "type": "other",
+      "type": "weights",
       "price": 1000,
       "texture": "shop/icons/others/3.png",
       "effects":[
@@ -37,11 +37,11 @@
       ]
     },
     {
-      "id": 4,
+      "id": 1,
       "happiness_level": 3,
       "name_fi": "Kahvikuppi",
       "name_en": "Coffee mug",
-      "type": "other",
+      "type": "mug",
       "price": 3000,
       "texture": "shop/icons/others/4.png",
       "effects":[
@@ -49,11 +49,11 @@
       ]
     },
     {
-      "id": 5,
+      "id": 1,
       "happiness_level": 4,
       "name_fi": "Kasvi",
       "name_en": "Plant",
-      "type": "other",
+      "type": "plant",
       "price": 6500,
       "texture": "shop/icons/others/5.png",
       "effects":[
@@ -65,7 +65,7 @@
       "happiness_level": 1,
       "name_fi": "Puhelin",
       "name_en": "Phone",
-      "type": "other",
+      "type": "hand",
       "price": 10000,
       "texture": "shop/icons/others/6.png",
       "effects":[
@@ -77,7 +77,7 @@
       "happiness_level": 2,
       "name_fi": "Kirja",
       "name_en": "Book",
-      "type": "other",
+      "type": "hand",
       "price": 150000,
       "texture": "shop/icons/others/7.png",
       "effects":[
@@ -89,7 +89,7 @@
       "happiness_level": 3,
       "name_fi": "Pearbook Pro",
       "name_en": "Pearbook Pro",
-      "type": "other",
+      "type": "hand",
       "price": 800000,
       "texture": "shop/icons/others/8.png",
       "effects":[
@@ -101,7 +101,7 @@
       "happiness_level": 4,
       "name_fi": "Pelitietokone",
       "name_en": "Gaming PC",
-      "type": "other",
+      "type": "hand",
       "price": 1000000,
       "texture": "shop/icons/others/9.png",
       "effects":[
@@ -112,7 +112,7 @@
       "id": 10,
       "name_fi": "Lue kirja",
       "name_en": "Read a book",
-      "type": "other",
+      "type": "immaterial",
       "price": 10000000,
       "texture": "shop/icons/others/10.png",
       "effects":[
@@ -123,7 +123,7 @@
       "id": 11,
       "name_fi": "Pelaa peliä",
       "name_en": "Play a game",
-      "type": "other",
+      "type": "immaterial",
       "price": 10000000,
       "texture": "shop/icons/others/11.png",
       "effects":[
@@ -134,7 +134,7 @@
       "id": 12,
       "name_fi": "Meditoi",
       "name_en": "Meditate",
-      "type": "other",
+      "type": "immaterial",
       "price": 10000000,
       "texture": "shop/icons/others/12.png",
       "effects":[
@@ -145,7 +145,7 @@
       "id": 13,
       "name_fi": "Kuuntele musiikkia",
       "name_en": "Listen to music",
-      "type": "other",
+      "type": "immaterial",
       "price": 10000000,
       "texture": "shop/icons/others/13.png",
       "effects":[
@@ -156,7 +156,7 @@
       "id": 14,
       "name_fi": "Mene ulos",
       "name_en": "Go outside",
-      "type": "other",
+      "type": "immaterial",
       "price": 10000000,
       "texture": "shop/icons/others/14.png",
       "effects":[
@@ -167,7 +167,7 @@
       "id": 15,
       "name_fi": "Soita puhelu",
       "name_en": "Make a call",
-      "type": "other",
+      "type": "immaterial",
       "price": 10000000,
       "texture": "shop/icons/others/15.png",
       "effects":[
@@ -178,7 +178,7 @@
       "id": 16,
       "name_fi": "Nuku",
       "name_en": "Sleep",
-      "type": "other",
+      "type": "immaterial",
       "price": 10000000,
       "texture": "shop/icons/others/16.png",
       "effects":[
@@ -189,7 +189,7 @@
       "id": 17,
       "name_fi": "Juo",
       "name_en": "Drink",
-      "type": "other",
+      "type": "immaterial",
       "price": 10000000,
       "texture": "shop/icons/others/17.png",
       "effects":[
@@ -200,7 +200,7 @@
       "id": 18,
       "name_fi": "Voimistele",
       "name_en": "Workout",
-      "type": "other",
+      "type": "immaterial",
       "price": 10000000,
       "texture": "shop/icons/others/18.png",
       "effects":[
