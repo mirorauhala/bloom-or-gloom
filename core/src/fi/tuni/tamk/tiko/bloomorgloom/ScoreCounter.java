@@ -103,7 +103,7 @@ public class ScoreCounter {
      *
      * @return long The increment amount of passive income.
      */
-    private long countPassiveIncomeIncrement() {
+    public long countPassiveIncomeIncrement() {
         if(getPassiveIncome() <= 0) {
             return 0;
         }
