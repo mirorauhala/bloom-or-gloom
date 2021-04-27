@@ -11,7 +11,7 @@ import fi.tuni.tamk.tiko.bloomorgloom.Shop.ShopMain;
 
 public class MyGdxGame extends Game {
 	// DEBUG ->
-	public static final boolean DEBUG = true;
+	public static final boolean DEBUG = false;
 	// <- DEBUG
 
 	public SpriteBatch gameBatch;
