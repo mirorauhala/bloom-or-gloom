@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
@@ -160,7 +161,7 @@ public class ShopMain {
             productName.setWrap(true);
             productName.setFontScale(2);
             float productNameSize = 1080f - texture.getWidth() - 40f - 200f;
-            game.score.incrementWallet(100);
+
             Button buyButton = createButton(game.score.getRationalizedValue(product.getPrice(), 2));
             buyButton.addListener(new ClickListener() {
                 @Override
@@ -184,7 +185,7 @@ public class ShopMain {
                             ownedOfCurrentType.add(product.getId());
                         } else {
                             currentOwnedProducts.put(product.getType(), new ArrayList<Integer>(
-                                    Collections.singletonList(1)
+                                    Collections.singletonList(product.getId())
                             ));
                         }
 
@@ -364,11 +365,27 @@ public class ShopMain {
      * Otherwise, enable the buttons back.
      */
     public void updateButtons() {
+        final OwnedProducts owned = new Gson().fromJson(game.inventory.getOwnedProducts(), OwnedProducts.class);
+
         for (Map.Entry<Product, Button> entry : buttons.entrySet()) {
             Product p = entry.getKey();
             Button b = entry.getValue();
 
-            b.setDisabled(p.getPrice() > walletAmount);
+            boolean isProductOwned = false;
+
+            // check if the player owns current type of product
+            if(owned.getProducts().containsKey(p.getType())) {
+
+                // get a list of owned products of the current type
+                ArrayList<Integer> ownedTypes = owned.getProducts().get(p.getType());
+                isProductOwned = ownedTypes.contains(p.getId());
+            }
+
+            boolean isDisabled = p.getHappinessLevel() > game.score.getHappinessLevel() || p.getPrice() > walletAmount || isProductOwned;
+
+            // set disabled
+            b.setDisabled(isDisabled);
+            b.setTouchable(isDisabled ? Touchable.disabled : Touchable.enabled);
         }
     }
 
