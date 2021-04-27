@@ -54,7 +54,6 @@ public class ShopMain {
 
         //setup skin
         skin = new Skin(Gdx.files.internal("UI/uiskin.json"));
-
     }
 
     /**
@@ -248,7 +247,7 @@ public class ShopMain {
         style.up = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/ui/button-default.png"))));
         style.down = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/ui/button-active.png"))));
         style.disabled = new TextureRegionDrawable(new TextureRegion(new Texture(Gdx.files.internal("shop/ui/button-disabled.png"))));
-        style.font = new BitmapFont(Gdx.files.internal("UI/Quicksand.fnt"));
+        style.font = new BitmapFont(Gdx.files.internal("UI/QuicksandASCII.fnt"));
 
         Button b = new TextButton(text, style);
         b.setSize(200f,50f);
