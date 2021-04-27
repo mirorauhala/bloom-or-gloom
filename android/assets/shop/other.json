@@ -6,7 +6,10 @@
       "name_en": "Trashcan",
       "type": "other",
       "price": 100,
-      "texture": "shop/icons/others/1.png"
+      "texture": "shop/icons/others/1.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 1}
+      ]
     },
     {
       "id": 2,
@@ -14,7 +17,10 @@
       "name_en": "Painting",
       "type": "other",
       "price": 400,
-      "texture": "shop/icons/others/2.png"
+      "texture": "shop/icons/others/2.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 5}
+      ]
     },
     {
       "id": 3,
@@ -22,7 +28,10 @@
       "name_en": "Weights",
       "type": "other",
       "price": 1000,
-      "texture": "shop/icons/others/3.png"
+      "texture": "shop/icons/others/3.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 10}
+      ]
     },
     {
       "id": 4,
@@ -30,7 +39,10 @@
       "name_en": "Coffee mug",
       "type": "other",
       "price": 3000,
-      "texture": "shop/icons/others/4.png"
+      "texture": "shop/icons/others/4.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 15}
+      ]
     },
     {
       "id": 5,
@@ -38,7 +50,10 @@
       "name_en": "Plant",
       "type": "other",
       "price": 6500,
-      "texture": "shop/icons/others/5.png"
+      "texture": "shop/icons/others/5.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 20}
+      ]
     },
     {
       "id": 6,
@@ -46,7 +61,10 @@
       "name_en": "Phone",
       "type": "other",
       "price": 10000,
-      "texture": "shop/icons/others/6.png"
+      "texture": "shop/icons/others/6.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 25}
+      ]
     },
     {
       "id": 7,
@@ -54,7 +72,10 @@
       "name_en": "Book",
       "type": "other",
       "price": 150000,
-      "texture": "shop/icons/others/7.png"
+      "texture": "shop/icons/others/7.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 30}
+      ]
     },
     {
       "id": 8,
@@ -62,7 +83,10 @@
       "name_en": "Pearbook Pro",
       "type": "other",
       "price": 800000,
-      "texture": "shop/icons/others/8.png"
+      "texture": "shop/icons/others/8.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 35}
+      ]
     },
     {
       "id": 9,
@@ -70,7 +94,10 @@
       "name_en": "Gaming PC",
       "type": "other",
       "price": 1000000,
-      "texture": "shop/icons/others/9.png"
+      "texture": "shop/icons/others/9.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 45}
+      ]
     },
     {
       "id": 10,
@@ -78,7 +105,10 @@
       "name_en": "Read a book",
       "type": "other",
       "price": 10000000,
-      "texture": "shop/icons/others/10.png"
+      "texture": "shop/icons/others/10.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 50}
+      ]
     },
     {
       "id": 11,
@@ -86,7 +116,10 @@
       "name_en": "Play a game",
       "type": "other",
       "price": 10000000,
-      "texture": "shop/icons/others/11.png"
+      "texture": "shop/icons/others/11.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 55}
+      ]
     },
     {
       "id": 12,
@@ -94,7 +127,10 @@
       "name_en": "Meditate",
       "type": "other",
       "price": 10000000,
-      "texture": "shop/icons/others/12.png"
+      "texture": "shop/icons/others/12.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 60}
+      ]
     },
     {
       "id": 13,
@@ -102,7 +138,10 @@
       "name_en": "Listen to music",
       "type": "other",
       "price": 10000000,
-      "texture": "shop/icons/others/13.png"
+      "texture": "shop/icons/others/13.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 65}
+      ]
     },
     {
       "id": 14,
@@ -110,7 +149,10 @@
       "name_en": "Go outside",
       "type": "other",
       "price": 10000000,
-      "texture": "shop/icons/others/14.png"
+      "texture": "shop/icons/others/14.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 70}
+      ]
     },
     {
       "id": 15,
@@ -118,7 +160,10 @@
       "name_en": "Make a call",
       "type": "other",
       "price": 10000000,
-      "texture": "shop/icons/others/15.png"
+      "texture": "shop/icons/others/15.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 75}
+      ]
     },
     {
       "id": 16,
@@ -126,7 +171,10 @@
       "name_en": "Sleep",
       "type": "other",
       "price": 10000000,
-      "texture": "shop/icons/others/16.png"
+      "texture": "shop/icons/others/16.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 80}
+      ]
     },
     {
       "id": 17,
@@ -134,7 +182,10 @@
       "name_en": "Drink",
       "type": "other",
       "price": 10000000,
-      "texture": "shop/icons/others/17.png"
+      "texture": "shop/icons/others/17.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 85}
+      ]
     },
     {
       "id": 18,
@@ -142,7 +193,10 @@
       "name_en": "Workout",
       "type": "other",
       "price": 10000000,
-      "texture": "shop/icons/others/18.png"
+      "texture": "shop/icons/others/18.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 90}
+      ]
     }
   ]
 }

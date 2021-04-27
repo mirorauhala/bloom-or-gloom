@@ -5,8 +5,11 @@
       "name_fi": "Oranssi paita",
       "name_en": "Orange shirt",
       "type": "shirt",
-      "price": 100,
-      "texture": "shop/icons/shirts/1.png"
+      "price": 10,
+      "texture": "shop/icons/shirts/1.png",
+      "effects": [
+        {"method": "click-power", "action": "increment", "amount": 1}
+      ]
     },
     {
       "id": 2,
@@ -14,7 +17,10 @@
       "name_en": "Yellow shirt",
       "type": "shirt",
       "price": 400,
-      "texture": "shop/icons/shirts/2.png"
+      "texture": "shop/icons/shirts/2.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 5}
+      ]
     },
     {
       "id": 3,
@@ -22,7 +28,10 @@
       "name_en": "Light blue shirt",
       "type": "shirt",
       "price": 1000,
-      "texture": "shop/icons/shirts/3.png"
+      "texture": "shop/icons/shirts/3.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 10}
+      ]
     },
     {
       "id": 4,
@@ -30,7 +39,10 @@
       "name_en": "Blue polkadot",
       "type": "shirt",
       "price": 3000,
-      "texture": "shop/icons/shirts/4.png"
+      "texture": "shop/icons/shirts/4.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 15}
+      ]
     },
     {
       "id": 5,
@@ -38,7 +50,10 @@
       "name_en": "Red polkadot",
       "type": "shirt",
       "price": 6500,
-      "texture": "shop/icons/shirts/5.png"
+      "texture": "shop/icons/shirts/5.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 20}
+      ]
     },
     {
       "id": 6,
@@ -46,7 +61,10 @@
       "name_en": "Light brown polkadot",
       "type": "shirt",
       "price": 10000,
-      "texture": "shop/icons/shirts/6.png"
+      "texture": "shop/icons/shirts/6.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 25}
+      ]
     },
     {
       "id": 7,
@@ -54,7 +72,10 @@
       "name_en": "Gray polo",
       "type": "shirt",
       "price": 150000,
-      "texture": "shop/icons/shirts/7.png"
+      "texture": "shop/icons/shirts/7.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 30}
+      ]
     },
     {
       "id": 8,
@@ -62,7 +83,10 @@
       "name_en": "Blue polo",
       "type": "shirt",
       "price": 800000,
-      "texture": "shop/icons/shirts/8.png"
+      "texture": "shop/icons/shirts/8.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 35}
+      ]
     },
     {
       "id": 9,
@@ -70,7 +94,10 @@
       "name_en": "Dark polo",
       "type": "shirt",
       "price": 1000000,
-      "texture": "shop/icons/shirts/9.png"
+      "texture": "shop/icons/shirts/9.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 40}
+      ]
     },
     {
       "id": 10,
@@ -78,7 +105,10 @@
       "name_en": "Red hoodie",
       "type": "shirt",
       "price": 2000000,
-      "texture": "shop/icons/shirts/10.png"
+      "texture": "shop/icons/shirts/10.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 45}
+      ]
     },
     {
       "id": 11,
@@ -86,7 +116,10 @@
       "name_en": "Green hoodie",
       "type": "shirt",
       "price": 3000000,
-      "texture": "shop/icons/shirts/11.png"
+      "texture": "shop/icons/shirts/11.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 50}
+      ]
     },
     {
       "id": 12,
@@ -94,7 +127,10 @@
       "name_en": "Blue hoodie",
       "type": "shirt",
       "price": 10000000,
-      "texture": "shop/icons/shirts/12.png"
+      "texture": "shop/icons/shirts/12.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 55}
+      ]
     },
     {
       "id": 13,
@@ -102,7 +138,10 @@
       "name_en": "Red striped hoodie",
       "type": "shirt",
       "price": 100000000,
-      "texture": "shop/icons/shirts/13.png"
+      "texture": "shop/icons/shirts/13.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 60}
+      ]
     },
     {
       "id": 14,
@@ -110,7 +149,10 @@
       "name_en": "Yellow striped hoodie",
       "type": "shirt",
       "price": 500000000,
-      "texture": "shop/icons/shirts/14.png"
+      "texture": "shop/icons/shirts/14.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 65}
+      ]
     },
     {
       "id": 15,
@@ -118,7 +160,10 @@
       "name_en": "Light blue striped hoodie",
       "type": "shirt",
       "price": 2147483647,
-      "texture": "shop/icons/shirts/15.png"
+      "texture": "shop/icons/shirts/15.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 70}
+      ]
     },
     {
       "id": 1,
@@ -126,7 +171,10 @@
       "name_en": "Red beanie",
       "type": "hat",
       "price": 150000,
-      "texture": "shop/icons/hats/1.png"
+      "texture": "shop/icons/hats/1.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 75}
+      ]
     },
     {
       "id": 2,
@@ -134,7 +182,10 @@
       "name_en": "Yellow beanie",
       "type": "hat",
       "price": 800000,
-      "texture": "shop/icons/hats/2.png"
+      "texture": "shop/icons/hats/2.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 80}
+      ]
     },
     {
       "id": 3,
@@ -142,7 +193,10 @@
       "name_en": "Blue beanie",
       "type": "hat",
       "price": 1000000,
-      "texture": "shop/icons/hats/3.png"
+      "texture": "shop/icons/hats/3.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 85}
+      ]
     },
     {
       "id": 4,
@@ -150,7 +204,10 @@
       "name_en": "Violet bandana",
       "type": "hat",
       "price": 2000000,
-      "texture": "shop/icons/hats/4.png"
+      "texture": "shop/icons/hats/4.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 90}
+      ]
     },
     {
       "id": 5,
@@ -158,7 +215,10 @@
       "name_en": "Blue bandana",
       "type": "hat",
       "price": 3000000,
-      "texture": "shop/icons/hats/5.png"
+      "texture": "shop/icons/hats/5.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 95}
+      ]
     },
     {
       "id": 6,
@@ -166,7 +226,10 @@
       "name_en": "Red bandana",
       "type": "hat",
       "price": 10000000,
-      "texture": "shop/icons/hats/6.png"
+      "texture": "shop/icons/hats/6.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 100}
+      ]
     },
     {
       "id": 7,
@@ -174,7 +237,10 @@
       "name_en": "Yellow baseball cap",
       "type": "hat",
       "price": 100000000,
-      "texture": "shop/icons/hats/7.png"
+      "texture": "shop/icons/hats/7.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 105}
+      ]
     },
     {
       "id": 8,
@@ -182,7 +248,10 @@
       "name_en": "Blue baseball cap",
       "type": "hat",
       "price": 500000000,
-      "texture": "shop/icons/hats/8.png"
+      "texture": "shop/icons/hats/8.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 110}
+      ]
     },
     {
       "id": 9,
@@ -190,7 +259,10 @@
       "name_en": "Red baseball cap",
       "type": "hat",
       "price": 2147483647,
-      "texture": "shop/icons/hats/9.png"
+      "texture": "shop/icons/hats/9.png",
+      "effects":[
+        {"method": "click-power", "action": "increment", "amount": 115}
+      ]
     }
   ]
 }
