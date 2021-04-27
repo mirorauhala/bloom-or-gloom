@@ -17,7 +17,7 @@ android {
         exclude 'META-INF/robovm/ios/robovm.xml'
     }
     defaultConfig {
-        applicationId "fi.tuni.tamk.tiko.depressionaut"
+        applicationId "fi.tuni.tamk.tiko.bloomorgloom"
         minSdkVersion 14
         targetSdkVersion 30
         versionCode 1
@@ -86,7 +86,7 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'fi.tuni.tamk.tiko.depressionaut/fi.tuni.tamk.tiko.depressionaut.AndroidLauncher'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'fi.tuni.tamk.tiko.bloomorgloom/fi.tuni.tamk.tiko.bloomorgloom.AndroidLauncher'
 }
 
 eclipse.project.name = appName + "-android"
