@@ -367,11 +367,10 @@ public class ScoreCounter {
      * @return happinesslevel int
      */
     public int getHappinessLevel() {
-        if(getScore() < 1000) {return 0;}
-        if(getScore() > 1000 && getScore() < 10000) {return 1;}
-        if(getScore() > 10000 && getScore() < 1000000) {return 2;}
-        if(getScore() > 1000000 && getScore() < 1000000000) {return 3;}
-        if(getScore() > 100000000 ) {return 4;}
+        if(getScore() > 10000000) {return 4;}
+        if(getScore() > 1000000) {return 3;}
+        if(getScore() > 100000) {return 2;}
+        if(getScore() > 10000) {return 1;}
         return 0;
     }
 
@@ -382,12 +381,10 @@ public class ScoreCounter {
      */
     public int getScoreForNextLevel(int happinessLevel) {
         switch (happinessLevel) {
-            case 0: return 1000;
-            case 1: return 10000;
+            default: return 10000;
+            case 1: return 100000;
             case 2: return 1000000;
-            case 3: return 100000000;
-            case 4: return 1000000000;
-            default: return 1000;
+            case 3: return 10000000;
         }
     }
 
