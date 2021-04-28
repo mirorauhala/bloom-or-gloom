@@ -18,6 +18,9 @@ public class Navigation {
     private MyGdxGame game;
     private Screen activeScreen;
     private HashMap<Screen, com.badlogic.gdx.Screen> screenPair = new HashMap<>();
+    public Texture gameNav;
+    public Texture shopNav;
+    public Texture settingsNav;
 
     public enum Screen {
         GAME("Game", new Texture("UI/gamePressed.png"), new Rectangle(0, 0, 360, 202)),
@@ -45,6 +48,7 @@ public class Navigation {
          * @return Texture  Get the navigation texture for the active state of this screen.
          */
         public Texture getTexture() {
+            System.out.println(texture);
             return texture;
         }
 
@@ -64,6 +68,12 @@ public class Navigation {
         this.screenPair.put(Screen.GAME, new GameScreen(game));
         this.screenPair.put(Screen.SHOP, new ShopClothingScreen(game));
         this.screenPair.put(Screen.SETTINGS, new SettingsScreen(game));
+
+        gameNav = new Texture("UI/gamePressed.png");
+        shopNav = new Texture("UI/shopPressed.png");
+        settingsNav = new Texture("UI/settingsPressed.png");
+
+
     }
 
 
@@ -76,7 +86,18 @@ public class Navigation {
             return;
         }
 
-        batch.draw(activeScreen.getTexture(), 0, 0);
+
+        if(activeScreen == Screen.GAME) {
+            batch.draw(gameNav, 0, 0);
+
+        }
+        if(activeScreen == Screen.SHOP) {
+            batch.draw(shopNav, 0, 0);
+        }
+        if(activeScreen == Screen.SETTINGS) {
+            batch.draw(settingsNav, 0, 0);
+        }
+        //batch.draw(activeScreen.getTexture(), 0, 0);
         listenForClick();
     }
 
