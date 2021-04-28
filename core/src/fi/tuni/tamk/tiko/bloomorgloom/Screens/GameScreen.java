@@ -93,7 +93,7 @@ public class GameScreen implements Screen {
         batch.draw(items.getItem("wall", wallIndex), x, y);
         batch.draw(items.getItem("floor", floorIndex), x, y);
         batch.draw(items.getItem("chair", chairIndex), x, y);
-        batch.draw(items.getItem("bed", chairIndex), x, y);
+        batch.draw(items.getItem("bed", bedIndex), x, y);
         batch.draw(items.getItem("desk", deskIndex), x, character.getStandingOffset());
         
         // Character layer:
