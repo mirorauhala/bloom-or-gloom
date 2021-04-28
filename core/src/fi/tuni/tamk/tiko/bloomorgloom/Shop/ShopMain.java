@@ -385,7 +385,6 @@ public class ShopMain {
 
             // set disabled
             b.setDisabled(isDisabled);
-            b.setVisible(!isDisabled);
             b.setTouchable(isDisabled ? Touchable.disabled : Touchable.enabled);
         }
     }
