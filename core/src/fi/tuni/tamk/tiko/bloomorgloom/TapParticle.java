@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class TapParticle extends Actor {
     // Particle texture:
-    private final Texture texture = new Texture("cosmetics/visuals.png");
+    private final Texture texture = new Texture("cosmetics/visuals/visuals.png");
 
     // The list containing the particles:
     private ArrayList<TapParticle> Particles = new ArrayList<>();

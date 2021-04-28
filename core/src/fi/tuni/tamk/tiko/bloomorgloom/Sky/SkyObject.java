@@ -29,8 +29,8 @@ public class SkyObject extends Actor {
             "cosmetics/clouds/v7.png",
             "cosmetics/clouds/v8.png",
             "cosmetics/clouds/v9.png",
-            "cosmetics/bird.png",
-            "cosmetics/bird.png"
+            "cosmetics/bird/bird.png",
+            "cosmetics/bird/bird.png"
     );
     // Lists for the different layers of objects needed for the parallaxing effect:
     private HashMap<Integer, ArrayList<SkyObject>> layers = new HashMap<>();
