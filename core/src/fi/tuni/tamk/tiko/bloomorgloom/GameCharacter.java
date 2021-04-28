@@ -165,9 +165,13 @@ public class GameCharacter {
     public void setItem(int index) {
         switch (index) {
             case 0: currentItem = heldItem.EMPTY;
+                    break;
             case 1: currentItem = heldItem.PHONE;
+                    break;
             case 2: currentItem = heldItem.BOOK;
+                    break;
             case 3: currentItem = heldItem.LAPTOP;
+                    break;
             case 4: currentItem = heldItem.COMPUTER;
         }
     }
