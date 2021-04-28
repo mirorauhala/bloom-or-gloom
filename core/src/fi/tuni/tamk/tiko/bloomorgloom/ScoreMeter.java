@@ -63,7 +63,7 @@ public class ScoreMeter {
         }
         batch.draw(meter, 22, 1920 - 358, meter.getWidth(), meter.getHeight());
         font.getData().setScale(3.5f, 3.5f);
-        font.draw(batch, score.getRationalizedValue(score.getScore(), 1), 540, 1875);
+        font.draw(batch, score.getRationalizedValue(score.getWallet(), 1), 540, 1875);
         font.getData().setScale(2f, 2f);
         font.draw(batch, "h/s " + score.countPassiveIncomeIncrement(), 410, 1740);
 
