@@ -34,7 +34,11 @@ public class ScoreMeter {
         return meterTexture;
     }
 
-
+    /**
+     * Constructor for the class.
+     *
+     * @param game Needed for the functionality of screens in LibGDX.
+     */
     public ScoreMeter(MyGdxGame game) {
         this.game = game;
         this.camera = game.camera;
@@ -49,7 +53,12 @@ public class ScoreMeter {
         createFillerRectangles();
     }
 
-    public void draw(SpriteBatch batch, GameClock clock) {
+    /**
+     * Draws the score meter.
+     *
+     * @param batch SpriteBatch needed for the draw() method.
+     */
+    public void draw(SpriteBatch batch) {
         //determineMeterHeight();
 
         batch.draw(meterBase, 0, 0);
@@ -69,6 +78,11 @@ public class ScoreMeter {
 
     }
 
+    /**
+     * Gets progress to the next happiness level as a percentage.
+     *
+     * @return Progress to the next level.
+     */
     public float getProgressToNextHappinessLevel() {
         // percentage of the progress to next happiness level:
         float progress = score.getScore() / score.getScoreForNextLevel(score.getHappinessLevel());
@@ -79,12 +93,21 @@ public class ScoreMeter {
         }
     }
 
+    /**
+     * Calculates the width of the rectangles filling the score meter.
+     *
+     * @param index Index of a rectangle.
+     * @return With of the given rectangle.
+     */
     public float getFillerWidth(int index) {
         // calculate distance to the center of the circle:
         float d = Math.abs(meter.getHeight()/2 - index);
         return (float) (2 * Math.sqrt(Math.pow(meter.getWidth()/2f, 2) - Math.pow(d, 2)));
     }
 
+    /**
+     * Creates rectangles needed to fill the score meter.
+     */
     public void createFillerRectangles() {
         for (int i = 0; i <= meter.getHeight(); i++) {
             rectangles.add(new Rectangle(

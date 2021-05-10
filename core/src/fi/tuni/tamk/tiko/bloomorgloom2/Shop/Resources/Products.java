@@ -9,6 +9,11 @@ public class Products {
     private List<fi.tuni.tamk.tiko.bloomorgloom2.Shop.Resources.Product> products;
     private List<ProductType> types;
 
+    /**
+     * Gets products.
+     *
+     * @return Products.
+     */
     public List<Product> getProducts() {
         return products;
     }

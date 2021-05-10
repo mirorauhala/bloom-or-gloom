@@ -14,12 +14,10 @@ import fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame;
 
 /**
  * SplashScreen is a Screen class that displays the games splash screen.
- *
- * @author Jere Joensuu
  */
 
 public class SplashScreen implements Screen {
-    fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame game;
+    MyGdxGame game;
 
     // Textures:
     private Texture bg;

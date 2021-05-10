@@ -35,8 +35,11 @@ import fi.tuni.tamk.tiko.bloomorgloom2.Screens.ShopClothingScreen;
 import fi.tuni.tamk.tiko.bloomorgloom2.Screens.ShopFurnitureScreen;
 import fi.tuni.tamk.tiko.bloomorgloom2.Shop.Resources.OwnedProducts;
 
+/**
+ * Main class for the shop.
+ */
 public class ShopMain {
-    private final fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame game;
+    private final MyGdxGame game;
     private final HashMap<Product, Button> buttons = new HashMap<>();
     private Texture shopClothingTexture;
     private Texture shopFurnitureTexture;
@@ -48,12 +51,17 @@ public class ShopMain {
     private Viewport viewport;
     private Stage stage;
 
-    public ShopMain(fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame game) {
+    /**
+     * Constructor for the shop.
+     *
+     * @param game Needed for the functionality of screens in LibGDX.
+     */
+    public ShopMain(MyGdxGame game) {
         this.game = game;
-        OrthographicCamera camera = new OrthographicCamera(fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame.SCREEN_WIDTH, fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame.SCREEN_HEIGHT);
+        OrthographicCamera camera = new OrthographicCamera(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT);
         camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
 
-        viewport = new StretchViewport(fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame.SCREEN_WIDTH, fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame.SCREEN_HEIGHT, camera);
+        viewport = new StretchViewport(MyGdxGame.SCREEN_WIDTH, MyGdxGame.SCREEN_HEIGHT, camera);
 
         //setup skin
         skin = new Skin(Gdx.files.internal("UI/uiskin.json"));
@@ -80,9 +88,9 @@ public class ShopMain {
     public Stage getStage(Products products, String area, Label walletLabel) {
         container = new Table();
         container.setFillParent(true);
-        container.setHeight(fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame.SCREEN_HEIGHT);
-        container.setWidth(fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame.SCREEN_WIDTH);
-        container.setDebug(fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame.DEBUG);
+        container.setHeight(MyGdxGame.SCREEN_HEIGHT);
+        container.setWidth(MyGdxGame.SCREEN_WIDTH);
+        container.setDebug(MyGdxGame.DEBUG);
         container.left().top();
 
         Table productsTable = game.shop.getProductsTable(products);
@@ -116,7 +124,7 @@ public class ShopMain {
 
         // setup stage
         stage = new Stage(viewport);
-        stage.setDebugAll(fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame.DEBUG);
+        stage.setDebugAll(MyGdxGame.DEBUG);
 
         // add container to the stage
         stage.addActor(container);
