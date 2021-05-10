@@ -3,6 +3,9 @@ package fi.tuni.tamk.tiko.bloomorgloom2;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 
+/**
+ * Class for all the sound and music in the game.
+ */
 public class Sounds {
     private final MyGdxGame game;
     public GameClock clock;
@@ -14,7 +17,11 @@ public class Sounds {
     public com.badlogic.gdx.audio.Music nature = Gdx.audio.newMusic(Gdx.files.internal("sounds/nature.mp3"));
     public com.badlogic.gdx.audio.Music music = Gdx.audio.newMusic(Gdx.files.internal("sounds/bgmusic.mp3"));
 
-
+    /**
+     * Constructor for the class.
+     *
+     * @param game Needed for the functionality of screens in LibGDX.
+     */
     public Sounds(MyGdxGame game) {
         this.game = game;
         clock = new GameClock(game);
@@ -29,7 +36,6 @@ public class Sounds {
         }
 
     }
-
 
     /**
      * used to play a clicking sound whenever the player presses a menu button
@@ -62,6 +68,9 @@ public class Sounds {
         }
     }
 
+    /**
+     * Stops ambient music.
+     */
     public void stopAmbient() {
         if(crickets.isPlaying()) {
             crickets.stop();
@@ -71,6 +80,9 @@ public class Sounds {
         }
     }
 
+    /**
+     * Plays music.
+     */
     public void musicPlay() {
         if(game.settings.getMusic()) {
             music.setLooping(true);
@@ -78,6 +90,10 @@ public class Sounds {
             music.play();
         }
     }
+
+    /**
+     * Stops music.
+     */
     public void stopMusic() {
         if(music.isPlaying()) {
             music.stop();

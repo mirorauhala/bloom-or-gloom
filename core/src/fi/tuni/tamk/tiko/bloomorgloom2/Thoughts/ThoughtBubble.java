@@ -29,6 +29,9 @@ public class ThoughtBubble extends Actor {
     private Rectangle hitbox;
     private float scale;
 
+    /**
+     * A thought bubble's emotion type.
+     */
     public enum Emotion{
         POSITIVE,
         NEGATIVE;

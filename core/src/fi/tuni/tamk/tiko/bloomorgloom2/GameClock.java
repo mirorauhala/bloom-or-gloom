@@ -7,8 +7,11 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
+/**
+ * Class for keeping track of time in the game.
+ */
 public class GameClock {
-    private final fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame game;
+    private final MyGdxGame game;
 
     Date date = new Date();
     Calendar calendarG = new GregorianCalendar();

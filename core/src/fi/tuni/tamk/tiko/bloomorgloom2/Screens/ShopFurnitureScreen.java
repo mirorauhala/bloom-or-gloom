@@ -9,11 +9,19 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import fi.tuni.tamk.tiko.bloomorgloom2.Shop.Resources.Products;
 import fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame;
 
+/**
+ * Class for the furniture section of the shop.
+ */
 public class ShopFurnitureScreen implements Screen {
-    private final fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame game;
+    private final MyGdxGame game;
     private final Stage stage;
     private final Label wallet;
 
+    /**
+     * Constructor.
+     *
+     * @param game Needed for the functionality of screens in LibGDX.
+     */
     public ShopFurnitureScreen(final MyGdxGame game){
         this.game = game;
         String area = "furniture";
@@ -22,6 +30,11 @@ public class ShopFurnitureScreen implements Screen {
         stage = game.shop.getStage(products, area, wallet);
     }
 
+    /**
+     * Renders the furniture section of the shop.
+     *
+     * @param delta Deltatime needed for LibGDX's stages.
+     */
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(1, 1, 1, 1); //sets up the clear color (background color) of the screen.

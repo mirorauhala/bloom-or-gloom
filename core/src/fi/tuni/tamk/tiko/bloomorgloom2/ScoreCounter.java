@@ -6,12 +6,11 @@ import com.badlogic.gdx.Preferences;
 /**
  * ScoreCounter class has methods for counting the score,
  * adding multiplier and temporary buffs, drawing the score etc.
- *
- * @author Jaakko Saranpää
  */
 public class ScoreCounter {
 
-    /*EVERYTHING FOR THE MAIN SCORE
+    /*
+    EVERYTHING FOR THE MAIN SCORE
     A unit gets added to the main score when the user presses the screen
     The amount of score that gets added is calculated by multiplying the temporary multiplier (buffs and daily bonuses),
     the multiplier (which can be bought on the store) and the clickpower (which can also be upgraded from the store)
@@ -21,6 +20,11 @@ public class ScoreCounter {
     private final Preferences prefs;
     private GameClock clock;
 
+    /**
+     * Constructor for the class.
+     *
+     * @param game Needed for the functionality of screens in LibGDX.
+     */
     public ScoreCounter(MyGdxGame game) {
         prefs = Gdx.app.getPreferences("score");
         clock = new GameClock(game);

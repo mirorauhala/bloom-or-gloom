@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Class for adding shirt textures to their respective lists.
+ */
 public class Shirts {
     public ArrayList<List<Texture>> shirts = new ArrayList<List<Texture>>();
     public List<Texture> tier1 = Arrays.asList(
@@ -154,6 +157,9 @@ public class Shirts {
             new Texture("character/hands/sleeves/v3/t5v15.png")
     );
 
+    /**
+     * Constructor for the class.
+     */
     public Shirts() {
         shirts.add(tier1);
         shirts.add(tier2);

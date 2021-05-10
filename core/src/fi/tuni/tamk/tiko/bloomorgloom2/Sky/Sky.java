@@ -22,7 +22,7 @@ public class Sky {
      * @param batch SpriteBatch needed for the draw() method.
      * @param clock GameClock object needed for timing skyObject creation.
      */
-    public void draw(SpriteBatch batch, fi.tuni.tamk.tiko.bloomorgloom2.GameClock clock) {
+    public void draw(SpriteBatch batch, GameClock clock) {
         // Creates a new object in the sky every 6-8 seconds.
         if (clock.skyObjectTimer()) {
             skyObject.createSkyObject();
@@ -39,15 +39,4 @@ public class Sky {
 
         skyObject.draw(batch); // draw sky objects
     }
-
-    public float getSkyOpacity(GameClock clock) {
-        if (clock.getDayOpacity() < 0.25) {
-            return 0;
-        } else if (clock.getDayOpacity() < 0.75) {
-            return (clock.getDayOpacity() - 0.25f) / 0.5f;
-        } else {
-            return 1;
-        }
-    }
-
 }

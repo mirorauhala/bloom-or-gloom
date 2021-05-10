@@ -14,8 +14,6 @@ import java.util.ArrayList;
  *
  * The particles are created around players head and utilize LibGDX's Actor
  * class to fade the textures in and out.
- *
- * @author Jere Joensuu
  */
 
 public class TapParticle extends Actor {

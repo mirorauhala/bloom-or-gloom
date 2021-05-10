@@ -23,24 +23,23 @@ import fi.tuni.tamk.tiko.bloomorgloom2.Thoughts.ThoughtBubble;
 
 /**
  * GameScreen has everything that gets drawn in the main games screen
- *
  */
 
 public class GameScreen implements Screen {
     private final Stage stage;
     private final Items items;
-    private final fi.tuni.tamk.tiko.bloomorgloom2.GameCharacter character;
+    private final GameCharacter character;
     public Rectangle gameScreenRectangle;
-    public fi.tuni.tamk.tiko.bloomorgloom2.ScoreMeter scoreMeter;
-    private fi.tuni.tamk.tiko.bloomorgloom2.TapParticle particle = new TapParticle();
-    private fi.tuni.tamk.tiko.bloomorgloom2.Thoughts.ThoughtBubble bubble = new fi.tuni.tamk.tiko.bloomorgloom2.Thoughts.ThoughtBubble();
-    private fi.tuni.tamk.tiko.bloomorgloom2.GameClock clock;
-    private fi.tuni.tamk.tiko.bloomorgloom2.Sky.Sky sky = new Sky();
+    public ScoreMeter scoreMeter;
+    private TapParticle particle = new TapParticle();
+    private ThoughtBubble bubble = new ThoughtBubble();
+    private GameClock clock;
+    private Sky sky = new Sky();
 
-    fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame game;
+    MyGdxGame game;
     SpriteBatch batch;
 
-    public fi.tuni.tamk.tiko.bloomorgloom2.DailyBonus dailyBonus;
+    public DailyBonus dailyBonus;
 
     private OrthographicCamera camera;
     private int wallIndex;
@@ -55,6 +54,11 @@ public class GameScreen implements Screen {
     private int mugIndex;
     private int plantIndex;
 
+    /**
+     * Constructor of the main GameScreen.
+     *
+     * @param game Needed for the functionality of screens in LibGDX.
+     */
     public GameScreen(MyGdxGame game) {
         this.game = game;
         batch = game.gameBatch;
@@ -68,6 +72,11 @@ public class GameScreen implements Screen {
         character = new GameCharacter(game);
     }
 
+    /**
+     * Main render loop of the screen.
+     *
+     * @param delta Deltatime needed for rendering particles.
+     */
     @Override
     public void render(float delta) {
         batch.setProjectionMatrix(camera.combined);
@@ -118,7 +127,7 @@ public class GameScreen implements Screen {
         batch.setColor(1,1,1,1); // reset batch color
 
         // Hud layer:
-        scoreMeter.draw(batch, clock);
+        scoreMeter.draw(batch);
         game.score.setTempMultiplier(clock.amountOfBuffs());
 
         // Daily Bonus
@@ -130,6 +139,10 @@ public class GameScreen implements Screen {
 
     }
 
+    /**
+     * Checks if the screen has been tapped and sends touch position information
+     * to other methods.
+     */
     public void checkForTap() {
         Vector2 headPos = new Vector2(character.getHeadPosition(game.score.getHappinessLevel()));
         headPos.x += character.head.getWidth() / 2f;

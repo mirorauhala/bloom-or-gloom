@@ -12,11 +12,9 @@ import com.badlogic.gdx.math.Vector3;
 
 /**
  * DailyBonus creates a window every day that the user plays the game for the first time during that day and gives the player a bonus
- *
- * @author Jaakko Saranpää
  */
 public class DailyBonus {
-    private final fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame game;
+    private final MyGdxGame game;
 
     private String [] emotionTips;
 
@@ -37,7 +35,7 @@ public class DailyBonus {
 
 
 
-    public fi.tuni.tamk.tiko.bloomorgloom2.GameClock clock;
+    public GameClock clock;
 
     public DailyBonus(MyGdxGame game) {
         this.game = game;

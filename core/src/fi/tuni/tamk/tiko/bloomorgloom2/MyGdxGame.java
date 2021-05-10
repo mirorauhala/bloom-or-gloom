@@ -9,6 +9,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import fi.tuni.tamk.tiko.bloomorgloom2.Screens.SplashScreen;
 import fi.tuni.tamk.tiko.bloomorgloom2.Shop.ShopMain;
 
+/**
+ * Main class of the game.
+ */
 public class MyGdxGame extends Game {
 	// DEBUG ->
 	public static final boolean DEBUG = false;
@@ -32,6 +35,9 @@ public class MyGdxGame extends Game {
 	public float soundVolume = 10f;
 	public float musicVolume = 7f;
 
+	/**
+	 * Initializes objects upon starting the game.
+	 */
 	@Override
 	public void create () {
 		if(DEBUG) {
@@ -55,8 +61,6 @@ public class MyGdxGame extends Game {
 		sounds.ambientPlay();
 		sounds.musicPlay();
 
-
-
 		if(DEBUG) {
 			navigation.setActive(fi.tuni.tamk.tiko.bloomorgloom2.Navigation.Screen.GAME);
 			navigation.setScreen(Navigation.Screen.GAME);
@@ -65,6 +69,9 @@ public class MyGdxGame extends Game {
 		}
 	}
 
+	/**
+	 * The main render loop of the game.
+	 */
 	@Override
 	public void render () {
 		hudBatch.setProjectionMatrix(camera.combined);
@@ -75,7 +82,10 @@ public class MyGdxGame extends Game {
 		navigation.draw(hudBatch);
 		hudBatch.end();
 	}
-	
+
+	/**
+	 * Calls dispose methods.
+	 */
 	@Override
 	public void dispose () {
 		gameBatch.dispose();

@@ -16,11 +16,9 @@ import fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame;
 
 /**
  * SettingsScreen houses all of the settings and stats of the player
- *
- * @author Jaakko Saranpää
  */
 public class SettingsScreen implements Screen {
-    private fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame game;
+    private MyGdxGame game;
 
     private Stage stage;
 
@@ -68,7 +66,12 @@ public class SettingsScreen implements Screen {
     private boolean resetPressed;
     private boolean guidePressed;
 
-    public SettingsScreen(fi.tuni.tamk.tiko.bloomorgloom2.MyGdxGame game) {
+    /**
+     * Constructor of the settings screen.
+     *
+     * @param game Needed for the functionality of screens in LibGDX.
+     */
+    public SettingsScreen(MyGdxGame game) {
         this.game = game;
         settingsBatch = game.hudBatch;
         camera = game.camera;
@@ -203,6 +206,9 @@ public class SettingsScreen implements Screen {
         checkForTap();
     }
 
+    /**
+     * Draws stats.
+     */
     private void drawStats() {
         if(!resetPressed) {
             if(game.settings.getLang().equals("en")) {
@@ -287,6 +293,9 @@ public class SettingsScreen implements Screen {
 
     }
 
+    /**
+     * Draws guide.
+     */
     public void drawGuide() {
         if(guidePressed) {
             if(game.settings.getLang().equals("en")) {

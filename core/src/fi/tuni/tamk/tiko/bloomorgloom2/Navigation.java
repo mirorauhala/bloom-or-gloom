@@ -13,6 +13,9 @@ import fi.tuni.tamk.tiko.bloomorgloom2.Screens.GameScreen;
 import fi.tuni.tamk.tiko.bloomorgloom2.Screens.SettingsScreen;
 import fi.tuni.tamk.tiko.bloomorgloom2.Screens.ShopClothingScreen;
 
+/**
+ * Class for the navigation bar.
+ */
 public class Navigation {
     private OrthographicCamera camera;
     private MyGdxGame game;
@@ -22,6 +25,9 @@ public class Navigation {
     public Texture shopNav;
     public Texture settingsNav;
 
+    /**
+     * Stores information for the different states of the navigation bar.
+     */
     public enum Screen {
         GAME("Game", new Texture("UI/gamePressed.png"), new Rectangle(0, 0, 360, 202)),
         SHOP("Shop", new Texture("UI/shopPressed.png"), new Rectangle(360, 0 , 360, 202)),
@@ -60,6 +66,11 @@ public class Navigation {
         }
     }
 
+    /**
+     * Constructor for the class.
+     *
+     * @param game Needed for the functionality of screens in LibGDX.
+     */
     public Navigation(MyGdxGame game) {
         this.game = game;
         this.camera = game.camera;
